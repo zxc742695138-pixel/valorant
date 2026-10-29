@@ -5,6 +5,8 @@
 // (team1 + team2) is >= MIN_TOTAL, one team leads by >= MIN_DIFF rounds,
 // yet that team loses the map.
 //
+// Rate = comeback maps / maps where some team held such a lead.
+//
 // Usage:
 //   node analysis/comeback.js data/paper-rex.json "Paper Rex"
 
@@ -30,22 +32,13 @@ function analyzeMap(rounds) {
   return { finalWinner, leaders, blownBy, leadAt };
 }
 
-const pct = (n, d) => (d ? `${((100 * n) / d).toFixed(1)}%` : 'n/a');
-
-function main() {
-  const [file, team] = process.argv.slice(2);
-  if (!file || !team) {
-    console.error('Usage: node analysis/comeback.js <data.json> "<Team name>"');
-    process.exit(1);
-  }
-  const data = JSON.parse(fs.readFileSync(file, 'utf8'));
-
+function analyzeMatches(matches) {
   let totalMaps = 0;
   let mapsWithLead = 0;      // any team had a qualifying lead
   let comebacks = 0;         // map was a comeback (either direction)
   const details = [];
 
-  for (const m of data.matches) {
+  for (const m of matches) {
     for (const mp of m.map_result) {
       if (!mp.rounds.length) continue;
       totalMaps++;
@@ -62,12 +55,27 @@ function main() {
       }
     }
   }
-
-  console.log(`Đội: ${team} — ${data.matches.length} trận, ${totalMaps} map`);
-  console.log(`Điều kiện: tổng round >= ${MIN_TOTAL}, chênh lệch >= ${MIN_DIFF}\n`);
-  console.log(`Tỉ lệ lật kèo (map lật kèo / map có tình huống dẫn ≥${MIN_DIFF}): ${comebacks}/${mapsWithLead} = ${pct(comebacks, mapsWithLead)}`);
-  console.log(`\nChi tiết map lật kèo`);
-  console.table(details);
+  return { totalMaps, mapsWithLead, comebacks, rate: mapsWithLead ? comebacks / mapsWithLead : null, details };
 }
 
-main();
+const pct = (n, d) => (d ? `${((100 * n) / d).toFixed(1)}%` : 'n/a');
+
+function main() {
+  const [file, team] = process.argv.slice(2);
+  if (!file) {
+    console.error('Usage: node analysis/comeback.js <data.json> ["<Team name>"]');
+    process.exit(1);
+  }
+  const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const r = analyzeMatches(data.matches);
+
+  console.log(`Đội: ${team || data.team_id} — ${data.matches.length} trận, ${r.totalMaps} map`);
+  console.log(`Điều kiện: tổng round >= ${MIN_TOTAL}, chênh lệch >= ${MIN_DIFF}\n`);
+  console.log(`Tỉ lệ lật kèo (map lật kèo / map có tình huống dẫn ≥${MIN_DIFF}): ${r.comebacks}/${r.mapsWithLead} = ${pct(r.comebacks, r.mapsWithLead)}`);
+  console.log(`\nChi tiết map lật kèo`);
+  console.table(r.details);
+}
+
+module.exports = { MIN_TOTAL, MIN_DIFF, analyzeMap, analyzeMatches, pct };
+
+if (require.main === module) main();

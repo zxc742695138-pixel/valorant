@@ -1,0 +1,14 @@
+[
+  { "id": "624", "slug": "paper-rex", "name": "Paper Rex" },
+  { "id": "14", "slug": "t1", "name": "T1" },
+  { "id": "17", "slug": "gen-g", "name": "Gen.G" },
+  { "id": "8185", "slug": "kiwoom-drx", "name": "KIWOOM DRX" },
+  { "id": "11229", "slug": "varrel", "name": "VARREL" },
+  { "id": "918", "slug": "global-esports", "name": "Global Esports" },
+  { "id": "11060", "slug": "nongshim-redforce", "name": "Nongshim RedForce" },
+  { "id": "5448", "slug": "zeta-division", "name": "ZETA DIVISION" },
+  { "id": "278", "slug": "detonation-focusme", "name": "DetonatioN FocusMe" },
+  { "id": "878", "slug": "rex-regum-qeon", "name": "Rex Regum Qeon" },
+  { "id": "6199", "slug": "team-secret", "name": "Team Secret" },
+  { "id": "4050", "slug": "full-sense", "name": "FULL SENSE" }
+]
