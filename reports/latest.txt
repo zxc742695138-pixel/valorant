@@ -99,7 +99,7 @@
 │ 6       │ 'Cloud9'      │ 7       │ 17   │ 14        │ 0         │ '0.0%' │
 └─────────┴───────────────┴─────────┴──────┴───────────┴───────────┴────────┘
 
-So với loại ngẫu nhiên 5 đội (5000 lần): trung bình 8.6%, khoảng 90% 4.6–12.8%, P(ngẫu nhiên ≤ kết quả) = 0.008
+So với loại ngẫu nhiên 5 đội (5000 lần): trung bình 8.6%, khoảng 90% 4.6–12.5%, P(ngẫu nhiên ≤ kết quả) = 0.006
 
 ======== EMEA ========
 
@@ -201,7 +201,7 @@ So với loại ngẫu nhiên 5 đội (5000 lần): trung bình 8.6%, khoảng 
 │ 6       │ 'GIANTX'        │ 9       │ 19   │ 17        │ 0         │ '0.0%' │
 └─────────┴─────────────────┴─────────┴──────┴───────────┴───────────┴────────┘
 
-So với loại ngẫu nhiên 5 đội (5000 lần): trung bình 7.9%, khoảng 90% 4.7–11.0%, P(ngẫu nhiên ≤ kết quả) = 0.003
+So với loại ngẫu nhiên 5 đội (5000 lần): trung bình 7.9%, khoảng 90% 4.7–10.8%, P(ngẫu nhiên ≤ kết quả) = 0.001
 
 ======== CHINA ========
 
@@ -303,7 +303,7 @@ So với loại ngẫu nhiên 5 đội (5000 lần): trung bình 7.9%, khoảng 
 │ 6       │ 'Dragon Ranger Gaming' │ 14      │ 35   │ 27        │ 0         │ '0.0%' │
 └─────────┴────────────────────────┴─────────┴──────┴───────────┴───────────┴────────┘
 
-So với loại ngẫu nhiên 5 đội (5000 lần): trung bình 9.5%, khoảng 90% 7.5–11.4%, P(ngẫu nhiên ≤ kết quả) = 0.000
+So với loại ngẫu nhiên 5 đội (5000 lần): trung bình 9.5%, khoảng 90% 7.5–11.4%, P(ngẫu nhiên ≤ kết quả) = 0.001
 
 ======== PACIFIC ========
 
@@ -406,7 +406,7 @@ So với loại ngẫu nhiên 5 đội (5000 lần): trung bình 9.5%, khoảng 
 │ 6       │ 'Team Secret'        │ 6       │ 13   │ 10        │ 0         │ '0.0%' │
 └─────────┴──────────────────────┴─────────┴──────┴───────────┴───────────┴────────┘
 
-So với loại ngẫu nhiên 5 đội (5000 lần): trung bình 7.3%, khoảng 90% 5.0–9.5%, P(ngẫu nhiên ≤ kết quả) = 0.001
+So với loại ngẫu nhiên 5 đội (5000 lần): trung bình 7.3%, khoảng 90% 4.8–9.6%, P(ngẫu nhiên ≤ kết quả) = 0.002
 
 ======== TÓM TẮT (tổng round >= 17, chênh lệch >= 3) ========
 ┌─────────┬────────────┬──────┬─────────────────────┬─────────┬───────────┬───────────┬────────┐
