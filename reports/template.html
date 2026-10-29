@@ -1,0 +1,311 @@
+<title>Đội gây lật kèo VCT 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column; a 4-region summary up top, then one section per region (top-5 list beside its step chart). */
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --ink: #12161d;
+  --ink-2: #4a5160;
+  --ink-3: #7a8191;
+  --rule: #dfe2e8;
+  --accent: #c2263f;
+  --bar: #2a78d6;
+  --bar-base: #9aa1ae;
+  --good: #0a8a3a;
+  --font-display: "Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12151b; --surface: #1a1e26; --ink: #eceef2; --ink-2: #b4bac6; --ink-3: #8a91a0;
+    --rule: #2c323d; --accent: #ef5a70; --bar: #3987e5; --bar-base: #6b7280; --good: #3cc46e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12151b; --surface: #1a1e26; --ink: #eceef2; --ink-2: #b4bac6; --ink-3: #8a91a0;
+  --rule: #2c323d; --accent: #ef5a70; --bar: #3987e5; --bar-base: #6b7280; --good: #3cc46e;
+  color-scheme: dark;
+}
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 64px;
+}
+main { max-width: 980px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.15; }
+h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 24px; font-weight: 600; }
+h3 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); }
+p { margin: 0; max-width: 68ch; }
+.eyebrow { font-family: var(--font-data); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+header { display: flex; flex-direction: column; gap: 12px; }
+.lede { color: var(--ink-2); font-size: 16px; }
+.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+
+.method { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.method div { display: flex; flex-direction: column; gap: 4px; border-top: 2px solid var(--ink); padding-top: 10px; }
+.method b { font-family: var(--font-display); font-weight: 600; font-size: 15px; }
+.method span { color: var(--ink-2); font-size: 14px; }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+th { font-family: var(--font-data); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
+td.r, th.r { text-align: right; }
+td.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+.delta { color: var(--good); font-weight: 500; }
+.region-name { font-family: var(--font-display); font-weight: 600; font-size: 15px; }
+
+section.region { display: flex; flex-direction: column; gap: 20px; padding-top: 28px; border-top: 1px solid var(--rule); }
+.region-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
+.region-head .move { font-family: var(--font-data); font-size: 15px; color: var(--ink-2); }
+.region-head .move strong { color: var(--ink); font-weight: 500; }
+.region-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 28px; align-items: start; }
+@media (max-width: 760px) { .region-body { grid-template-columns: minmax(0, 1fr); } }
+
+ol.top5 { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+ol.top5 li { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 4px 10px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+ol.top5 .rank { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--accent); }
+ol.top5 .team { font-weight: 600; }
+ol.top5 .stat { font-family: var(--font-data); font-size: 13px; color: var(--ink-2); text-align: right; }
+ol.top5 .after { grid-column: 2 / 4; font-size: 13px; color: var(--ink-3); }
+.tie { font-size: 12px; color: var(--ink-3); }
+
+.chart { position: relative; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 12px 8px 4px; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart .axis { stroke: var(--rule); stroke-width: 1; }
+.chart .grid { stroke: var(--rule); stroke-width: 1; stroke-dasharray: 2 4; }
+.chart text { fill: var(--ink-3); font-family: var(--font-data); font-size: 11px; }
+.chart text.val { fill: var(--ink); font-size: 12px; font-weight: 500; }
+.chart rect.bar { fill: var(--bar); }
+.chart rect.bar.base { fill: var(--bar-base); }
+.chart rect.hit { fill: transparent; cursor: default; }
+.chart g.step:hover rect.bar, .chart g.step:focus rect.bar { opacity: 0.8; }
+.chart g.step:focus { outline: none; }
+.chart g.step:focus-visible rect.hit { stroke: var(--ink); stroke-width: 1.5; }
+.tip {
+  position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 12px; line-height: 1.4;
+  padding: 6px 9px; border-radius: 4px; white-space: nowrap; transform: translate(-50%, -100%); margin-top: -8px;
+}
+.chart-cap { font-size: 12px; color: var(--ink-3); padding: 6px 4px 4px; }
+
+details { border-top: 1px solid var(--rule); padding-top: 10px; }
+summary { cursor: pointer; font-size: 14px; color: var(--ink-2); }
+summary:focus-visible { outline: 2px solid var(--bar); outline-offset: 2px; }
+details .table-wrap { margin-top: 10px; }
+
+.notes { display: flex; flex-direction: column; gap: 10px; color: var(--ink-2); font-size: 14px; }
+.notes ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; max-width: 72ch; }
+footer { color: var(--ink-3); font-size: 13px; }
+</style>
+
+<main>
+  <header>
+    <div class="eyebrow" id="window"></div>
+    <h1>Đội gây lật kèo VCT 2026</h1>
+    <p class="lede">Ở mỗi khu vực, đâu là 5 đội mà nếu bỏ các trận có họ tham gia thì tỉ lệ map lật kèo của khu vực giảm mạnh nhất.</p>
+  </header>
+
+  <div class="method">
+    <div><b>Map lật kèo</b><span id="def"></span></div>
+    <div><b>Tỉ lệ lật kèo</b><span>Số map lật kèo chia cho số map có tình huống dẫn như trên.</span></div>
+    <div><b>Loại lần lượt</b><span id="algo"></span></div>
+  </div>
+
+  <section>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <h2>Tổng quan 4 khu vực</h2>
+      <div class="table-wrap"><table id="summary"></table></div>
+      <p class="chart-cap" id="baseline-note"></p>
+    </div>
+  </section>
+
+  <div id="regions" style="display:flex;flex-direction:column;gap:40px"></div>
+
+  <div class="notes">
+    <h2>Lưu ý khi đọc</h2>
+    <ul id="notes"></ul>
+  </div>
+
+  <footer id="footer"></footer>
+</main>
+
+<script>
+const DATA = /*DATA*/null;
+
+const REGION_NAMES = { americas: 'Americas', emea: 'EMEA', china: 'China', pacific: 'Pacific' };
+const pct = (x, d = 1) => (x == null ? '—' : `${(100 * x).toFixed(d)}%`);
+const pp = x => `${(100 * x).toFixed(1)}`;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+
+const fmtDate = iso => { const d = new Date(iso); return `${String(d.getUTCDate()).padStart(2, '0')}/${String(d.getUTCMonth() + 1).padStart(2, '0')}/${d.getUTCFullYear()}`; };
+document.getElementById('window').textContent = `${DATA.days} ngày · ${fmtDate(DATA.since)} – ${fmtDate(DATA.until)} · nguồn vlr.gg`;
+document.getElementById('def').textContent =
+  `Có thời điểm tổng round hai đội ≥ ${DATA.min_total} mà một đội dẫn ≥ ${DATA.min_diff} round, nhưng đội đó thua map.`;
+document.getElementById('algo').textContent =
+  `Loại đội có nhiều map lật kèo nhất (bằng nhau thì xét tỉ lệ cao hơn), bỏ mọi map có đội đó, tính lại. Lặp ${DATA.steps} lần cho mỗi khu vực.`;
+
+// ---- Summary table ----
+const sumRows = DATA.regions.map(r => {
+  const a = r.steps[0], z = r.steps[DATA.steps];
+  return { r, a, z, abs: a.rate - z.rate, rel: a.rate ? (a.rate - z.rate) / a.rate : 0 };
+});
+document.getElementById('summary').innerHTML = `
+  <thead><tr>
+    <th>Khu vực</th><th class="r">Ban đầu</th><th class="r">Sau khi loại 5 đội</th>
+    <th class="r">Giảm</th><th class="r">Giảm tương đối</th><th class="r">Loại 5 đội ngẫu nhiên</th>
+  </tr></thead>
+  <tbody>${sumRows.map(({ r, a, z, abs, rel }) => `
+    <tr>
+      <td class="region-name">${REGION_NAMES[r.region] || r.region}</td>
+      <td class="r num">${pct(a.rate)} <span style="color:var(--ink-3)">(${a.comebacks}/${a.lead_maps})</span></td>
+      <td class="r num">${pct(z.rate)} <span style="color:var(--ink-3)">(${z.comebacks}/${z.lead_maps})</span></td>
+      <td class="r num delta">−${pp(abs)} điểm %</td>
+      <td class="r num delta">−${(100 * rel).toFixed(0)}%</td>
+      <td class="r num">${r.baseline ? `${pct(r.baseline.mean)} <span style="color:var(--ink-3)">(${pct(r.baseline.p05)}–${pct(r.baseline.p95)})</span>` : '—'}</td>
+    </tr>`).join('')}
+  </tbody>`;
+const b0 = DATA.regions.find(r => r.baseline);
+document.getElementById('baseline-note').textContent = b0
+  ? `Cột cuối: tỉ lệ khu vực khi loại 5 đội chọn ngẫu nhiên, ${b0.baseline.runs.toLocaleString('vi-VN')} lần (trung bình và khoảng 90%). `
+    + DATA.regions.filter(r => r.baseline).map(r =>
+      `${REGION_NAMES[r.region]}: ${(100 * r.baseline.p_value).toFixed(1)}% số lần loại ngẫu nhiên cho tỉ lệ thấp bằng hoặc hơn`).join('; ') + '.'
+  : '';
+
+// ---- Per-region sections ----
+// Short axis labels: well-known abbreviations, else drop filler words and keep the first remaining one.
+const SHORT = {
+  'Rex Regum Qeon': 'RRQ', 'DetonatioN FocusMe': 'DFM', 'Nongshim RedForce': 'NS', 'KIWOOM DRX': 'DRX',
+  '100 Thieves': '100T', 'EDward Gaming': 'EDG', 'Bilibili Gaming': 'BLG', 'FunPlus Phoenix': 'FPX',
+  'All Gamers': 'AG', 'JD Gaming': 'JDG', 'Dragon Ranger Gaming': 'DRG', 'Evil Geniuses': 'EG',
+  'Natus Vincere': 'NAVI', 'Gentle Mates': 'M8', 'Karmine Corp': 'KC', 'Global Esports': 'GE',
+  'Titan Esports Club': 'TEC', 'Xi Lai Gaming': 'XLG', 'KRÜ Esports': 'KRÜ', 'Eternal Fire': 'EF',
+};
+const shortName = name => SHORT[name]
+  || name.split(' ').filter(w => !/^(Team|Esports|Gaming|Club)$/i.test(w))[0]
+  || name.split(' ')[0];
+
+const maxRate = Math.max(...DATA.regions.flatMap(r => r.steps.map(s => s.rate || 0)));
+const yMax = Math.ceil((maxRate * 100 + 1) / 2) * 2 / 100; // round up to an even percent
+
+function chart(r) {
+  const W = 520, H = 230, L = 40, R = 8, T = 22, B = 46;
+  const n = r.steps.length, slot = (W - L - R) / n, bw = Math.min(46, slot * 0.56);
+  const y = v => T + (H - T - B) * (1 - v / yMax);
+  const ticks = [];
+  for (let v = 0; v <= yMax + 1e-9; v += yMax / 4) ticks.push(v);
+  const bars = r.steps.map((s, i) => {
+    const cx = L + slot * (i + 0.5), top = y(s.rate || 0), h = Math.max(0, y(0) - top);
+    const label = i === 0 ? 'Gốc' : `−${shortName(r.steps[i - 1].removed.team)}`;
+    const tip = i === 0
+      ? `Ban đầu: ${pct(s.rate)} (${s.comebacks}/${s.lead_maps} map)`
+      : `Sau khi loại ${r.steps[i - 1].removed.team}: ${pct(s.rate)} (${s.comebacks}/${s.lead_maps} map)`;
+    // Bar with rounded top only: a path with 4px radius at the data end.
+    const rr = Math.min(4, h, bw / 2);
+    const x0 = cx - bw / 2, x1 = cx + bw / 2, yb = y(0);
+    const d = h > 0
+      ? `M${x0},${yb} V${top + rr} Q${x0},${top} ${x0 + rr},${top} H${x1 - rr} Q${x1},${top} ${x1},${top + rr} V${yb} Z`
+      : '';
+    return `<g class="step" tabindex="0" data-tip="${esc(tip)}" data-x="${cx}" data-y="${top}">
+      ${d ? `<path d="${d}" class="bar-path" fill="${i === 0 ? 'var(--bar-base)' : 'var(--bar)'}"></path>` : ''}
+      <text class="val" x="${cx}" y="${top - 6}" text-anchor="middle">${pct(s.rate)}</text>
+      <text x="${cx}" y="${H - B + 16}" text-anchor="middle">${i === 0 ? '' : i}</text>
+      <text x="${cx}" y="${H - B + 31}" text-anchor="middle">${esc(label)}</text>
+      <rect class="hit" x="${cx - slot / 2}" y="${T}" width="${slot}" height="${H - T - B + 36}"></rect>
+    </g>`;
+  }).join('');
+  const grid = ticks.map(v => `<line class="${v === 0 ? 'axis' : 'grid'}" x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"></line>
+    <text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${Math.round(v * 100)}%</text>`).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Tỉ lệ lật kèo ${REGION_NAMES[r.region]} sau từng lần loại">${grid}${bars}</svg>`;
+}
+
+const regionsEl = document.getElementById('regions');
+for (const r of DATA.regions) {
+  const a = r.steps[0], z = r.steps[DATA.steps];
+  const removed = r.steps.slice(0, DATA.steps);
+  const sec = document.createElement('section');
+  sec.className = 'region';
+  sec.id = r.region;
+  sec.innerHTML = `
+    <div class="region-head">
+      <h2>${REGION_NAMES[r.region] || r.region}</h2>
+      <div class="move"><strong>${pct(a.rate)} → ${pct(z.rate)}</strong> · giảm ${pp(a.rate - z.rate)} điểm % (−${(100 * (a.rate - z.rate) / a.rate).toFixed(0)}%)</div>
+    </div>
+    <div class="region-body">
+      <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+        <h3>5 đội ảnh hưởng, theo thứ tự loại</h3>
+        <ol class="top5">${removed.map((s, i) => `
+          <li>
+            <span class="rank">${i + 1}</span>
+            <span class="team">${esc(s.removed.team)}</span>
+            <span class="stat">${s.removed.comebacks} map · ${pct(s.removed.comebacks / s.removed.lead_maps)}</span>
+            <span class="after">Tỉ lệ khu vực ${pct(s.rate)} → ${pct(r.steps[i + 1].rate)}${s.tie_with ? ` <span class="tie">· đồng hạng với ${esc(s.tie_with)}</span>` : ''}</span>
+          </li>`).join('')}
+        </ol>
+      </div>
+      <div style="min-width:0">
+        <div class="chart">${chart(r)}<div class="chart-cap">Tỉ lệ lật kèo của khu vực: ban đầu và sau mỗi lần loại.</div></div>
+      </div>
+    </div>
+    <details>
+      <summary>Bảng các đội còn lại sau khi loại 5 đội (${z.matches} trận, ${z.lead_maps} map có dẫn ≥ ${DATA.min_diff})</summary>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Đội</th><th class="r">Trận</th><th class="r">Map</th><th class="r">Map có dẫn ≥ ${DATA.min_diff}</th><th class="r">Lật kèo</th><th class="r">Tỉ lệ</th></tr></thead>
+        <tbody>${z.table.map(t => `<tr><td>${esc(t.team)}</td><td class="r num">${t.matches}</td><td class="r num">${t.maps}</td><td class="r num">${t.lead_maps}</td><td class="r num">${t.comebacks}</td><td class="r num">${t.lead_maps ? pct(t.comebacks / t.lead_maps) : '—'}</td></tr>`).join('')}</tbody>
+      </table></div>
+    </details>
+    <details>
+      <summary>Bảng ban đầu (${a.matches} trận, ${a.lead_maps} map có dẫn ≥ ${DATA.min_diff})</summary>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Đội</th><th class="r">Trận</th><th class="r">Map</th><th class="r">Map có dẫn ≥ ${DATA.min_diff}</th><th class="r">Lật kèo</th><th class="r">Tỉ lệ</th></tr></thead>
+        <tbody>${a.table.map(t => `<tr><td>${esc(t.team)}</td><td class="r num">${t.matches}</td><td class="r num">${t.maps}</td><td class="r num">${t.lead_maps}</td><td class="r num">${t.comebacks}</td><td class="r num">${t.lead_maps ? pct(t.comebacks / t.lead_maps) : '—'}</td></tr>`).join('')}</tbody>
+      </table></div>
+    </details>`;
+  regionsEl.appendChild(sec);
+}
+
+// ---- Tooltips ----
+document.querySelectorAll('.chart').forEach(c => {
+  const tip = document.createElement('div');
+  tip.className = 'tip';
+  tip.hidden = true;
+  c.appendChild(tip);
+  const svg = c.querySelector('svg');
+  const show = g => {
+    const box = svg.getBoundingClientRect(), cbox = c.getBoundingClientRect();
+    const k = box.width / svg.viewBox.baseVal.width;
+    tip.textContent = g.dataset.tip;
+    tip.hidden = false;
+    let x = box.left - cbox.left + Number(g.dataset.x) * k;
+    const half = tip.offsetWidth / 2;
+    x = Math.max(half + 4, Math.min(cbox.width - half - 4, x));
+    tip.style.left = `${x}px`;
+    tip.style.top = `${box.top - cbox.top + Number(g.dataset.y) * k - 14}px`;
+  };
+  c.querySelectorAll('g.step').forEach(g => {
+    g.addEventListener('mouseenter', () => show(g));
+    g.addEventListener('focus', () => show(g));
+    g.addEventListener('mouseleave', () => { tip.hidden = true; });
+    g.addEventListener('blur', () => { tip.hidden = true; });
+  });
+});
+
+// ---- Notes ----
+const notes = [
+  'Thuật toán chọn đội trên chính dữ liệu đang đo, nên tỉ lệ sau khi loại chắc chắn giảm. Phép so với loại ngẫu nhiên cho biết mức giảm này lớn đến đâu.',
+  'Kết quả mô tả giai đoạn đã qua. Muốn dùng để dự đoán, nên chạy thuật toán trên một giai đoạn và kiểm tra trên giai đoạn sau.',
+  'Mỗi khu vực được xử lý độc lập: chỉ bỏ các đội đã bị loại khỏi chính khu vực đó. Trận quốc tế (Masters, EWC, Champions) được tính cho các đội tham gia.',
+  'Số trận mỗi đội khác nhau tùy đội đi sâu đến đâu ở các giải.',
+];
+if (DATA.regions.some(r => r.steps.some(s => s.tie_with))) {
+  notes.push('Khi hai đội bằng nhau cả số map lật kèo lẫn tỉ lệ, đội đứng trước trong bảng bị loại; danh sách đánh dấu "đồng hạng" ở những chỗ này.');
+}
+document.getElementById('notes').innerHTML = notes.map(n => `<li>${esc(n)}</li>`).join('');
+document.getElementById('footer').textContent =
+  `Dữ liệu crawl từ vlr.gg ngày ${fmtDate(DATA.crawled_at)}. 12 đội nhượng quyền mỗi khu vực theo VCT 2026 Stage 2.`;
+</script>
