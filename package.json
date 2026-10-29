@@ -1,0 +1,11 @@
+{
+  "name": "valorant-comeback-analysis",
+  "private": true,
+  "description": "Crawl vlr.gg and find the teams that drive comeback maps in each VCT region",
+  "scripts": {
+    "update": "node pipeline/update.js"
+  },
+  "dependencies": {
+    "playwright": "1.48.2"
+  }
+}

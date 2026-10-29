@@ -156,6 +156,7 @@ function crawlAll(teams) {
   const archive = rel(`reports/archive/${report.crawled_at.slice(0, 10)}.json`);
   fs.mkdirSync(path.dirname(archive), { recursive: true });
   fs.copyFileSync(latestJson, archive);
-  log(`Đã lưu reports/latest.html, reports/latest.json, ${path.relative(ROOT, archive)}`);
+  run(['pipeline/export_blacklist.js']);
+  log(`Đã lưu reports/latest.html, reports/latest.json, reports/vlr-blacklist.json, ${path.relative(ROOT, archive)}`);
   if (notes.length) console.log(`\nGhi chú:\n${notes.map(n => `  - ${n}`).join('\n')}`);
 })().catch(e => { console.error(e); process.exit(1); });

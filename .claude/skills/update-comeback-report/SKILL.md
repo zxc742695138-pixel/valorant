@@ -18,6 +18,21 @@ description: Refresh the VCT comeback-influence report (top 5 teams per region w
   comeback maps, then by comeback rate; remove the top team and every match it played;
   recompute; repeat 5 times. The 5 removed teams are the answer.
 
+## Weekly release (automatic)
+
+`.github/workflows/vlr-blacklist.yml` runs every Monday 01:23 UTC: it runs the pipeline,
+commits `data/` and `reports/`, and publishes a release `vlr-blacklist vN` (N = previous
+highest `vN` + 1) with `vlr-blacklist.json` (`{"Pacific": [...], "Americas": [...],
+"EMEA": [...], "China": [...]}`, teams in removal order) and `report-details.json`.
+Stable link to the newest file:
+`https://github.com/<release repo>/releases/latest/download/vlr-blacklist.json`.
+The release repo is `vars.RELEASE_REPO` (with `secrets.RELEASE_TOKEN`) or this repo.
+
+When the user asks for an update between weekly runs, prefer triggering that workflow
+(`workflow_dispatch`, GitHub MCP `actions_run_trigger` with `workflow_id: vlr-blacklist.yml`)
+so a release is published too; when it finishes, `git pull` and do step 4 below with the
+pulled `reports/latest.html`. The steps below are the local equivalent (no release).
+
 ## Steps
 
 1. Run the pipeline. It takes ~30–40 minutes (48 teams crawled from vlr.gg with

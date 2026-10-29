@@ -17,6 +17,21 @@ Settings (window, steps, events, report URL) live in `pipeline/config.json`. Out
 `reports/latest.html`, `reports/latest.json`, and a dated copy in `reports/archive/`.
 Each run is compared with the previous one (teams entering/leaving the top 5).
 
+### Weekly release
+
+`.github/workflows/vlr-blacklist.yml` runs the pipeline every Monday (01:23 UTC, or on
+demand from the Actions tab) and publishes a release `vlr-blacklist vN` with
+`vlr-blacklist.json`:
+
+```json
+{ "Pacific": ["T1", "..."], "Americas": ["NRG", "..."], "EMEA": ["..."], "China": ["..."] }
+```
+
+Newest file: `https://github.com/<owner>/<repo>/releases/latest/download/vlr-blacklist.json`.
+To publish releases to another (public) repository, set the repository variable
+`RELEASE_REPO` (`owner/name`) and the secret `RELEASE_TOKEN` (a token with
+Contents: write on that repository).
+
 ## Crawler
 
 Crawls a team's most recent completed matches from [vlr.gg](https://www.vlr.gg) with Playwright,

@@ -1,0 +1,75 @@
+# Weekly refresh of the comeback-influence top 5 per region, published as a
+# GitHub release "vlr-blacklist vN" with vlr-blacklist.json attached.
+#
+# The release goes to vars.RELEASE_REPO (owner/name) when set, using
+# secrets.RELEASE_TOKEN (a token with Contents: write on that repo); otherwise
+# to this repository with the built-in token.
+name: vlr-blacklist
+
+on:
+  schedule:
+    - cron: "23 1 * * 1" # Mondays 01:23 UTC (08:23 Vietnam)
+  workflow_dispatch:
+    inputs:
+      skip_crawl:
+        description: "Reuse the data already in the repo instead of crawling vlr.gg"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vlr-blacklist
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      RELEASE_REPO: ${{ vars.RELEASE_REPO || github.repository }}
+      GH_TOKEN: ${{ secrets.RELEASE_TOKEN || github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Playwright
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+
+      - name: Run pipeline
+        run: node pipeline/update.js ${{ inputs.skip_crawl && '--skip-crawl' || '' }}
+
+      - name: Commit data and report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data reports crawler/teams
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Weekly vlr-blacklist update $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Publish release
+        run: |
+          last=$(gh release list --repo "$RELEASE_REPO" --limit 100 --json tagName --jq '[.[].tagName | select(test("^v[0-9]+$")) | ltrimstr("v") | tonumber] | max // 0')
+          next="v$((last + 1))"
+          cp reports/latest.json report-details.json
+          # Tag this run's commit when releasing here; another repo tags its own default branch.
+          target=()
+          if [ "$RELEASE_REPO" = "$GITHUB_REPOSITORY" ]; then target=(--target "$(git rev-parse HEAD)"); fi
+          gh release create "$next" reports/vlr-blacklist.json report-details.json \
+            --repo "$RELEASE_REPO" \
+            "${target[@]}" \
+            --title "vlr-blacklist $next" \
+            --notes-file reports/release-notes.md \
+            --latest
+          echo "Published $next to $RELEASE_REPO" >> "$GITHUB_STEP_SUMMARY"
+          echo "https://github.com/$RELEASE_REPO/releases/latest/download/vlr-blacklist.json" >> "$GITHUB_STEP_SUMMARY"
