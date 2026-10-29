@@ -35,8 +35,8 @@ pulled `reports/latest.html`. The steps below are the local equivalent (no relea
 
 ## Steps
 
-1. Run the pipeline. It takes ~30–40 minutes (48 teams crawled from vlr.gg with
-   Playwright), so run it in the background and wait for it to finish:
+1. Run the pipeline. It takes ~10 minutes locally (48 teams crawled from vlr.gg with
+   Playwright, 4 at a time), so run it in the background and wait for it to finish:
 
    ```bash
    node pipeline/update.js
@@ -47,7 +47,8 @@ pulled `reports/latest.html`. The steps below are the local equivalent (no relea
    `--skip-crawl` reuses the data already in `data/`; `--days N` overrides the window.
 
 2. Read its output. Check:
-   - every team crawled (no "Vẫn lỗi sau khi thử lại" line); if some failed, re-run
+   - every team crawled: if a team still fails after one retry, the pipeline prints
+     "Vẫn lỗi sau khi thử lại" and exits without building a report; re-run
      those teams with `node crawler/crawl_team.js --team-id <id> --days 180 --out data/<slug>.json`
      and then `node pipeline/update.js --skip-crawl`;
    - "0 map tỉ số không khớp"; any mismatch means vlr.gg changed its markup;

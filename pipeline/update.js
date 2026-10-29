@@ -76,7 +76,12 @@ function crawlAll(teams) {
       log(`Crawl lại ${retry.length} đội có lỗi`);
       results = await crawlAll(retry);
       retry = retry.filter(t => results[t.slug].code || /FAILED/.test(results[t.slug].out));
-      if (retry.length) log(`!! Vẫn lỗi sau khi thử lại: ${retry.map(t => t.name).join(', ')}`);
+      if (retry.length) {
+        // Stop here: continuing would publish a report built on stale or partial data.
+        log(`!! Vẫn lỗi sau khi thử lại: ${retry.map(t => t.name).join(', ')}`);
+        retry.forEach(t => console.error(`--- ${t.name}\n${results[t.slug].out.slice(-2000)}`));
+        process.exit(1);
+      }
     }
   }
 
