@@ -75,7 +75,11 @@ for (const teamsFile of argv) {
     current.removed = top;
     if (next && next.comebacks === top.comebacks && next.rate === top.rate) {
       current.tie_with = next.team;
-      console.log(`!! Đồng hạng: ${top.team} và ${next.team} — loại ${top.team} (thứ tự trong bảng)`);
+      // Region rate right after this step had the other team been removed instead.
+      current.tie_alt_rate = table(teams, new Set([...excluded, next.team])).region.rate;
+      const chosenRate = table(teams, new Set([...excluded, top.team])).region.rate;
+      console.log(`!! Đồng hạng: ${top.team} và ${next.team} — loại ${top.team} (thứ tự trong bảng); `
+        + `tỉ lệ sau bước này: ${(100 * chosenRate).toFixed(1)}% nếu loại ${top.team}, ${(100 * current.tie_alt_rate).toFixed(1)}% nếu loại ${next.team}`);
     }
     excluded.add(top.team);
     console.log(`>> Loại: ${top.team} (${top.comebacks} map lật kèo, ${pct(top.comebacks, top.lead_maps)})`);

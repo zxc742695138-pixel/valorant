@@ -1,0 +1,13 @@
+{
+  "days": 180,
+  "steps": 5,
+  "baseline": 5000,
+  "concurrency": 4,
+  "regions": {
+    "americas": "https://www.vlr.gg/event/2977/vct-2026-americas-stage-2",
+    "emea": "https://www.vlr.gg/event/2976/vct-2026-emea-stage-2",
+    "china": "https://www.vlr.gg/event/2978/vct-2026-china-stage-2",
+    "pacific": "https://www.vlr.gg/event/2776/vct-2026-pacific-stage-2"
+  },
+  "artifact_url": "https://claude.ai/artifact/8p65sjAg4P61A1vuyhbErb"
+}

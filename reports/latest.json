@@ -566,10 +566,24 @@
       ],
       "baseline": {
         "runs": 5000,
-        "mean": 0.08549131481382366,
-        "p05": 0.045454545454545456,
-        "p95": 0.12781954887218044,
-        "p_value": 0.0068
+        "mean": 0.08575984143652873,
+        "p05": 0.046296296296296294,
+        "p95": 0.1276595744680851,
+        "p_value": 0.008
+      },
+      "previous": {
+        "crawled_at": "2026-10-29T04:55:38.029Z",
+        "top5": [
+          "NRG",
+          "Evil Geniuses",
+          "ENVY",
+          "Sentinels",
+          "100 Thieves"
+        ],
+        "start_rate": 0.0915032679738562,
+        "final_rate": 0.03418803418803419,
+        "added": [],
+        "dropped": []
       }
     },
     {
@@ -1135,10 +1149,24 @@
       ],
       "baseline": {
         "runs": 5000,
-        "mean": 0.07898517587773973,
-        "p05": 0.046875,
-        "p95": 0.1095890410958904,
-        "p_value": 0.0014
+        "mean": 0.07868350894338251,
+        "p05": 0.0472972972972973,
+        "p95": 0.10967741935483871,
+        "p_value": 0.0026
+      },
+      "previous": {
+        "crawled_at": "2026-10-29T04:55:38.029Z",
+        "top5": [
+          "Team Vitality",
+          "Team Liquid",
+          "PCIFIC Esports",
+          "Team Heretics",
+          "Gentle Mates"
+        ],
+        "start_rate": 0.09032258064516129,
+        "final_rate": 0.023622047244094488,
+        "added": [],
+        "dropped": []
       }
     },
     {
@@ -1704,10 +1732,24 @@
       ],
       "baseline": {
         "runs": 5000,
-        "mean": 0.09439456447141811,
-        "p05": 0.075,
-        "p95": 0.11382113821138211,
-        "p_value": 0
+        "mean": 0.09455527378870235,
+        "p05": 0.07518796992481203,
+        "p95": 0.11403508771929824,
+        "p_value": 0.0004
+      },
+      "previous": {
+        "crawled_at": "2026-10-29T04:55:38.029Z",
+        "top5": [
+          "EDward Gaming",
+          "All Gamers",
+          "JD Gaming",
+          "Bilibili Gaming",
+          "Trace Esports"
+        ],
+        "start_rate": 0.08852459016393442,
+        "final_rate": 0.06451612903225806,
+        "added": [],
+        "dropped": []
       }
     },
     {
@@ -2201,7 +2243,8 @@
             "comebacks": 1,
             "rate": 0.07692307692307693
           },
-          "tie_with": "ZETA DIVISION"
+          "tie_with": "ZETA DIVISION",
+          "tie_alt_rate": 0.030927835051546393
         },
         {
           "step": 5,
@@ -2273,10 +2316,24 @@
       ],
       "baseline": {
         "runs": 5000,
-        "mean": 0.07271777067163389,
+        "mean": 0.0725606474456366,
         "p05": 0.05,
-        "p95": 0.09473684210526316,
-        "p_value": 0.002
+        "p95": 0.09482758620689655,
+        "p_value": 0.001
+      },
+      "previous": {
+        "crawled_at": "2026-10-29T04:55:38.029Z",
+        "top5": [
+          "T1",
+          "Nongshim RedForce",
+          "KIWOOM DRX",
+          "Rex Regum Qeon",
+          "VARREL"
+        ],
+        "start_rate": 0.06810035842293907,
+        "final_rate": 0.030927835051546393,
+        "added": [],
+        "dropped": []
       }
     }
   ],

@@ -1,5 +1,22 @@
 # Valorant team analysis
 
+## Comeback-influence report
+
+Finds, per region (Americas, EMEA, China, Pacific), the 5 teams whose removal lowers the
+region's comeback-map rate the most. A comeback map is one where, with total rounds >= 17,
+a team led by >= 3 rounds and still lost. Teams are removed one at a time: remove the team
+with the most comeback maps (ties: higher rate), drop its matches, recompute, 5 times.
+
+Refresh everything (crawl → validate → analyse → report):
+
+```bash
+node pipeline/update.js
+```
+
+Settings (window, steps, events, report URL) live in `pipeline/config.json`. Output:
+`reports/latest.html`, `reports/latest.json`, and a dated copy in `reports/archive/`.
+Each run is compared with the previous one (teams entering/leaving the top 5).
+
 ## Crawler
 
 Crawls a team's most recent completed matches from [vlr.gg](https://www.vlr.gg) with Playwright,

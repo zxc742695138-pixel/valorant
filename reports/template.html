@@ -65,6 +65,8 @@ section.region { display: flex; flex-direction: column; gap: 20px; padding-top: 
 .region-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
 .region-head .move { font-family: var(--font-data); font-size: 15px; color: var(--ink-2); }
 .region-head .move strong { color: var(--ink); font-weight: 500; }
+.changes { font-size: 14px; color: var(--ink-2); }
+.changes b { font-weight: 600; color: var(--ink); }
 .region-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 28px; align-items: start; }
 @media (max-width: 760px) { .region-body { grid-template-columns: minmax(0, 1fr); } }
 
@@ -236,6 +238,11 @@ for (const r of DATA.regions) {
       <h2>${REGION_NAMES[r.region] || r.region}</h2>
       <div class="move"><strong>${pct(a.rate)} → ${pct(z.rate)}</strong> · giảm ${pp(a.rate - z.rate)} điểm % (−${(100 * (a.rate - z.rate) / a.rate).toFixed(0)}%)</div>
     </div>
+    ${r.previous ? `<p class="changes">So với lần cập nhật ${fmtDate(r.previous.crawled_at)}: ${
+      r.previous.added.length || r.previous.dropped.length
+        ? `${r.previous.added.length ? `<b>vào top 5:</b> ${r.previous.added.map(esc).join(', ')}` : ''}${r.previous.added.length && r.previous.dropped.length ? ' · ' : ''}${r.previous.dropped.length ? `<b>rời top 5:</b> ${r.previous.dropped.map(esc).join(', ')}` : ''}`
+        : 'top 5 không đổi'
+    } · tỉ lệ ban đầu khi đó ${pct(r.previous.start_rate)}.</p>` : ''}
     <div class="region-body">
       <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
         <h3>5 đội ảnh hưởng, theo thứ tự loại</h3>
@@ -244,7 +251,7 @@ for (const r of DATA.regions) {
             <span class="rank">${i + 1}</span>
             <span class="team">${esc(s.removed.team)}</span>
             <span class="stat">${s.removed.comebacks} map · ${pct(s.removed.comebacks / s.removed.lead_maps)}</span>
-            <span class="after">Tỉ lệ khu vực ${pct(s.rate)} → ${pct(r.steps[i + 1].rate)}${s.tie_with ? ` <span class="tie">· đồng hạng với ${esc(s.tie_with)}</span>` : ''}</span>
+            <span class="after">Tỉ lệ khu vực ${pct(s.rate)} → ${pct(r.steps[i + 1].rate)}${s.tie_with ? ` <span class="tie">· đồng hạng với ${esc(s.tie_with)}${s.tie_alt_rate != null ? ` (loại ${esc(s.tie_with)} thay thế: ${pct(s.tie_alt_rate)})` : ''}</span>` : ''}</span>
           </li>`).join('')}
         </ol>
       </div>
