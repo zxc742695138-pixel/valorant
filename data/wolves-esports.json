@@ -1,7 +1,7 @@
 {
   "team_id": "13790",
-  "crawled_at": "2026-10-29T02:04:50.961Z",
-  "since": "2026-07-01T02:04:24.498Z",
+  "crawled_at": "2026-10-29T04:54:41.186Z",
+  "since": "2026-05-02T04:54:08.929Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/777957/wolves-esports-vs-world-sports-invictus-gaming-vct-2026-china-threshold-week-2-ro12",
@@ -1071,6 +1071,132 @@
             "12-10",
             "13-10"
           ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/681010/funplus-phoenix-vs-wolves-esports-china-evolution-series-2026-act-2-ro16",
+      "date": "2026-05-21 07:00:00",
+      "event": "China Evolution Series 2026: Act 2",
+      "stage": "Playoffs: Round of 16",
+      "team1": "FunPlus Phoenix",
+      "team2": "Wolves Esports",
+      "match_result": "2-0",
+      "winner": "FunPlus Phoenix",
+      "map_result": [
+        {
+          "map": "Fracture",
+          "score": "13-10",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "2-0",
+            "2-1",
+            "2-2",
+            "2-3",
+            "2-4",
+            "3-4",
+            "3-5",
+            "4-5",
+            "5-5",
+            "6-5",
+            "6-6",
+            "6-7",
+            "6-8",
+            "6-9",
+            "7-9",
+            "8-9",
+            "9-9",
+            "10-9",
+            "10-10",
+            "11-10",
+            "12-10",
+            "13-10"
+          ]
+        },
+        {
+          "map": "Split",
+          "score": "15-13",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "1-1",
+            "2-1",
+            "2-2",
+            "2-3",
+            "2-4",
+            "3-4",
+            "3-5",
+            "4-5",
+            "5-5",
+            "6-5",
+            "6-6",
+            "6-7",
+            "6-8",
+            "7-8",
+            "8-8",
+            "9-8",
+            "10-8",
+            "10-9",
+            "10-10",
+            "11-10",
+            "11-11",
+            "11-12",
+            "12-12",
+            "13-12",
+            "13-13",
+            "14-13",
+            "15-13"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/675344/wolves-esports-vs-funplus-phoenix-esports-world-cup-2026-china-qualifier-stage-1-lr1",
+      "date": "2026-05-13 05:00:00",
+      "event": "Esports World Cup 2026: China Qualifier",
+      "stage": "Stage 1: Lower Round 1",
+      "team1": "Wolves Esports",
+      "team2": "FunPlus Phoenix",
+      "match_result": "1-2",
+      "winner": "FunPlus Phoenix",
+      "map_result": [
+        {
+          "map": "Haven",
+          "score": "9-13",
+          "rounds": []
+        },
+        {
+          "map": "Ascent",
+          "score": "13-10",
+          "rounds": []
+        },
+        {
+          "map": "Pearl",
+          "score": "10-13",
+          "rounds": []
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/675340/bilibili-gaming-vs-wolves-esports-esports-world-cup-2026-china-qualifier-stage-1-ubsf",
+      "date": "2026-05-12 05:00:00",
+      "event": "Esports World Cup 2026: China Qualifier",
+      "stage": "Stage 1: Upper Semifinals",
+      "team1": "Bilibili Gaming",
+      "team2": "Wolves Esports",
+      "match_result": "2-0",
+      "winner": "Bilibili Gaming",
+      "map_result": [
+        {
+          "map": "Lotus",
+          "score": "13-7",
+          "rounds": []
+        },
+        {
+          "map": "Pearl",
+          "score": "13-8",
+          "rounds": []
         }
       ]
     }

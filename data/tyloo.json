@@ -1,7 +1,7 @@
 {
   "team_id": "731",
-  "crawled_at": "2026-10-29T02:04:23.624Z",
-  "since": "2026-07-01T02:03:50.928Z",
+  "crawled_at": "2026-10-29T04:54:08.117Z",
+  "since": "2026-05-02T04:53:22.298Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/753457/tyloo-vs-team-liquid-valorant-champions-2026-elim-c",
@@ -1248,6 +1248,633 @@
             "7-11",
             "7-12",
             "7-13"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/681024/all-gamers-vs-tyloo-china-evolution-series-2026-act-2-cf",
+      "date": "2026-05-30 05:00:00",
+      "event": "China Evolution Series 2026: Act 2",
+      "stage": "Playoffs: Consolation Final",
+      "team1": "All Gamers",
+      "team2": "TYLOO",
+      "match_result": "3-2",
+      "winner": "All Gamers",
+      "map_result": [
+        {
+          "map": "Split",
+          "score": "11-13",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "2-0",
+            "2-1",
+            "2-2",
+            "2-3",
+            "2-4",
+            "2-5",
+            "2-6",
+            "2-7",
+            "2-8",
+            "3-8",
+            "4-8",
+            "4-9",
+            "4-10",
+            "5-10",
+            "6-10",
+            "7-10",
+            "8-10",
+            "9-10",
+            "10-10",
+            "11-10",
+            "11-11",
+            "11-12",
+            "11-13"
+          ]
+        },
+        {
+          "map": "Ascent",
+          "score": "13-11",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "2-0",
+            "2-1",
+            "3-1",
+            "4-1",
+            "4-2",
+            "5-2",
+            "5-3",
+            "5-4",
+            "6-4",
+            "6-5",
+            "6-6",
+            "6-7",
+            "6-8",
+            "7-8",
+            "8-8",
+            "9-8",
+            "9-9",
+            "9-10",
+            "9-11",
+            "10-11",
+            "11-11",
+            "12-11",
+            "13-11"
+          ]
+        },
+        {
+          "map": "Haven",
+          "score": "13-8",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "0-2",
+            "0-3",
+            "1-3",
+            "2-3",
+            "3-3",
+            "4-3",
+            "4-4",
+            "4-5",
+            "5-5",
+            "5-6",
+            "6-6",
+            "7-6",
+            "8-6",
+            "9-6",
+            "10-6",
+            "11-6",
+            "12-6",
+            "12-7",
+            "12-8",
+            "13-8"
+          ]
+        },
+        {
+          "map": "Lotus",
+          "score": "10-13",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "2-0",
+            "2-1",
+            "3-1",
+            "4-1",
+            "5-1",
+            "6-1",
+            "6-2",
+            "7-2",
+            "8-2",
+            "8-3",
+            "9-3",
+            "9-4",
+            "9-5",
+            "9-6",
+            "9-7",
+            "9-8",
+            "9-9",
+            "9-10",
+            "10-10",
+            "10-11",
+            "10-12",
+            "10-13"
+          ]
+        },
+        {
+          "map": "Fracture",
+          "score": "13-7",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "2-0",
+            "2-1",
+            "3-1",
+            "4-1",
+            "5-1",
+            "6-1",
+            "6-2",
+            "7-2",
+            "8-2",
+            "9-2",
+            "9-3",
+            "10-3",
+            "11-3",
+            "11-4",
+            "11-5",
+            "11-6",
+            "12-6",
+            "12-7",
+            "13-7"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/681022/nova-esports-vs-tyloo-china-evolution-series-2026-act-2-sf",
+      "date": "2026-05-29 06:55:00",
+      "event": "China Evolution Series 2026: Act 2",
+      "stage": "Playoffs: Semifinals",
+      "team1": "Nova Esports",
+      "team2": "TYLOO",
+      "match_result": "2-0",
+      "winner": "Nova Esports",
+      "map_result": [
+        {
+          "map": "Fracture",
+          "score": "13-8",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "2-0",
+            "2-1",
+            "3-1",
+            "4-1",
+            "5-1",
+            "6-1",
+            "6-2",
+            "6-3",
+            "7-3",
+            "7-4",
+            "7-5",
+            "7-6",
+            "8-6",
+            "9-6",
+            "10-6",
+            "11-6",
+            "11-7",
+            "11-8",
+            "12-8",
+            "13-8"
+          ]
+        },
+        {
+          "map": "Ascent",
+          "score": "13-3",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "1-1",
+            "1-2",
+            "2-2",
+            "3-2",
+            "4-2",
+            "5-2",
+            "6-2",
+            "7-2",
+            "7-3",
+            "8-3",
+            "9-3",
+            "10-3",
+            "11-3",
+            "12-3",
+            "13-3"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/681020/tyloo-vs-bilibili-gaming-china-evolution-series-2026-act-2-qf",
+      "date": "2026-05-26 07:00:00",
+      "event": "China Evolution Series 2026: Act 2",
+      "stage": "Playoffs: Quarterfinals",
+      "team1": "TYLOO",
+      "team2": "Bilibili Gaming",
+      "match_result": "2-0",
+      "winner": "TYLOO",
+      "map_result": [
+        {
+          "map": "Breeze",
+          "score": "13-9",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "2-0",
+            "2-1",
+            "3-1",
+            "4-1",
+            "5-1",
+            "6-1",
+            "7-1",
+            "8-1",
+            "8-2",
+            "9-2",
+            "9-3",
+            "9-4",
+            "9-5",
+            "10-5",
+            "10-6",
+            "11-6",
+            "11-7",
+            "12-7",
+            "12-8",
+            "12-9",
+            "13-9"
+          ]
+        },
+        {
+          "map": "Lotus",
+          "score": "13-9",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "2-0",
+            "3-0",
+            "4-0",
+            "5-0",
+            "6-0",
+            "6-1",
+            "6-2",
+            "7-2",
+            "7-3",
+            "8-3",
+            "8-4",
+            "8-5",
+            "8-6",
+            "9-6",
+            "10-6",
+            "10-7",
+            "10-8",
+            "11-8",
+            "12-8",
+            "12-9",
+            "13-9"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/681015/tyloo-vs-edward-gaming-china-evolution-series-2026-act-2-ro16",
+      "date": "2026-05-24 05:00:00",
+      "event": "China Evolution Series 2026: Act 2",
+      "stage": "Playoffs: Round of 16",
+      "team1": "TYLOO",
+      "team2": "EDward Gaming",
+      "match_result": "2-0",
+      "winner": "TYLOO",
+      "map_result": [
+        {
+          "map": "Ascent",
+          "score": "13-2",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "2-0",
+            "3-0",
+            "4-0",
+            "5-0",
+            "6-0",
+            "7-0",
+            "8-0",
+            "9-0",
+            "9-1",
+            "10-1",
+            "10-2",
+            "11-2",
+            "12-2",
+            "13-2"
+          ]
+        },
+        {
+          "map": "Haven",
+          "score": "13-4",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "0-2",
+            "1-2",
+            "2-2",
+            "3-2",
+            "4-2",
+            "5-2",
+            "6-2",
+            "7-2",
+            "8-2",
+            "9-2",
+            "10-2",
+            "11-2",
+            "11-3",
+            "11-4",
+            "12-4",
+            "13-4"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/675356/tyloo-vs-all-gamers-esports-world-cup-2026-china-qualifier-stage-2-lr2",
+      "date": "2026-05-18 05:00:00",
+      "event": "Esports World Cup 2026: China Qualifier",
+      "stage": "Stage 2: Lower Round 2",
+      "team1": "TYLOO",
+      "team2": "All Gamers",
+      "match_result": "1-2",
+      "winner": "All Gamers",
+      "map_result": [
+        {
+          "map": "Split",
+          "score": "13-8",
+          "rounds": []
+        },
+        {
+          "map": "Ascent",
+          "score": "11-13",
+          "rounds": []
+        },
+        {
+          "map": "Haven",
+          "score": "6-13",
+          "rounds": []
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/675350/xi-lai-gaming-vs-tyloo-esports-world-cup-2026-china-qualifier-stage-2-ubsf",
+      "date": "2026-05-17 05:00:00",
+      "event": "Esports World Cup 2026: China Qualifier",
+      "stage": "Stage 2: Upper Semifinals",
+      "team1": "Xi Lai Gaming",
+      "team2": "TYLOO",
+      "match_result": "2-1",
+      "winner": "Xi Lai Gaming",
+      "map_result": [
+        {
+          "map": "Breeze",
+          "score": "8-13",
+          "rounds": []
+        },
+        {
+          "map": "Pearl",
+          "score": "13-3",
+          "rounds": []
+        },
+        {
+          "map": "Haven",
+          "score": "13-6",
+          "rounds": []
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/675347/tyloo-vs-jdg-esports-esports-world-cup-2026-china-qualifier-stage-2-ubqf",
+      "date": "2026-05-16 05:00:00",
+      "event": "Esports World Cup 2026: China Qualifier",
+      "stage": "Stage 2: Upper Quarterfinals",
+      "team1": "TYLOO",
+      "team2": "JD Gaming",
+      "match_result": "2-1",
+      "winner": "TYLOO",
+      "map_result": [
+        {
+          "map": "Haven",
+          "score": "14-12",
+          "rounds": []
+        },
+        {
+          "map": "Split",
+          "score": "5-13",
+          "rounds": []
+        },
+        {
+          "map": "Ascent",
+          "score": "13-10",
+          "rounds": []
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/659484/all-gamers-vs-tyloo-vct-2026-china-stage-1-lr2",
+      "date": "2026-05-05 07:00:00",
+      "event": "VCT 2026: China Stage 1",
+      "stage": "Playoffs: Lower Round 2",
+      "team1": "All Gamers",
+      "team2": "TYLOO",
+      "match_result": "2-1",
+      "winner": "All Gamers",
+      "map_result": [
+        {
+          "map": "Fracture",
+          "score": "13-4",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "0-2",
+            "1-2",
+            "1-3",
+            "2-3",
+            "3-3",
+            "4-3",
+            "5-3",
+            "6-3",
+            "6-4",
+            "7-4",
+            "8-4",
+            "9-4",
+            "10-4",
+            "11-4",
+            "12-4",
+            "13-4"
+          ]
+        },
+        {
+          "map": "Haven",
+          "score": "10-13",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "0-2",
+            "0-3",
+            "1-3",
+            "1-4",
+            "1-5",
+            "2-5",
+            "2-6",
+            "3-6",
+            "4-6",
+            "4-7",
+            "4-8",
+            "5-8",
+            "6-8",
+            "6-9",
+            "6-10",
+            "6-11",
+            "7-11",
+            "8-11",
+            "9-11",
+            "10-11",
+            "10-12",
+            "10-13"
+          ]
+        },
+        {
+          "map": "Split",
+          "score": "13-10",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "2-0",
+            "2-1",
+            "2-2",
+            "3-2",
+            "3-3",
+            "3-4",
+            "4-4",
+            "4-5",
+            "5-5",
+            "6-5",
+            "6-6",
+            "7-6",
+            "8-6",
+            "9-6",
+            "10-6",
+            "11-6",
+            "12-6",
+            "12-7",
+            "12-8",
+            "12-9",
+            "12-10",
+            "13-10"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/659482/titan-esports-club-vs-tyloo-vct-2026-china-stage-1-lr1",
+      "date": "2026-05-03 05:00:00",
+      "event": "VCT 2026: China Stage 1",
+      "stage": "Playoffs: Lower Round 1",
+      "team1": "Wuxi Titan Esports Club (Titan Esports Club)",
+      "team2": "TYLOO",
+      "match_result": "1-2",
+      "winner": "TYLOO",
+      "map_result": [
+        {
+          "map": "Pearl",
+          "score": "13-8",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "1-1",
+            "1-2",
+            "1-3",
+            "1-4",
+            "2-4",
+            "3-4",
+            "4-4",
+            "5-4",
+            "5-5",
+            "6-5",
+            "7-5",
+            "7-6",
+            "7-7",
+            "8-7",
+            "9-7",
+            "10-7",
+            "11-7",
+            "11-8",
+            "12-8",
+            "13-8"
+          ]
+        },
+        {
+          "map": "Fracture",
+          "score": "9-13",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "1-1",
+            "1-2",
+            "1-3",
+            "1-4",
+            "1-5",
+            "2-5",
+            "2-6",
+            "2-7",
+            "3-7",
+            "3-8",
+            "3-9",
+            "3-10",
+            "3-11",
+            "3-12",
+            "4-12",
+            "5-12",
+            "6-12",
+            "7-12",
+            "8-12",
+            "9-12",
+            "9-13"
+          ]
+        },
+        {
+          "map": "Split",
+          "score": "11-13",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "0-2",
+            "1-2",
+            "1-3",
+            "1-4",
+            "1-5",
+            "1-6",
+            "2-6",
+            "2-7",
+            "2-8",
+            "3-8",
+            "3-9",
+            "4-9",
+            "5-9",
+            "5-10",
+            "5-11",
+            "6-11",
+            "7-11",
+            "8-11",
+            "8-12",
+            "9-12",
+            "10-12",
+            "11-12",
+            "11-13"
           ]
         }
       ]

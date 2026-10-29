@@ -1,7 +1,7 @@
 {
   "team_id": "12685",
-  "crawled_at": "2026-10-29T02:05:13.484Z",
-  "since": "2026-07-01T02:04:47.852Z",
+  "crawled_at": "2026-10-29T04:55:21.728Z",
+  "since": "2026-05-02T04:54:42.217Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/748622/trace-esports-vs-unsettled-resentment-china-evolution-series-2026-act-3-ro16",
@@ -1115,6 +1115,286 @@
             "12-8",
             "12-9",
             "13-9"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/681018/trace-esports-vs-titan-esports-club-china-evolution-series-2026-act-2-qf",
+      "date": "2026-05-25 06:40:00",
+      "event": "China Evolution Series 2026: Act 2",
+      "stage": "Playoffs: Quarterfinals",
+      "team1": "Trace Esports",
+      "team2": "Titan Esports Club",
+      "match_result": "0-2",
+      "winner": "Titan Esports Club",
+      "map_result": [
+        {
+          "map": "Split",
+          "score": "10-13",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "0-2",
+            "0-3",
+            "0-4",
+            "0-5",
+            "1-5",
+            "2-5",
+            "3-5",
+            "3-6",
+            "4-6",
+            "4-7",
+            "5-7",
+            "5-8",
+            "5-9",
+            "6-9",
+            "7-9",
+            "8-9",
+            "8-10",
+            "8-11",
+            "9-11",
+            "10-11",
+            "10-12",
+            "10-13"
+          ]
+        },
+        {
+          "map": "Breeze",
+          "score": "11-13",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "1-1",
+            "1-2",
+            "2-2",
+            "2-3",
+            "2-4",
+            "2-5",
+            "3-5",
+            "4-5",
+            "4-6",
+            "4-7",
+            "5-7",
+            "5-8",
+            "5-9",
+            "6-9",
+            "7-9",
+            "8-9",
+            "9-9",
+            "10-9",
+            "10-10",
+            "11-10",
+            "11-11",
+            "11-12",
+            "11-13"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/681011/trace-esports-vs-any-questions-gaming-china-evolution-series-2026-act-2-ro16",
+      "date": "2026-05-22 05:00:00",
+      "event": "China Evolution Series 2026: Act 2",
+      "stage": "Playoffs: Round of 16",
+      "team1": "Trace Esports",
+      "team2": "Any Questions Gaming",
+      "match_result": "2-0",
+      "winner": "Trace Esports",
+      "map_result": [
+        {
+          "map": "Lotus",
+          "score": "14-12",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "0-2",
+            "1-2",
+            "1-3",
+            "2-3",
+            "2-4",
+            "2-5",
+            "2-6",
+            "2-7",
+            "3-7",
+            "4-7",
+            "5-7",
+            "6-7",
+            "7-7",
+            "7-8",
+            "7-9",
+            "7-10",
+            "7-11",
+            "7-12",
+            "8-12",
+            "9-12",
+            "10-12",
+            "11-12",
+            "12-12",
+            "13-12",
+            "14-12"
+          ]
+        },
+        {
+          "map": "Pearl",
+          "score": "13-6",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "0-2",
+            "0-3",
+            "0-4",
+            "1-4",
+            "2-4",
+            "3-4",
+            "3-5",
+            "4-5",
+            "5-5",
+            "6-5",
+            "7-5",
+            "8-5",
+            "9-5",
+            "9-6",
+            "10-6",
+            "11-6",
+            "12-6",
+            "13-6"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/675355/trace-esports-vs-funplus-phoenix-esports-world-cup-2026-china-qualifier-stage-2-lr2",
+      "date": "2026-05-18 05:00:00",
+      "event": "Esports World Cup 2026: China Qualifier",
+      "stage": "Stage 2: Lower Round 2",
+      "team1": "Trace Esports",
+      "team2": "FunPlus Phoenix",
+      "match_result": "0-2",
+      "winner": "FunPlus Phoenix",
+      "map_result": [
+        {
+          "map": "Lotus",
+          "score": "10-13",
+          "rounds": []
+        },
+        {
+          "map": "Breeze",
+          "score": "2-13",
+          "rounds": []
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/675351/trace-esports-vs-titan-esports-club-esports-world-cup-2026-china-qualifier-stage-2-ubsf",
+      "date": "2026-05-17 05:00:00",
+      "event": "Esports World Cup 2026: China Qualifier",
+      "stage": "Stage 2: Upper Semifinals",
+      "team1": "Trace Esports",
+      "team2": "Titan Esports Club",
+      "match_result": "0-2",
+      "winner": "Titan Esports Club",
+      "map_result": [
+        {
+          "map": "Lotus",
+          "score": "12-14",
+          "rounds": []
+        },
+        {
+          "map": "Split",
+          "score": "14-16",
+          "rounds": []
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/675348/all-gamers-vs-trace-esports-esports-world-cup-2026-china-qualifier-stage-2-ubqf",
+      "date": "2026-05-16 05:00:00",
+      "event": "Esports World Cup 2026: China Qualifier",
+      "stage": "Stage 2: Upper Quarterfinals",
+      "team1": "All Gamers",
+      "team2": "Trace Esports",
+      "match_result": "1-2",
+      "winner": "Trace Esports",
+      "map_result": [
+        {
+          "map": "Split",
+          "score": "13-3",
+          "rounds": []
+        },
+        {
+          "map": "Lotus",
+          "score": "9-13",
+          "rounds": []
+        },
+        {
+          "map": "Ascent",
+          "score": "5-13",
+          "rounds": []
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/659483/trace-esports-vs-dragon-ranger-gaming-vct-2026-china-stage-1-lr1",
+      "date": "2026-05-03 08:30:00",
+      "event": "VCT 2026: China Stage 1",
+      "stage": "Playoffs: Lower Round 1",
+      "team1": "Trace Esports",
+      "team2": "Dragon Ranger Gaming",
+      "match_result": "0-2",
+      "winner": "Dragon Ranger Gaming",
+      "map_result": [
+        {
+          "map": "Ascent",
+          "score": "7-13",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "0-2",
+            "0-3",
+            "0-4",
+            "1-4",
+            "1-5",
+            "1-6",
+            "2-6",
+            "2-7",
+            "2-8",
+            "2-9",
+            "2-10",
+            "3-10",
+            "4-10",
+            "5-10",
+            "5-11",
+            "6-11",
+            "7-11",
+            "7-12",
+            "7-13"
+          ]
+        },
+        {
+          "map": "Lotus",
+          "score": "6-13",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "0-2",
+            "1-2",
+            "2-2",
+            "2-3",
+            "3-3",
+            "4-3",
+            "5-3",
+            "6-3",
+            "6-4",
+            "6-5",
+            "6-6",
+            "6-7",
+            "6-8",
+            "6-9",
+            "6-10",
+            "6-11",
+            "6-12",
+            "6-13"
           ]
         }
       ]

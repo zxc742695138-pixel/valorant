@@ -305,6 +305,7 @@ const notes = [
 if (DATA.regions.some(r => r.steps.some(s => s.tie_with))) {
   notes.push('Khi hai đội bằng nhau cả số map lật kèo lẫn tỉ lệ, đội đứng trước trong bảng bị loại; danh sách đánh dấu "đồng hạng" ở những chỗ này.');
 }
+notes.push(...(DATA.notes || []));
 document.getElementById('notes').innerHTML = notes.map(n => `<li>${esc(n)}</li>`).join('');
 document.getElementById('footer').textContent =
   `Dữ liệu crawl từ vlr.gg ngày ${fmtDate(DATA.crawled_at)}. 12 đội nhượng quyền mỗi khu vực theo VCT 2026 Stage 2.`;
