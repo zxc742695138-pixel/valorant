@@ -43,24 +43,16 @@ function main() {
   let totalMaps = 0;
   let mapsWithLead = 0;      // any team had a qualifying lead
   let comebacks = 0;         // map was a comeback (either direction)
-  let teamLed = 0, teamBlew = 0;          // team had a qualifying lead / lost anyway
-  let teamTrailed = 0, teamCameBack = 0;  // team faced a qualifying deficit / won anyway
   const details = [];
 
   for (const m of data.matches) {
-    const side = m.team1 === team ? 1 : m.team2 === team ? 2 : null;
     for (const mp of m.map_result) {
       if (!mp.rounds.length) continue;
       totalMaps++;
       const r = analyzeMap(mp.rounds);
       if (r.leaders.size) mapsWithLead++;
-      if (r.blownBy) comebacks++;
-      if (side) {
-        const opp = side === 1 ? 2 : 1;
-        if (r.leaders.has(side)) { teamLed++; if (r.finalWinner !== side) teamBlew++; }
-        if (r.leaders.has(opp)) { teamTrailed++; if (r.finalWinner === side) teamCameBack++; }
-      }
       if (r.blownBy) {
+        comebacks++;
         const blown = r.blownBy === 1 ? m.team1 : m.team2;
         const winner = r.finalWinner === 1 ? m.team1 : m.team2;
         details.push({
@@ -73,12 +65,7 @@ function main() {
 
   console.log(`Đội: ${team} — ${data.matches.length} trận, ${totalMaps} map`);
   console.log(`Điều kiện: tổng round >= ${MIN_TOTAL}, chênh lệch >= ${MIN_DIFF}\n`);
-  console.log(`Tổng quan`);
-  console.log(`  Map lật kèo / tổng map:                 ${comebacks}/${totalMaps} = ${pct(comebacks, totalMaps)}`);
-  console.log(`  Map lật kèo / map có tình huống dẫn ≥3: ${comebacks}/${mapsWithLead} = ${pct(comebacks, mapsWithLead)}`);
-  console.log(`\nTheo góc nhìn ${team}`);
-  console.log(`  Bị lật kèo khi đang dẫn ≥3:   ${teamBlew}/${teamLed} = ${pct(teamBlew, teamLed)}`);
-  console.log(`  Lật kèo khi đang bị dẫn ≥3:   ${teamCameBack}/${teamTrailed} = ${pct(teamCameBack, teamTrailed)}`);
+  console.log(`Tỉ lệ lật kèo (map lật kèo / map có tình huống dẫn ≥${MIN_DIFF}): ${comebacks}/${mapsWithLead} = ${pct(comebacks, mapsWithLead)}`);
   console.log(`\nChi tiết map lật kèo`);
   console.table(details);
 }
