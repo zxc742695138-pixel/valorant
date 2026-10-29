@@ -6,11 +6,12 @@ Crawls a team's most recent completed matches from [vlr.gg](https://www.vlr.gg) 
 including round-by-round score progression for every map.
 
 ```bash
-node crawler/crawl_team.js --team-id 624 --limit 20 --out data/paper-rex.json
+node crawler/crawl_team.js --team-id 624 --days 120 --out data/paper-rex.json
 ```
 
 - `--team-id`: vlr.gg team id (from the team URL, e.g. `vlr.gg/team/624/paper-rex` → `624`)
-- `--limit`: number of matches (default 20)
+- `--days`: only matches from the last N days
+- `--limit`: at most N most recent matches (default 20 when `--days` is not given)
 - `--delay`: ms between requests (default 1000)
 - `--out`: output file (prints to stdout if omitted)
 

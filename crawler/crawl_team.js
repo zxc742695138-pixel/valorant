@@ -12,16 +12,19 @@ const { chromium } = require('playwright');
 const BASE = 'https://www.vlr.gg';
 
 function parseArgs(argv) {
-  const args = { limit: 20, delay: 1000 };
+  const args = { delay: 1000 };
   for (let i = 2; i < argv.length; i++) {
     const key = argv[i].replace(/^--/, '');
     args[key.replace(/-(\w)/g, (_, c) => c.toUpperCase())] = argv[++i];
   }
   if (!args.teamId) {
-    console.error('Usage: node crawler/crawl_team.js --team-id <vlr team id> [--limit 20] [--out file.json]');
+    console.error('Usage: node crawler/crawl_team.js --team-id <vlr team id> [--days 120 | --limit 20] [--out file.json]');
     process.exit(1);
   }
-  args.limit = Number(args.limit);
+  // --days: every match in the last N days; --limit: the N most recent matches.
+  // Both may be combined; with neither, default to the 20 most recent matches.
+  args.limit = args.limit ? Number(args.limit) : (args.days ? Infinity : 20);
+  args.since = args.days ? new Date(Date.now() - Number(args.days) * 86400000) : null;
   args.delay = Number(args.delay);
   return args;
 }
@@ -40,14 +43,25 @@ async function gotoWithRetry(page, url, tries = 3) {
   }
 }
 
-// Collect match URLs from the team's "completed" match list, following pagination.
-async function getMatchLinks(page, teamId, limit) {
+// Collect match URLs from the team's "completed" match list (newest first), following
+// pagination until `limit` matches are found or matches get older than `since`.
+async function getMatchLinks(page, teamId, limit, since) {
   const links = [];
-  for (let pageNo = 1; links.length < limit; pageNo++) {
+  let reachedCutoff = false;
+  for (let pageNo = 1; links.length < limit && !reachedCutoff; pageNo++) {
     await gotoWithRetry(page, `${BASE}/team/matches/${teamId}/?group=completed&page=${pageNo}`);
-    const hrefs = await page.$$eval('a.m-item', as => as.map(a => a.getAttribute('href')));
-    if (hrefs.length === 0) break;
-    for (const h of hrefs) if (!links.includes(h)) links.push(h);
+    const items = await page.$$eval('a.m-item', as => as.map(a => ({
+      href: a.getAttribute('href'),
+      date: (a.innerText.match(/\d{4}\/\d{2}\/\d{2}/) || [null])[0],
+    })));
+    if (items.length === 0) break;
+    for (const { href, date } of items) {
+      if (since && date && new Date(date.replace(/\//g, '-')) < since) {
+        reachedCutoff = true;
+        break;
+      }
+      if (!links.includes(href)) links.push(href);
+    }
   }
   return links.slice(0, limit).map(h => BASE + h);
 }
@@ -99,7 +113,7 @@ async function getMatch(page, url) {
   const browser = await chromium.launch();
   const page = await browser.newPage();
   try {
-    const links = await getMatchLinks(page, args.teamId, args.limit);
+    const links = await getMatchLinks(page, args.teamId, args.limit, args.since);
     console.error(`Found ${links.length} matches`);
     const matches = [];
     for (const [i, url] of links.entries()) {
@@ -112,7 +126,12 @@ async function getMatch(page, url) {
         console.error(`[${i + 1}/${links.length}] FAILED ${url}: ${e.message}`);
       }
     }
-    const out = JSON.stringify({ team_id: args.teamId, crawled_at: new Date().toISOString(), matches }, null, 2);
+    const out = JSON.stringify({
+      team_id: args.teamId,
+      crawled_at: new Date().toISOString(),
+      since: args.since ? args.since.toISOString() : null,
+      matches,
+    }, null, 2);
     if (args.out) {
       fs.mkdirSync(path.dirname(args.out), { recursive: true });
       fs.writeFileSync(args.out, out);
