@@ -1,7 +1,7 @@
 {
   "team_id": "13581",
-  "crawled_at": "2026-10-29T06:31:16.544Z",
-  "since": "2026-05-02T06:30:25.052Z",
+  "crawled_at": "2026-11-02T07:57:13.353Z",
+  "since": "2026-05-06T07:55:30.426Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/753462/xi-lai-gaming-vs-nongshim-redforce-valorant-champions-2026-elim-d",
@@ -2245,63 +2245,6 @@
             "8-11",
             "8-12",
             "8-13"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/659478/xi-lai-gaming-vs-jdg-esports-vct-2026-china-stage-1-ubsf",
-      "date": "2026-05-04 05:00:00",
-      "event": "VCT 2026: China Stage 1",
-      "stage": "Playoffs: Upper Semifinals",
-      "team1": "Xi Lai Gaming",
-      "team2": "JD Mall JDG Esports (JD Gaming)",
-      "match_result": "2-0",
-      "winner": "Xi Lai Gaming",
-      "map_result": [
-        {
-          "map": "Lotus",
-          "score": "13-0",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "3-0",
-            "4-0",
-            "5-0",
-            "6-0",
-            "7-0",
-            "8-0",
-            "9-0",
-            "10-0",
-            "11-0",
-            "12-0",
-            "13-0"
-          ]
-        },
-        {
-          "map": "Pearl",
-          "score": "13-5",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "2-1",
-            "3-1",
-            "4-1",
-            "5-1",
-            "6-1",
-            "6-2",
-            "6-3",
-            "7-3",
-            "8-3",
-            "8-4",
-            "9-4",
-            "10-4",
-            "10-5",
-            "11-5",
-            "12-5",
-            "13-5"
           ]
         }
       ]

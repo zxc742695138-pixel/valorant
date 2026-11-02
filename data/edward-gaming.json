@@ -1,7 +1,7 @@
 {
   "team_id": "1120",
-  "crawled_at": "2026-10-29T06:31:35.057Z",
-  "since": "2026-05-02T06:30:49.134Z",
+  "crawled_at": "2026-11-02T07:57:37.172Z",
+  "since": "2026-05-06T07:56:05.146Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/753452/global-esports-vs-edward-gaming-valorant-champions-2026-elim-b",
@@ -1858,71 +1858,6 @@
             "8-11",
             "8-12",
             "8-13"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/659479/all-gamers-vs-edward-gaming-vct-2026-china-stage-1-ubsf",
-      "date": "2026-05-04 07:00:00",
-      "event": "VCT 2026: China Stage 1",
-      "stage": "Playoffs: Upper Semifinals",
-      "team1": "All Gamers",
-      "team2": "EDward Gaming",
-      "match_result": "0-2",
-      "winner": "EDward Gaming",
-      "map_result": [
-        {
-          "map": "Fracture",
-          "score": "7-13",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "3-0",
-            "4-0",
-            "4-1",
-            "4-2",
-            "4-3",
-            "5-3",
-            "5-4",
-            "5-5",
-            "6-5",
-            "7-5",
-            "7-6",
-            "7-7",
-            "7-8",
-            "7-9",
-            "7-10",
-            "7-11",
-            "7-12",
-            "7-13"
-          ]
-        },
-        {
-          "map": "Lotus",
-          "score": "6-13",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "0-3",
-            "0-4",
-            "0-5",
-            "0-6",
-            "1-6",
-            "1-7",
-            "2-7",
-            "2-8",
-            "2-9",
-            "2-10",
-            "2-11",
-            "3-11",
-            "4-11",
-            "5-11",
-            "6-11",
-            "6-12",
-            "6-13"
           ]
         }
       ]

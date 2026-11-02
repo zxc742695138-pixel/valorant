@@ -8,10 +8,10 @@
       "steps": [
         {
           "step": 0,
-          "matches": 147,
-          "lead_maps": 306,
+          "matches": 145,
+          "lead_maps": 303,
           "comebacks": 28,
-          "rate": 0.0915032679738562,
+          "rate": 0.0924092409240924,
           "table": [
             {
               "team": "NRG",
@@ -23,11 +23,11 @@
             },
             {
               "team": "LOUD",
-              "matches": 25,
-              "maps": 68,
-              "lead_maps": 53,
+              "matches": 24,
+              "maps": 65,
+              "lead_maps": 52,
               "comebacks": 6,
-              "rate": 0.11320754716981132
+              "rate": 0.11538461538461539
             },
             {
               "team": "Evil Geniuses",
@@ -39,11 +39,11 @@
             },
             {
               "team": "ENVY",
-              "matches": 14,
-              "maps": 33,
-              "lead_maps": 28,
+              "matches": 13,
+              "maps": 31,
+              "lead_maps": 26,
               "comebacks": 4,
-              "rate": 0.14285714285714285
+              "rate": 0.15384615384615385
             },
             {
               "team": "Sentinels",
@@ -63,11 +63,11 @@
             },
             {
               "team": "Cloud9",
-              "matches": 12,
-              "maps": 30,
-              "lead_maps": 26,
+              "matches": 11,
+              "maps": 27,
+              "lead_maps": 25,
               "comebacks": 3,
-              "rate": 0.11538461538461539
+              "rate": 0.12
             },
             {
               "team": "KRÜ Esports",
@@ -103,11 +103,11 @@
             },
             {
               "team": "G2 Esports",
-              "matches": 31,
-              "maps": 81,
-              "lead_maps": 65,
+              "matches": 30,
+              "maps": 79,
+              "lead_maps": 63,
               "comebacks": 1,
-              "rate": 0.015384615384615385
+              "rate": 0.015873015873015872
             }
           ],
           "removed": {
@@ -122,10 +122,10 @@
         },
         {
           "step": 1,
-          "matches": 116,
-          "lead_maps": 233,
+          "matches": 114,
+          "lead_maps": 230,
           "comebacks": 17,
-          "rate": 0.07296137339055794,
+          "rate": 0.07391304347826087,
           "table": [
             {
               "team": "Evil Geniuses",
@@ -137,11 +137,11 @@
             },
             {
               "team": "ENVY",
-              "matches": 13,
-              "maps": 31,
-              "lead_maps": 26,
+              "matches": 12,
+              "maps": 29,
+              "lead_maps": 24,
               "comebacks": 4,
-              "rate": 0.15384615384615385
+              "rate": 0.16666666666666666
             },
             {
               "team": "Sentinels",
@@ -152,6 +152,14 @@
               "rate": 0.12121212121212122
             },
             {
+              "team": "Cloud9",
+              "matches": 11,
+              "maps": 27,
+              "lead_maps": 25,
+              "comebacks": 3,
+              "rate": 0.12
+            },
+            {
               "team": "KRÜ Esports",
               "matches": 14,
               "maps": 34,
@@ -160,20 +168,12 @@
               "rate": 0.12
             },
             {
-              "team": "Cloud9",
-              "matches": 12,
-              "maps": 30,
-              "lead_maps": 26,
-              "comebacks": 3,
-              "rate": 0.11538461538461539
-            },
-            {
               "team": "LOUD",
-              "matches": 20,
-              "maps": 52,
-              "lead_maps": 39,
+              "matches": 19,
+              "maps": 49,
+              "lead_maps": 38,
               "comebacks": 3,
-              "rate": 0.07692307692307693
+              "rate": 0.07894736842105263
             },
             {
               "team": "100 Thieves",
@@ -209,11 +209,11 @@
             },
             {
               "team": "G2 Esports",
-              "matches": 30,
-              "maps": 76,
-              "lead_maps": 60,
+              "matches": 29,
+              "maps": 74,
+              "lead_maps": 58,
               "comebacks": 1,
-              "rate": 0.016666666666666666
+              "rate": 0.017241379310344827
             }
           ],
           "removed": {
@@ -228,26 +228,26 @@
         },
         {
           "step": 2,
-          "matches": 104,
-          "lead_maps": 210,
+          "matches": 102,
+          "lead_maps": 207,
           "comebacks": 13,
-          "rate": 0.06190476190476191,
+          "rate": 0.06280193236714976,
           "table": [
             {
               "team": "ENVY",
-              "matches": 11,
-              "maps": 26,
-              "lead_maps": 22,
+              "matches": 10,
+              "maps": 24,
+              "lead_maps": 20,
               "comebacks": 3,
-              "rate": 0.13636363636363635
+              "rate": 0.15
             },
             {
               "team": "Cloud9",
-              "matches": 11,
-              "maps": 27,
-              "lead_maps": 23,
+              "matches": 10,
+              "maps": 24,
+              "lead_maps": 22,
               "comebacks": 3,
-              "rate": 0.13043478260869565
+              "rate": 0.13636363636363635
             },
             {
               "team": "Sentinels",
@@ -259,11 +259,11 @@
             },
             {
               "team": "LOUD",
-              "matches": 20,
-              "maps": 52,
-              "lead_maps": 39,
+              "matches": 19,
+              "maps": 49,
+              "lead_maps": 38,
               "comebacks": 3,
-              "rate": 0.07692307692307693
+              "rate": 0.07894736842105263
             },
             {
               "team": "100 Thieves",
@@ -299,11 +299,11 @@
             },
             {
               "team": "G2 Esports",
-              "matches": 30,
-              "maps": 76,
-              "lead_maps": 60,
+              "matches": 29,
+              "maps": 74,
+              "lead_maps": 58,
               "comebacks": 1,
-              "rate": 0.016666666666666666
+              "rate": 0.017241379310344827
             },
             {
               "team": "MIBR",
@@ -316,20 +316,20 @@
           ],
           "removed": {
             "team": "ENVY",
-            "matches": 11,
-            "maps": 26,
-            "lead_maps": 22,
+            "matches": 10,
+            "maps": 24,
+            "lead_maps": 20,
             "comebacks": 3,
-            "rate": 0.13636363636363635
+            "rate": 0.15
           },
           "tie_with": null
         },
         {
           "step": 3,
-          "matches": 93,
-          "lead_maps": 188,
+          "matches": 92,
+          "lead_maps": 187,
           "comebacks": 10,
-          "rate": 0.05319148936170213,
+          "rate": 0.053475935828877004,
           "table": [
             {
               "team": "Sentinels",
@@ -341,11 +341,11 @@
             },
             {
               "team": "LOUD",
-              "matches": 20,
-              "maps": 52,
-              "lead_maps": 39,
+              "matches": 19,
+              "maps": 49,
+              "lead_maps": 38,
               "comebacks": 3,
-              "rate": 0.07692307692307693
+              "rate": 0.07894736842105263
             },
             {
               "team": "100 Thieves",
@@ -357,11 +357,11 @@
             },
             {
               "team": "Cloud9",
-              "matches": 10,
-              "maps": 24,
-              "lead_maps": 20,
+              "matches": 9,
+              "maps": 21,
+              "lead_maps": 19,
               "comebacks": 2,
-              "rate": 0.1
+              "rate": 0.10526315789473684
             },
             {
               "team": "KRÜ Esports",
@@ -416,10 +416,10 @@
         },
         {
           "step": 4,
-          "matches": 82,
-          "lead_maps": 162,
+          "matches": 81,
+          "lead_maps": 161,
           "comebacks": 7,
-          "rate": 0.043209876543209874,
+          "rate": 0.043478260869565216,
           "table": [
             {
               "team": "100 Thieves",
@@ -439,11 +439,11 @@
             },
             {
               "team": "LOUD",
-              "matches": 18,
-              "maps": 47,
-              "lead_maps": 34,
+              "matches": 17,
+              "maps": 44,
+              "lead_maps": 33,
               "comebacks": 2,
-              "rate": 0.058823529411764705
+              "rate": 0.06060606060606061
             },
             {
               "team": "FURIA",
@@ -479,9 +479,9 @@
             },
             {
               "team": "Cloud9",
-              "matches": 8,
-              "maps": 19,
-              "lead_maps": 15,
+              "matches": 7,
+              "maps": 16,
+              "lead_maps": 14,
               "comebacks": 0,
               "rate": 0
             }
@@ -498,10 +498,10 @@
         },
         {
           "step": 5,
-          "matches": 60,
-          "lead_maps": 117,
+          "matches": 59,
+          "lead_maps": 116,
           "comebacks": 4,
-          "rate": 0.03418803418803419,
+          "rate": 0.034482758620689655,
           "table": [
             {
               "team": "KRÜ Esports",
@@ -521,11 +521,11 @@
             },
             {
               "team": "LOUD",
-              "matches": 14,
-              "maps": 35,
-              "lead_maps": 24,
+              "matches": 13,
+              "maps": 32,
+              "lead_maps": 23,
               "comebacks": 1,
-              "rate": 0.041666666666666664
+              "rate": 0.043478260869565216
             },
             {
               "team": "LEVIATÁN",
@@ -553,9 +553,9 @@
             },
             {
               "team": "Cloud9",
-              "matches": 7,
-              "maps": 17,
-              "lead_maps": 14,
+              "matches": 6,
+              "maps": 14,
+              "lead_maps": 13,
               "comebacks": 0,
               "rate": 0
             }
@@ -566,13 +566,13 @@
       ],
       "baseline": {
         "runs": 5000,
-        "mean": 0.08559623614785966,
-        "p05": 0.046357615894039736,
-        "p95": 0.125,
-        "p_value": 0.006
+        "mean": 0.08650430221152015,
+        "p05": 0.04697986577181208,
+        "p95": 0.12781954887218044,
+        "p_value": 0.005
       },
       "previous": {
-        "crawled_at": "2026-10-29T04:55:38.029Z",
+        "crawled_at": "2026-10-29T06:34:34.487Z",
         "top5": [
           "NRG",
           "Evil Geniuses",
@@ -1149,13 +1149,13 @@
       ],
       "baseline": {
         "runs": 5000,
-        "mean": 0.0788693479275529,
+        "mean": 0.07902151382599382,
         "p05": 0.047244094488188976,
-        "p95": 0.10833333333333334,
-        "p_value": 0.0014
+        "p95": 0.10967741935483871,
+        "p_value": 0.0008
       },
       "previous": {
-        "crawled_at": "2026-10-29T04:55:38.029Z",
+        "crawled_at": "2026-10-29T06:34:34.487Z",
         "top5": [
           "Team Vitality",
           "Team Liquid",
@@ -1174,58 +1174,58 @@
       "steps": [
         {
           "step": 0,
-          "matches": 161,
-          "lead_maps": 305,
-          "comebacks": 27,
-          "rate": 0.08852459016393442,
+          "matches": 160,
+          "lead_maps": 306,
+          "comebacks": 28,
+          "rate": 0.0915032679738562,
           "table": [
             {
               "team": "EDward Gaming",
-              "matches": 23,
-              "maps": 59,
-              "lead_maps": 50,
+              "matches": 22,
+              "maps": 57,
+              "lead_maps": 48,
               "comebacks": 5,
-              "rate": 0.1
+              "rate": 0.10416666666666667
             },
             {
               "team": "All Gamers",
-              "matches": 28,
-              "maps": 65,
-              "lead_maps": 53,
+              "matches": 26,
+              "maps": 60,
+              "lead_maps": 48,
               "comebacks": 5,
-              "rate": 0.09433962264150944
-            },
-            {
-              "team": "Trace Esports",
-              "matches": 20,
-              "maps": 39,
-              "lead_maps": 31,
-              "comebacks": 4,
-              "rate": 0.12903225806451613
+              "rate": 0.10416666666666667
             },
             {
               "team": "Nova Esports",
-              "matches": 22,
-              "maps": 48,
-              "lead_maps": 43,
+              "matches": 25,
+              "maps": 56,
+              "lead_maps": 51,
+              "comebacks": 5,
+              "rate": 0.09803921568627451
+            },
+            {
+              "team": "Trace Esports",
+              "matches": 19,
+              "maps": 37,
+              "lead_maps": 29,
               "comebacks": 4,
-              "rate": 0.09302325581395349
+              "rate": 0.13793103448275862
             },
             {
               "team": "JD Gaming",
-              "matches": 24,
-              "maps": 52,
-              "lead_maps": 44,
+              "matches": 22,
+              "maps": 48,
+              "lead_maps": 41,
               "comebacks": 4,
-              "rate": 0.09090909090909091
+              "rate": 0.0975609756097561
             },
             {
               "team": "Xi Lai Gaming",
-              "matches": 28,
-              "maps": 70,
-              "lead_maps": 56,
+              "matches": 27,
+              "maps": 68,
+              "lead_maps": 55,
               "comebacks": 4,
-              "rate": 0.07142857142857142
+              "rate": 0.07272727272727272
             },
             {
               "team": "Bilibili Gaming",
@@ -1236,28 +1236,28 @@
               "rate": 0.09375
             },
             {
-              "team": "FunPlus Phoenix",
-              "matches": 24,
-              "maps": 43,
-              "lead_maps": 36,
+              "team": "TYLOO",
+              "matches": 22,
+              "maps": 49,
+              "lead_maps": 39,
               "comebacks": 3,
-              "rate": 0.08333333333333333
+              "rate": 0.07692307692307693
             },
             {
-              "team": "TYLOO",
-              "matches": 24,
-              "maps": 55,
-              "lead_maps": 45,
+              "team": "FunPlus Phoenix",
+              "matches": 25,
+              "maps": 46,
+              "lead_maps": 39,
               "comebacks": 3,
-              "rate": 0.06666666666666667
+              "rate": 0.07692307692307693
             },
             {
               "team": "Dragon Ranger Gaming",
-              "matches": 23,
-              "maps": 55,
-              "lead_maps": 45,
+              "matches": 21,
+              "maps": 51,
+              "lead_maps": 41,
               "comebacks": 3,
-              "rate": 0.06666666666666667
+              "rate": 0.07317073170731707
             },
             {
               "team": "Titan Esports Club",
@@ -1278,52 +1278,61 @@
           ],
           "removed": {
             "team": "EDward Gaming",
-            "matches": 23,
-            "maps": 59,
-            "lead_maps": 50,
+            "matches": 22,
+            "maps": 57,
+            "lead_maps": 48,
             "comebacks": 5,
-            "rate": 0.1
+            "rate": 0.10416666666666667
           },
-          "tie_with": null
+          "tie_with": "All Gamers",
+          "tie_alt_rate": 0.08914728682170543
         },
         {
           "step": 1,
           "matches": 138,
-          "lead_maps": 255,
-          "comebacks": 22,
-          "rate": 0.08627450980392157,
+          "lead_maps": 258,
+          "comebacks": 23,
+          "rate": 0.08914728682170543,
           "table": [
             {
               "team": "All Gamers",
-              "matches": 26,
-              "maps": 61,
-              "lead_maps": 49,
+              "matches": 25,
+              "maps": 58,
+              "lead_maps": 46,
               "comebacks": 5,
-              "rate": 0.10204081632653061
+              "rate": 0.10869565217391304
             },
             {
               "team": "JD Gaming",
-              "matches": 22,
-              "maps": 48,
-              "lead_maps": 40,
+              "matches": 20,
+              "maps": 44,
+              "lead_maps": 37,
               "comebacks": 4,
-              "rate": 0.1
+              "rate": 0.10810810810810811
             },
             {
               "team": "Xi Lai Gaming",
-              "matches": 25,
-              "maps": 60,
+              "matches": 24,
+              "maps": 58,
+              "lead_maps": 46,
+              "comebacks": 4,
+              "rate": 0.08695652173913043
+            },
+            {
+              "team": "Nova Esports",
+              "matches": 23,
+              "maps": 51,
               "lead_maps": 47,
               "comebacks": 4,
               "rate": 0.0851063829787234
             },
             {
               "team": "Trace Esports",
-              "matches": 19,
-              "maps": 37,
-              "lead_maps": 30,
+              "matches": 18,
+              "maps": 35,
+              "lead_maps": 28,
               "comebacks": 3,
-              "rate": 0.1
+              "rate": 0.10714285714285714
             },
             {
               "team": "Bilibili Gaming",
@@ -1334,36 +1343,28 @@
               "rate": 0.09375
             },
             {
-              "team": "FunPlus Phoenix",
-              "matches": 23,
-              "maps": 40,
-              "lead_maps": 33,
-              "comebacks": 3,
-              "rate": 0.09090909090909091
-            },
-            {
-              "team": "Nova Esports",
-              "matches": 20,
-              "maps": 43,
-              "lead_maps": 39,
-              "comebacks": 3,
-              "rate": 0.07692307692307693
-            },
-            {
               "team": "TYLOO",
-              "matches": 22,
-              "maps": 50,
-              "lead_maps": 42,
+              "matches": 20,
+              "maps": 44,
+              "lead_maps": 36,
               "comebacks": 3,
-              "rate": 0.07142857142857142
+              "rate": 0.08333333333333333
+            },
+            {
+              "team": "FunPlus Phoenix",
+              "matches": 24,
+              "maps": 43,
+              "lead_maps": 36,
+              "comebacks": 3,
+              "rate": 0.08333333333333333
             },
             {
               "team": "Dragon Ranger Gaming",
-              "matches": 23,
-              "maps": 55,
-              "lead_maps": 45,
+              "matches": 21,
+              "maps": 51,
+              "lead_maps": 41,
               "comebacks": 3,
-              "rate": 0.06666666666666667
+              "rate": 0.07317073170731707
             },
             {
               "team": "Titan Esports Club",
@@ -1384,36 +1385,44 @@
           ],
           "removed": {
             "team": "All Gamers",
-            "matches": 26,
-            "maps": 61,
-            "lead_maps": 49,
+            "matches": 25,
+            "maps": 58,
+            "lead_maps": 46,
             "comebacks": 5,
-            "rate": 0.10204081632653061
+            "rate": 0.10869565217391304
           },
           "tie_with": null
         },
         {
           "step": 2,
-          "matches": 112,
-          "lead_maps": 206,
-          "comebacks": 17,
-          "rate": 0.0825242718446602,
+          "matches": 113,
+          "lead_maps": 212,
+          "comebacks": 18,
+          "rate": 0.08490566037735849,
           "table": [
             {
               "team": "JD Gaming",
-              "matches": 20,
-              "maps": 44,
-              "lead_maps": 37,
+              "matches": 18,
+              "maps": 40,
+              "lead_maps": 34,
               "comebacks": 4,
-              "rate": 0.10810810810810811
+              "rate": 0.11764705882352941
             },
             {
               "team": "Xi Lai Gaming",
-              "matches": 23,
-              "maps": 55,
-              "lead_maps": 44,
+              "matches": 22,
+              "maps": 53,
+              "lead_maps": 43,
               "comebacks": 4,
-              "rate": 0.09090909090909091
+              "rate": 0.09302325581395349
+            },
+            {
+              "team": "Nova Esports",
+              "matches": 23,
+              "maps": 51,
+              "lead_maps": 47,
+              "comebacks": 4,
+              "rate": 0.0851063829787234
             },
             {
               "team": "Bilibili Gaming",
@@ -1425,19 +1434,19 @@
             },
             {
               "team": "FunPlus Phoenix",
-              "matches": 21,
-              "maps": 36,
-              "lead_maps": 30,
+              "matches": 22,
+              "maps": 39,
+              "lead_maps": 33,
               "comebacks": 3,
-              "rate": 0.1
+              "rate": 0.09090909090909091
             },
             {
-              "team": "Nova Esports",
-              "matches": 20,
-              "maps": 43,
-              "lead_maps": 39,
-              "comebacks": 3,
-              "rate": 0.07692307692307693
+              "team": "Trace Esports",
+              "matches": 15,
+              "maps": 29,
+              "lead_maps": 23,
+              "comebacks": 2,
+              "rate": 0.08695652173913043
             },
             {
               "team": "Wolves Esports",
@@ -1448,28 +1457,20 @@
               "rate": 0.08333333333333333
             },
             {
-              "team": "Trace Esports",
-              "matches": 16,
-              "maps": 31,
-              "lead_maps": 25,
-              "comebacks": 2,
-              "rate": 0.08
-            },
-            {
               "team": "TYLOO",
-              "matches": 18,
-              "maps": 40,
-              "lead_maps": 33,
+              "matches": 17,
+              "maps": 37,
+              "lead_maps": 30,
               "comebacks": 2,
-              "rate": 0.06060606060606061
+              "rate": 0.06666666666666667
             },
             {
               "team": "Dragon Ranger Gaming",
-              "matches": 19,
-              "maps": 47,
-              "lead_maps": 38,
+              "matches": 17,
+              "maps": 43,
+              "lead_maps": 34,
               "comebacks": 2,
-              "rate": 0.05263157894736842
+              "rate": 0.058823529411764705
             },
             {
               "team": "Titan Esports Club",
@@ -1482,20 +1483,20 @@
           ],
           "removed": {
             "team": "JD Gaming",
-            "matches": 20,
-            "maps": 44,
-            "lead_maps": 37,
+            "matches": 18,
+            "maps": 40,
+            "lead_maps": 34,
             "comebacks": 4,
-            "rate": 0.10810810810810811
+            "rate": 0.11764705882352941
           },
           "tie_with": null
         },
         {
           "step": 3,
-          "matches": 92,
-          "lead_maps": 169,
-          "comebacks": 13,
-          "rate": 0.07692307692307693,
+          "matches": 95,
+          "lead_maps": 178,
+          "comebacks": 14,
+          "rate": 0.07865168539325842,
           "table": [
             {
               "team": "Bilibili Gaming",
@@ -1504,6 +1505,14 @@
               "lead_maps": 27,
               "comebacks": 3,
               "rate": 0.1111111111111111
+            },
+            {
+              "team": "Nova Esports",
+              "matches": 20,
+              "maps": 44,
+              "lead_maps": 40,
+              "comebacks": 3,
+              "rate": 0.075
             },
             {
               "team": "Xi Lai Gaming",
@@ -1515,11 +1524,19 @@
             },
             {
               "team": "Trace Esports",
-              "matches": 14,
-              "maps": 27,
-              "lead_maps": 21,
+              "matches": 13,
+              "maps": 25,
+              "lead_maps": 19,
               "comebacks": 2,
-              "rate": 0.09523809523809523
+              "rate": 0.10526315789473684
+            },
+            {
+              "team": "TYLOO",
+              "matches": 13,
+              "maps": 28,
+              "lead_maps": 22,
+              "comebacks": 2,
+              "rate": 0.09090909090909091
             },
             {
               "team": "Wolves Esports",
@@ -1530,36 +1547,20 @@
               "rate": 0.08333333333333333
             },
             {
-              "team": "TYLOO",
-              "matches": 14,
-              "maps": 31,
-              "lead_maps": 25,
-              "comebacks": 2,
-              "rate": 0.08
-            },
-            {
               "team": "FunPlus Phoenix",
-              "matches": 18,
-              "maps": 31,
-              "lead_maps": 26,
+              "matches": 19,
+              "maps": 34,
+              "lead_maps": 29,
               "comebacks": 2,
-              "rate": 0.07692307692307693
-            },
-            {
-              "team": "Nova Esports",
-              "matches": 17,
-              "maps": 36,
-              "lead_maps": 32,
-              "comebacks": 2,
-              "rate": 0.0625
+              "rate": 0.06896551724137931
             },
             {
               "team": "Dragon Ranger Gaming",
-              "matches": 17,
-              "maps": 42,
-              "lead_maps": 34,
+              "matches": 16,
+              "maps": 40,
+              "lead_maps": 32,
               "comebacks": 2,
-              "rate": 0.058823529411764705
+              "rate": 0.0625
             },
             {
               "team": "Titan Esports Club",
@@ -1582,93 +1583,27 @@
         },
         {
           "step": 4,
-          "matches": 77,
-          "lead_maps": 142,
-          "comebacks": 10,
-          "rate": 0.07042253521126761,
+          "matches": 80,
+          "lead_maps": 151,
+          "comebacks": 11,
+          "rate": 0.0728476821192053,
           "table": [
             {
-              "team": "Trace Esports",
-              "matches": 13,
-              "maps": 24,
-              "lead_maps": 18,
-              "comebacks": 2,
-              "rate": 0.1111111111111111
-            },
-            {
-              "team": "Wolves Esports",
-              "matches": 12,
-              "maps": 26,
-              "lead_maps": 21,
-              "comebacks": 2,
-              "rate": 0.09523809523809523
-            },
-            {
-              "team": "FunPlus Phoenix",
-              "matches": 17,
-              "maps": 31,
-              "lead_maps": 26,
-              "comebacks": 2,
-              "rate": 0.07692307692307693
-            },
-            {
               "team": "Nova Esports",
-              "matches": 15,
-              "maps": 34,
-              "lead_maps": 30,
-              "comebacks": 2,
-              "rate": 0.06666666666666667
-            },
-            {
-              "team": "Xi Lai Gaming",
               "matches": 18,
               "maps": 42,
-              "lead_maps": 34,
-              "comebacks": 2,
-              "rate": 0.058823529411764705
+              "lead_maps": 38,
+              "comebacks": 3,
+              "rate": 0.07894736842105263
             },
             {
-              "team": "TYLOO",
+              "team": "Trace Esports",
               "matches": 12,
-              "maps": 26,
-              "lead_maps": 20,
-              "comebacks": 1,
-              "rate": 0.05
+              "maps": 22,
+              "lead_maps": 16,
+              "comebacks": 2,
+              "rate": 0.125
             },
-            {
-              "team": "Dragon Ranger Gaming",
-              "matches": 16,
-              "maps": 40,
-              "lead_maps": 32,
-              "comebacks": 1,
-              "rate": 0.03125
-            },
-            {
-              "team": "Titan Esports Club",
-              "matches": 19,
-              "maps": 46,
-              "lead_maps": 37,
-              "comebacks": 1,
-              "rate": 0.02702702702702703
-            }
-          ],
-          "removed": {
-            "team": "Trace Esports",
-            "matches": 13,
-            "maps": 24,
-            "lead_maps": 18,
-            "comebacks": 2,
-            "rate": 0.1111111111111111
-          },
-          "tie_with": null
-        },
-        {
-          "step": 5,
-          "matches": 64,
-          "lead_maps": 124,
-          "comebacks": 8,
-          "rate": 0.06451612903225806,
-          "table": [
             {
               "team": "Wolves Esports",
               "matches": 12,
@@ -1679,19 +1614,11 @@
             },
             {
               "team": "FunPlus Phoenix",
-              "matches": 14,
-              "maps": 27,
-              "lead_maps": 23,
+              "matches": 18,
+              "maps": 34,
+              "lead_maps": 29,
               "comebacks": 2,
-              "rate": 0.08695652173913043
-            },
-            {
-              "team": "Nova Esports",
-              "matches": 14,
-              "maps": 31,
-              "lead_maps": 28,
-              "comebacks": 2,
-              "rate": 0.07142857142857142
+              "rate": 0.06896551724137931
             },
             {
               "team": "Xi Lai Gaming",
@@ -1704,24 +1631,98 @@
             {
               "team": "TYLOO",
               "matches": 11,
-              "maps": 24,
-              "lead_maps": 19,
+              "maps": 23,
+              "lead_maps": 17,
               "comebacks": 1,
-              "rate": 0.05263157894736842
+              "rate": 0.058823529411764705
+            },
+            {
+              "team": "Dragon Ranger Gaming",
+              "matches": 15,
+              "maps": 38,
+              "lead_maps": 30,
+              "comebacks": 1,
+              "rate": 0.03333333333333333
             },
             {
               "team": "Titan Esports Club",
-              "matches": 16,
-              "maps": 42,
-              "lead_maps": 35,
+              "matches": 19,
+              "maps": 46,
+              "lead_maps": 37,
               "comebacks": 1,
-              "rate": 0.02857142857142857
+              "rate": 0.02702702702702703
+            }
+          ],
+          "removed": {
+            "team": "Nova Esports",
+            "matches": 18,
+            "maps": 42,
+            "lead_maps": 38,
+            "comebacks": 3,
+            "rate": 0.07894736842105263
+          },
+          "tie_with": null
+        },
+        {
+          "step": 5,
+          "matches": 62,
+          "lead_maps": 113,
+          "comebacks": 8,
+          "rate": 0.07079646017699115,
+          "table": [
+            {
+              "team": "Trace Esports",
+              "matches": 11,
+              "maps": 19,
+              "lead_maps": 14,
+              "comebacks": 2,
+              "rate": 0.14285714285714285
+            },
+            {
+              "team": "Wolves Esports",
+              "matches": 12,
+              "maps": 26,
+              "lead_maps": 21,
+              "comebacks": 2,
+              "rate": 0.09523809523809523
+            },
+            {
+              "team": "FunPlus Phoenix",
+              "matches": 14,
+              "maps": 30,
+              "lead_maps": 25,
+              "comebacks": 2,
+              "rate": 0.08
+            },
+            {
+              "team": "Xi Lai Gaming",
+              "matches": 17,
+              "maps": 39,
+              "lead_maps": 32,
+              "comebacks": 2,
+              "rate": 0.0625
             },
             {
               "team": "Dragon Ranger Gaming",
               "matches": 14,
               "maps": 35,
-              "lead_maps": 27,
+              "lead_maps": 28,
+              "comebacks": 1,
+              "rate": 0.03571428571428571
+            },
+            {
+              "team": "TYLOO",
+              "matches": 8,
+              "maps": 17,
+              "lead_maps": 12,
+              "comebacks": 0,
+              "rate": 0
+            },
+            {
+              "team": "Titan Esports Club",
+              "matches": 17,
+              "maps": 39,
+              "lead_maps": 30,
               "comebacks": 0,
               "rate": 0
             }
@@ -1732,13 +1733,13 @@
       ],
       "baseline": {
         "runs": 5000,
-        "mean": 0.09456211806120056,
-        "p05": 0.07518796992481203,
-        "p95": 0.11382113821138211,
-        "p_value": 0.0006
+        "mean": 0.09608256742712576,
+        "p05": 0.0763888888888889,
+        "p95": 0.11475409836065574,
+        "p_value": 0.01
       },
       "previous": {
-        "crawled_at": "2026-10-29T04:55:38.029Z",
+        "crawled_at": "2026-10-29T06:34:34.487Z",
         "top5": [
           "EDward Gaming",
           "All Gamers",
@@ -1748,8 +1749,12 @@
         ],
         "start_rate": 0.08852459016393442,
         "final_rate": 0.06451612903225806,
-        "added": [],
-        "dropped": []
+        "added": [
+          "Nova Esports"
+        ],
+        "dropped": [
+          "Trace Esports"
+        ]
       }
     },
     {
@@ -1757,10 +1762,10 @@
       "steps": [
         {
           "step": 0,
-          "matches": 127,
-          "lead_maps": 279,
+          "matches": 125,
+          "lead_maps": 276,
           "comebacks": 19,
-          "rate": 0.06810035842293907,
+          "rate": 0.06884057971014493,
           "table": [
             {
               "team": "T1",
@@ -1788,11 +1793,11 @@
             },
             {
               "team": "Paper Rex",
-              "matches": 24,
-              "maps": 65,
-              "lead_maps": 58,
+              "matches": 23,
+              "maps": 63,
+              "lead_maps": 56,
               "comebacks": 3,
-              "rate": 0.05172413793103448
+              "rate": 0.05357142857142857
             },
             {
               "team": "VARREL",
@@ -1803,20 +1808,20 @@
               "rate": 0.1
             },
             {
-              "team": "Rex Regum Qeon",
-              "matches": 15,
-              "maps": 41,
-              "lead_maps": 35,
+              "team": "KIWOOM DRX",
+              "matches": 16,
+              "maps": 40,
+              "lead_maps": 34,
               "comebacks": 2,
-              "rate": 0.05714285714285714
+              "rate": 0.058823529411764705
             },
             {
-              "team": "KIWOOM DRX",
-              "matches": 17,
-              "maps": 42,
-              "lead_maps": 36,
+              "team": "Rex Regum Qeon",
+              "matches": 14,
+              "maps": 38,
+              "lead_maps": 34,
               "comebacks": 2,
-              "rate": 0.05555555555555555
+              "rate": 0.058823529411764705
             },
             {
               "team": "ZETA DIVISION",
@@ -1828,11 +1833,11 @@
             },
             {
               "team": "DetonatioN FocusMe",
-              "matches": 13,
-              "maps": 34,
-              "lead_maps": 27,
+              "matches": 12,
+              "maps": 31,
+              "lead_maps": 26,
               "comebacks": 1,
-              "rate": 0.037037037037037035
+              "rate": 0.038461538461538464
             },
             {
               "team": "Gen.G",
@@ -1871,10 +1876,10 @@
         },
         {
           "step": 1,
-          "matches": 103,
-          "lead_maps": 224,
+          "matches": 101,
+          "lead_maps": 221,
           "comebacks": 13,
-          "rate": 0.05803571428571429,
+          "rate": 0.058823529411764705,
           "table": [
             {
               "team": "Nongshim RedForce",
@@ -1894,19 +1899,19 @@
             },
             {
               "team": "KIWOOM DRX",
-              "matches": 15,
-              "maps": 38,
-              "lead_maps": 32,
+              "matches": 14,
+              "maps": 36,
+              "lead_maps": 30,
               "comebacks": 2,
-              "rate": 0.0625
+              "rate": 0.06666666666666667
             },
             {
               "team": "Rex Regum Qeon",
-              "matches": 14,
-              "maps": 38,
-              "lead_maps": 32,
+              "matches": 13,
+              "maps": 35,
+              "lead_maps": 31,
               "comebacks": 2,
-              "rate": 0.0625
+              "rate": 0.06451612903225806
             },
             {
               "team": "VARREL",
@@ -1926,11 +1931,11 @@
             },
             {
               "team": "DetonatioN FocusMe",
-              "matches": 10,
-              "maps": 26,
-              "lead_maps": 19,
+              "matches": 9,
+              "maps": 23,
+              "lead_maps": 18,
               "comebacks": 1,
-              "rate": 0.05263157894736842
+              "rate": 0.05555555555555555
             },
             {
               "team": "Gen.G",
@@ -1950,11 +1955,11 @@
             },
             {
               "team": "Paper Rex",
-              "matches": 21,
-              "maps": 56,
-              "lead_maps": 49,
+              "matches": 20,
+              "maps": 54,
+              "lead_maps": 47,
               "comebacks": 1,
-              "rate": 0.02040816326530612
+              "rate": 0.02127659574468085
             },
             {
               "team": "Team Secret",
@@ -1977,26 +1982,26 @@
         },
         {
           "step": 2,
-          "matches": 78,
-          "lead_maps": 164,
+          "matches": 76,
+          "lead_maps": 161,
           "comebacks": 8,
-          "rate": 0.04878048780487805,
+          "rate": 0.049689440993788817,
           "table": [
             {
               "team": "KIWOOM DRX",
-              "matches": 13,
-              "maps": 33,
-              "lead_maps": 27,
+              "matches": 12,
+              "maps": 31,
+              "lead_maps": 25,
               "comebacks": 2,
-              "rate": 0.07407407407407407
+              "rate": 0.08
             },
             {
               "team": "Rex Regum Qeon",
-              "matches": 13,
-              "maps": 35,
-              "lead_maps": 29,
+              "matches": 12,
+              "maps": 32,
+              "lead_maps": 28,
               "comebacks": 2,
-              "rate": 0.06896551724137931
+              "rate": 0.07142857142857142
             },
             {
               "team": "Global Esports",
@@ -2024,11 +2029,11 @@
             },
             {
               "team": "DetonatioN FocusMe",
-              "matches": 10,
-              "maps": 26,
-              "lead_maps": 19,
+              "matches": 9,
+              "maps": 23,
+              "lead_maps": 18,
               "comebacks": 1,
-              "rate": 0.05263157894736842
+              "rate": 0.05555555555555555
             },
             {
               "team": "Gen.G",
@@ -2048,11 +2053,11 @@
             },
             {
               "team": "Paper Rex",
-              "matches": 20,
-              "maps": 54,
-              "lead_maps": 47,
+              "matches": 19,
+              "maps": 52,
+              "lead_maps": 45,
               "comebacks": 1,
-              "rate": 0.02127659574468085
+              "rate": 0.022222222222222223
             },
             {
               "team": "Team Secret",
@@ -2065,28 +2070,28 @@
           ],
           "removed": {
             "team": "KIWOOM DRX",
-            "matches": 13,
-            "maps": 33,
-            "lead_maps": 27,
+            "matches": 12,
+            "maps": 31,
+            "lead_maps": 25,
             "comebacks": 2,
-            "rate": 0.07407407407407407
+            "rate": 0.08
           },
           "tie_with": null
         },
         {
           "step": 3,
-          "matches": 65,
-          "lead_maps": 137,
+          "matches": 64,
+          "lead_maps": 136,
           "comebacks": 6,
-          "rate": 0.043795620437956206,
+          "rate": 0.04411764705882353,
           "table": [
             {
               "team": "Rex Regum Qeon",
-              "matches": 12,
-              "maps": 33,
-              "lead_maps": 27,
+              "matches": 11,
+              "maps": 30,
+              "lead_maps": 26,
               "comebacks": 2,
-              "rate": 0.07407407407407407
+              "rate": 0.07692307692307693
             },
             {
               "team": "VARREL",
@@ -2106,11 +2111,11 @@
             },
             {
               "team": "DetonatioN FocusMe",
-              "matches": 9,
-              "maps": 23,
-              "lead_maps": 17,
+              "matches": 8,
+              "maps": 20,
+              "lead_maps": 16,
               "comebacks": 1,
-              "rate": 0.058823529411764705
+              "rate": 0.0625
             },
             {
               "team": "Gen.G",
@@ -2155,11 +2160,11 @@
           ],
           "removed": {
             "team": "Rex Regum Qeon",
-            "matches": 12,
-            "maps": 33,
-            "lead_maps": 27,
+            "matches": 11,
+            "maps": 30,
+            "lead_maps": 26,
             "comebacks": 2,
-            "rate": 0.07407407407407407
+            "rate": 0.07692307692307693
           },
           "tie_with": null
         },
@@ -2316,13 +2321,13 @@
       ],
       "baseline": {
         "runs": 5000,
-        "mean": 0.07275999686154233,
+        "mean": 0.0729681093241237,
         "p05": 0.04807692307692308,
-        "p95": 0.09554140127388536,
-        "p_value": 0.0016
+        "p95": 0.09523809523809523,
+        "p_value": 0.0022
       },
       "previous": {
-        "crawled_at": "2026-10-29T04:55:38.029Z",
+        "crawled_at": "2026-10-29T06:34:34.487Z",
         "top5": [
           "T1",
           "Nongshim RedForce",
@@ -2337,7 +2342,7 @@
       }
     }
   ],
-  "since": "2026-05-02T06:26:28.749Z",
-  "until": "2026-10-29T06:34:34.487Z",
-  "crawled_at": "2026-10-29T06:34:34.487Z"
+  "since": "2026-05-06T07:46:47.465Z",
+  "until": "2026-11-02T08:03:13.452Z",
+  "crawled_at": "2026-11-02T08:03:13.452Z"
 }
