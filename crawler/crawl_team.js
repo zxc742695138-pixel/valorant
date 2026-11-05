@@ -81,6 +81,9 @@ async function getMatch(page, url) {
   return page.evaluate(() => {
     const clean = s => (s || '').replace(/\s+/g, ' ').trim();
     const teams = [...document.querySelectorAll('.match-header-link-name .wf-title-med')].map(e => clean(e.innerText));
+    // vlr.gg team ids stay the same when a team is renamed (e.g. VISA KRÜ → KRÜ Esports).
+    const teamIds = [...document.querySelectorAll('a.match-header-link')]
+      .map(a => ((a.getAttribute('href') || '').match(/\/team\/(\d+)/) || [])[1] || null);
     // Header text looks like "FINAL 2 : 1 BO3".
     const scoreMatch = clean(document.querySelector('.match-header-vs-score')?.innerText).match(/(\d+)\s*:\s*(\d+)/);
     const matchScore = scoreMatch ? scoreMatch[0] : null;
@@ -111,6 +114,8 @@ async function getMatch(page, url) {
       stage: clean(document.querySelector('.match-header-event-series')?.innerText),
       team1: teams[0],
       team2: teams[1],
+      team1_id: teamIds[0] || null,
+      team2_id: teamIds[1] || null,
       match_result: matchScore ? `${s1}-${s2}` : null,
       winner: isNaN(s1) || s1 === s2 ? null : (s1 > s2 ? teams[0] : teams[1]),
       map_result: maps,

@@ -27,7 +27,8 @@ if (marks.length < 2) {
 }
 
 const minusDays = (day, n) => new Date(Date.parse(day) - n * 864e5).toISOString().slice(0, 10);
-const regions = Object.fromEntries(active.map(r => [r, loadRegion(r, dataDir)]));
+const teamsDir = opt('--teams-dir', 'crawler/teams');
+const regions = Object.fromEntries(active.map(r => [r, loadRegion(r, dataDir, { teamsDir })]));
 
 // Every bet once (a match can sit in two regions), with the blacklists of its period.
 const bets = new Map();

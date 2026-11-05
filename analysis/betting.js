@@ -13,20 +13,29 @@ const REGIONS = ['americas', 'emea', 'china', 'pacific'];
 // "MIBR.LOS (MIBR)" → "MIBR"
 const normalize = name => (name.match(/\(([^)]+)\)$/) || [null, name])[1].trim();
 
-const teamList = region => JSON.parse(fs.readFileSync(`crawler/teams/${region}.json`, 'utf8'));
-// The partner (franchise) teams of all regions.
-const PARTNERS = new Set(REGIONS.flatMap(r => teamList(r).map(t => t.name)));
+const DEFAULT_TEAMS_DIR = 'crawler/teams';
+const teamList = (region, teamsDir = DEFAULT_TEAMS_DIR) => JSON.parse(fs.readFileSync(path.join(teamsDir, `${region}.json`), 'utf8'));
 
-// A region's team names and its matches (de-duplicated by URL), with t1/t2 normalized.
-// Only matches between two partner teams are kept unless `allOpponents` is set.
-// `opponents` lists every team that appears in the kept matches.
-function loadRegion(region, dataDir, { allOpponents = false } = {}) {
-  const teams = teamList(region);
+// The partner (franchise) teams of all regions, by name, and their names by vlr.gg id.
+function partnerIndex(teamsDir = DEFAULT_TEAMS_DIR) {
+  const all = REGIONS.flatMap(r => teamList(r, teamsDir));
+  return { names: new Set(all.map(t => t.name)), byId: new Map(all.map(t => [t.id, t.name])) };
+}
+const PARTNERS = partnerIndex().names;
+
+// A region's team names and its matches (de-duplicated by URL), with t1/t2 set to the
+// team's name in the lists when the match records team ids (renames resolved), or the
+// normalized name otherwise. Only matches between two partner teams are kept unless
+// `allOpponents` is set. `opponents` lists every team that appears in the kept matches.
+function loadRegion(region, dataDir, { allOpponents = false, teamsDir = DEFAULT_TEAMS_DIR } = {}) {
+  const teams = teamList(region, teamsDir);
+  const partners = partnerIndex(teamsDir);
+  const name = (id, raw) => partners.byId.get(id) || normalize(raw);
   const byUrl = new Map();
   for (const t of teams) {
     for (const m of JSON.parse(fs.readFileSync(path.join(dataDir, `${t.slug}.json`), 'utf8')).matches) {
-      const row = { ...m, day: m.date.slice(0, 10), t1: normalize(m.team1), t2: normalize(m.team2) };
-      if (allOpponents || (PARTNERS.has(row.t1) && PARTNERS.has(row.t2))) byUrl.set(m.url, row);
+      const row = { ...m, day: m.date.slice(0, 10), t1: name(m.team1_id, m.team1), t2: name(m.team2_id, m.team2) };
+      if (allOpponents || (partners.names.has(row.t1) && partners.names.has(row.t2))) byUrl.set(m.url, row);
     }
   }
   const matches = [...byUrl.values()];

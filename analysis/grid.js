@@ -32,7 +32,8 @@ const minusDays = (day, n) => new Date(Date.parse(day) - n * 864e5).toISOString(
 const dayNum = d => Date.parse(d) / 864e5;
 
 // ---- Load: every match once, its lead maps with outcome ids ----
-const regionData = Object.fromEntries(REGIONS.map(r => [r, loadRegion(r, dataDir)]));
+const teamsDir = opt('--teams-dir', 'crawler/teams');
+const regionData = Object.fromEntries(REGIONS.map(r => [r, loadRegion(r, dataDir, { teamsDir })]));
 const matchByUrl = new Map();
 const outcomes = []; // per lead map: { blown, lost } (ranking uses blown, bets use lost)
 for (const r of REGIONS) {

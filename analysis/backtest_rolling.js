@@ -37,7 +37,9 @@ const ddmm = d => `${d.slice(8, 10)}/${d.slice(5, 7)}`;
 const pct = (n, d) => (d ? `${((100 * n) / d).toFixed(1)}%` : '—');
 // --regions americas,china: only bet on (and blacklist for) these regions.
 const ACTIVE = opt('--regions') ? opt('--regions').split(',') : REGIONS;
-const regions = Object.fromEntries(ACTIVE.map(r => [r, loadRegion(r, dataDir, { allOpponents })]));
+// --teams-dir: team lists to use (e.g. crawler/teams/backtest = 2025 + 2026 partners).
+const teamsDir = opt('--teams-dir', 'crawler/teams');
+const regions = Object.fromEntries(ACTIVE.map(r => [r, loadRegion(r, dataDir, { allOpponents, teamsDir })]));
 const earliest = Object.values(regions).flatMap(r => r.matches.map(m => m.day)).sort()[0];
 
 const rows = [];
