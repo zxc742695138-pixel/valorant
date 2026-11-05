@@ -10,6 +10,8 @@
 //   leader_blown    share of the leader's past qualifying leads that were reversed
 //   trailer_cb      share of the trailer's past qualifying deficits it reversed
 //   strength_gap    trailer's past map win rate − leader's
+//   involvement     both teams' past share of qualifying maps that ended in a comeback
+//                   (either direction), summed
 //   lead_size       rounds of lead at that moment (smaller = riskier)
 //   round_no        total rounds played at that moment (earlier = riskier)
 //
@@ -72,6 +74,7 @@ while (i < matches.length) {
           leader_blown: shrink(L.blown, L.lead),
           trailer_cb: shrink(T.cb, T.trail),
           strength_gap: shrink(T.wins, T.maps, 0.5) - shrink(L.wins, L.maps, 0.5),
+          involvement: shrink(L.blown + L.cb, L.lead + L.trail) + shrink(T.blown + T.cb, T.lead + T.trail),
           lead_size: -f.size,
           round_no: -f.roundNo,
           leaderHist: L.lead, trailerHist: T.trail,
@@ -115,6 +118,7 @@ const FEATURES = {
   leader_blown: 'Tỉ lệ bị lật của đội đang dẫn (lịch sử)',
   trailer_cb: 'Tỉ lệ lật được của đội bị dẫn (lịch sử)',
   strength_gap: 'Chênh lệch sức mạnh (đội bị dẫn − đội dẫn)',
+  involvement: 'Mức độ dính lật kèo của cả hai đội (bị lật + lật được)',
   lead_size: 'Dẫn ít round hơn',
   round_no: 'Thời điểm sớm hơn (round nhỏ hơn)',
 };
