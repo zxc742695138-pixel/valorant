@@ -307,6 +307,7 @@ const notes = [
   'Thuật toán chọn đội trên chính dữ liệu đang đo, nên tỉ lệ sau khi loại chắc chắn giảm. Phép so với loại ngẫu nhiên cho biết mức giảm này lớn đến đâu.',
   'Kết quả mô tả giai đoạn đã qua. Muốn dùng để dự đoán, nên chạy thuật toán trên một giai đoạn và kiểm tra trên giai đoạn sau.',
   'Mỗi khu vực được xử lý độc lập: chỉ bỏ các đội đã bị loại khỏi chính khu vực đó. Trận quốc tế (Masters, EWC, Champions) được tính cho các đội tham gia.',
+  ...(DATA.partners_only ? ['Chỉ tính trận giữa hai đội nhượng quyền tier 1 (48 đội của 4 khu vực). Trận gặp đội Challengers hoặc đội ngoài danh sách không được tính.'] : []),
   'Số trận mỗi đội khác nhau tùy đội đi sâu đến đâu ở các giải.',
 ];
 if (DATA.regions.some(r => r.steps.some(s => s.tie_with))) {
