@@ -20,6 +20,9 @@ const windowDays = Number(opt('--window', 300));
 // --last-matches M: judge each team on its own M most recent matches before the day
 // (any age) instead of every match in the last --window days.
 const lastMatches = opt('--last-matches') ? Number(opt('--last-matches')) : null;
+// --season: groups use every match since the start of the current season (1 January
+// of the day's year) instead of the last --window days; the season start resets them.
+const seasonMode = argv.includes('--season');
 const odds = Number(opt('--odds', 1.1));
 const NET = Number(opt('--net', 2));
 const VOLATILE = Number(opt('--volatile', 6));
@@ -102,7 +105,7 @@ const groupAt = day => {
     return cache.get(day);
   }
   if (!cache.has(day)) {
-    const start = new Date(Date.parse(day) - windowDays * 864e5).toISOString().slice(0, 10);
+    const start = seasonMode ? `${day.slice(0, 4)}-01-01` : new Date(Date.parse(day) - windowDays * 864e5).toISOString().slice(0, 10);
     cache.set(day, groupsFrom(events.filter(e => e.day >= start && e.day < day)));
   }
   return cache.get(day);
@@ -143,7 +146,7 @@ const fmt = (k, a, all) => ({
   'giữ lại': `${(100 * a.n / all).toFixed(0)}%`,
 });
 const all = acc['Cược tất cả'].n;
-console.log(`Kèo ${from} → ${to}; nhóm ${fixed ? 'tính một lần trên chính giai đoạn này (nhìn lại)' : (lastMatches ? `tính lại mỗi ngày từ ${lastMatches} trận gần nhất của từng đội` : `tính lại mỗi ngày từ ${windowDays} ngày trước đó`)}; tỉ lệ ăn ${odds}\n`);
+console.log(`Kèo ${from} → ${to}; nhóm ${fixed ? 'tính một lần trên chính giai đoạn này (nhìn lại)' : (lastMatches ? `tính lại mỗi ngày từ ${lastMatches} trận gần nhất của từng đội` : seasonMode ? 'tính lại mỗi ngày từ đầu mùa giải' : `tính lại mỗi ngày từ ${windowDays} ngày trước đó`)}; tỉ lệ ăn ${odds}\n`);
 console.table(Object.entries(acc).map(([k, a]) => fmt(k, a, all)));
 console.log('Theo cặp nhóm của hai đội:');
 console.table(Object.entries(pairCount).sort((a, b) => b[1].n - a[1].n).map(([k, a]) => fmt(k, a, all)));
