@@ -1,2319 +1,441 @@
 {
+  "kind": "groups",
+  "crawled_at": "2026-11-05T11:32:14.898Z",
+  "from": "2026-08-07",
+  "to": "2026-11-05",
+  "last_match": "2026-10-25",
+  "window_days": 90,
+  "net": 1,
+  "volatile": 3,
+  "min_maps": 0,
   "min_total": 17,
   "min_diff": 3,
-  "steps": 5,
-  "partners_only": true,
-  "half_life": 90,
+  "notes": [
+    "43 map của Esports World Cup 2026: China Qualifier (12/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính."
+  ],
   "regions": [
     {
       "region": "pacific",
-      "steps": [
+      "teams": [
         {
-          "step": 0,
-          "matches": 114,
-          "lead_maps": 252,
-          "comebacks": 16,
-          "rate": 0.06349206349206349,
-          "table": [
-            {
-              "team": "T1",
-              "matches": 24,
-              "maps": 58,
-              "lead_maps": 55,
-              "comebacks": 6,
-              "rate": 0.10909090909090909,
-              "weighted_comebacks": 3.615,
-              "rank_cb": 3.6146681826203535,
-              "rank_rate": 0.12211013827305195
-            },
-            {
-              "team": "Nongshim RedForce",
-              "matches": 27,
-              "maps": 78,
-              "lead_maps": 64,
-              "comebacks": 6,
-              "rate": 0.09375,
-              "weighted_comebacks": 2.451,
-              "rank_cb": 2.451172060119595,
-              "rank_rate": 0.07766287578526321
-            },
-            {
-              "team": "Paper Rex",
-              "matches": 22,
-              "maps": 61,
-              "lead_maps": 54,
-              "comebacks": 3,
-              "rate": 0.05555555555555555,
-              "weighted_comebacks": 1.621,
-              "rank_cb": 1.6207193616860942,
-              "rank_rate": 0.06593886380113596
-            },
-            {
-              "team": "Global Esports",
-              "matches": 24,
-              "maps": 66,
-              "lead_maps": 54,
-              "comebacks": 4,
-              "rate": 0.07407407407407407,
-              "weighted_comebacks": 1.605,
-              "rank_cb": 1.6053079836498687,
-              "rank_rate": 0.06306845885100038
-            },
-            {
-              "team": "VARREL",
-              "matches": 11,
-              "maps": 27,
-              "lead_maps": 20,
-              "comebacks": 2,
-              "rate": 0.1,
-              "weighted_comebacks": 0.716,
-              "rank_cb": 0.7156760507870692,
-              "rank_rate": 0.07458733033433633
-            },
-            {
-              "team": "KIWOOM DRX",
-              "matches": 14,
-              "maps": 35,
-              "lead_maps": 30,
-              "comebacks": 1,
-              "rate": 0.03333333333333333,
-              "weighted_comebacks": 0.592,
-              "rank_cb": 0.5923182505897684,
-              "rank_rate": 0.04807019817304546
-            },
-            {
-              "team": "Rex Regum Qeon",
-              "matches": 13,
-              "maps": 35,
-              "lead_maps": 32,
-              "comebacks": 1,
-              "rate": 0.03125,
-              "weighted_comebacks": 0.439,
-              "rank_cb": 0.4386405555615829,
-              "rank_rate": 0.03541356633272449
-            },
-            {
-              "team": "FULL SENSE",
-              "matches": 15,
-              "maps": 39,
-              "lead_maps": 32,
-              "comebacks": 1,
-              "rate": 0.03125,
-              "weighted_comebacks": 0.283,
-              "rank_cb": 0.28278505420927325,
-              "rank_rate": 0.02284960378229497
-            },
-            {
-              "team": "Gen.G",
-              "matches": 15,
-              "maps": 42,
-              "lead_maps": 35,
-              "comebacks": 1,
-              "rate": 0.02857142857142857,
-              "weighted_comebacks": 0.283,
-              "rank_cb": 0.28278505420927325,
-              "rank_rate": 0.021647988744134983
-            },
-            {
-              "team": "ZETA DIVISION",
-              "matches": 9,
-              "maps": 21,
-              "lead_maps": 15,
-              "comebacks": 1,
-              "rate": 0.06666666666666667,
-              "weighted_comebacks": 0.26,
-              "rank_cb": 0.25981480650796085,
-              "rank_rate": 0.038411940144819
-            },
-            {
-              "team": "DetonatioN FocusMe",
-              "matches": 10,
-              "maps": 25,
-              "lead_maps": 20,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "Team Secret",
-              "matches": 9,
-              "maps": 21,
-              "lead_maps": 18,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": {
-            "team": "T1",
-            "matches": 24,
-            "maps": 58,
-            "lead_maps": 55,
-            "comebacks": 6,
-            "rate": 0.10909090909090909,
-            "weighted_comebacks": 3.615,
-            "rank_cb": 3.6146681826203535,
-            "rank_rate": 0.12211013827305195
-          },
-          "tie_with": null
+          "team": "T1",
+          "group": "Mạnh",
+          "maps": 33,
+          "wins": 20,
+          "lead": 16,
+          "blown": 1,
+          "trail": 13,
+          "made": 2
         },
         {
-          "step": 1,
-          "matches": 90,
-          "lead_maps": 197,
-          "comebacks": 10,
-          "rate": 0.050761421319796954,
-          "table": [
-            {
-              "team": "Nongshim RedForce",
-              "matches": 25,
-              "maps": 74,
-              "lead_maps": 60,
-              "comebacks": 5,
-              "rate": 0.08333333333333333,
-              "weighted_comebacks": 2.168,
-              "rank_cb": 2.168387005910322,
-              "rank_rate": 0.0726275978104015
-            },
-            {
-              "team": "Global Esports",
-              "matches": 23,
-              "maps": 62,
-              "lead_maps": 50,
-              "comebacks": 4,
-              "rate": 0.08,
-              "weighted_comebacks": 1.605,
-              "rank_cb": 1.6053079836498687,
-              "rank_rate": 0.07011773663876776
-            },
-            {
-              "team": "KIWOOM DRX",
-              "matches": 12,
-              "maps": 31,
-              "lead_maps": 26,
-              "comebacks": 1,
-              "rate": 0.038461538461538464,
-              "weighted_comebacks": 0.592,
-              "rank_cb": 0.5923182505897684,
-              "rank_rate": 0.05871727284622657
-            },
-            {
-              "team": "Rex Regum Qeon",
-              "matches": 12,
-              "maps": 32,
-              "lead_maps": 29,
-              "comebacks": 1,
-              "rate": 0.034482758620689655,
-              "weighted_comebacks": 0.439,
-              "rank_cb": 0.4386405555615829,
-              "rank_rate": 0.03777227555654938
-            },
-            {
-              "team": "Paper Rex",
-              "matches": 19,
-              "maps": 52,
-              "lead_maps": 45,
-              "comebacks": 1,
-              "rate": 0.022222222222222223,
-              "weighted_comebacks": 0.351,
-              "rank_cb": 0.3508409099817236,
-              "rank_rate": 0.01757222025040579
-            },
-            {
-              "team": "FULL SENSE",
-              "matches": 13,
-              "maps": 35,
-              "lead_maps": 29,
-              "comebacks": 1,
-              "rate": 0.034482758620689655,
-              "weighted_comebacks": 0.283,
-              "rank_cb": 0.28278505420927325,
-              "rank_rate": 0.02498155389403066
-            },
-            {
-              "team": "Gen.G",
-              "matches": 13,
-              "maps": 38,
-              "lead_maps": 32,
-              "comebacks": 1,
-              "rate": 0.03125,
-              "weighted_comebacks": 0.283,
-              "rank_cb": 0.28278505420927325,
-              "rank_rate": 0.023853243778255297
-            },
-            {
-              "team": "ZETA DIVISION",
-              "matches": 9,
-              "maps": 21,
-              "lead_maps": 15,
-              "comebacks": 1,
-              "rate": 0.06666666666666667,
-              "weighted_comebacks": 0.26,
-              "rank_cb": 0.25981480650796085,
-              "rank_rate": 0.038411940144819
-            },
-            {
-              "team": "VARREL",
-              "matches": 9,
-              "maps": 23,
-              "lead_maps": 16,
-              "comebacks": 1,
-              "rate": 0.0625,
-              "weighted_comebacks": 0.26,
-              "rank_cb": 0.25981480650796085,
-              "rank_rate": 0.03504495435747609
-            },
-            {
-              "team": "DetonatioN FocusMe",
-              "matches": 7,
-              "maps": 17,
-              "lead_maps": 12,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "Team Secret",
-              "matches": 8,
-              "maps": 19,
-              "lead_maps": 16,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": {
-            "team": "Nongshim RedForce",
-            "matches": 25,
-            "maps": 74,
-            "lead_maps": 60,
-            "comebacks": 5,
-            "rate": 0.08333333333333333,
-            "weighted_comebacks": 2.168,
-            "rank_cb": 2.168387005910322,
-            "rank_rate": 0.0726275978104015
-          },
-          "tie_with": null
+          "team": "Global Esports",
+          "group": "Mạnh",
+          "maps": 26,
+          "wins": 16,
+          "lead": 14,
+          "blown": 0,
+          "trail": 8,
+          "made": 1
         },
         {
-          "step": 2,
-          "matches": 65,
-          "lead_maps": 137,
-          "comebacks": 5,
-          "rate": 0.0364963503649635,
-          "table": [
-            {
-              "team": "Global Esports",
-              "matches": 19,
-              "maps": 46,
-              "lead_maps": 38,
-              "comebacks": 2,
-              "rate": 0.05263157894736842,
-              "weighted_comebacks": 1.031,
-              "rank_cb": 1.0309588061513513,
-              "rank_rate": 0.0601028755641992
-            },
-            {
-              "team": "KIWOOM DRX",
-              "matches": 10,
-              "maps": 26,
-              "lead_maps": 21,
-              "comebacks": 1,
-              "rate": 0.047619047619047616,
-              "weighted_comebacks": 0.592,
-              "rank_cb": 0.5923182505897684,
-              "rank_rate": 0.06793739613796518
-            },
-            {
-              "team": "Rex Regum Qeon",
-              "matches": 11,
-              "maps": 29,
-              "lead_maps": 26,
-              "comebacks": 1,
-              "rate": 0.038461538461538464,
-              "weighted_comebacks": 0.439,
-              "rank_cb": 0.4386405555615829,
-              "rank_rate": 0.04362899971615129
-            },
-            {
-              "team": "Paper Rex",
-              "matches": 18,
-              "maps": 50,
-              "lead_maps": 43,
-              "comebacks": 1,
-              "rate": 0.023255813953488372,
-              "weighted_comebacks": 0.351,
-              "rank_cb": 0.3508409099817236,
-              "rank_rate": 0.01868061019601171
-            },
-            {
-              "team": "Gen.G",
-              "matches": 10,
-              "maps": 28,
-              "lead_maps": 22,
-              "comebacks": 1,
-              "rate": 0.045454545454545456,
-              "weighted_comebacks": 0.283,
-              "rank_cb": 0.28278505420927325,
-              "rank_rate": 0.03757397338394472
-            },
-            {
-              "team": "FULL SENSE",
-              "matches": 12,
-              "maps": 32,
-              "lead_maps": 28,
-              "comebacks": 1,
-              "rate": 0.03571428571428571,
-              "weighted_comebacks": 0.283,
-              "rank_cb": 0.28278505420927325,
-              "rank_rate": 0.025980577623604752
-            },
-            {
-              "team": "ZETA DIVISION",
-              "matches": 8,
-              "maps": 18,
-              "lead_maps": 14,
-              "comebacks": 1,
-              "rate": 0.07142857142857142,
-              "weighted_comebacks": 0.26,
-              "rank_cb": 0.25981480650796085,
-              "rank_rate": 0.041427526718966975
-            },
-            {
-              "team": "VARREL",
-              "matches": 9,
-              "maps": 23,
-              "lead_maps": 16,
-              "comebacks": 1,
-              "rate": 0.0625,
-              "weighted_comebacks": 0.26,
-              "rank_cb": 0.25981480650796085,
-              "rank_rate": 0.03504495435747609
-            },
-            {
-              "team": "DetonatioN FocusMe",
-              "matches": 7,
-              "maps": 17,
-              "lead_maps": 12,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "Team Secret",
-              "matches": 7,
-              "maps": 17,
-              "lead_maps": 14,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": {
-            "team": "Global Esports",
-            "matches": 19,
-            "maps": 46,
-            "lead_maps": 38,
-            "comebacks": 2,
-            "rate": 0.05263157894736842,
-            "weighted_comebacks": 1.031,
-            "rank_cb": 1.0309588061513513,
-            "rank_rate": 0.0601028755641992
-          },
-          "tie_with": null
+          "team": "Nongshim RedForce",
+          "group": "Mạnh",
+          "maps": 33,
+          "wins": 19,
+          "lead": 14,
+          "blown": 0,
+          "trail": 12,
+          "made": 1
         },
         {
-          "step": 3,
-          "matches": 46,
-          "lead_maps": 99,
-          "comebacks": 3,
-          "rate": 0.030303030303030304,
-          "table": [
-            {
-              "team": "Paper Rex",
-              "matches": 16,
-              "maps": 44,
-              "lead_maps": 37,
-              "comebacks": 1,
-              "rate": 0.02702702702702703,
-              "weighted_comebacks": 0.351,
-              "rank_cb": 0.3508409099817236,
-              "rank_rate": 0.020386665055172188
-            },
-            {
-              "team": "Gen.G",
-              "matches": 9,
-              "maps": 25,
-              "lead_maps": 21,
-              "comebacks": 1,
-              "rate": 0.047619047619047616,
-              "weighted_comebacks": 0.283,
-              "rank_cb": 0.28278505420927325,
-              "rank_rate": 0.04016116036227999
-            },
-            {
-              "team": "FULL SENSE",
-              "matches": 9,
-              "maps": 25,
-              "lead_maps": 23,
-              "comebacks": 1,
-              "rate": 0.043478260869565216,
-              "weighted_comebacks": 0.283,
-              "rank_cb": 0.28278505420927325,
-              "rank_rate": 0.030783780899568593
-            },
-            {
-              "team": "ZETA DIVISION",
-              "matches": 7,
-              "maps": 16,
-              "lead_maps": 12,
-              "comebacks": 1,
-              "rate": 0.08333333333333333,
-              "weighted_comebacks": 0.26,
-              "rank_cb": 0.25981480650796085,
-              "rank_rate": 0.04958047984168802
-            },
-            {
-              "team": "VARREL",
-              "matches": 8,
-              "maps": 21,
-              "lead_maps": 14,
-              "comebacks": 1,
-              "rate": 0.07142857142857142,
-              "weighted_comebacks": 0.26,
-              "rank_cb": 0.25981480650796085,
-              "rank_rate": 0.04177112093996152
-            },
-            {
-              "team": "KIWOOM DRX",
-              "matches": 9,
-              "maps": 23,
-              "lead_maps": 18,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "DetonatioN FocusMe",
-              "matches": 6,
-              "maps": 15,
-              "lead_maps": 10,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "Rex Regum Qeon",
-              "matches": 9,
-              "maps": 25,
-              "lead_maps": 22,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "Team Secret",
-              "matches": 7,
-              "maps": 17,
-              "lead_maps": 14,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": {
-            "team": "Paper Rex",
-            "matches": 16,
-            "maps": 44,
-            "lead_maps": 37,
-            "comebacks": 1,
-            "rate": 0.02702702702702703,
-            "weighted_comebacks": 0.351,
-            "rank_cb": 0.3508409099817236,
-            "rank_rate": 0.020386665055172188
-          },
-          "tie_with": null
+          "team": "Gen.G",
+          "group": "Trung bình",
+          "maps": 8,
+          "wins": 3,
+          "lead": 3,
+          "blown": 0,
+          "trail": 4,
+          "made": 0
         },
         {
-          "step": 4,
-          "matches": 30,
-          "lead_maps": 62,
-          "comebacks": 2,
-          "rate": 0.03225806451612903,
-          "table": [
-            {
-              "team": "Gen.G",
-              "matches": 9,
-              "maps": 25,
-              "lead_maps": 21,
-              "comebacks": 1,
-              "rate": 0.047619047619047616,
-              "weighted_comebacks": 0.283,
-              "rank_cb": 0.28278505420927325,
-              "rank_rate": 0.04016116036227999
-            },
-            {
-              "team": "FULL SENSE",
-              "matches": 8,
-              "maps": 22,
-              "lead_maps": 20,
-              "comebacks": 1,
-              "rate": 0.05,
-              "weighted_comebacks": 0.283,
-              "rank_cb": 0.28278505420927325,
-              "rank_rate": 0.03378610409220142
-            },
-            {
-              "team": "VARREL",
-              "matches": 6,
-              "maps": 16,
-              "lead_maps": 10,
-              "comebacks": 1,
-              "rate": 0.1,
-              "weighted_comebacks": 0.26,
-              "rank_cb": 0.25981480650796085,
-              "rank_rate": 0.06693077302770419
-            },
-            {
-              "team": "ZETA DIVISION",
-              "matches": 7,
-              "maps": 16,
-              "lead_maps": 12,
-              "comebacks": 1,
-              "rate": 0.08333333333333333,
-              "weighted_comebacks": 0.26,
-              "rank_cb": 0.25981480650796085,
-              "rank_rate": 0.04958047984168802
-            },
-            {
-              "team": "KIWOOM DRX",
-              "matches": 7,
-              "maps": 18,
-              "lead_maps": 15,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "DetonatioN FocusMe",
-              "matches": 5,
-              "maps": 13,
-              "lead_maps": 8,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "Rex Regum Qeon",
-              "matches": 9,
-              "maps": 25,
-              "lead_maps": 22,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "Team Secret",
-              "matches": 6,
-              "maps": 15,
-              "lead_maps": 12,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": {
-            "team": "Gen.G",
-            "matches": 9,
-            "maps": 25,
-            "lead_maps": 21,
-            "comebacks": 1,
-            "rate": 0.047619047619047616,
-            "weighted_comebacks": 0.283,
-            "rank_cb": 0.28278505420927325,
-            "rank_rate": 0.04016116036227999
-          },
-          "tie_with": null
+          "team": "VARREL",
+          "group": "Trung bình",
+          "maps": 9,
+          "wins": 4,
+          "lead": 3,
+          "blown": 0,
+          "trail": 5,
+          "made": 0
         },
         {
-          "step": 5,
-          "matches": 21,
-          "lead_maps": 41,
-          "comebacks": 1,
-          "rate": 0.024390243902439025,
-          "table": [
-            {
-              "team": "VARREL",
-              "matches": 5,
-              "maps": 14,
-              "lead_maps": 9,
-              "comebacks": 1,
-              "rate": 0.1111111111111111,
-              "weighted_comebacks": 0.26,
-              "rank_cb": 0.25981480650796085,
-              "rank_rate": 0.07206033574427718
-            },
-            {
-              "team": "ZETA DIVISION",
-              "matches": 5,
-              "maps": 12,
-              "lead_maps": 9,
-              "comebacks": 1,
-              "rate": 0.1111111111111111,
-              "weighted_comebacks": 0.26,
-              "rank_cb": 0.25981480650796085,
-              "rank_rate": 0.06063807227730104
-            },
-            {
-              "team": "KIWOOM DRX",
-              "matches": 7,
-              "maps": 18,
-              "lead_maps": 15,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "DetonatioN FocusMe",
-              "matches": 5,
-              "maps": 13,
-              "lead_maps": 8,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "Rex Regum Qeon",
-              "matches": 7,
-              "maps": 17,
-              "lead_maps": 15,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "Team Secret",
-              "matches": 4,
-              "maps": 10,
-              "lead_maps": 8,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "FULL SENSE",
-              "matches": 6,
-              "maps": 16,
-              "lead_maps": 14,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": null,
-          "tie_with": null
+          "team": "ZETA DIVISION",
+          "group": "Trung bình",
+          "maps": 7,
+          "wins": 1,
+          "lead": 1,
+          "blown": 0,
+          "trail": 3,
+          "made": 0
+        },
+        {
+          "team": "DetonatioN FocusMe",
+          "group": "Trung bình",
+          "maps": 6,
+          "wins": 4,
+          "lead": 2,
+          "blown": 0,
+          "trail": 2,
+          "made": 0
+        },
+        {
+          "team": "Rex Regum Qeon",
+          "group": "Trung bình",
+          "maps": 6,
+          "wins": 3,
+          "lead": 2,
+          "blown": 0,
+          "trail": 3,
+          "made": 0
+        },
+        {
+          "team": "Team Secret",
+          "group": "Trung bình",
+          "maps": 4,
+          "wins": 0,
+          "lead": 0,
+          "blown": 0,
+          "trail": 4,
+          "made": 0
+        },
+        {
+          "team": "FULL SENSE",
+          "group": "Trung bình",
+          "maps": 8,
+          "wins": 3,
+          "lead": 3,
+          "blown": 0,
+          "trail": 3,
+          "made": 0
+        },
+        {
+          "team": "Paper Rex",
+          "group": "Yếu",
+          "maps": 18,
+          "wins": 6,
+          "lead": 6,
+          "blown": 1,
+          "trail": 9,
+          "made": 0
+        },
+        {
+          "team": "KIWOOM DRX",
+          "group": "Yếu",
+          "maps": 10,
+          "wins": 3,
+          "lead": 3,
+          "blown": 1,
+          "trail": 6,
+          "made": 0
         }
       ],
-      "baseline": {
-        "runs": 5000,
-        "mean": 0.06428088254909795,
-        "p05": 0.03225806451612903,
-        "p95": 0.09219858156028368,
-        "p_value": 0.0206
-      },
-      "previous": {
-        "crawled_at": "2026-11-02T08:03:13.452Z",
-        "top5": [
-          "T1",
-          "Nongshim RedForce",
-          "Global Esports",
-          "Paper Rex",
-          "Gen.G"
-        ],
-        "start_rate": 0.06349206349206349,
-        "final_rate": 0.024390243902439025,
-        "added": [],
-        "dropped": []
-      }
+      "whitelist": [
+        "Gen.G",
+        "VARREL",
+        "ZETA DIVISION",
+        "DetonatioN FocusMe",
+        "Rex Regum Qeon",
+        "Team Secret",
+        "FULL SENSE"
+      ],
+      "blacklist": [
+        "T1",
+        "Global Esports",
+        "Nongshim RedForce",
+        "Paper Rex",
+        "KIWOOM DRX"
+      ]
     },
     {
       "region": "americas",
-      "steps": [
+      "teams": [
         {
-          "step": 0,
-          "matches": 136,
-          "lead_maps": 285,
-          "comebacks": 26,
-          "rate": 0.0912280701754386,
-          "table": [
-            {
-              "team": "NRG",
-              "matches": 31,
-              "maps": 84,
-              "lead_maps": 73,
-              "comebacks": 11,
-              "rate": 0.1506849315068493,
-              "weighted_comebacks": 5.217,
-              "rank_cb": 5.21726974637879,
-              "rank_rate": 0.1583855713157152
-            },
-            {
-              "team": "LOUD",
-              "matches": 24,
-              "maps": 65,
-              "lead_maps": 52,
-              "comebacks": 6,
-              "rate": 0.11538461538461539,
-              "weighted_comebacks": 3.579,
-              "rank_cb": 3.5785986693502587,
-              "rank_rate": 0.12023976825162533
-            },
-            {
-              "team": "100 Thieves",
-              "matches": 27,
-              "maps": 70,
-              "lead_maps": 53,
-              "comebacks": 4,
-              "rate": 0.07547169811320754,
-              "weighted_comebacks": 1.939,
-              "rank_cb": 1.9385220297741816,
-              "rank_rate": 0.0693425906101936
-            },
-            {
-              "team": "ENVY",
-              "matches": 12,
-              "maps": 29,
-              "lead_maps": 24,
-              "comebacks": 4,
-              "rate": 0.16666666666666666,
-              "weighted_comebacks": 1.593,
-              "rank_cb": 1.5930409830623817,
-              "rank_rate": 0.1503304497677201
-            },
-            {
-              "team": "Sentinels",
-              "matches": 15,
-              "maps": 40,
-              "lead_maps": 33,
-              "comebacks": 4,
-              "rate": 0.12121212121212122,
-              "weighted_comebacks": 1.426,
-              "rank_cb": 1.4264514423193773,
-              "rank_rate": 0.11447084303340745
-            },
-            {
-              "team": "Evil Geniuses",
-              "matches": 13,
-              "maps": 34,
-              "lead_maps": 24,
-              "comebacks": 4,
-              "rate": 0.16666666666666666,
-              "weighted_comebacks": 1.264,
-              "rank_cb": 1.2643835162453607,
-              "rank_rate": 0.11897018306811886
-            },
-            {
-              "team": "LEVIATÁN",
-              "matches": 24,
-              "maps": 67,
-              "lead_maps": 52,
-              "comebacks": 3,
-              "rate": 0.057692307692307696,
-              "weighted_comebacks": 1.143,
-              "rank_cb": 1.1428896338309258,
-              "rank_rate": 0.058691227334998715
-            },
-            {
-              "team": "Cloud9",
-              "matches": 9,
-              "maps": 22,
-              "lead_maps": 20,
-              "comebacks": 3,
-              "rate": 0.15,
-              "weighted_comebacks": 1.126,
-              "rank_cb": 1.1256951832988482,
-              "rank_rate": 0.13762005978471195
-            },
-            {
-              "team": "MIBR",
-              "matches": 19,
-              "maps": 45,
-              "lead_maps": 32,
-              "comebacks": 2,
-              "rate": 0.0625,
-              "weighted_comebacks": 0.923,
-              "rank_cb": 0.9234721278849418,
-              "rank_rate": 0.06442596146768738
-            },
-            {
-              "team": "FURIA",
-              "matches": 14,
-              "maps": 35,
-              "lead_maps": 29,
-              "comebacks": 2,
-              "rate": 0.06896551724137931,
-              "weighted_comebacks": 0.787,
-              "rank_cb": 0.7870288250566906,
-              "rank_rate": 0.06266608740359242
-            },
-            {
-              "team": "KRÜ Esports",
-              "matches": 13,
-              "maps": 31,
-              "lead_maps": 24,
-              "comebacks": 2,
-              "rate": 0.08333333333333333,
-              "weighted_comebacks": 0.713,
-              "rank_cb": 0.713266303996489,
-              "rank_rate": 0.06936216775400261
-            },
-            {
-              "team": "G2 Esports",
-              "matches": 28,
-              "maps": 75,
-              "lead_maps": 60,
-              "comebacks": 1,
-              "rate": 0.016666666666666666,
-              "weighted_comebacks": 0.579,
-              "rank_cb": 0.5787896830493259,
-              "rank_rate": 0.01868201750532935
-            }
-          ],
-          "removed": {
-            "team": "NRG",
-            "matches": 31,
-            "maps": 84,
-            "lead_maps": 73,
-            "comebacks": 11,
-            "rate": 0.1506849315068493,
-            "weighted_comebacks": 5.217,
-            "rank_cb": 5.21726974637879,
-            "rank_rate": 0.1583855713157152
-          },
-          "tie_with": null
+          "team": "NRG",
+          "group": "Mạnh",
+          "maps": 24,
+          "wins": 13,
+          "lead": 11,
+          "blown": 1,
+          "trail": 6,
+          "made": 2
         },
         {
-          "step": 1,
-          "matches": 105,
-          "lead_maps": 212,
-          "comebacks": 15,
-          "rate": 0.07075471698113207,
-          "table": [
-            {
-              "team": "LOUD",
-              "matches": 19,
-              "maps": 49,
-              "lead_maps": 38,
-              "comebacks": 3,
-              "rate": 0.07894736842105263,
-              "weighted_comebacks": 1.836,
-              "rank_cb": 1.8363401313806582,
-              "rank_rate": 0.0826199695355002
-            },
-            {
-              "team": "ENVY",
-              "matches": 11,
-              "maps": 27,
-              "lead_maps": 22,
-              "comebacks": 4,
-              "rate": 0.18181818181818182,
-              "weighted_comebacks": 1.593,
-              "rank_cb": 1.5930409830623817,
-              "rank_rate": 0.1662638066226165
-            },
-            {
-              "team": "100 Thieves",
-              "matches": 23,
-              "maps": 60,
-              "lead_maps": 47,
-              "comebacks": 3,
-              "rate": 0.06382978723404255,
-              "weighted_comebacks": 1.52,
-              "rank_cb": 1.5196897781616037,
-              "rank_rate": 0.060940023671862686
-            },
-            {
-              "team": "Sentinels",
-              "matches": 14,
-              "maps": 37,
-              "lead_maps": 31,
-              "comebacks": 4,
-              "rate": 0.12903225806451613,
-              "weighted_comebacks": 1.426,
-              "rank_cb": 1.4264514423193773,
-              "rank_rate": 0.11941207507973206
-            },
-            {
-              "team": "Evil Geniuses",
-              "matches": 12,
-              "maps": 32,
-              "lead_maps": 23,
-              "comebacks": 4,
-              "rate": 0.17391304347826086,
-              "weighted_comebacks": 1.264,
-              "rank_cb": 1.2643835162453607,
-              "rank_rate": 0.1250861099430607
-            },
-            {
-              "team": "Cloud9",
-              "matches": 9,
-              "maps": 22,
-              "lead_maps": 20,
-              "comebacks": 3,
-              "rate": 0.15,
-              "weighted_comebacks": 1.126,
-              "rank_cb": 1.1256951832988482,
-              "rank_rate": 0.13762005978471195
-            },
-            {
-              "team": "KRÜ Esports",
-              "matches": 12,
-              "maps": 29,
-              "lead_maps": 22,
-              "comebacks": 2,
-              "rate": 0.09090909090909091,
-              "weighted_comebacks": 0.713,
-              "rank_cb": 0.713266303996489,
-              "rank_rate": 0.07323804724425073
-            },
-            {
-              "team": "G2 Esports",
-              "matches": 27,
-              "maps": 70,
-              "lead_maps": 55,
-              "comebacks": 1,
-              "rate": 0.01818181818181818,
-              "weighted_comebacks": 0.579,
-              "rank_cb": 0.5787896830493259,
-              "rank_rate": 0.019582645821112632
-            },
-            {
-              "team": "FURIA",
-              "matches": 11,
-              "maps": 29,
-              "lead_maps": 24,
-              "comebacks": 1,
-              "rate": 0.041666666666666664,
-              "weighted_comebacks": 0.489,
-              "rank_cb": 0.48857998421712295,
-              "rank_rate": 0.04456718779005275
-            },
-            {
-              "team": "MIBR",
-              "matches": 18,
-              "maps": 42,
-              "lead_maps": 29,
-              "comebacks": 1,
-              "rate": 0.034482758620689655,
-              "weighted_comebacks": 0.485,
-              "rank_cb": 0.48483157232335894,
-              "rank_rate": 0.037243371231288666
-            },
-            {
-              "team": "LEVIATÁN",
-              "matches": 21,
-              "maps": 59,
-              "lead_maps": 44,
-              "comebacks": 1,
-              "rate": 0.022727272727272728,
-              "weighted_comebacks": 0.354,
-              "rank_cb": 0.35355339059327373,
-              "rank_rate": 0.02150745884280254
-            }
-          ],
-          "removed": {
-            "team": "LOUD",
-            "matches": 19,
-            "maps": 49,
-            "lead_maps": 38,
-            "comebacks": 3,
-            "rate": 0.07894736842105263,
-            "weighted_comebacks": 1.836,
-            "rank_cb": 1.8363401313806582,
-            "rank_rate": 0.0826199695355002
-          },
-          "tie_with": null
+          "team": "100 Thieves",
+          "group": "Mạnh",
+          "maps": 31,
+          "wins": 20,
+          "lead": 11,
+          "blown": 0,
+          "trail": 9,
+          "made": 1
         },
         {
-          "step": 2,
-          "matches": 86,
-          "lead_maps": 174,
-          "comebacks": 12,
-          "rate": 0.06896551724137931,
-          "table": [
-            {
-              "team": "ENVY",
-              "matches": 11,
-              "maps": 27,
-              "lead_maps": 22,
-              "comebacks": 4,
-              "rate": 0.18181818181818182,
-              "weighted_comebacks": 1.593,
-              "rank_cb": 1.5930409830623817,
-              "rank_rate": 0.1662638066226165
-            },
-            {
-              "team": "Evil Geniuses",
-              "matches": 12,
-              "maps": 32,
-              "lead_maps": 23,
-              "comebacks": 4,
-              "rate": 0.17391304347826086,
-              "weighted_comebacks": 1.264,
-              "rank_cb": 1.2643835162453607,
-              "rank_rate": 0.1250861099430607
-            },
-            {
-              "team": "Cloud9",
-              "matches": 8,
-              "maps": 19,
-              "lead_maps": 17,
-              "comebacks": 3,
-              "rate": 0.17647058823529413,
-              "weighted_comebacks": 1.126,
-              "rank_cb": 1.1256951832988482,
-              "rank_rate": 0.16738371667565327
-            },
-            {
-              "team": "Sentinels",
-              "matches": 12,
-              "maps": 32,
-              "lead_maps": 26,
-              "comebacks": 3,
-              "rate": 0.11538461538461539,
-              "weighted_comebacks": 1.126,
-              "rank_cb": 1.1256951832988482,
-              "rank_rate": 0.11126243028198726
-            },
-            {
-              "team": "100 Thieves",
-              "matches": 19,
-              "maps": 48,
-              "lead_maps": 37,
-              "comebacks": 2,
-              "rate": 0.05405405405405406,
-              "weighted_comebacks": 0.875,
-              "rank_cb": 0.8750046239418141,
-              "rank_rate": 0.042623323628491874
-            },
-            {
-              "team": "KRÜ Esports",
-              "matches": 11,
-              "maps": 26,
-              "lead_maps": 21,
-              "comebacks": 2,
-              "rate": 0.09523809523809523,
-              "weighted_comebacks": 0.713,
-              "rank_cb": 0.713266303996489,
-              "rank_rate": 0.07666448854651177
-            },
-            {
-              "team": "G2 Esports",
-              "matches": 25,
-              "maps": 66,
-              "lead_maps": 54,
-              "comebacks": 1,
-              "rate": 0.018518518518518517,
-              "weighted_comebacks": 0.579,
-              "rank_cb": 0.5787896830493259,
-              "rank_rate": 0.020012488766113962
-            },
-            {
-              "team": "FURIA",
-              "matches": 10,
-              "maps": 27,
-              "lead_maps": 22,
-              "comebacks": 1,
-              "rate": 0.045454545454545456,
-              "weighted_comebacks": 0.489,
-              "rank_cb": 0.48857998421712295,
-              "rank_rate": 0.050013417838548256
-            },
-            {
-              "team": "MIBR",
-              "matches": 17,
-              "maps": 40,
-              "lead_maps": 27,
-              "comebacks": 1,
-              "rate": 0.037037037037037035,
-              "weighted_comebacks": 0.485,
-              "rank_cb": 0.48483157232335894,
-              "rank_rate": 0.04110055175939258
-            },
-            {
-              "team": "LEVIATÁN",
-              "matches": 20,
-              "maps": 56,
-              "lead_maps": 43,
-              "comebacks": 1,
-              "rate": 0.023255813953488372,
-              "weighted_comebacks": 0.354,
-              "rank_cb": 0.35355339059327373,
-              "rank_rate": 0.021850153798445005
-            }
-          ],
-          "removed": {
-            "team": "ENVY",
-            "matches": 11,
-            "maps": 27,
-            "lead_maps": 22,
-            "comebacks": 4,
-            "rate": 0.18181818181818182,
-            "weighted_comebacks": 1.593,
-            "rank_cb": 1.5930409830623817,
-            "rank_rate": 0.1662638066226165
-          },
-          "tie_with": null
+          "team": "ENVY",
+          "group": "Mạnh",
+          "maps": 8,
+          "wins": 4,
+          "lead": 2,
+          "blown": 0,
+          "trail": 5,
+          "made": 1
         },
         {
-          "step": 3,
-          "matches": 75,
-          "lead_maps": 152,
-          "comebacks": 8,
-          "rate": 0.05263157894736842,
-          "table": [
-            {
-              "team": "Sentinels",
-              "matches": 10,
-              "maps": 28,
-              "lead_maps": 23,
-              "comebacks": 3,
-              "rate": 0.13043478260869565,
-              "weighted_comebacks": 1.126,
-              "rank_cb": 1.1256951832988482,
-              "rank_rate": 0.12479132589843214
-            },
-            {
-              "team": "Evil Geniuses",
-              "matches": 10,
-              "maps": 27,
-              "lead_maps": 19,
-              "comebacks": 3,
-              "rate": 0.15789473684210525,
-              "weighted_comebacks": 1.001,
-              "rank_cb": 1.0005357311545842,
-              "rank_rate": 0.11487393334291798
-            },
-            {
-              "team": "100 Thieves",
-              "matches": 19,
-              "maps": 48,
-              "lead_maps": 37,
-              "comebacks": 2,
-              "rate": 0.05405405405405406,
-              "weighted_comebacks": 0.875,
-              "rank_cb": 0.8750046239418141,
-              "rank_rate": 0.042623323628491874
-            },
-            {
-              "team": "Cloud9",
-              "matches": 7,
-              "maps": 16,
-              "lead_maps": 14,
-              "comebacks": 2,
-              "rate": 0.14285714285714285,
-              "weighted_comebacks": 0.864,
-              "rank_cb": 0.8638716525936915,
-              "rank_rate": 0.14543865482425397
-            },
-            {
-              "team": "KRÜ Esports",
-              "matches": 11,
-              "maps": 26,
-              "lead_maps": 21,
-              "comebacks": 2,
-              "rate": 0.09523809523809523,
-              "weighted_comebacks": 0.713,
-              "rank_cb": 0.713266303996489,
-              "rank_rate": 0.07666448854651177
-            },
-            {
-              "team": "MIBR",
-              "matches": 14,
-              "maps": 33,
-              "lead_maps": 23,
-              "comebacks": 1,
-              "rate": 0.043478260869565216,
-              "weighted_comebacks": 0.485,
-              "rank_cb": 0.48483157232335894,
-              "rank_rate": 0.05034313052840398
-            },
-            {
-              "team": "LEVIATÁN",
-              "matches": 19,
-              "maps": 54,
-              "lead_maps": 41,
-              "comebacks": 1,
-              "rate": 0.024390243902439025,
-              "weighted_comebacks": 0.354,
-              "rank_cb": 0.35355339059327373,
-              "rank_rate": 0.02318719472577094
-            },
-            {
-              "team": "G2 Esports",
-              "matches": 24,
-              "maps": 63,
-              "lead_maps": 51,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "FURIA",
-              "matches": 9,
-              "maps": 24,
-              "lead_maps": 19,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": {
-            "team": "Sentinels",
-            "matches": 10,
-            "maps": 28,
-            "lead_maps": 23,
-            "comebacks": 3,
-            "rate": 0.13043478260869565,
-            "weighted_comebacks": 1.126,
-            "rank_cb": 1.1256951832988482,
-            "rank_rate": 0.12479132589843214
-          },
-          "tie_with": null
+          "team": "LOUD",
+          "group": "Không ổn định",
+          "maps": 41,
+          "wins": 27,
+          "lead": 16,
+          "blown": 2,
+          "trail": 13,
+          "made": 2
         },
         {
-          "step": 4,
-          "matches": 65,
-          "lead_maps": 129,
-          "comebacks": 5,
-          "rate": 0.03875968992248062,
-          "table": [
-            {
-              "team": "100 Thieves",
-              "matches": 18,
-              "maps": 45,
-              "lead_maps": 35,
-              "comebacks": 2,
-              "rate": 0.05714285714285714,
-              "weighted_comebacks": 0.875,
-              "rank_cb": 0.8750046239418141,
-              "rank_rate": 0.04471940982645818
-            },
-            {
-              "team": "Evil Geniuses",
-              "matches": 8,
-              "maps": 21,
-              "lead_maps": 15,
-              "comebacks": 2,
-              "rate": 0.13333333333333333,
-              "weighted_comebacks": 0.739,
-              "rank_cb": 0.7387122004494276,
-              "rank_rate": 0.096825857355466
-            },
-            {
-              "team": "KRÜ Esports",
-              "matches": 8,
-              "maps": 18,
-              "lead_maps": 14,
-              "comebacks": 2,
-              "rate": 0.14285714285714285,
-              "weighted_comebacks": 0.713,
-              "rank_cb": 0.713266303996489,
-              "rank_rate": 0.1185656468918614
-            },
-            {
-              "team": "MIBR",
-              "matches": 14,
-              "maps": 33,
-              "lead_maps": 23,
-              "comebacks": 1,
-              "rate": 0.043478260869565216,
-              "weighted_comebacks": 0.485,
-              "rank_cb": 0.48483157232335894,
-              "rank_rate": 0.05034313052840398
-            },
-            {
-              "team": "LEVIATÁN",
-              "matches": 18,
-              "maps": 51,
-              "lead_maps": 38,
-              "comebacks": 1,
-              "rate": 0.02631578947368421,
-              "weighted_comebacks": 0.354,
-              "rank_cb": 0.35355339059327373,
-              "rank_rate": 0.024610211934699814
-            },
-            {
-              "team": "G2 Esports",
-              "matches": 23,
-              "maps": 60,
-              "lead_maps": 49,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "Cloud9",
-              "matches": 5,
-              "maps": 11,
-              "lead_maps": 9,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "FURIA",
-              "matches": 9,
-              "maps": 24,
-              "lead_maps": 19,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": {
-            "team": "100 Thieves",
-            "matches": 18,
-            "maps": 45,
-            "lead_maps": 35,
-            "comebacks": 2,
-            "rate": 0.05714285714285714,
-            "weighted_comebacks": 0.875,
-            "rank_cb": 0.8750046239418141,
-            "rank_rate": 0.04471940982645818
-          },
-          "tie_with": null
+          "team": "LEVIATÁN",
+          "group": "Trung bình",
+          "maps": 9,
+          "wins": 5,
+          "lead": 4,
+          "blown": 0,
+          "trail": 3,
+          "made": 0
         },
         {
-          "step": 5,
-          "matches": 47,
-          "lead_maps": 94,
-          "comebacks": 3,
-          "rate": 0.031914893617021274,
-          "table": [
-            {
-              "team": "Evil Geniuses",
-              "matches": 8,
-              "maps": 21,
-              "lead_maps": 15,
-              "comebacks": 2,
-              "rate": 0.13333333333333333,
-              "weighted_comebacks": 0.739,
-              "rank_cb": 0.7387122004494276,
-              "rank_rate": 0.096825857355466
-            },
-            {
-              "team": "MIBR",
-              "matches": 12,
-              "maps": 28,
-              "lead_maps": 20,
-              "comebacks": 1,
-              "rate": 0.05,
-              "weighted_comebacks": 0.485,
-              "rank_cb": 0.48483157232335894,
-              "rank_rate": 0.05681457302376289
-            },
-            {
-              "team": "LEVIATÁN",
-              "matches": 17,
-              "maps": 49,
-              "lead_maps": 37,
-              "comebacks": 1,
-              "rate": 0.02702702702702703,
-              "weighted_comebacks": 0.354,
-              "rank_cb": 0.35355339059327373,
-              "rank_rate": 0.025685676292850155
-            },
-            {
-              "team": "KRÜ Esports",
-              "matches": 7,
-              "maps": 16,
-              "lead_maps": 13,
-              "comebacks": 1,
-              "rate": 0.07692307692307693,
-              "weighted_comebacks": 0.254,
-              "rank_cb": 0.2538806281260687,
-              "rank_rate": 0.04569151358503603
-            },
-            {
-              "team": "G2 Esports",
-              "matches": 19,
-              "maps": 50,
-              "lead_maps": 41,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "Cloud9",
-              "matches": 4,
-              "maps": 9,
-              "lead_maps": 8,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "FURIA",
-              "matches": 7,
-              "maps": 19,
-              "lead_maps": 14,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": null,
-          "tie_with": null
+          "team": "MIBR",
+          "group": "Trung bình",
+          "maps": 14,
+          "wins": 6,
+          "lead": 5,
+          "blown": 0,
+          "trail": 5,
+          "made": 0
+        },
+        {
+          "team": "Evil Geniuses",
+          "group": "Trung bình",
+          "maps": 14,
+          "wins": 6,
+          "lead": 4,
+          "blown": 0,
+          "trail": 6,
+          "made": 0
+        },
+        {
+          "team": "Sentinels",
+          "group": "Trung bình",
+          "maps": 7,
+          "wins": 1,
+          "lead": 1,
+          "blown": 0,
+          "trail": 5,
+          "made": 0
+        },
+        {
+          "team": "Cloud9",
+          "group": "Trung bình",
+          "maps": 5,
+          "wins": 3,
+          "lead": 2,
+          "blown": 0,
+          "trail": 2,
+          "made": 0
+        },
+        {
+          "team": "FURIA",
+          "group": "Trung bình",
+          "maps": 11,
+          "wins": 5,
+          "lead": 5,
+          "blown": 0,
+          "trail": 3,
+          "made": 0
+        },
+        {
+          "team": "KRÜ Esports",
+          "group": "Trung bình",
+          "maps": 10,
+          "wins": 5,
+          "lead": 5,
+          "blown": 0,
+          "trail": 4,
+          "made": 0
+        },
+        {
+          "team": "G2 Esports",
+          "group": "Yếu",
+          "maps": 33,
+          "wins": 17,
+          "lead": 13,
+          "blown": 1,
+          "trail": 10,
+          "made": 0
         }
       ],
-      "baseline": {
-        "runs": 5000,
-        "mean": 0.08302768543271455,
-        "p05": 0.039603960396039604,
-        "p95": 0.1262135922330097,
-        "p_value": 0.022
-      },
-      "previous": {
-        "crawled_at": "2026-11-02T08:03:13.452Z",
-        "top5": [
-          "NRG",
-          "LOUD",
-          "ENVY",
-          "Sentinels",
-          "100 Thieves"
-        ],
-        "start_rate": 0.0912280701754386,
-        "final_rate": 0.031914893617021274,
-        "added": [],
-        "dropped": []
-      }
+      "whitelist": [
+        "LEVIATÁN",
+        "MIBR",
+        "Evil Geniuses",
+        "Sentinels",
+        "Cloud9",
+        "FURIA",
+        "KRÜ Esports"
+      ],
+      "blacklist": [
+        "NRG",
+        "100 Thieves",
+        "ENVY",
+        "LOUD",
+        "G2 Esports"
+      ]
     },
     {
       "region": "china",
-      "steps": [
+      "teams": [
         {
-          "step": 0,
-          "matches": 131,
-          "lead_maps": 241,
-          "comebacks": 22,
-          "rate": 0.0912863070539419,
-          "table": [
-            {
-              "team": "All Gamers",
-              "matches": 26,
-              "maps": 60,
-              "lead_maps": 48,
-              "comebacks": 5,
-              "rate": 0.10416666666666667,
-              "weighted_comebacks": 2.397,
-              "rank_cb": 2.396570670890666,
-              "rank_rate": 0.119270885284574
-            },
-            {
-              "team": "EDward Gaming",
-              "matches": 22,
-              "maps": 57,
-              "lead_maps": 48,
-              "comebacks": 5,
-              "rate": 0.10416666666666667,
-              "weighted_comebacks": 1.976,
-              "rank_cb": 1.9763490652141777,
-              "rank_rate": 0.09467994833553374
-            },
-            {
-              "team": "JD Gaming",
-              "matches": 21,
-              "maps": 46,
-              "lead_maps": 40,
-              "comebacks": 4,
-              "rate": 0.1,
-              "weighted_comebacks": 1.872,
-              "rank_cb": 1.8719760989162437,
-              "rank_rate": 0.09391169155181096
-            },
-            {
-              "team": "Xi Lai Gaming",
-              "matches": 27,
-              "maps": 68,
-              "lead_maps": 55,
-              "comebacks": 4,
-              "rate": 0.07272727272727272,
-              "weighted_comebacks": 1.829,
-              "rank_cb": 1.8294048374700056,
-              "rank_rate": 0.08542945511895059
-            },
-            {
-              "team": "Nova Esports",
-              "matches": 19,
-              "maps": 40,
-              "lead_maps": 35,
-              "comebacks": 4,
-              "rate": 0.11428571428571428,
-              "weighted_comebacks": 1.745,
-              "rank_cb": 1.7447992865531354,
-              "rank_rate": 0.1020063625261985
-            },
-            {
-              "team": "TYLOO",
-              "matches": 22,
-              "maps": 49,
-              "lead_maps": 39,
-              "comebacks": 3,
-              "rate": 0.07692307692307693,
-              "weighted_comebacks": 1.596,
-              "rank_cb": 1.5957805301961723,
-              "rank_rate": 0.0837724705545649
-            },
-            {
-              "team": "Trace Esports",
-              "matches": 16,
-              "maps": 31,
-              "lead_maps": 24,
-              "comebacks": 3,
-              "rate": 0.125,
-              "weighted_comebacks": 1.511,
-              "rank_cb": 1.511383341676928,
-              "rank_rate": 0.1282540662391616
-            },
-            {
-              "team": "Bilibili Gaming",
-              "matches": 15,
-              "maps": 31,
-              "lead_maps": 29,
-              "comebacks": 3,
-              "rate": 0.10344827586206896,
-              "weighted_comebacks": 1.429,
-              "rank_cb": 1.4290646463336778,
-              "rank_rate": 0.10235206286223801
-            },
-            {
-              "team": "Dragon Ranger Gaming",
-              "matches": 19,
-              "maps": 47,
-              "lead_maps": 38,
-              "comebacks": 3,
-              "rate": 0.07894736842105263,
-              "weighted_comebacks": 1.389,
-              "rank_cb": 1.3893255322629015,
-              "rank_rate": 0.07593239580050345
-            },
-            {
-              "team": "Titan Esports Club",
-              "matches": 20,
-              "maps": 49,
-              "lead_maps": 39,
-              "comebacks": 3,
-              "rate": 0.07692307692307693,
-              "weighted_comebacks": 1.379,
-              "rank_cb": 1.3786367101557622,
-              "rank_rate": 0.07905691461504752
-            },
-            {
-              "team": "FunPlus Phoenix",
-              "matches": 20,
-              "maps": 30,
-              "lead_maps": 24,
-              "comebacks": 1,
-              "rate": 0.041666666666666664,
-              "weighted_comebacks": 0.508,
-              "rank_cb": 0.5077612562521375,
-              "rank_rate": 0.043749258209883124
-            },
-            {
-              "team": "Wolves Esports",
-              "matches": 11,
-              "maps": 23,
-              "lead_maps": 18,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": {
-            "team": "All Gamers",
-            "matches": 26,
-            "maps": 60,
-            "lead_maps": 48,
-            "comebacks": 5,
-            "rate": 0.10416666666666667,
-            "weighted_comebacks": 2.397,
-            "rank_cb": 2.396570670890666,
-            "rank_rate": 0.119270885284574
-          },
-          "tie_with": null
+          "team": "TYLOO",
+          "group": "Mạnh",
+          "maps": 24,
+          "wins": 15,
+          "lead": 10,
+          "blown": 0,
+          "trail": 7,
+          "made": 2
         },
         {
-          "step": 1,
-          "matches": 105,
-          "lead_maps": 193,
-          "comebacks": 17,
-          "rate": 0.08808290155440414,
-          "table": [
-            {
-              "team": "EDward Gaming",
-              "matches": 21,
-              "maps": 55,
-              "lead_maps": 46,
-              "comebacks": 5,
-              "rate": 0.10869565217391304,
-              "weighted_comebacks": 1.976,
-              "rank_cb": 1.9763490652141777,
-              "rank_rate": 0.09903916835587881
-            },
-            {
-              "team": "JD Gaming",
-              "matches": 19,
-              "maps": 42,
-              "lead_maps": 37,
-              "comebacks": 4,
-              "rate": 0.10810810810810811,
-              "weighted_comebacks": 1.872,
-              "rank_cb": 1.8719760989162437,
-              "rank_rate": 0.10262246778220141
-            },
-            {
-              "team": "Xi Lai Gaming",
-              "matches": 25,
-              "maps": 63,
-              "lead_maps": 52,
-              "comebacks": 4,
-              "rate": 0.07692307692307693,
-              "weighted_comebacks": 1.829,
-              "rank_cb": 1.8294048374700056,
-              "rank_rate": 0.09198921860366807
-            },
-            {
-              "team": "Nova Esports",
-              "matches": 19,
-              "maps": 40,
-              "lead_maps": 35,
-              "comebacks": 4,
-              "rate": 0.11428571428571428,
-              "weighted_comebacks": 1.745,
-              "rank_cb": 1.7447992865531354,
-              "rank_rate": 0.1020063625261985
-            },
-            {
-              "team": "Bilibili Gaming",
-              "matches": 14,
-              "maps": 28,
-              "lead_maps": 26,
-              "comebacks": 3,
-              "rate": 0.11538461538461539,
-              "weighted_comebacks": 1.429,
-              "rank_cb": 1.4290646463336778,
-              "rank_rate": 0.11282292819581585
-            },
-            {
-              "team": "TYLOO",
-              "matches": 19,
-              "maps": 42,
-              "lead_maps": 33,
-              "comebacks": 2,
-              "rate": 0.06060606060606061,
-              "weighted_comebacks": 1.03,
-              "rank_cb": 1.0302104217776258,
-              "rank_rate": 0.06163455190696536
-            },
-            {
-              "team": "Trace Esports",
-              "matches": 13,
-              "maps": 25,
-              "lead_maps": 19,
-              "comebacks": 2,
-              "rate": 0.10526315789473684,
-              "weighted_comebacks": 0.963,
-              "rank_cb": 0.962970851829615,
-              "rank_rate": 0.10563894356041995
-            },
-            {
-              "team": "Dragon Ranger Gaming",
-              "matches": 15,
-              "maps": 39,
-              "lead_maps": 31,
-              "comebacks": 2,
-              "rate": 0.06451612903225806,
-              "weighted_comebacks": 0.937,
-              "rank_cb": 0.9369616799465437,
-              "rank_rate": 0.05830765437190541
-            },
-            {
-              "team": "Titan Esports Club",
-              "matches": 16,
-              "maps": 38,
-              "lead_maps": 31,
-              "comebacks": 1,
-              "rate": 0.03225806451612903,
-              "weighted_comebacks": 0.548,
-              "rank_cb": 0.548412489847313,
-              "rank_rate": 0.0389581924020569
-            },
-            {
-              "team": "FunPlus Phoenix",
-              "matches": 18,
-              "maps": 26,
-              "lead_maps": 21,
-              "comebacks": 1,
-              "rate": 0.047619047619047616,
-              "weighted_comebacks": 0.508,
-              "rank_cb": 0.5077612562521375,
-              "rank_rate": 0.047171641242338025
-            },
-            {
-              "team": "Wolves Esports",
-              "matches": 10,
-              "maps": 21,
-              "lead_maps": 16,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": {
-            "team": "EDward Gaming",
-            "matches": 21,
-            "maps": 55,
-            "lead_maps": 46,
-            "comebacks": 5,
-            "rate": 0.10869565217391304,
-            "weighted_comebacks": 1.976,
-            "rank_cb": 1.9763490652141777,
-            "rank_rate": 0.09903916835587881
-          },
-          "tie_with": null
+          "team": "Nova Esports",
+          "group": "Mạnh",
+          "maps": 17,
+          "wins": 6,
+          "lead": 4,
+          "blown": 0,
+          "trail": 9,
+          "made": 1
         },
         {
-          "step": 2,
-          "matches": 84,
-          "lead_maps": 147,
-          "comebacks": 12,
-          "rate": 0.08163265306122448,
-          "table": [
-            {
-              "team": "JD Gaming",
-              "matches": 17,
-              "maps": 38,
-              "lead_maps": 33,
-              "comebacks": 4,
-              "rate": 0.12121212121212122,
-              "weighted_comebacks": 1.872,
-              "rank_cb": 1.8719760989162437,
-              "rank_rate": 0.11483155106291455
-            },
-            {
-              "team": "Xi Lai Gaming",
-              "matches": 22,
-              "maps": 53,
-              "lead_maps": 43,
-              "comebacks": 4,
-              "rate": 0.09302325581395349,
-              "weighted_comebacks": 1.829,
-              "rank_cb": 1.8294048374700056,
-              "rank_rate": 0.10507841082465791
-            },
-            {
-              "team": "Bilibili Gaming",
-              "matches": 14,
-              "maps": 28,
-              "lead_maps": 26,
-              "comebacks": 3,
-              "rate": 0.11538461538461539,
-              "weighted_comebacks": 1.429,
-              "rank_cb": 1.4290646463336778,
-              "rank_rate": 0.11282292819581585
-            },
-            {
-              "team": "Nova Esports",
-              "matches": 17,
-              "maps": 35,
-              "lead_maps": 31,
-              "comebacks": 3,
-              "rate": 0.0967741935483871,
-              "weighted_comebacks": 1.296,
-              "rank_cb": 1.2959059940204507,
-              "rank_rate": 0.08681307699554817
-            },
-            {
-              "team": "TYLOO",
-              "matches": 17,
-              "maps": 37,
-              "lead_maps": 30,
-              "comebacks": 2,
-              "rate": 0.06666666666666667,
-              "weighted_comebacks": 1.03,
-              "rank_cb": 1.0302104217776258,
-              "rank_rate": 0.06616466807545232
-            },
-            {
-              "team": "Dragon Ranger Gaming",
-              "matches": 15,
-              "maps": 39,
-              "lead_maps": 31,
-              "comebacks": 2,
-              "rate": 0.06451612903225806,
-              "weighted_comebacks": 0.937,
-              "rank_cb": 0.9369616799465437,
-              "rank_rate": 0.05830765437190541
-            },
-            {
-              "team": "Titan Esports Club",
-              "matches": 15,
-              "maps": 35,
-              "lead_maps": 29,
-              "comebacks": 1,
-              "rate": 0.034482758620689655,
-              "weighted_comebacks": 0.548,
-              "rank_cb": 0.548412489847313,
-              "rank_rate": 0.04201243589287938
-            },
-            {
-              "team": "Trace Esports",
-              "matches": 12,
-              "maps": 23,
-              "lead_maps": 18,
-              "comebacks": 1,
-              "rate": 0.05555555555555555,
-              "weighted_comebacks": 0.528,
-              "rank_cb": 0.5276955701815529,
-              "rank_rate": 0.06079158292436862
-            },
-            {
-              "team": "FunPlus Phoenix",
-              "matches": 17,
-              "maps": 23,
-              "lead_maps": 18,
-              "comebacks": 1,
-              "rate": 0.05555555555555555,
-              "weighted_comebacks": 0.508,
-              "rank_cb": 0.5077612562521375,
-              "rank_rate": 0.0540370606055581
-            },
-            {
-              "team": "Wolves Esports",
-              "matches": 9,
-              "maps": 18,
-              "lead_maps": 13,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": {
-            "team": "JD Gaming",
-            "matches": 17,
-            "maps": 38,
-            "lead_maps": 33,
-            "comebacks": 4,
-            "rate": 0.12121212121212122,
-            "weighted_comebacks": 1.872,
-            "rank_cb": 1.8719760989162437,
-            "rank_rate": 0.11483155106291455
-          },
-          "tie_with": null
+          "team": "Trace Esports",
+          "group": "Trung bình",
+          "maps": 16,
+          "wins": 9,
+          "lead": 8,
+          "blown": 1,
+          "trail": 6,
+          "made": 1
         },
         {
-          "step": 3,
-          "matches": 67,
-          "lead_maps": 114,
-          "comebacks": 8,
-          "rate": 0.07017543859649122,
-          "table": [
-            {
-              "team": "Xi Lai Gaming",
-              "matches": 21,
-              "maps": 50,
-              "lead_maps": 40,
-              "comebacks": 3,
-              "rate": 0.075,
-              "weighted_comebacks": 1.544,
-              "rank_cb": 1.5444334675975484,
-              "rank_rate": 0.09329112624119329
-            },
-            {
-              "team": "Bilibili Gaming",
-              "matches": 13,
-              "maps": 26,
-              "lead_maps": 24,
-              "comebacks": 3,
-              "rate": 0.125,
-              "weighted_comebacks": 1.429,
-              "rank_cb": 1.4290646463336778,
-              "rank_rate": 0.12398022915483811
-            },
-            {
-              "team": "TYLOO",
-              "matches": 13,
-              "maps": 28,
-              "lead_maps": 22,
-              "comebacks": 2,
-              "rate": 0.09090909090909091,
-              "weighted_comebacks": 1.03,
-              "rank_cb": 1.0302104217776258,
-              "rank_rate": 0.09096396507065785
-            },
-            {
-              "team": "Nova Esports",
-              "matches": 14,
-              "maps": 28,
-              "lead_maps": 24,
-              "comebacks": 2,
-              "rate": 0.08333333333333333,
-              "weighted_comebacks": 1.004,
-              "rank_cb": 1.0042737341264214,
-              "rank_rate": 0.08398065612916228
-            },
-            {
-              "team": "Dragon Ranger Gaming",
-              "matches": 14,
-              "maps": 36,
-              "lead_maps": 29,
-              "comebacks": 2,
-              "rate": 0.06896551724137931,
-              "weighted_comebacks": 0.937,
-              "rank_cb": 0.9369616799465437,
-              "rank_rate": 0.061872612367854574
-            },
-            {
-              "team": "Titan Esports Club",
-              "matches": 15,
-              "maps": 35,
-              "lead_maps": 29,
-              "comebacks": 1,
-              "rate": 0.034482758620689655,
-              "weighted_comebacks": 0.548,
-              "rank_cb": 0.548412489847313,
-              "rank_rate": 0.04201243589287938
-            },
-            {
-              "team": "Trace Esports",
-              "matches": 10,
-              "maps": 19,
-              "lead_maps": 14,
-              "comebacks": 1,
-              "rate": 0.07142857142857142,
-              "weighted_comebacks": 0.528,
-              "rank_cb": 0.5276955701815529,
-              "rank_rate": 0.07853702098696969
-            },
-            {
-              "team": "FunPlus Phoenix",
-              "matches": 14,
-              "maps": 18,
-              "lead_maps": 14,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "Wolves Esports",
-              "matches": 9,
-              "maps": 18,
-              "lead_maps": 13,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": {
-            "team": "Xi Lai Gaming",
-            "matches": 21,
-            "maps": 50,
-            "lead_maps": 40,
-            "comebacks": 3,
-            "rate": 0.075,
-            "weighted_comebacks": 1.544,
-            "rank_cb": 1.5444334675975484,
-            "rank_rate": 0.09329112624119329
-          },
-          "tie_with": null
+          "team": "Titan Esports Club",
+          "group": "Trung bình",
+          "maps": 18,
+          "wins": 8,
+          "lead": 5,
+          "blown": 1,
+          "trail": 8,
+          "made": 1
         },
         {
-          "step": 4,
-          "matches": 46,
-          "lead_maps": 74,
-          "comebacks": 5,
-          "rate": 0.06756756756756757,
-          "table": [
-            {
-              "team": "TYLOO",
-              "matches": 11,
-              "maps": 26,
-              "lead_maps": 20,
-              "comebacks": 2,
-              "rate": 0.1,
-              "weighted_comebacks": 1.03,
-              "rank_cb": 1.0302104217776258,
-              "rank_rate": 0.09906246935027406
-            },
-            {
-              "team": "Nova Esports",
-              "matches": 13,
-              "maps": 25,
-              "lead_maps": 22,
-              "comebacks": 2,
-              "rate": 0.09090909090909091,
-              "weighted_comebacks": 1.004,
-              "rank_cb": 1.0042737341264214,
-              "rank_rate": 0.0927542476317649
-            },
-            {
-              "team": "Bilibili Gaming",
-              "matches": 10,
-              "maps": 18,
-              "lead_maps": 18,
-              "comebacks": 2,
-              "rate": 0.1111111111111111,
-              "weighted_comebacks": 0.984,
-              "rank_cb": 0.9836152872635082,
-              "rank_rate": 0.11917884435810969
-            },
-            {
-              "team": "Dragon Ranger Gaming",
-              "matches": 11,
-              "maps": 27,
-              "lead_maps": 21,
-              "comebacks": 2,
-              "rate": 0.09523809523809523,
-              "weighted_comebacks": 0.937,
-              "rank_cb": 0.9369616799465437,
-              "rank_rate": 0.07473277712854844
-            },
-            {
-              "team": "Titan Esports Club",
-              "matches": 13,
-              "maps": 29,
-              "lead_maps": 23,
-              "comebacks": 1,
-              "rate": 0.043478260869565216,
-              "weighted_comebacks": 0.548,
-              "rank_cb": 0.548412489847313,
-              "rank_rate": 0.05006067622368167
-            },
-            {
-              "team": "Trace Esports",
-              "matches": 10,
-              "maps": 19,
-              "lead_maps": 14,
-              "comebacks": 1,
-              "rate": 0.07142857142857142,
-              "weighted_comebacks": 0.528,
-              "rank_cb": 0.5276955701815529,
-              "rank_rate": 0.07853702098696969
-            },
-            {
-              "team": "FunPlus Phoenix",
-              "matches": 13,
-              "maps": 18,
-              "lead_maps": 14,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "Wolves Esports",
-              "matches": 8,
-              "maps": 15,
-              "lead_maps": 12,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": {
-            "team": "TYLOO",
-            "matches": 11,
-            "maps": 26,
-            "lead_maps": 20,
-            "comebacks": 2,
-            "rate": 0.1,
-            "weighted_comebacks": 1.03,
-            "rank_cb": 1.0302104217776258,
-            "rank_rate": 0.09906246935027406
-          },
-          "tie_with": null
+          "team": "EDward Gaming",
+          "group": "Trung bình",
+          "maps": 15,
+          "wins": 4,
+          "lead": 3,
+          "blown": 0,
+          "trail": 10,
+          "made": 0
         },
         {
-          "step": 5,
-          "matches": 35,
-          "lead_maps": 54,
-          "comebacks": 3,
-          "rate": 0.05555555555555555,
-          "table": [
-            {
-              "team": "Dragon Ranger Gaming",
-              "matches": 11,
-              "maps": 27,
-              "lead_maps": 21,
-              "comebacks": 2,
-              "rate": 0.09523809523809523,
-              "weighted_comebacks": 0.937,
-              "rank_cb": 0.9369616799465437,
-              "rank_rate": 0.07473277712854844
-            },
-            {
-              "team": "Nova Esports",
-              "matches": 10,
-              "maps": 19,
-              "lead_maps": 17,
-              "comebacks": 1,
-              "rate": 0.058823529411764705,
-              "weighted_comebacks": 0.548,
-              "rank_cb": 0.548412489847313,
-              "rank_rate": 0.06469267170658854
-            },
-            {
-              "team": "Titan Esports Club",
-              "matches": 11,
-              "maps": 24,
-              "lead_maps": 20,
-              "comebacks": 1,
-              "rate": 0.05,
-              "weighted_comebacks": 0.548,
-              "rank_cb": 0.548412489847313,
-              "rank_rate": 0.05935158374920698
-            },
-            {
-              "team": "Trace Esports",
-              "matches": 9,
-              "maps": 17,
-              "lead_maps": 13,
-              "comebacks": 1,
-              "rate": 0.07692307692307693,
-              "weighted_comebacks": 0.528,
-              "rank_cb": 0.5276955701815529,
-              "rank_rate": 0.08375806978615619
-            },
-            {
-              "team": "Bilibili Gaming",
-              "matches": 8,
-              "maps": 13,
-              "lead_maps": 13,
-              "comebacks": 1,
-              "rate": 0.07692307692307693,
-              "weighted_comebacks": 0.409,
-              "rank_cb": 0.40926610976499084,
-              "rank_rate": 0.06881939503725679
-            },
-            {
-              "team": "FunPlus Phoenix",
-              "matches": 12,
-              "maps": 15,
-              "lead_maps": 11,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            },
-            {
-              "team": "Wolves Esports",
-              "matches": 8,
-              "maps": 15,
-              "lead_maps": 12,
-              "comebacks": 0,
-              "rate": 0,
-              "weighted_comebacks": 0,
-              "rank_cb": 0,
-              "rank_rate": 0
-            }
-          ],
-          "removed": null,
-          "tie_with": null
+          "team": "FunPlus Phoenix",
+          "group": "Trung bình",
+          "maps": 7,
+          "wins": 3,
+          "lead": 3,
+          "blown": 0,
+          "trail": 2,
+          "made": 0
+        },
+        {
+          "team": "Wolves Esports",
+          "group": "Trung bình",
+          "maps": 3,
+          "wins": 1,
+          "lead": 1,
+          "blown": 0,
+          "trail": 2,
+          "made": 0
+        },
+        {
+          "team": "All Gamers",
+          "group": "Yếu",
+          "maps": 18,
+          "wins": 8,
+          "lead": 6,
+          "blown": 2,
+          "trail": 8,
+          "made": 1
+        },
+        {
+          "team": "Bilibili Gaming",
+          "group": "Yếu",
+          "maps": 13,
+          "wins": 6,
+          "lead": 6,
+          "blown": 1,
+          "trail": 6,
+          "made": 0
+        },
+        {
+          "team": "Xi Lai Gaming",
+          "group": "Yếu",
+          "maps": 15,
+          "wins": 4,
+          "lead": 5,
+          "blown": 1,
+          "trail": 5,
+          "made": 0
+        },
+        {
+          "team": "Dragon Ranger Gaming",
+          "group": "Yếu",
+          "maps": 14,
+          "wins": 9,
+          "lead": 6,
+          "blown": 1,
+          "trail": 3,
+          "made": 0
+        },
+        {
+          "team": "JD Gaming",
+          "group": "Yếu",
+          "maps": 24,
+          "wins": 12,
+          "lead": 11,
+          "blown": 1,
+          "trail": 7,
+          "made": 0
         }
       ],
-      "baseline": {
-        "runs": 5000,
-        "mean": 0.09632805384385051,
-        "p05": 0.07142857142857142,
-        "p95": 0.12087912087912088,
-        "p_value": 0.0134
-      },
-      "previous": {
-        "crawled_at": "2026-11-02T08:03:13.452Z",
-        "top5": [
-          "All Gamers",
-          "EDward Gaming",
-          "JD Gaming",
-          "Xi Lai Gaming",
-          "TYLOO"
-        ],
-        "start_rate": 0.0912863070539419,
-        "final_rate": 0.05555555555555555,
-        "added": [],
-        "dropped": []
-      }
+      "whitelist": [
+        "Trace Esports",
+        "Titan Esports Club",
+        "EDward Gaming",
+        "FunPlus Phoenix",
+        "Wolves Esports"
+      ],
+      "blacklist": [
+        "TYLOO",
+        "Nova Esports",
+        "All Gamers",
+        "Bilibili Gaming",
+        "Xi Lai Gaming",
+        "Dragon Ranger Gaming",
+        "JD Gaming"
+      ]
     }
-  ],
-  "since": "2026-05-06T07:46:47.465Z",
-  "until": "2026-11-02T08:03:13.452Z",
-  "crawled_at": "2026-11-02T08:03:13.452Z"
+  ]
 }

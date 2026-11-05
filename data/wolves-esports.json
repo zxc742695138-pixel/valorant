@@ -1,7 +1,7 @@
 {
   "team_id": "13790",
-  "crawled_at": "2026-11-02T07:58:01.765Z",
-  "since": "2026-05-06T07:57:13.826Z",
+  "crawled_at": "2026-11-05T11:28:56.400Z",
+  "since": "2026-05-09T11:28:21.435Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/777957/wolves-esports-vs-world-sports-invictus-gaming-vct-2026-china-threshold-week-2-ro12",
@@ -10,6 +10,8 @@
       "stage": "Week 2: Round of 12",
       "team1": "Wolves Esports",
       "team2": "World Sports Invictus Gaming",
+      "team1_id": "13790",
+      "team2_id": "21699",
       "match_result": "0-2",
       "winner": "World Sports Invictus Gaming",
       "map_result": [
@@ -74,6 +76,8 @@
       "stage": "Week 1: Quarterfinals",
       "team1": "KeepBest Gaming",
       "team2": "Wolves Esports",
+      "team1_id": "12784",
+      "team2_id": "13790",
       "match_result": "2-0",
       "winner": "KeepBest Gaming",
       "map_result": [
@@ -141,6 +145,8 @@
       "stage": "Week 1: Round of 12",
       "team1": "Wolves Esports",
       "team2": "A Team",
+      "team1_id": "13790",
+      "team2_id": "20603",
       "match_result": "2-0",
       "winner": "Wolves Esports",
       "map_result": [
@@ -210,6 +216,8 @@
       "stage": "Main Event: Round of 16",
       "team1": "Wolves Esports",
       "team2": "KeepBest Gaming",
+      "team1_id": "13790",
+      "team2_id": "12784",
       "match_result": "0-2",
       "winner": "KeepBest Gaming",
       "map_result": [
@@ -286,6 +294,8 @@
       "stage": "Play-Ins: Lower Round 2",
       "team1": "EDward Gaming",
       "team2": "Wolves Esports",
+      "team1_id": "1120",
+      "team2_id": "13790",
       "match_result": "2-1",
       "winner": "EDward Gaming",
       "map_result": [
@@ -385,6 +395,8 @@
       "stage": "Play-Ins: Lower Round 1",
       "team1": "A Team",
       "team2": "Wolves Esports",
+      "team1_id": "20603",
+      "team2_id": "13790",
       "match_result": "1-2",
       "winner": "Wolves Esports",
       "map_result": [
@@ -493,6 +505,8 @@
       "stage": "Play-Ins: Upper Quarterfinals",
       "team1": "Wolves Esports",
       "team2": "Dragon Ranger Gaming",
+      "team1_id": "13790",
+      "team2_id": "11981",
       "match_result": "1-2",
       "winner": "Dragon Ranger Gaming",
       "map_result": [
@@ -593,6 +607,8 @@
       "stage": "Group Stage: Seeding",
       "team1": "FunPlus Phoenix",
       "team2": "Wolves Esports",
+      "team1_id": "11328",
+      "team2_id": "13790",
       "match_result": "2-0",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -666,6 +682,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "Xi Lai Gaming",
       "team2": "Wolves Esports",
+      "team1_id": "13581",
+      "team2_id": "13790",
       "match_result": "2-1",
       "winner": "Xi Lai Gaming",
       "map_result": [
@@ -759,6 +777,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Dragon Ranger Gaming",
       "team2": "Wolves Esports",
+      "team1_id": "11981",
+      "team2_id": "13790",
       "match_result": "1-2",
       "winner": "Wolves Esports",
       "map_result": [
@@ -857,6 +877,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Wolves Esports",
       "team2": "All Gamers",
+      "team1_id": "13790",
+      "team2_id": "1119",
       "match_result": "0-2",
       "winner": "All Gamers",
       "map_result": [
@@ -924,6 +946,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "team2": "Wolves Esports",
+      "team1_id": "12010",
+      "team2_id": "13790",
       "match_result": "2-1",
       "winner": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "map_result": [
@@ -1014,6 +1038,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Wolves Esports",
       "team2": "Wuxi Titan Esports Club (Titan Esports Club)",
+      "team1_id": "13790",
+      "team2_id": "14137",
       "match_result": "2-0",
       "winner": "Wolves Esports",
       "map_result": [
@@ -1081,6 +1107,8 @@
       "stage": "Playoffs: Round of 16",
       "team1": "FunPlus Phoenix",
       "team2": "Wolves Esports",
+      "team1_id": "11328",
+      "team2_id": "13790",
       "match_result": "2-0",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -1158,6 +1186,8 @@
       "stage": "Stage 1: Lower Round 1",
       "team1": "Wolves Esports",
       "team2": "FunPlus Phoenix",
+      "team1_id": "13790",
+      "team2_id": "11328",
       "match_result": "1-2",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -1185,6 +1215,8 @@
       "stage": "Stage 1: Upper Semifinals",
       "team1": "Bilibili Gaming",
       "team2": "Wolves Esports",
+      "team1_id": "12010",
+      "team2_id": "13790",
       "match_result": "2-0",
       "winner": "Bilibili Gaming",
       "map_result": [

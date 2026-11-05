@@ -1,7 +1,7 @@
 {
   "team_id": "8185",
-  "crawled_at": "2026-11-02T08:00:40.622Z",
-  "since": "2026-05-06T07:59:37.570Z",
+  "crawled_at": "2026-11-05T11:30:42.687Z",
+  "since": "2026-05-09T11:30:03.340Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/742483/kiwoom-drx-vs-t1-vct-2026-pacific-stage-2-lr1",
@@ -10,6 +10,8 @@
       "stage": "Playoffs: Lower Round 1",
       "team1": "KIWOOM DRX",
       "team2": "T1",
+      "team1_id": "8185",
+      "team2_id": "14",
       "match_result": "0-2",
       "winner": "T1",
       "map_result": [
@@ -79,6 +81,8 @@
       "stage": "Playoffs: Upper Round 1",
       "team1": "Global Esports",
       "team2": "KIWOOM DRX",
+      "team1_id": "918",
+      "team2_id": "8185",
       "match_result": "2-1",
       "winner": "Global Esports",
       "map_result": [
@@ -179,6 +183,8 @@
       "stage": "Play-Ins: Upper Semifinals",
       "team1": "KIWOOM DRX",
       "team2": "Sharper Esports",
+      "team1_id": "8185",
+      "team2_id": "623",
       "match_result": "2-1",
       "winner": "KIWOOM DRX",
       "map_result": [
@@ -279,6 +285,8 @@
       "stage": "Play-Ins: Upper Quarterfinals",
       "team1": "ZETA DIVISION",
       "team2": "KIWOOM DRX",
+      "team1_id": "5448",
+      "team2_id": "8185",
       "match_result": "1-2",
       "winner": "KIWOOM DRX",
       "map_result": [
@@ -379,6 +387,8 @@
       "stage": "Play-Ins: Upper Round 1",
       "team1": "KIWOOM DRX",
       "team2": "ONSIDE GAMING",
+      "team1_id": "8185",
+      "team2_id": "19189",
       "match_result": "2-0",
       "winner": "KIWOOM DRX",
       "map_result": [
@@ -449,6 +459,8 @@
       "stage": "Group Stage: Week 4",
       "team1": "KIWOOM DRX",
       "team2": "T1",
+      "team1_id": "8185",
+      "team2_id": "14",
       "match_result": "0-2",
       "winner": "T1",
       "map_result": [
@@ -515,6 +527,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "VARREL",
       "team2": "KIWOOM DRX",
+      "team1_id": "11229",
+      "team2_id": "8185",
       "match_result": "2-1",
       "winner": "VARREL",
       "map_result": [
@@ -611,6 +625,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Paper Rex",
       "team2": "KIWOOM DRX",
+      "team1_id": "624",
+      "team2_id": "8185",
       "match_result": "2-0",
       "winner": "Paper Rex",
       "map_result": [
@@ -670,6 +686,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "KIWOOM DRX",
       "team2": "Team Secret",
+      "team1_id": "8185",
+      "team2_id": "6199",
       "match_result": "0-2",
       "winner": "Team Secret",
       "map_result": [
@@ -733,6 +751,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "KIWOOM DRX",
       "team2": "DetonatioN FocusMe",
+      "team1_id": "8185",
+      "team2_id": "278",
       "match_result": "2-1",
       "winner": "KIWOOM DRX",
       "map_result": [
@@ -829,6 +849,8 @@
       "stage": "Stage 2: Lower Round 2",
       "team1": "Nongshim RedForce",
       "team2": "KIWOOM DRX",
+      "team1_id": "11060",
+      "team2_id": "8185",
       "match_result": "2-0",
       "winner": "Nongshim RedForce",
       "map_result": [
@@ -898,6 +920,8 @@
       "stage": "Stage 2: Lower Round 1",
       "team1": "FULL SENSE",
       "team2": "KIWOOM DRX",
+      "team1_id": "4050",
+      "team2_id": "8185",
       "match_result": "1-2",
       "winner": "KIWOOM DRX",
       "map_result": [
@@ -992,6 +1016,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "Rex Regum Qeon",
       "team2": "KIWOOM DRX",
+      "team1_id": "878",
+      "team2_id": "8185",
       "match_result": "2-0",
       "winner": "Rex Regum Qeon",
       "map_result": [
@@ -1059,6 +1085,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "Paper Rex",
       "team2": "KIWOOM DRX",
+      "team1_id": "624",
+      "team2_id": "8185",
       "match_result": "2-1",
       "winner": "Paper Rex",
       "map_result": [
@@ -1134,172 +1162,6 @@
             "11-1",
             "12-1",
             "13-1"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/666495/kiwoom-drx-vs-nongshim-redforce-vct-2026-pacific-stage-1-lr1",
-      "date": "2026-05-09 07:30:00",
-      "event": "VCT 2026: Pacific Stage 1",
-      "stage": "Playoffs: Lower Round 1",
-      "team1": "KIWOOM DRX",
-      "team2": "Nongshim RedForce",
-      "match_result": "2-1",
-      "winner": "KIWOOM DRX",
-      "map_result": [
-        {
-          "map": "Pearl",
-          "score": "11-13",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "0-3",
-            "0-4",
-            "1-4",
-            "2-4",
-            "3-4",
-            "3-5",
-            "3-6",
-            "4-6",
-            "4-7",
-            "4-8",
-            "4-9",
-            "4-10",
-            "4-11",
-            "5-11",
-            "6-11",
-            "7-11",
-            "8-11",
-            "9-11",
-            "10-11",
-            "11-11",
-            "11-12",
-            "11-13"
-          ]
-        },
-        {
-          "map": "Split",
-          "score": "13-6",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "2-1",
-            "3-1",
-            "3-2",
-            "3-3",
-            "4-3",
-            "5-3",
-            "6-3",
-            "7-3",
-            "8-3",
-            "8-4",
-            "9-4",
-            "9-5",
-            "9-6",
-            "10-6",
-            "11-6",
-            "12-6",
-            "13-6"
-          ]
-        },
-        {
-          "map": "Haven",
-          "score": "13-9",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "3-0",
-            "4-0",
-            "5-0",
-            "6-0",
-            "6-1",
-            "7-1",
-            "8-1",
-            "9-1",
-            "9-2",
-            "10-2",
-            "11-2",
-            "11-3",
-            "11-4",
-            "11-5",
-            "11-6",
-            "11-7",
-            "11-8",
-            "11-9",
-            "12-9",
-            "13-9"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/666489/kiwoom-drx-vs-full-sense-vct-2026-pacific-stage-1-ur1",
-      "date": "2026-05-07 06:35:00",
-      "event": "VCT 2026: Pacific Stage 1",
-      "stage": "Playoffs: Upper Round 1",
-      "team1": "KIWOOM DRX",
-      "team2": "FULL SENSE",
-      "match_result": "0-2",
-      "winner": "FULL SENSE",
-      "map_result": [
-        {
-          "map": "Lotus",
-          "score": "9-13",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "2-1",
-            "3-1",
-            "3-2",
-            "3-3",
-            "3-4",
-            "4-4",
-            "5-4",
-            "6-4",
-            "6-5",
-            "7-5",
-            "7-6",
-            "7-7",
-            "7-8",
-            "7-9",
-            "8-9",
-            "8-10",
-            "8-11",
-            "8-12",
-            "9-12",
-            "9-13"
-          ]
-        },
-        {
-          "map": "Fracture",
-          "score": "7-13",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "1-2",
-            "2-2",
-            "2-3",
-            "2-4",
-            "2-5",
-            "3-5",
-            "3-6",
-            "3-7",
-            "3-8",
-            "3-9",
-            "3-10",
-            "3-11",
-            "3-12",
-            "4-12",
-            "5-12",
-            "6-12",
-            "7-12",
-            "7-13"
           ]
         }
       ]

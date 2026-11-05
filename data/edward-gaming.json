@@ -1,7 +1,7 @@
 {
   "team_id": "1120",
-  "crawled_at": "2026-11-02T07:57:37.172Z",
-  "since": "2026-05-06T07:56:05.146Z",
+  "crawled_at": "2026-11-05T11:28:36.850Z",
+  "since": "2026-05-09T11:27:41.094Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/753452/global-esports-vs-edward-gaming-valorant-champions-2026-elim-b",
@@ -10,6 +10,8 @@
       "stage": "Group Stage: Elimination (B)",
       "team1": "Global Esports",
       "team2": "EDward Gaming",
+      "team1_id": "918",
+      "team2_id": "1120",
       "match_result": "2-0",
       "winner": "Global Esports",
       "map_result": [
@@ -73,6 +75,8 @@
       "stage": "Group Stage: Opening (B)",
       "team1": "LOUD",
       "team2": "EDward Gaming",
+      "team1_id": "6961",
+      "team2_id": "1120",
       "match_result": "2-0",
       "winner": "LOUD",
       "map_result": [
@@ -138,6 +142,8 @@
       "stage": "Main Event: Round of 16",
       "team1": "Nova Esports",
       "team2": "EDward Gaming",
+      "team1_id": "12064",
+      "team2_id": "1120",
       "match_result": "2-1",
       "winner": "Nova Esports",
       "map_result": [
@@ -237,6 +243,8 @@
       "stage": "Play-Ins: Lower Round 3",
       "team1": "JD Gaming",
       "team2": "EDward Gaming",
+      "team1_id": "13576",
+      "team2_id": "1120",
       "match_result": "2-0",
       "winner": "JD Gaming",
       "map_result": [
@@ -304,6 +312,8 @@
       "stage": "Play-Ins: Lower Round 2",
       "team1": "EDward Gaming",
       "team2": "Wolves Esports",
+      "team1_id": "1120",
+      "team2_id": "13790",
       "match_result": "2-1",
       "winner": "EDward Gaming",
       "map_result": [
@@ -403,6 +413,8 @@
       "stage": "Play-Ins: Upper Quarterfinals",
       "team1": "EDward Gaming",
       "team2": "Wuxi Titan Esports Club (Titan Esports Club)",
+      "team1_id": "1120",
+      "team2_id": "14137",
       "match_result": "1-2",
       "winner": "Wuxi Titan Esports Club (Titan Esports Club)",
       "map_result": [
@@ -502,6 +514,8 @@
       "stage": "Group Stage: Seeding",
       "team1": "EDward Gaming",
       "team2": "All Gamers",
+      "team1_id": "1120",
+      "team2_id": "1119",
       "match_result": "2-0",
       "winner": "EDward Gaming",
       "map_result": [
@@ -570,6 +584,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "FunPlus Phoenix",
       "team2": "EDward Gaming",
+      "team1_id": "11328",
+      "team2_id": "1120",
       "match_result": "1-2",
       "winner": "EDward Gaming",
       "map_result": [
@@ -665,6 +681,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "EDward Gaming",
       "team2": "Nova Esports",
+      "team1_id": "1120",
+      "team2_id": "12064",
       "match_result": "0-2",
       "winner": "Nova Esports",
       "map_result": [
@@ -742,6 +760,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "EDward Gaming",
       "team2": "JD Gaming",
+      "team1_id": "1120",
+      "team2_id": "13576",
       "match_result": "2-0",
       "winner": "EDward Gaming",
       "map_result": [
@@ -811,6 +831,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Trace Esports",
       "team2": "EDward Gaming",
+      "team1_id": "12685",
+      "team2_id": "1120",
       "match_result": "0-2",
       "winner": "EDward Gaming",
       "map_result": [
@@ -877,6 +899,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "EDward Gaming",
       "team2": "TYLOO",
+      "team1_id": "1120",
+      "team2_id": "731",
       "match_result": "1-2",
       "winner": "TYLOO",
       "map_result": [
@@ -967,6 +991,8 @@
       "stage": "Group Stage: Decider (A)",
       "team1": "BBL Esports",
       "team2": "EDward Gaming",
+      "team1_id": "397",
+      "team2_id": "1120",
       "match_result": "2-0",
       "winner": "BBL Esports",
       "map_result": [
@@ -1028,6 +1054,8 @@
       "stage": "Group Stage: Elimination (A)",
       "team1": "Rex Regum Qeon",
       "team2": "EDward Gaming",
+      "team1_id": "878",
+      "team2_id": "1120",
       "match_result": "0-2",
       "winner": "EDward Gaming",
       "map_result": [
@@ -1096,6 +1124,8 @@
       "stage": "Group Stage: Opening (A)",
       "team1": "BBL Esports",
       "team2": "EDward Gaming",
+      "team1_id": "397",
+      "team2_id": "1120",
       "match_result": "2-1",
       "winner": "BBL Esports",
       "map_result": [
@@ -1199,6 +1229,8 @@
       "stage": "Playoffs: Lower Final",
       "team1": "EDward Gaming",
       "team2": "LEVIATÁN",
+      "team1_id": "1120",
+      "team2_id": "2359",
       "match_result": "0-3",
       "winner": "LEVIATÁN",
       "map_result": [
@@ -1296,6 +1328,8 @@
       "stage": "Playoffs: Upper Final",
       "team1": "EDward Gaming",
       "team2": "Paper Rex",
+      "team1_id": "1120",
+      "team2_id": "624",
       "match_result": "1-2",
       "winner": "Paper Rex",
       "map_result": [
@@ -1402,6 +1436,8 @@
       "stage": "Playoffs: Upper Semifinals",
       "team1": "Xi Lai Gaming",
       "team2": "EDward Gaming",
+      "team1_id": "13581",
+      "team2_id": "1120",
       "match_result": "1-2",
       "winner": "EDward Gaming",
       "map_result": [
@@ -1497,6 +1533,8 @@
       "stage": "Playoffs: Upper Quarterfinals",
       "team1": "EDward Gaming",
       "team2": "FUT Esports",
+      "team1_id": "1120",
+      "team2_id": "1184",
       "match_result": "2-1",
       "winner": "EDward Gaming",
       "map_result": [
@@ -1591,6 +1629,8 @@
       "stage": "Playoffs: Round of 16",
       "team1": "TYLOO",
       "team2": "EDward Gaming",
+      "team1_id": "731",
+      "team2_id": "1120",
       "match_result": "2-0",
       "winner": "TYLOO",
       "map_result": [
@@ -1649,6 +1689,8 @@
       "stage": "Playoffs: Grand Final",
       "team1": "EDward Gaming",
       "team2": "Xi Lai Gaming",
+      "team1_id": "1120",
+      "team2_id": "13581",
       "match_result": "3-2",
       "winner": "EDward Gaming",
       "map_result": [
@@ -1789,75 +1831,6 @@
             "11-4",
             "12-4",
             "13-4"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/659480/xi-lai-gaming-vs-edward-gaming-vct-2026-china-stage-1-ubf",
-      "date": "2026-05-08 05:00:00",
-      "event": "VCT 2026: China Stage 1",
-      "stage": "Playoffs: Upper Final",
-      "team1": "Xi Lai Gaming",
-      "team2": "EDward Gaming",
-      "match_result": "0-2",
-      "winner": "EDward Gaming",
-      "map_result": [
-        {
-          "map": "Split",
-          "score": "9-13",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "2-1",
-            "2-2",
-            "2-3",
-            "2-4",
-            "2-5",
-            "2-6",
-            "3-6",
-            "4-6",
-            "4-7",
-            "5-7",
-            "6-7",
-            "7-7",
-            "7-8",
-            "8-8",
-            "8-9",
-            "8-10",
-            "8-11",
-            "9-11",
-            "9-12",
-            "9-13"
-          ]
-        },
-        {
-          "map": "Breeze",
-          "score": "8-13",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "2-1",
-            "2-2",
-            "2-3",
-            "2-4",
-            "2-5",
-            "2-6",
-            "3-6",
-            "3-7",
-            "3-8",
-            "4-8",
-            "5-8",
-            "6-8",
-            "6-9",
-            "7-9",
-            "8-9",
-            "8-10",
-            "8-11",
-            "8-12",
-            "8-13"
           ]
         }
       ]

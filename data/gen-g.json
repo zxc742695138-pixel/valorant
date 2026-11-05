@@ -1,7 +1,7 @@
 {
   "team_id": "17",
-  "crawled_at": "2026-11-02T08:00:13.464Z",
-  "since": "2026-05-06T07:59:05.355Z",
+  "crawled_at": "2026-11-05T11:30:21.813Z",
+  "since": "2026-05-09T11:29:39.098Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/742485/gen-g-vs-t1-vct-2026-pacific-stage-2-lr2",
@@ -10,6 +10,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "Gen.G",
       "team2": "T1",
+      "team1_id": "17",
+      "team2_id": "14",
       "match_result": "0-2",
       "winner": "T1",
       "map_result": [
@@ -78,6 +80,8 @@
       "stage": "Playoffs: Upper Semifinals",
       "team1": "Gen.G",
       "team2": "Nongshim RedForce",
+      "team1_id": "17",
+      "team2_id": "11060",
       "match_result": "1-2",
       "winner": "Nongshim RedForce",
       "map_result": [
@@ -178,6 +182,8 @@
       "stage": "Group Stage: Week 4",
       "team1": "Gen.G",
       "team2": "FULL SENSE",
+      "team1_id": "17",
+      "team2_id": "4050",
       "match_result": "2-1",
       "winner": "Gen.G",
       "map_result": [
@@ -279,6 +285,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "Global Esports",
       "team2": "Gen.G",
+      "team1_id": "918",
+      "team2_id": "17",
       "match_result": "1-2",
       "winner": "Gen.G",
       "map_result": [
@@ -383,6 +391,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Gen.G",
       "team2": "Rex Regum Qeon",
+      "team1_id": "17",
+      "team2_id": "878",
       "match_result": "2-1",
       "winner": "Gen.G",
       "map_result": [
@@ -478,6 +488,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Nongshim RedForce",
       "team2": "Gen.G",
+      "team1_id": "11060",
+      "team2_id": "17",
       "match_result": "1-2",
       "winner": "Gen.G",
       "map_result": [
@@ -572,6 +584,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Gen.G",
       "team2": "ZETA DIVISION",
+      "team1_id": "17",
+      "team2_id": "5448",
       "match_result": "2-0",
       "winner": "Gen.G",
       "map_result": [
@@ -648,6 +662,8 @@
       "stage": "Stage 2: Lower Final",
       "team1": "Nongshim RedForce",
       "team2": "Gen.G",
+      "team1_id": "11060",
+      "team2_id": "17",
       "match_result": "3-1",
       "winner": "Nongshim RedForce",
       "map_result": [
@@ -778,6 +794,8 @@
       "stage": "Stage 2: Lower Round 2",
       "team1": "Gen.G",
       "team2": "T1",
+      "team1_id": "17",
+      "team2_id": "14",
       "match_result": "2-0",
       "winner": "Gen.G",
       "map_result": [
@@ -849,6 +867,8 @@
       "stage": "Stage 2: Upper Semifinals",
       "team1": "Gen.G",
       "team2": "Rex Regum Qeon",
+      "team1_id": "17",
+      "team2_id": "878",
       "match_result": "2-3",
       "winner": "Rex Regum Qeon",
       "map_result": [
@@ -998,6 +1018,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "FULL SENSE",
       "team2": "Gen.G",
+      "team1_id": "4050",
+      "team2_id": "17",
       "match_result": "1-2",
       "winner": "Gen.G",
       "map_result": [
@@ -1105,6 +1127,8 @@
       "stage": "Stage 1: Grand Final",
       "team1": "VARREL",
       "team2": "Gen.G",
+      "team1_id": "11229",
+      "team2_id": "17",
       "match_result": "0-2",
       "winner": "Gen.G",
       "map_result": [
@@ -1170,6 +1194,8 @@
       "stage": "Stage 1: Lower Final",
       "team1": "Team Secret",
       "team2": "Gen.G",
+      "team1_id": "6199",
+      "team2_id": "17",
       "match_result": "0-2",
       "winner": "Gen.G",
       "map_result": [
@@ -1241,6 +1267,8 @@
       "stage": "Stage 1: Lower Round 1",
       "team1": "ZETA DIVISION",
       "team2": "Gen.G",
+      "team1_id": "5448",
+      "team2_id": "17",
       "match_result": "0-2",
       "winner": "Gen.G",
       "map_result": [
@@ -1310,6 +1338,8 @@
       "stage": "Stage 1: Upper Semifinals",
       "team1": "Gen.G",
       "team2": "Team Secret",
+      "team1_id": "17",
+      "team2_id": "6199",
       "match_result": "1-2",
       "winner": "Team Secret",
       "map_result": [

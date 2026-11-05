@@ -1,7 +1,7 @@
 {
   "team_id": "5448",
-  "crawled_at": "2026-11-02T08:01:37.424Z",
-  "since": "2026-05-06T08:01:00.100Z",
+  "crawled_at": "2026-11-05T11:31:10.068Z",
+  "since": "2026-05-09T11:30:43.155Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/730550/detonation-focusme-vs-zeta-division-vct-2026-pacific-stage-2-lr2",
@@ -10,6 +10,8 @@
       "stage": "Play-Ins: Lower Round 2",
       "team1": "DetonatioN FocusMe",
       "team2": "ZETA DIVISION",
+      "team1_id": "278",
+      "team2_id": "5448",
       "match_result": "2-0",
       "winner": "DetonatioN FocusMe",
       "map_result": [
@@ -69,6 +71,8 @@
       "stage": "Play-Ins: Lower Round 1",
       "team1": "ZETA DIVISION",
       "team2": "Xipto Esports",
+      "team1_id": "5448",
+      "team2_id": "17167",
       "match_result": "2-1",
       "winner": "ZETA DIVISION",
       "map_result": [
@@ -170,6 +174,8 @@
       "stage": "Play-Ins: Upper Quarterfinals",
       "team1": "ZETA DIVISION",
       "team2": "KIWOOM DRX",
+      "team1_id": "5448",
+      "team2_id": "8185",
       "match_result": "1-2",
       "winner": "KIWOOM DRX",
       "map_result": [
@@ -270,6 +276,8 @@
       "stage": "Group Stage: Week 4",
       "team1": "Global Esports",
       "team2": "ZETA DIVISION",
+      "team1_id": "918",
+      "team2_id": "5448",
       "match_result": "2-0",
       "winner": "Global Esports",
       "map_result": [
@@ -344,6 +352,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "ZETA DIVISION",
       "team2": "Nongshim RedForce",
+      "team1_id": "5448",
+      "team2_id": "11060",
       "match_result": "1-2",
       "winner": "Nongshim RedForce",
       "map_result": [
@@ -441,6 +451,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "FULL SENSE",
       "team2": "ZETA DIVISION",
+      "team1_id": "4050",
+      "team2_id": "5448",
       "match_result": "1-2",
       "winner": "ZETA DIVISION",
       "map_result": [
@@ -547,6 +559,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Rex Regum Qeon",
       "team2": "ZETA DIVISION",
+      "team1_id": "878",
+      "team2_id": "5448",
       "match_result": "0-2",
       "winner": "ZETA DIVISION",
       "map_result": [
@@ -613,6 +627,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Gen.G",
       "team2": "ZETA DIVISION",
+      "team1_id": "17",
+      "team2_id": "5448",
       "match_result": "2-0",
       "winner": "Gen.G",
       "map_result": [
@@ -689,6 +705,8 @@
       "stage": "Stage 1: Lower Round 1",
       "team1": "ZETA DIVISION",
       "team2": "Gen.G",
+      "team1_id": "5448",
+      "team2_id": "17",
       "match_result": "0-2",
       "winner": "Gen.G",
       "map_result": [
@@ -758,6 +776,8 @@
       "stage": "Stage 1: Upper Semifinals",
       "team1": "ZETA DIVISION",
       "team2": "VARREL",
+      "team1_id": "5448",
+      "team2_id": "11229",
       "match_result": "0-2",
       "winner": "VARREL",
       "map_result": [

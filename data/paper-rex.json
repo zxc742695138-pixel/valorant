@@ -1,7 +1,7 @@
 {
   "team_id": "624",
-  "crawled_at": "2026-11-02T08:01:09.398Z",
-  "since": "2026-05-06T07:58:52.503Z",
+  "crawled_at": "2026-11-05T11:30:39.930Z",
+  "since": "2026-05-09T11:29:20.915Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/754739/t1-vs-paper-rex-valorant-champions-2026-lr1",
@@ -10,6 +10,8 @@
       "stage": "Playoffs: Lower Round 1",
       "team1": "T1",
       "team2": "Paper Rex",
+      "team1_id": "14",
+      "team2_id": "624",
       "match_result": "2-1",
       "winner": "T1",
       "map_result": [
@@ -106,6 +108,8 @@
       "stage": "Playoffs: Upper Quarterfinals",
       "team1": "Paper Rex",
       "team2": "LOUD",
+      "team1_id": "624",
+      "team2_id": "6961",
       "match_result": "0-2",
       "winner": "LOUD",
       "map_result": [
@@ -182,6 +186,8 @@
       "stage": "Group Stage: Winner's (C)",
       "team1": "G2 Esports",
       "team2": "Paper Rex",
+      "team1_id": "11058",
+      "team2_id": "624",
       "match_result": "1-2",
       "winner": "Paper Rex",
       "map_result": [
@@ -283,6 +289,8 @@
       "stage": "Group Stage: Opening (C)",
       "team1": "Team Liquid",
       "team2": "Paper Rex",
+      "team1_id": "474",
+      "team2_id": "624",
       "match_result": "1-2",
       "winner": "Paper Rex",
       "map_result": [
@@ -376,6 +384,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "VARREL",
       "team2": "Paper Rex",
+      "team1_id": "11229",
+      "team2_id": "624",
       "match_result": "2-1",
       "winner": "VARREL",
       "map_result": [
@@ -479,6 +489,8 @@
       "stage": "Playoffs: Lower Round 1",
       "team1": "Paper Rex",
       "team2": "ONSIDE GAMING",
+      "team1_id": "624",
+      "team2_id": "19189",
       "match_result": "2-0",
       "winner": "Paper Rex",
       "map_result": [
@@ -547,6 +559,8 @@
       "stage": "Playoffs: Upper Round 1",
       "team1": "Paper Rex",
       "team2": "Nongshim RedForce",
+      "team1_id": "624",
+      "team2_id": "11060",
       "match_result": "0-2",
       "winner": "Nongshim RedForce",
       "map_result": [
@@ -616,6 +630,8 @@
       "stage": "Group Stage: Week 4",
       "team1": "VARREL",
       "team2": "Paper Rex",
+      "team1_id": "11229",
+      "team2_id": "624",
       "match_result": "2-0",
       "winner": "VARREL",
       "map_result": [
@@ -688,6 +704,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "Team Secret",
       "team2": "Paper Rex",
+      "team1_id": "6199",
+      "team2_id": "624",
       "match_result": "0-2",
       "winner": "Paper Rex",
       "map_result": [
@@ -758,6 +776,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Paper Rex",
       "team2": "KIWOOM DRX",
+      "team1_id": "624",
+      "team2_id": "8185",
       "match_result": "2-0",
       "winner": "Paper Rex",
       "map_result": [
@@ -817,6 +837,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "DetonatioN FocusMe",
       "team2": "Paper Rex",
+      "team1_id": "278",
+      "team2_id": "624",
       "match_result": "0-2",
       "winner": "Paper Rex",
       "map_result": [
@@ -898,6 +920,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Paper Rex",
       "team2": "T1",
+      "team1_id": "624",
+      "team2_id": "14",
       "match_result": "1-2",
       "winner": "T1",
       "map_result": [
@@ -1013,6 +1037,8 @@
       "stage": "Group Stage: Elimination (B)",
       "team1": "Karmine Corp",
       "team2": "Paper Rex",
+      "team1_id": "8877",
+      "team2_id": "624",
       "match_result": "2-1",
       "winner": "Karmine Corp",
       "map_result": [
@@ -1112,6 +1138,8 @@
       "stage": "Group Stage: Opening (B)",
       "team1": "NRG",
       "team2": "Paper Rex",
+      "team1_id": "1034",
+      "team2_id": "624",
       "match_result": "2-1",
       "winner": "NRG",
       "map_result": [
@@ -1208,6 +1236,8 @@
       "stage": "Playoffs: Grand Final",
       "team1": "Paper Rex",
       "team2": "LEVIATÁN",
+      "team1_id": "624",
+      "team2_id": "2359",
       "match_result": "2-3",
       "winner": "LEVIATÁN",
       "map_result": [
@@ -1354,6 +1384,8 @@
       "stage": "Playoffs: Upper Final",
       "team1": "EDward Gaming",
       "team2": "Paper Rex",
+      "team1_id": "1120",
+      "team2_id": "624",
       "match_result": "1-2",
       "winner": "Paper Rex",
       "map_result": [
@@ -1460,6 +1492,8 @@
       "stage": "Playoffs: Upper Semifinals",
       "team1": "Paper Rex",
       "team2": "Team Vitality",
+      "team1_id": "624",
+      "team2_id": "2059",
       "match_result": "2-1",
       "winner": "Paper Rex",
       "map_result": [
@@ -1547,6 +1581,8 @@
       "stage": "Playoffs: Upper Quarterfinals",
       "team1": "Paper Rex",
       "team2": "LEVIATÁN",
+      "team1_id": "624",
+      "team2_id": "2359",
       "match_result": "2-0",
       "winner": "Paper Rex",
       "map_result": [
@@ -1610,6 +1646,8 @@
       "stage": "Playoffs: Grand Final",
       "team1": "FULL SENSE",
       "team2": "Paper Rex",
+      "team1_id": "4050",
+      "team2_id": "624",
       "match_result": "0-3",
       "winner": "Paper Rex",
       "map_result": [
@@ -1711,6 +1749,8 @@
       "stage": "Playoffs: Lower Final",
       "team1": "Global Esports",
       "team2": "Paper Rex",
+      "team1_id": "918",
+      "team2_id": "624",
       "match_result": "0-3",
       "winner": "Paper Rex",
       "map_result": [
@@ -1804,6 +1844,8 @@
       "stage": "Playoffs: Lower Round 3",
       "team1": "T1",
       "team2": "Paper Rex",
+      "team1_id": "14",
+      "team2_id": "624",
       "match_result": "1-2",
       "winner": "Paper Rex",
       "map_result": [
@@ -1903,6 +1945,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "Paper Rex",
       "team2": "KIWOOM DRX",
+      "team1_id": "624",
+      "team2_id": "8185",
       "match_result": "2-1",
       "winner": "Paper Rex",
       "map_result": [
@@ -1978,98 +2022,6 @@
             "11-1",
             "12-1",
             "13-1"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/666490/paper-rex-vs-global-esports-vct-2026-pacific-stage-1-ubsf",
-      "date": "2026-05-08 04:00:00",
-      "event": "VCT 2026: Pacific Stage 1",
-      "stage": "Playoffs: Upper Semifinals",
-      "team1": "Paper Rex",
-      "team2": "Global Esports",
-      "match_result": "1-2",
-      "winner": "Global Esports",
-      "map_result": [
-        {
-          "map": "Breeze",
-          "score": "9-13",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "1-2",
-            "1-3",
-            "1-4",
-            "2-4",
-            "3-4",
-            "4-4",
-            "5-4",
-            "6-4",
-            "6-5",
-            "6-6",
-            "7-6",
-            "8-6",
-            "8-7",
-            "8-8",
-            "8-9",
-            "9-9",
-            "9-10",
-            "9-11",
-            "9-12",
-            "9-13"
-          ]
-        },
-        {
-          "map": "Lotus",
-          "score": "13-6",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "1-1",
-            "2-1",
-            "2-2",
-            "2-3",
-            "3-3",
-            "4-3",
-            "5-3",
-            "6-3",
-            "7-3",
-            "8-3",
-            "9-3",
-            "9-4",
-            "9-5",
-            "10-5",
-            "11-5",
-            "12-5",
-            "12-6",
-            "13-6"
-          ]
-        },
-        {
-          "map": "Pearl",
-          "score": "5-13",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "1-2",
-            "1-3",
-            "1-4",
-            "2-4",
-            "2-5",
-            "2-6",
-            "2-7",
-            "3-7",
-            "3-8",
-            "3-9",
-            "4-9",
-            "5-9",
-            "5-10",
-            "5-11",
-            "5-12",
-            "5-13"
           ]
         }
       ]

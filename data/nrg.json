@@ -1,7 +1,7 @@
 {
   "team_id": "1034",
-  "crawled_at": "2026-11-02T07:49:22.097Z",
-  "since": "2026-05-06T07:46:47.503Z",
+  "crawled_at": "2026-11-05T11:23:27.241Z",
+  "since": "2026-05-09T11:21:50.354Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/754740/nrg-vs-100-thieves-valorant-champions-2026-lr2",
@@ -10,6 +10,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "NRG",
       "team2": "100 Thieves",
+      "team1_id": "1034",
+      "team2_id": "120",
       "match_result": "0-2",
       "winner": "100 Thieves",
       "map_result": [
@@ -79,6 +81,8 @@
       "stage": "Playoffs: Upper Semifinals",
       "team1": "NRG",
       "team2": "LOUD",
+      "team1_id": "1034",
+      "team2_id": "6961",
       "match_result": "1-2",
       "winner": "LOUD",
       "map_result": [
@@ -173,6 +177,8 @@
       "stage": "Playoffs: Upper Quarterfinals",
       "team1": "NRG",
       "team2": "T1",
+      "team1_id": "1034",
+      "team2_id": "14",
       "match_result": "2-0",
       "winner": "NRG",
       "map_result": [
@@ -243,6 +249,8 @@
       "stage": "Group Stage: Winner's (D)",
       "team1": "Karmine Corp",
       "team2": "NRG",
+      "team1_id": "8877",
+      "team2_id": "1034",
       "match_result": "1-2",
       "winner": "NRG",
       "map_result": [
@@ -342,6 +350,8 @@
       "stage": "Group Stage: Opening (D)",
       "team1": "Nongshim RedForce",
       "team2": "NRG",
+      "team1_id": "11060",
+      "team2_id": "1034",
       "match_result": "0-2",
       "winner": "NRG",
       "map_result": [
@@ -409,6 +419,8 @@
       "stage": "Playoffs: Lower Final",
       "team1": "NRG",
       "team2": "LOUD",
+      "team1_id": "1034",
+      "team2_id": "6961",
       "match_result": "2-3",
       "winner": "LOUD",
       "map_result": [
@@ -557,6 +569,8 @@
       "stage": "Playoffs: Upper Final",
       "team1": "NRG",
       "team2": "100 Thieves",
+      "team1_id": "1034",
+      "team2_id": "120",
       "match_result": "0-2",
       "winner": "100 Thieves",
       "map_result": [
@@ -618,6 +632,8 @@
       "stage": "Playoffs: Upper Semifinals",
       "team1": "NRG",
       "team2": "LOUD",
+      "team1_id": "1034",
+      "team2_id": "6961",
       "match_result": "2-1",
       "winner": "NRG",
       "map_result": [
@@ -713,6 +729,8 @@
       "stage": "Group Stage: Week 4",
       "team1": "Evil Geniuses",
       "team2": "NRG",
+      "team1_id": "5248",
+      "team2_id": "1034",
       "match_result": "0-2",
       "winner": "NRG",
       "map_result": [
@@ -773,6 +791,8 @@
       "stage": "Group Stage: Week 4",
       "team1": "ENVY",
       "team2": "NRG",
+      "team1_id": "427",
+      "team2_id": "1034",
       "match_result": "0-2",
       "winner": "NRG",
       "map_result": [
@@ -840,6 +860,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "LEVIATÁN",
       "team2": "NRG",
+      "team1_id": "2359",
+      "team2_id": "1034",
       "match_result": "1-2",
       "winner": "NRG",
       "map_result": [
@@ -945,6 +967,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "FURIA",
       "team2": "NRG",
+      "team1_id": "2406",
+      "team2_id": "1034",
       "match_result": "0-2",
       "winner": "NRG",
       "map_result": [
@@ -1017,6 +1041,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "NRG",
       "team2": "MIBR",
+      "team1_id": "1034",
+      "team2_id": "7386",
       "match_result": "2-1",
       "winner": "NRG",
       "map_result": [
@@ -1113,6 +1139,8 @@
       "stage": "Playoffs: Grand Final",
       "team1": "100 Thieves",
       "team2": "NRG",
+      "team1_id": "120",
+      "team2_id": "1034",
       "match_result": "3-1",
       "winner": "100 Thieves",
       "map_result": [
@@ -1233,6 +1261,8 @@
       "stage": "Playoffs: Semifinals",
       "team1": "BBL Esports",
       "team2": "NRG",
+      "team1_id": "397",
+      "team2_id": "1034",
       "match_result": "1-2",
       "winner": "NRG",
       "map_result": [
@@ -1328,6 +1358,8 @@
       "stage": "Playoffs: Quarterfinals",
       "team1": "Gentle Mates",
       "team2": "NRG",
+      "team1_id": "12694",
+      "team2_id": "1034",
       "match_result": "1-2",
       "winner": "NRG",
       "map_result": [
@@ -1429,6 +1461,8 @@
       "stage": "Group Stage: Decider (B)",
       "team1": "NRG",
       "team2": "Karmine Corp",
+      "team1_id": "1034",
+      "team2_id": "8877",
       "match_result": "2-1",
       "winner": "NRG",
       "map_result": [
@@ -1521,6 +1555,8 @@
       "stage": "Group Stage: Winner's (B)",
       "team1": "Team Vitality",
       "team2": "NRG",
+      "team1_id": "2059",
+      "team2_id": "1034",
       "match_result": "2-1",
       "winner": "Team Vitality",
       "map_result": [
@@ -1628,6 +1664,8 @@
       "stage": "Group Stage: Opening (B)",
       "team1": "NRG",
       "team2": "Paper Rex",
+      "team1_id": "1034",
+      "team2_id": "624",
       "match_result": "2-1",
       "winner": "NRG",
       "map_result": [
@@ -1724,6 +1762,8 @@
       "stage": "Swiss Stage: Round 3 (1-1)",
       "team1": "FUT Esports",
       "team2": "NRG",
+      "team1_id": "1184",
+      "team2_id": "1034",
       "match_result": "2-1",
       "winner": "FUT Esports",
       "map_result": [
@@ -1831,6 +1871,8 @@
       "stage": "Swiss Stage: Round 2 (1-0)",
       "team1": "NRG",
       "team2": "LEVIATÁN",
+      "team1_id": "1034",
+      "team2_id": "2359",
       "match_result": "1-2",
       "winner": "LEVIATÁN",
       "map_result": [
@@ -1923,6 +1965,8 @@
       "stage": "Swiss Stage: Round 1",
       "team1": "Xi Lai Gaming",
       "team2": "NRG",
+      "team1_id": "13581",
+      "team2_id": "1034",
       "match_result": "0-2",
       "winner": "NRG",
       "map_result": [
@@ -1992,6 +2036,8 @@
       "stage": "Stage 2: Lower Final",
       "team1": "LOUD",
       "team2": "NRG",
+      "team1_id": "6961",
+      "team2_id": "1034",
       "match_result": "0-3",
       "winner": "NRG",
       "map_result": [
@@ -2086,6 +2132,8 @@
       "stage": "Stage 2: Lower Round 2",
       "team1": "LEVIATÁN",
       "team2": "NRG",
+      "team1_id": "2359",
+      "team2_id": "1034",
       "match_result": "0-2",
       "winner": "NRG",
       "map_result": [
@@ -2162,6 +2210,8 @@
       "stage": "Stage 2: Lower Round 1",
       "team1": "FURIA",
       "team2": "NRG",
+      "team1_id": "2406",
+      "team2_id": "1034",
       "match_result": "0-2",
       "winner": "NRG",
       "map_result": [
@@ -2236,6 +2286,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "LOUD",
       "team2": "NRG",
+      "team1_id": "6961",
+      "team2_id": "1034",
       "match_result": "2-0",
       "winner": "LOUD",
       "map_result": [
@@ -2306,6 +2358,8 @@
       "stage": "Playoffs: Lower Final",
       "team1": "G2 Esports",
       "team2": "NRG",
+      "team1_id": "11058",
+      "team2_id": "1034",
       "match_result": "3-2",
       "winner": "G2 Esports",
       "map_result": [
@@ -2459,6 +2513,8 @@
       "stage": "Playoffs: Lower Round 3",
       "team1": "NRG",
       "team2": "100 Thieves",
+      "team1_id": "1034",
+      "team2_id": "120",
       "match_result": "2-0",
       "winner": "NRG",
       "map_result": [
@@ -2531,6 +2587,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "KRÜ Esports",
       "team2": "NRG",
+      "team1_id": "2355",
+      "team2_id": "1034",
       "match_result": "0-2",
       "winner": "NRG",
       "map_result": [
@@ -2595,6 +2653,8 @@
       "stage": "Playoffs: Lower Round 1",
       "team1": "FURIA",
       "team2": "NRG",
+      "team1_id": "2406",
+      "team2_id": "1034",
       "match_result": "0-2",
       "winner": "NRG",
       "map_result": [
@@ -2659,6 +2719,8 @@
       "stage": "Group Stage: Week 5",
       "team1": "Sentinels",
       "team2": "NRG",
+      "team1_id": "2",
+      "team2_id": "1034",
       "match_result": "1-2",
       "winner": "NRG",
       "map_result": [

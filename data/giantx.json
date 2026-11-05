@@ -1,7 +1,7 @@
 {
   "team_id": "14419",
-  "crawled_at": "2026-11-02T07:55:36.086Z",
-  "since": "2026-05-06T07:54:55.045Z",
+  "crawled_at": "2026-11-05T11:27:22.133Z",
+  "since": "2026-05-09T11:26:51.545Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/772432/giantx-vs-bbl-esports-monsters-reloaded-2026-main-event-sf",
@@ -10,6 +10,8 @@
       "stage": "Main Event: Semifinals",
       "team1": "GIANTX",
       "team2": "BBL Esports",
+      "team1_id": "14419",
+      "team2_id": "397",
       "match_result": "0-2",
       "winner": "BBL Esports",
       "map_result": [
@@ -83,6 +85,8 @@
       "stage": "Play-Ins: Lower Round 1",
       "team1": "GIANTX",
       "team2": "FNATIC",
+      "team1_id": "14419",
+      "team2_id": "2593",
       "match_result": "0-2",
       "winner": "FNATIC",
       "map_result": [
@@ -147,6 +151,8 @@
       "stage": "Play-Ins: Upper Quarterfinals",
       "team1": "FUT Esports",
       "team2": "GIANTX",
+      "team1_id": "1184",
+      "team2_id": "14419",
       "match_result": "2-0",
       "winner": "FUT Esports",
       "map_result": [
@@ -215,6 +221,8 @@
       "stage": "Play-Ins: Upper Round 1",
       "team1": "GIANTX",
       "team2": "Eintracht Frankfurt",
+      "team1_id": "14419",
+      "team2_id": "14478",
       "match_result": "2-1",
       "winner": "GIANTX",
       "map_result": [
@@ -310,6 +318,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "GIANTX",
       "team2": "Team Heretics",
+      "team1_id": "14419",
+      "team2_id": "1001",
       "match_result": "0-2",
       "winner": "Team Heretics",
       "map_result": [
@@ -378,6 +388,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "GIANTX",
       "team2": "Team Liquid",
+      "team1_id": "14419",
+      "team2_id": "474",
       "match_result": "0-2",
       "winner": "Team Liquid",
       "map_result": [
@@ -443,6 +455,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Eternal Fire",
       "team2": "GIANTX",
+      "team1_id": "6392",
+      "team2_id": "14419",
       "match_result": "0-2",
       "winner": "GIANTX",
       "map_result": [
@@ -507,6 +521,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "GIANTX",
       "team2": "Karmine Corp",
+      "team1_id": "14419",
+      "team2_id": "8877",
       "match_result": "0-2",
       "winner": "Karmine Corp",
       "map_result": [
@@ -571,6 +587,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "FNATIC",
       "team2": "GIANTX",
+      "team1_id": "2593",
+      "team2_id": "14419",
       "match_result": "2-0",
       "winner": "FNATIC",
       "map_result": [
@@ -647,6 +665,8 @@
       "stage": "Stage 1: Decider",
       "team1": "Karmine Corp",
       "team2": "GIANTX",
+      "team1_id": "8877",
+      "team2_id": "14419",
       "match_result": "2-0",
       "winner": "Karmine Corp",
       "map_result": [
@@ -707,6 +727,8 @@
       "stage": "Stage 1: Elimination",
       "team1": "PCIFIC Esports",
       "team2": "GIANTX",
+      "team1_id": "3478",
+      "team2_id": "14419",
       "match_result": "1-2",
       "winner": "GIANTX",
       "map_result": [
@@ -804,6 +826,8 @@
       "stage": "Stage 1: Opening",
       "team1": "Karmine Corp",
       "team2": "GIANTX",
+      "team1_id": "8877",
+      "team2_id": "14419",
       "match_result": "2-0",
       "winner": "Karmine Corp",
       "map_result": [

@@ -1,7 +1,7 @@
 {
   "team_id": "14137",
-  "crawled_at": "2026-11-02T07:59:37.078Z",
-  "since": "2026-05-06T07:58:16.492Z",
+  "crawled_at": "2026-11-05T11:30:03.027Z",
+  "since": "2026-05-09T11:29:06.478Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/777961/titan-esports-club-vs-world-sports-invictus-gaming-vct-2026-china-threshold-week-2-qf",
@@ -10,6 +10,8 @@
       "stage": "Week 2: Quarterfinals",
       "team1": "Titan Esports Club",
       "team2": "World Sports Invictus Gaming",
+      "team1_id": "14137",
+      "team2_id": "21699",
       "match_result": "1-2",
       "winner": "World Sports Invictus Gaming",
       "map_result": [
@@ -106,6 +108,8 @@
       "stage": "Week 1: Semifinals",
       "team1": "Titan Esports Club",
       "team2": "Dragon Ranger Gaming",
+      "team1_id": "14137",
+      "team2_id": "11981",
       "match_result": "0-2",
       "winner": "Dragon Ranger Gaming",
       "map_result": [
@@ -173,6 +177,8 @@
       "stage": "Week 1: Quarterfinals",
       "team1": "Titan Esports Club",
       "team2": "Unsettled Resentment",
+      "team1_id": "14137",
+      "team2_id": "21919",
       "match_result": "2-0",
       "winner": "Titan Esports Club",
       "map_result": [
@@ -244,6 +250,8 @@
       "stage": "Main Event: Quarterfinals",
       "team1": "Wuxi Titan Esports Club (Titan Esports Club)",
       "team2": "Unsettled Resentment",
+      "team1_id": "14137",
+      "team2_id": "21919",
       "match_result": "1-2",
       "winner": "Unsettled Resentment",
       "map_result": [
@@ -330,6 +338,8 @@
       "stage": "Main Event: Round of 16",
       "team1": "Wuxi Titan Esports Club (Titan Esports Club)",
       "team2": "TYLOO",
+      "team1_id": "14137",
+      "team2_id": "731",
       "match_result": "2-1",
       "winner": "Wuxi Titan Esports Club (Titan Esports Club)",
       "map_result": [
@@ -432,6 +442,8 @@
       "stage": "Playoffs: Lower Round 1",
       "team1": "Wuxi Titan Esports Club (Titan Esports Club)",
       "team2": "Nova Esports",
+      "team1_id": "14137",
+      "team2_id": "12064",
       "match_result": "0-2",
       "winner": "Nova Esports",
       "map_result": [
@@ -503,6 +515,8 @@
       "stage": "Playoffs: Upper Quarterfinals",
       "team1": "TYLOO",
       "team2": "Wuxi Titan Esports Club (Titan Esports Club)",
+      "team1_id": "731",
+      "team2_id": "14137",
       "match_result": "2-0",
       "winner": "TYLOO",
       "map_result": [
@@ -566,6 +580,8 @@
       "stage": "Play-Ins: Upper Final",
       "team1": "All Gamers",
       "team2": "Wuxi Titan Esports Club (Titan Esports Club)",
+      "team1_id": "1119",
+      "team2_id": "14137",
       "match_result": "1-2",
       "winner": "Wuxi Titan Esports Club (Titan Esports Club)",
       "map_result": [
@@ -670,6 +686,8 @@
       "stage": "Play-Ins: Upper Semifinals",
       "team1": "Wuxi Titan Esports Club (Titan Esports Club)",
       "team2": "Dragon Ranger Gaming",
+      "team1_id": "14137",
+      "team2_id": "11981",
       "match_result": "2-1",
       "winner": "Wuxi Titan Esports Club (Titan Esports Club)",
       "map_result": [
@@ -760,6 +778,8 @@
       "stage": "Play-Ins: Upper Quarterfinals",
       "team1": "EDward Gaming",
       "team2": "Wuxi Titan Esports Club (Titan Esports Club)",
+      "team1_id": "1120",
+      "team2_id": "14137",
       "match_result": "1-2",
       "winner": "Wuxi Titan Esports Club (Titan Esports Club)",
       "map_result": [
@@ -859,6 +879,8 @@
       "stage": "Play-Ins: Upper Round 1",
       "team1": "Wuxi Titan Esports Club (Titan Esports Club)",
       "team2": "KeepBest Gaming",
+      "team1_id": "14137",
+      "team2_id": "12784",
       "match_result": "2-1",
       "winner": "Wuxi Titan Esports Club (Titan Esports Club)",
       "map_result": [
@@ -960,6 +982,8 @@
       "stage": "Group Stage: Seeding",
       "team1": "Trace Esports",
       "team2": "Wuxi Titan Esports Club (Titan Esports Club)",
+      "team1_id": "12685",
+      "team2_id": "14137",
       "match_result": "2-0",
       "winner": "Trace Esports",
       "map_result": [
@@ -1034,6 +1058,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "Wuxi Titan Esports Club (Titan Esports Club)",
       "team2": "All Gamers",
+      "team1_id": "14137",
+      "team2_id": "1119",
       "match_result": "0-2",
       "winner": "All Gamers",
       "map_result": [
@@ -1101,6 +1127,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Wuxi Titan Esports Club (Titan Esports Club)",
       "team2": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
+      "team1_id": "14137",
+      "team2_id": "12010",
       "match_result": "1-2",
       "winner": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "map_result": [
@@ -1198,6 +1226,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Xi Lai Gaming",
       "team2": "Wuxi Titan Esports Club (Titan Esports Club)",
+      "team1_id": "13581",
+      "team2_id": "14137",
       "match_result": "1-2",
       "winner": "Wuxi Titan Esports Club (Titan Esports Club)",
       "map_result": [
@@ -1300,6 +1330,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Dragon Ranger Gaming",
       "team2": "Wuxi Titan Esports Club (Titan Esports Club)",
+      "team1_id": "11981",
+      "team2_id": "14137",
       "match_result": "2-1",
       "winner": "Dragon Ranger Gaming",
       "map_result": [
@@ -1404,6 +1436,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Wolves Esports",
       "team2": "Wuxi Titan Esports Club (Titan Esports Club)",
+      "team1_id": "13790",
+      "team2_id": "14137",
       "match_result": "2-0",
       "winner": "Wolves Esports",
       "map_result": [
@@ -1471,6 +1505,8 @@
       "stage": "Playoffs: Grand Final",
       "team1": "Titan Esports Club",
       "team2": "Nova Esports",
+      "team1_id": "14137",
+      "team2_id": "12064",
       "match_result": "2-3",
       "winner": "Nova Esports",
       "map_result": [
@@ -1622,6 +1658,8 @@
       "stage": "Playoffs: Semifinals",
       "team1": "All Gamers",
       "team2": "Titan Esports Club",
+      "team1_id": "1119",
+      "team2_id": "14137",
       "match_result": "1-2",
       "winner": "Titan Esports Club",
       "map_result": [
@@ -1727,6 +1765,8 @@
       "stage": "Playoffs: Quarterfinals",
       "team1": "Trace Esports",
       "team2": "Titan Esports Club",
+      "team1_id": "12685",
+      "team2_id": "14137",
       "match_result": "0-2",
       "winner": "Titan Esports Club",
       "map_result": [
@@ -1800,6 +1840,8 @@
       "stage": "Playoffs: Round of 16",
       "team1": "Titan Esports Club",
       "team2": "Weibo Gaming",
+      "team1_id": "14137",
+      "team2_id": "1224",
       "match_result": "2-1",
       "winner": "Titan Esports Club",
       "map_result": [
@@ -1891,6 +1933,8 @@
       "stage": "Stage 2: Lower Final",
       "team1": "Titan Esports Club",
       "team2": "All Gamers",
+      "team1_id": "14137",
+      "team2_id": "1119",
       "match_result": "0-3",
       "winner": "All Gamers",
       "map_result": [
@@ -1974,6 +2018,8 @@
       "stage": "Stage 2: Upper Final",
       "team1": "Xi Lai Gaming",
       "team2": "Titan Esports Club",
+      "team1_id": "13581",
+      "team2_id": "14137",
       "match_result": "3-0",
       "winner": "Xi Lai Gaming",
       "map_result": [
@@ -2068,6 +2114,8 @@
       "stage": "Stage 2: Upper Semifinals",
       "team1": "Trace Esports",
       "team2": "Titan Esports Club",
+      "team1_id": "12685",
+      "team2_id": "14137",
       "match_result": "0-2",
       "winner": "Titan Esports Club",
       "map_result": [
@@ -2090,6 +2138,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "Titan Esports Club",
       "team2": "Dragon Ranger Gaming",
+      "team1_id": "14137",
+      "team2_id": "11981",
       "match_result": "2-0",
       "winner": "Titan Esports Club",
       "map_result": [

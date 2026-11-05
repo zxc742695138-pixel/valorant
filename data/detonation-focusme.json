@@ -1,7 +1,7 @@
 {
   "team_id": "278",
-  "crawled_at": "2026-11-02T08:01:56.145Z",
-  "since": "2026-05-06T08:01:09.986Z",
+  "crawled_at": "2026-11-05T11:31:21.075Z",
+  "since": "2026-05-09T11:30:53.920Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/730552/t1-vs-detonation-focusme-vct-2026-pacific-stage-2-lr3",
@@ -10,6 +10,8 @@
       "stage": "Play-Ins: Lower Round 3",
       "team1": "T1",
       "team2": "DetonatioN FocusMe",
+      "team1_id": "14",
+      "team2_id": "278",
       "match_result": "2-0",
       "winner": "T1",
       "map_result": [
@@ -77,6 +79,8 @@
       "stage": "Play-Ins: Lower Round 2",
       "team1": "DetonatioN FocusMe",
       "team2": "ZETA DIVISION",
+      "team1_id": "278",
+      "team2_id": "5448",
       "match_result": "2-0",
       "winner": "DetonatioN FocusMe",
       "map_result": [
@@ -136,6 +140,8 @@
       "stage": "Play-Ins: Lower Round 1",
       "team1": "DetonatioN FocusMe",
       "team2": "QT DIG∞",
+      "team1_id": "278",
+      "team2_id": "18299",
       "match_result": "2-1",
       "winner": "DetonatioN FocusMe",
       "map_result": [
@@ -237,6 +243,8 @@
       "stage": "Play-Ins: Upper Quarterfinals",
       "team1": "DetonatioN FocusMe",
       "team2": "Sharper Esports",
+      "team1_id": "278",
+      "team2_id": "623",
       "match_result": "1-2",
       "winner": "Sharper Esports",
       "map_result": [
@@ -341,6 +349,8 @@
       "stage": "Group Stage: Week 4",
       "team1": "Team Secret",
       "team2": "DetonatioN FocusMe",
+      "team1_id": "6199",
+      "team2_id": "278",
       "match_result": "0-2",
       "winner": "DetonatioN FocusMe",
       "map_result": [
@@ -410,6 +420,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "T1",
       "team2": "DetonatioN FocusMe",
+      "team1_id": "14",
+      "team2_id": "278",
       "match_result": "1-2",
       "winner": "DetonatioN FocusMe",
       "map_result": [
@@ -503,6 +515,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "VARREL",
       "team2": "DetonatioN FocusMe",
+      "team1_id": "11229",
+      "team2_id": "278",
       "match_result": "1-2",
       "winner": "DetonatioN FocusMe",
       "map_result": [
@@ -604,6 +618,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "DetonatioN FocusMe",
       "team2": "Paper Rex",
+      "team1_id": "278",
+      "team2_id": "624",
       "match_result": "0-2",
       "winner": "Paper Rex",
       "map_result": [
@@ -685,6 +701,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "KIWOOM DRX",
       "team2": "DetonatioN FocusMe",
+      "team1_id": "8185",
+      "team2_id": "278",
       "match_result": "2-1",
       "winner": "KIWOOM DRX",
       "map_result": [
@@ -781,6 +799,8 @@
       "stage": "Stage 2: Lower Round 1",
       "team1": "T1",
       "team2": "DetonatioN FocusMe",
+      "team1_id": "14",
+      "team2_id": "278",
       "match_result": "2-1",
       "winner": "T1",
       "map_result": [
@@ -881,6 +901,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "DetonatioN FocusMe",
       "team2": "Global Esports",
+      "team1_id": "278",
+      "team2_id": "918",
       "match_result": "0-2",
       "winner": "Global Esports",
       "map_result": [
@@ -937,106 +959,6 @@
             "4-11",
             "4-12",
             "4-13"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/666494/rex-regum-qeon-vs-detonation-focusme-vct-2026-pacific-stage-1-lr1",
-      "date": "2026-05-09 04:00:00",
-      "event": "VCT 2026: Pacific Stage 1",
-      "stage": "Playoffs: Lower Round 1",
-      "team1": "Rex Regum Qeon",
-      "team2": "DetonatioN FocusMe",
-      "match_result": "2-1",
-      "winner": "Rex Regum Qeon",
-      "map_result": [
-        {
-          "map": "Ascent",
-          "score": "9-13",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "0-3",
-            "0-4",
-            "0-5",
-            "0-6",
-            "0-7",
-            "1-7",
-            "2-7",
-            "3-7",
-            "3-8",
-            "4-8",
-            "5-8",
-            "6-8",
-            "6-9",
-            "6-10",
-            "6-11",
-            "7-11",
-            "8-11",
-            "8-12",
-            "9-12",
-            "9-13"
-          ]
-        },
-        {
-          "map": "Breeze",
-          "score": "13-11",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "1-2",
-            "2-2",
-            "3-2",
-            "3-3",
-            "4-3",
-            "4-4",
-            "4-5",
-            "5-5",
-            "6-5",
-            "7-5",
-            "8-5",
-            "9-5",
-            "9-6",
-            "9-7",
-            "9-8",
-            "9-9",
-            "9-10",
-            "10-10",
-            "10-11",
-            "11-11",
-            "12-11",
-            "13-11"
-          ]
-        },
-        {
-          "map": "Lotus",
-          "score": "13-8",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "1-2",
-            "2-2",
-            "3-2",
-            "3-3",
-            "3-4",
-            "3-5",
-            "4-5",
-            "5-5",
-            "6-5",
-            "6-6",
-            "7-6",
-            "8-6",
-            "8-7",
-            "9-7",
-            "9-8",
-            "10-8",
-            "11-8",
-            "12-8",
-            "13-8"
           ]
         }
       ]

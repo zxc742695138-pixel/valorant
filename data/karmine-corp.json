@@ -1,7 +1,7 @@
 {
   "team_id": "8877",
-  "crawled_at": "2026-11-02T07:52:32.804Z",
-  "since": "2026-05-06T07:51:10.141Z",
+  "crawled_at": "2026-11-05T11:25:27.241Z",
+  "since": "2026-05-09T11:24:35.795Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/753463/karmine-corp-vs-nongshim-redforce-valorant-champions-2026-decider-d",
@@ -10,6 +10,8 @@
       "stage": "Group Stage: Decider (D)",
       "team1": "Karmine Corp",
       "team2": "Nongshim RedForce",
+      "team1_id": "8877",
+      "team2_id": "11060",
       "match_result": "1-2",
       "winner": "Nongshim RedForce",
       "map_result": [
@@ -102,6 +104,8 @@
       "stage": "Group Stage: Winner's (D)",
       "team1": "Karmine Corp",
       "team2": "NRG",
+      "team1_id": "8877",
+      "team2_id": "1034",
       "match_result": "1-2",
       "winner": "NRG",
       "map_result": [
@@ -201,6 +205,8 @@
       "stage": "Group Stage: Opening (D)",
       "team1": "Karmine Corp",
       "team2": "Xi Lai Gaming",
+      "team1_id": "8877",
+      "team2_id": "13581",
       "match_result": "2-0",
       "winner": "Karmine Corp",
       "map_result": [
@@ -262,6 +268,8 @@
       "stage": "Playoffs: Grand Final",
       "team1": "Karmine Corp",
       "team2": "Team Liquid",
+      "team1_id": "8877",
+      "team2_id": "474",
       "match_result": "3-1",
       "winner": "Karmine Corp",
       "map_result": [
@@ -384,6 +392,8 @@
       "stage": "Playoffs: Upper Final",
       "team1": "FUT Esports",
       "team2": "Karmine Corp",
+      "team1_id": "1184",
+      "team2_id": "8877",
       "match_result": "0-2",
       "winner": "Karmine Corp",
       "map_result": [
@@ -450,6 +460,8 @@
       "stage": "Playoffs: Upper Semifinals",
       "team1": "Karmine Corp",
       "team2": "Enterprise Esports",
+      "team1_id": "8877",
+      "team2_id": "876",
       "match_result": "2-1",
       "winner": "Karmine Corp",
       "map_result": [
@@ -547,6 +559,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "Karmine Corp",
       "team2": "Team Liquid",
+      "team1_id": "8877",
+      "team2_id": "474",
       "match_result": "2-1",
       "winner": "Karmine Corp",
       "map_result": [
@@ -652,6 +666,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Team Heretics",
       "team2": "Karmine Corp",
+      "team1_id": "1001",
+      "team2_id": "8877",
       "match_result": "0-2",
       "winner": "Karmine Corp",
       "map_result": [
@@ -710,6 +726,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "FNATIC",
       "team2": "Karmine Corp",
+      "team1_id": "2593",
+      "team2_id": "8877",
       "match_result": "2-1",
       "winner": "FNATIC",
       "map_result": [
@@ -824,6 +842,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "GIANTX",
       "team2": "Karmine Corp",
+      "team1_id": "14419",
+      "team2_id": "8877",
       "match_result": "0-2",
       "winner": "Karmine Corp",
       "map_result": [
@@ -888,6 +908,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Karmine Corp",
       "team2": "Eternal Fire",
+      "team1_id": "8877",
+      "team2_id": "6392",
       "match_result": "2-0",
       "winner": "Karmine Corp",
       "map_result": [
@@ -961,6 +983,8 @@
       "stage": "Group Stage: Decider (B)",
       "team1": "NRG",
       "team2": "Karmine Corp",
+      "team1_id": "1034",
+      "team2_id": "8877",
       "match_result": "2-1",
       "winner": "NRG",
       "map_result": [
@@ -1053,6 +1077,8 @@
       "stage": "Group Stage: Elimination (B)",
       "team1": "Karmine Corp",
       "team2": "Paper Rex",
+      "team1_id": "8877",
+      "team2_id": "624",
       "match_result": "2-1",
       "winner": "Karmine Corp",
       "map_result": [
@@ -1152,6 +1178,8 @@
       "stage": "Group Stage: Opening (B)",
       "team1": "Team Vitality",
       "team2": "Karmine Corp",
+      "team1_id": "2059",
+      "team2_id": "8877",
       "match_result": "2-0",
       "winner": "Team Vitality",
       "map_result": [
@@ -1221,6 +1249,8 @@
       "stage": "Stage 2: Upper Semifinals",
       "team1": "FNATIC",
       "team2": "Karmine Corp",
+      "team1_id": "2593",
+      "team2_id": "8877",
       "match_result": "2-3",
       "winner": "Karmine Corp",
       "map_result": [
@@ -1371,6 +1401,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "Karmine Corp",
       "team2": "Eternal Fire",
+      "team1_id": "8877",
+      "team2_id": "6392",
       "match_result": "2-1",
       "winner": "Karmine Corp",
       "map_result": [
@@ -1473,6 +1505,8 @@
       "stage": "Stage 1: Decider",
       "team1": "Karmine Corp",
       "team2": "GIANTX",
+      "team1_id": "8877",
+      "team2_id": "14419",
       "match_result": "2-0",
       "winner": "Karmine Corp",
       "map_result": [
@@ -1533,6 +1567,8 @@
       "stage": "Stage 1: Winner's",
       "team1": "Natus Vincere",
       "team2": "Karmine Corp",
+      "team1_id": "4915",
+      "team2_id": "8877",
       "match_result": "2-0",
       "winner": "Natus Vincere",
       "map_result": [
@@ -1592,6 +1628,8 @@
       "stage": "Stage 1: Opening",
       "team1": "Karmine Corp",
       "team2": "GIANTX",
+      "team1_id": "8877",
+      "team2_id": "14419",
       "match_result": "2-0",
       "winner": "Karmine Corp",
       "map_result": [

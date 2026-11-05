@@ -1,7 +1,7 @@
 {
   "team_id": "4915",
-  "crawled_at": "2026-11-02T07:54:07.225Z",
-  "since": "2026-05-06T07:53:14.643Z",
+  "crawled_at": "2026-11-05T11:26:23.000Z",
+  "since": "2026-05-09T11:25:47.473Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/729675/team-heretics-vs-natus-vincere-vct-2026-emea-stage-2-lr1",
@@ -10,6 +10,8 @@
       "stage": "Play-Ins: Lower Round 1",
       "team1": "Team Heretics",
       "team2": "Natus Vincere",
+      "team1_id": "1001",
+      "team2_id": "4915",
       "match_result": "2-1",
       "winner": "Team Heretics",
       "map_result": [
@@ -115,6 +117,8 @@
       "stage": "Play-Ins: Upper Round 1",
       "team1": "Natus Vincere",
       "team2": "Joblife",
+      "team1_id": "4915",
+      "team2_id": "11232",
       "match_result": "1-2",
       "winner": "Joblife",
       "map_result": [
@@ -217,6 +221,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "Natus Vincere",
       "team2": "PCIFIC Esports",
+      "team1_id": "4915",
+      "team2_id": "3478",
       "match_result": "2-0",
       "winner": "Natus Vincere",
       "map_result": [
@@ -293,6 +299,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "BBL Esports",
       "team2": "Natus Vincere",
+      "team1_id": "397",
+      "team2_id": "4915",
       "match_result": "2-1",
       "winner": "BBL Esports",
       "map_result": [
@@ -388,6 +396,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Gentle Mates",
       "team2": "Natus Vincere",
+      "team1_id": "12694",
+      "team2_id": "4915",
       "match_result": "2-0",
       "winner": "Gentle Mates",
       "map_result": [
@@ -457,6 +467,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Team Vitality",
       "team2": "Natus Vincere",
+      "team1_id": "2059",
+      "team2_id": "4915",
       "match_result": "2-1",
       "winner": "Team Vitality",
       "map_result": [
@@ -553,6 +565,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "FUT Esports",
       "team2": "Natus Vincere",
+      "team1_id": "1184",
+      "team2_id": "4915",
       "match_result": "0-2",
       "winner": "Natus Vincere",
       "map_result": [
@@ -620,6 +634,8 @@
       "stage": "Stage 2: Lower Final",
       "team1": "Natus Vincere",
       "team2": "BBL Esports",
+      "team1_id": "4915",
+      "team2_id": "397",
       "match_result": "0-3",
       "winner": "BBL Esports",
       "map_result": [
@@ -725,6 +741,8 @@
       "stage": "Stage 2: Lower Round 2",
       "team1": "FNATIC",
       "team2": "Natus Vincere",
+      "team1_id": "2593",
+      "team2_id": "4915",
       "match_result": "1-2",
       "winner": "Natus Vincere",
       "map_result": [
@@ -834,6 +852,8 @@
       "stage": "Stage 2: Lower Round 1",
       "team1": "Natus Vincere",
       "team2": "Team Liquid",
+      "team1_id": "4915",
+      "team2_id": "474",
       "match_result": "2-0",
       "winner": "Natus Vincere",
       "map_result": [
@@ -907,6 +927,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "FUT Esports",
       "team2": "Natus Vincere",
+      "team1_id": "1184",
+      "team2_id": "4915",
       "match_result": "2-0",
       "winner": "FUT Esports",
       "map_result": [
@@ -977,6 +999,8 @@
       "stage": "Stage 1: Winner's",
       "team1": "Natus Vincere",
       "team2": "Karmine Corp",
+      "team1_id": "4915",
+      "team2_id": "8877",
       "match_result": "2-0",
       "winner": "Natus Vincere",
       "map_result": [
@@ -1036,6 +1060,8 @@
       "stage": "Stage 1: Opening",
       "team1": "Natus Vincere",
       "team2": "PCIFIC Esports",
+      "team1_id": "4915",
+      "team2_id": "3478",
       "match_result": "2-1",
       "winner": "Natus Vincere",
       "map_result": [

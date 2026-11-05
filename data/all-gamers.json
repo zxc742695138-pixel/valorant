@@ -1,7 +1,7 @@
 {
   "team_id": "1119",
-  "crawled_at": "2026-11-02T07:57:48.933Z",
-  "since": "2026-05-06T07:56:21.908Z",
+  "crawled_at": "2026-11-05T11:28:46.212Z",
+  "since": "2026-05-09T11:27:49.422Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/748625/all-gamers-vs-jd-gaming-china-evolution-series-2026-act-3-ro16",
@@ -10,6 +10,8 @@
       "stage": "Main Event: Round of 16",
       "team1": "All Gamers",
       "team2": "JD Gaming",
+      "team1_id": "1119",
+      "team2_id": "13576",
       "match_result": "0-2",
       "winner": "JD Gaming",
       "map_result": [
@@ -71,6 +73,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "TYLOO",
       "team2": "All Gamers",
+      "team1_id": "731",
+      "team2_id": "1119",
       "match_result": "2-0",
       "winner": "TYLOO",
       "map_result": [
@@ -145,6 +149,8 @@
       "stage": "Playoffs: Lower Round 1",
       "team1": "All Gamers",
       "team2": "Trace Esports",
+      "team1_id": "1119",
+      "team2_id": "12685",
       "match_result": "2-1",
       "winner": "All Gamers",
       "map_result": [
@@ -256,6 +262,8 @@
       "stage": "Playoffs: Upper Quarterfinals",
       "team1": "Xi Lai Gaming",
       "team2": "All Gamers",
+      "team1_id": "13581",
+      "team2_id": "1119",
       "match_result": "2-1",
       "winner": "Xi Lai Gaming",
       "map_result": [
@@ -346,6 +354,8 @@
       "stage": "Play-Ins: Upper Final",
       "team1": "All Gamers",
       "team2": "Wuxi Titan Esports Club (Titan Esports Club)",
+      "team1_id": "1119",
+      "team2_id": "14137",
       "match_result": "1-2",
       "winner": "Wuxi Titan Esports Club (Titan Esports Club)",
       "map_result": [
@@ -450,6 +460,8 @@
       "stage": "Play-Ins: Upper Semifinals",
       "team1": "All Gamers",
       "team2": "JD Gaming",
+      "team1_id": "1119",
+      "team2_id": "13576",
       "match_result": "2-0",
       "winner": "All Gamers",
       "map_result": [
@@ -526,6 +538,8 @@
       "stage": "Play-Ins: Upper Quarterfinals",
       "team1": "All Gamers",
       "team2": "Trace Esports",
+      "team1_id": "1119",
+      "team2_id": "12685",
       "match_result": "2-1",
       "winner": "All Gamers",
       "map_result": [
@@ -613,6 +627,8 @@
       "stage": "Group Stage: Seeding",
       "team1": "EDward Gaming",
       "team2": "All Gamers",
+      "team1_id": "1120",
+      "team2_id": "1119",
       "match_result": "2-0",
       "winner": "EDward Gaming",
       "map_result": [
@@ -681,6 +697,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "All Gamers",
       "team2": "Dragon Ranger Gaming",
+      "team1_id": "1119",
+      "team2_id": "11981",
       "match_result": "2-1",
       "winner": "All Gamers",
       "map_result": [
@@ -775,6 +793,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "Wuxi Titan Esports Club (Titan Esports Club)",
       "team2": "All Gamers",
+      "team1_id": "14137",
+      "team2_id": "1119",
       "match_result": "0-2",
       "winner": "All Gamers",
       "map_result": [
@@ -842,6 +862,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "All Gamers",
       "team2": "Xi Lai Gaming",
+      "team1_id": "1119",
+      "team2_id": "13581",
       "match_result": "0-2",
       "winner": "Xi Lai Gaming",
       "map_result": [
@@ -915,6 +937,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "All Gamers",
       "team2": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
+      "team1_id": "1119",
+      "team2_id": "12010",
       "match_result": "1-2",
       "winner": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "map_result": [
@@ -1015,6 +1039,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Wolves Esports",
       "team2": "All Gamers",
+      "team1_id": "13790",
+      "team2_id": "1119",
       "match_result": "0-2",
       "winner": "All Gamers",
       "map_result": [
@@ -1082,6 +1108,8 @@
       "stage": "Group Stage: Decider (D)",
       "team1": "MIBR.LOS (MIBR)",
       "team2": "AG.AL (All Gamers)",
+      "team1_id": "7386",
+      "team2_id": "1119",
       "match_result": "2-1",
       "winner": "MIBR.LOS (MIBR)",
       "map_result": [
@@ -1179,6 +1207,8 @@
       "stage": "Group Stage: Elimination (D)",
       "team1": "Global Esports",
       "team2": "AG.AL (All Gamers)",
+      "team1_id": "918",
+      "team2_id": "1119",
       "match_result": "0-2",
       "winner": "AG.AL (All Gamers)",
       "map_result": [
@@ -1254,6 +1284,8 @@
       "stage": "Group Stage: Opening (D)",
       "team1": "AG.AL (All Gamers)",
       "team2": "Team Heretics",
+      "team1_id": "1119",
+      "team2_id": "1001",
       "match_result": "1-2",
       "winner": "Team Heretics",
       "map_result": [
@@ -1352,6 +1384,8 @@
       "stage": "Playoffs: Consolation Final",
       "team1": "All Gamers",
       "team2": "TYLOO",
+      "team1_id": "1119",
+      "team2_id": "731",
       "match_result": "3-2",
       "winner": "All Gamers",
       "map_result": [
@@ -1511,6 +1545,8 @@
       "stage": "Playoffs: Semifinals",
       "team1": "All Gamers",
       "team2": "Titan Esports Club",
+      "team1_id": "1119",
+      "team2_id": "14137",
       "match_result": "1-2",
       "winner": "Titan Esports Club",
       "map_result": [
@@ -1616,6 +1652,8 @@
       "stage": "Playoffs: Quarterfinals",
       "team1": "All Gamers",
       "team2": "FunPlus Phoenix",
+      "team1_id": "1119",
+      "team2_id": "11328",
       "match_result": "2-0",
       "winner": "All Gamers",
       "map_result": [
@@ -1674,6 +1712,8 @@
       "stage": "Playoffs: Round of 16",
       "team1": "All Gamers",
       "team2": "Dragon Ranger Gaming",
+      "team1_id": "1119",
+      "team2_id": "11981",
       "match_result": "2-0",
       "winner": "All Gamers",
       "map_result": [
@@ -1736,6 +1776,8 @@
       "stage": "Stage 2: Lower Final",
       "team1": "Titan Esports Club",
       "team2": "All Gamers",
+      "team1_id": "14137",
+      "team2_id": "1119",
       "match_result": "0-3",
       "winner": "All Gamers",
       "map_result": [
@@ -1819,6 +1861,8 @@
       "stage": "Stage 2: Lower Round 3",
       "team1": "FunPlus Phoenix",
       "team2": "All Gamers",
+      "team1_id": "11328",
+      "team2_id": "1119",
       "match_result": "0-2",
       "winner": "All Gamers",
       "map_result": [
@@ -1887,6 +1931,8 @@
       "stage": "Stage 2: Lower Round 2",
       "team1": "TYLOO",
       "team2": "All Gamers",
+      "team1_id": "731",
+      "team2_id": "1119",
       "match_result": "1-2",
       "winner": "All Gamers",
       "map_result": [
@@ -1914,6 +1960,8 @@
       "stage": "Stage 2: Lower Round 1",
       "team1": "All Gamers",
       "team2": "Dragon Ranger Gaming",
+      "team1_id": "1119",
+      "team2_id": "11981",
       "match_result": "2-0",
       "winner": "All Gamers",
       "map_result": [
@@ -1936,6 +1984,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "All Gamers",
       "team2": "Trace Esports",
+      "team1_id": "1119",
+      "team2_id": "12685",
       "match_result": "1-2",
       "winner": "Trace Esports",
       "map_result": [
@@ -1953,100 +2003,6 @@
           "map": "Ascent",
           "score": "5-13",
           "rounds": []
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/659486/all-gamers-vs-dragon-ranger-gaming-vct-2026-china-stage-1-lr3",
-      "date": "2026-05-08 07:10:00",
-      "event": "VCT 2026: China Stage 1",
-      "stage": "Playoffs: Lower Round 3",
-      "team1": "All Gamers",
-      "team2": "Dragon Ranger Gaming",
-      "match_result": "1-2",
-      "winner": "Dragon Ranger Gaming",
-      "map_result": [
-        {
-          "map": "Lotus",
-          "score": "8-13",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "1-2",
-            "2-2",
-            "3-2",
-            "3-3",
-            "3-4",
-            "3-5",
-            "4-5",
-            "5-5",
-            "5-6",
-            "5-7",
-            "5-8",
-            "5-9",
-            "6-9",
-            "6-10",
-            "6-11",
-            "7-11",
-            "7-12",
-            "8-12",
-            "8-13"
-          ]
-        },
-        {
-          "map": "Split",
-          "score": "13-8",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "3-0",
-            "4-0",
-            "4-1",
-            "5-1",
-            "6-1",
-            "7-1",
-            "8-1",
-            "8-2",
-            "8-3",
-            "8-4",
-            "9-4",
-            "10-4",
-            "10-5",
-            "10-6",
-            "11-6",
-            "11-7",
-            "11-8",
-            "12-8",
-            "13-8"
-          ]
-        },
-        {
-          "map": "Haven",
-          "score": "6-13",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "3-0",
-            "4-0",
-            "4-1",
-            "4-2",
-            "4-3",
-            "4-4",
-            "4-5",
-            "4-6",
-            "4-7",
-            "4-8",
-            "5-8",
-            "6-8",
-            "6-9",
-            "6-10",
-            "6-11",
-            "6-12",
-            "6-13"
-          ]
         }
       ]
     }

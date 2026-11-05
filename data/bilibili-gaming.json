@@ -1,7 +1,7 @@
 {
   "team_id": "12010",
-  "crawled_at": "2026-11-02T07:56:04.590Z",
-  "since": "2026-05-06T07:55:09.609Z",
+  "crawled_at": "2026-11-05T11:27:40.794Z",
+  "since": "2026-05-09T11:27:00.539Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/748627/bilibili-gaming-vs-keepbest-gaming-china-evolution-series-2026-act-3-qf",
@@ -10,6 +10,8 @@
       "stage": "Main Event: Quarterfinals",
       "team1": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "team2": "KeepBest Gaming",
+      "team1_id": "12010",
+      "team2_id": "12784",
       "match_result": "0-2",
       "winner": "KeepBest Gaming",
       "map_result": [
@@ -87,6 +89,8 @@
       "stage": "Main Event: Round of 16",
       "team1": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "team2": "Xi Lai Gaming",
+      "team1_id": "12010",
+      "team2_id": "13581",
       "match_result": "2-0",
       "winner": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "map_result": [
@@ -159,6 +163,8 @@
       "stage": "Playoffs: Lower Final",
       "team1": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "team2": "TYLOO",
+      "team1_id": "12010",
+      "team2_id": "731",
       "match_result": "0-3",
       "winner": "TYLOO",
       "map_result": [
@@ -269,6 +275,8 @@
       "stage": "Playoffs: Upper Final",
       "team1": "JD Gaming",
       "team2": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
+      "team1_id": "13576",
+      "team2_id": "12010",
       "match_result": "2-0",
       "winner": "JD Gaming",
       "map_result": [
@@ -336,6 +344,8 @@
       "stage": "Playoffs: Upper Semifinals",
       "team1": "Xi Lai Gaming",
       "team2": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
+      "team1_id": "13581",
+      "team2_id": "12010",
       "match_result": "1-2",
       "winner": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "map_result": [
@@ -432,6 +442,8 @@
       "stage": "Playoffs: Upper Quarterfinals",
       "team1": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "team2": "Trace Esports",
+      "team1_id": "12010",
+      "team2_id": "12685",
       "match_result": "2-1",
       "winner": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "map_result": [
@@ -538,6 +550,8 @@
       "stage": "Group Stage: Seeding",
       "team1": "Nova Esports",
       "team2": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
+      "team1_id": "12064",
+      "team2_id": "12010",
       "match_result": "2-0",
       "winner": "Nova Esports",
       "map_result": [
@@ -605,6 +619,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "team2": "Xi Lai Gaming",
+      "team1_id": "12010",
+      "team2_id": "13581",
       "match_result": "2-1",
       "winner": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "map_result": [
@@ -698,6 +714,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Wuxi Titan Esports Club (Titan Esports Club)",
       "team2": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
+      "team1_id": "14137",
+      "team2_id": "12010",
       "match_result": "1-2",
       "winner": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "map_result": [
@@ -795,6 +813,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "All Gamers",
       "team2": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
+      "team1_id": "1119",
+      "team2_id": "12010",
       "match_result": "1-2",
       "winner": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "map_result": [
@@ -895,6 +915,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "team2": "Wolves Esports",
+      "team1_id": "12010",
+      "team2_id": "13790",
       "match_result": "2-1",
       "winner": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "map_result": [
@@ -985,6 +1007,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Dragon Ranger Gaming",
       "team2": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
+      "team1_id": "11981",
+      "team2_id": "12010",
       "match_result": "2-0",
       "winner": "Dragon Ranger Gaming",
       "map_result": [
@@ -1059,6 +1083,8 @@
       "stage": "Playoffs: Quarterfinals",
       "team1": "TYLOO",
       "team2": "Bilibili Gaming",
+      "team1_id": "731",
+      "team2_id": "12010",
       "match_result": "2-0",
       "winner": "TYLOO",
       "map_result": [
@@ -1129,6 +1155,8 @@
       "stage": "Playoffs: Round of 16",
       "team1": "Bilibili Gaming",
       "team2": "Unsettled Resentment",
+      "team1_id": "12010",
+      "team2_id": "21919",
       "match_result": "2-0",
       "winner": "Bilibili Gaming",
       "map_result": [
@@ -1204,6 +1232,8 @@
       "stage": "Stage 1: Lower Final",
       "team1": "Bilibili Gaming",
       "team2": "FunPlus Phoenix",
+      "team1_id": "12010",
+      "team2_id": "11328",
       "match_result": "1-2",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -1231,6 +1261,8 @@
       "stage": "Stage 1: Upper Final",
       "team1": "Bilibili Gaming",
       "team2": "Nova Esports",
+      "team1_id": "12010",
+      "team2_id": "12064",
       "match_result": "1-2",
       "winner": "Nova Esports",
       "map_result": [
@@ -1258,6 +1290,8 @@
       "stage": "Stage 1: Upper Semifinals",
       "team1": "Bilibili Gaming",
       "team2": "Wolves Esports",
+      "team1_id": "12010",
+      "team2_id": "13790",
       "match_result": "2-0",
       "winner": "Bilibili Gaming",
       "map_result": [

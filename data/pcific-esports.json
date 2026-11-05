@@ -1,7 +1,7 @@
 {
   "team_id": "3478",
-  "crawled_at": "2026-11-02T07:55:29.875Z",
-  "since": "2026-05-06T07:54:32.865Z",
+  "crawled_at": "2026-11-05T11:27:19.330Z",
+  "since": "2026-05-09T11:26:41.941Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/762035/misa-esports-vs-pcific-esports-monsters-reloaded-2026-closed-qualifier-playoffs-lr1",
@@ -10,6 +10,8 @@
       "stage": "Closed Qualifier Playoffs: Lower Round 1",
       "team1": "Misa Esports",
       "team2": "PCIFIC Esports",
+      "team1_id": "19218",
+      "team2_id": "3478",
       "match_result": "2-0",
       "winner": "Misa Esports",
       "map_result": [
@@ -79,6 +81,8 @@
       "stage": "Closed Qualifier Playoffs: Upper Semifinals",
       "team1": "BBL Esports",
       "team2": "PCIFIC Esports",
+      "team1_id": "397",
+      "team2_id": "3478",
       "match_result": "2-0",
       "winner": "BBL Esports",
       "map_result": [
@@ -143,6 +147,8 @@
       "stage": "Closed Qualifier: Play-Ins",
       "team1": "Eternal Fire",
       "team2": "PCIFIC Esports",
+      "team1_id": "6392",
+      "team2_id": "3478",
       "match_result": "1-2",
       "winner": "PCIFIC Esports",
       "map_result": [
@@ -242,6 +248,8 @@
       "stage": "Closed Qualifier: Decider Match",
       "team1": "Fear Never Ends (FOKIN)",
       "team2": "PCIFIC Esports",
+      "team1_id": "23481",
+      "team2_id": "3478",
       "match_result": "0-2",
       "winner": "PCIFIC Esports",
       "map_result": [
@@ -319,6 +327,8 @@
       "stage": "Closed Qualifier: Elimination Match",
       "team1": "Galatasaray Esports",
       "team2": "PCIFIC Esports",
+      "team1_id": "4572",
+      "team2_id": "3478",
       "match_result": "1-2",
       "winner": "PCIFIC Esports",
       "map_result": [
@@ -412,6 +422,8 @@
       "stage": "Closed Qualifier: Opening Matches",
       "team1": "PCIFIC Esports",
       "team2": "Fear Never Ends (FOKIN)",
+      "team1_id": "3478",
+      "team2_id": "23481",
       "match_result": "1-2",
       "winner": "Fear Never Ends (FOKIN)",
       "map_result": [
@@ -509,6 +521,8 @@
       "stage": "Play-Ins: Lower Round 1",
       "team1": "Joblife",
       "team2": "PCIFIC Esports",
+      "team1_id": "11232",
+      "team2_id": "3478",
       "match_result": "2-1",
       "winner": "Joblife",
       "map_result": [
@@ -605,6 +619,8 @@
       "stage": "Play-Ins: Upper Round 1",
       "team1": "PCIFIC Esports",
       "team2": "Fire Flux Esports",
+      "team1_id": "3478",
+      "team2_id": "20085",
       "match_result": "0-2",
       "winner": "Fire Flux Esports",
       "map_result": [
@@ -668,6 +684,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "BBL Esports",
       "team2": "PCIFIC Esports",
+      "team1_id": "397",
+      "team2_id": "3478",
       "match_result": "2-1",
       "winner": "BBL Esports",
       "map_result": [
@@ -763,6 +781,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "Natus Vincere",
       "team2": "PCIFIC Esports",
+      "team1_id": "4915",
+      "team2_id": "3478",
       "match_result": "2-0",
       "winner": "Natus Vincere",
       "map_result": [
@@ -839,6 +859,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "PCIFIC Esports",
       "team2": "Team Vitality",
+      "team1_id": "3478",
+      "team2_id": "2059",
       "match_result": "0-2",
       "winner": "Team Vitality",
       "map_result": [
@@ -904,6 +926,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "FUT Esports",
       "team2": "PCIFIC Esports",
+      "team1_id": "1184",
+      "team2_id": "3478",
       "match_result": "2-1",
       "winner": "FUT Esports",
       "map_result": [
@@ -1000,6 +1024,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "PCIFIC Esports",
       "team2": "Gentle Mates",
+      "team1_id": "3478",
+      "team2_id": "12694",
       "match_result": "1-2",
       "winner": "Gentle Mates",
       "map_result": [
@@ -1086,6 +1112,8 @@
       "stage": "Stage 1: Elimination",
       "team1": "PCIFIC Esports",
       "team2": "GIANTX",
+      "team1_id": "3478",
+      "team2_id": "14419",
       "match_result": "1-2",
       "winner": "GIANTX",
       "map_result": [
@@ -1183,6 +1211,8 @@
       "stage": "Stage 1: Opening",
       "team1": "Natus Vincere",
       "team2": "PCIFIC Esports",
+      "team1_id": "4915",
+      "team2_id": "3478",
       "match_result": "2-1",
       "winner": "Natus Vincere",
       "map_result": [

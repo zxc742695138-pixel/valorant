@@ -1,7 +1,7 @@
 {
   "team_id": "2",
-  "crawled_at": "2026-11-02T07:50:30.601Z",
-  "since": "2026-05-06T07:49:22.588Z",
+  "crawled_at": "2026-11-05T11:24:07.387Z",
+  "since": "2026-05-09T11:23:27.630Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/729757/sentinels-vs-kr-esports-vct-2026-americas-stage-2-lr2",
@@ -10,6 +10,8 @@
       "stage": "Play-Ins: Lower Round 2",
       "team1": "Sentinels",
       "team2": "KRÜ Esports",
+      "team1_id": "2",
+      "team2_id": "2355",
       "match_result": "0-2",
       "winner": "KRÜ Esports",
       "map_result": [
@@ -77,6 +79,8 @@
       "stage": "Play-Ins: Lower Round 1",
       "team1": "Sentinels",
       "team2": "2Game Esports",
+      "team1_id": "2",
+      "team2_id": "15072",
       "match_result": "2-0",
       "winner": "Sentinels",
       "map_result": [
@@ -147,6 +151,8 @@
       "stage": "Play-Ins: Upper Quarterfinals",
       "team1": "Sentinels",
       "team2": "ENVY",
+      "team1_id": "2",
+      "team2_id": "427",
       "match_result": "0-2",
       "winner": "ENVY",
       "map_result": [
@@ -212,6 +218,8 @@
       "stage": "Group Stage: Week 4",
       "team1": "KRÜ Esports",
       "team2": "Sentinels",
+      "team1_id": "2355",
+      "team2_id": "2",
       "match_result": "2-1",
       "winner": "KRÜ Esports",
       "map_result": [
@@ -303,6 +311,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "G2 Esports",
       "team2": "Sentinels",
+      "team1_id": "11058",
+      "team2_id": "2",
       "match_result": "2-1",
       "winner": "G2 Esports",
       "map_result": [
@@ -404,6 +414,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "100 Thieves",
       "team2": "Sentinels",
+      "team1_id": "120",
+      "team2_id": "2",
       "match_result": "2-1",
       "winner": "100 Thieves",
       "map_result": [
@@ -504,6 +516,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Sentinels",
       "team2": "LOUD",
+      "team1_id": "2",
+      "team2_id": "6961",
       "match_result": "2-0",
       "winner": "Sentinels",
       "map_result": [
@@ -569,6 +583,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Sentinels",
       "team2": "Cloud9",
+      "team1_id": "2",
+      "team2_id": "188",
       "match_result": "2-1",
       "winner": "Sentinels",
       "map_result": [
@@ -673,6 +689,8 @@
       "stage": "Stage 2: Lower Round 2",
       "team1": "LOUD",
       "team2": "Sentinels",
+      "team1_id": "6961",
+      "team2_id": "2",
       "match_result": "2-1",
       "winner": "LOUD",
       "map_result": [
@@ -771,6 +789,8 @@
       "stage": "Stage 2: Lower Round 1",
       "team1": "Sentinels",
       "team2": "KRÜ Esports",
+      "team1_id": "2",
+      "team2_id": "2355",
       "match_result": "2-1",
       "winner": "Sentinels",
       "map_result": [
@@ -868,6 +888,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "LEVIATÁN",
       "team2": "Sentinels",
+      "team1_id": "2359",
+      "team2_id": "2",
       "match_result": "2-1",
       "winner": "LEVIATÁN",
       "map_result": [
@@ -961,6 +983,8 @@
       "stage": "Stage 1: Grand Final",
       "team1": "Evil Geniuses",
       "team2": "Sentinels",
+      "team1_id": "5248",
+      "team2_id": "2",
       "match_result": "1-2",
       "winner": "Sentinels",
       "map_result": [
@@ -1045,6 +1069,8 @@
       "stage": "Stage 1: Lower Final",
       "team1": "ENVY",
       "team2": "Sentinels",
+      "team1_id": "427",
+      "team2_id": "2",
       "match_result": "0-2",
       "winner": "Sentinels",
       "map_result": [
@@ -1109,6 +1135,8 @@
       "stage": "Stage 1: Lower Round 1",
       "team1": "Sentinels",
       "team2": "Cloud9",
+      "team1_id": "2",
+      "team2_id": "188",
       "match_result": "2-0",
       "winner": "Sentinels",
       "map_result": [
@@ -1177,6 +1205,8 @@
       "stage": "Stage 1: Upper Semifinals",
       "team1": "Sentinels",
       "team2": "Evil Geniuses",
+      "team1_id": "2",
+      "team2_id": "5248",
       "match_result": "1-2",
       "winner": "Evil Geniuses",
       "map_result": [
@@ -1270,6 +1300,8 @@
       "stage": "Group Stage: Week 5",
       "team1": "Sentinels",
       "team2": "NRG",
+      "team1_id": "2",
+      "team2_id": "1034",
       "match_result": "1-2",
       "winner": "NRG",
       "map_result": [

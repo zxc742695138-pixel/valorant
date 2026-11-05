@@ -1,7 +1,7 @@
 {
   "team_id": "2593",
-  "crawled_at": "2026-11-02T07:55:09.080Z",
-  "since": "2026-05-06T07:54:07.762Z",
+  "crawled_at": "2026-11-05T11:27:00.232Z",
+  "since": "2026-05-09T11:26:23.331Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/729680/joblife-vs-fnatic-vct-2026-emea-stage-2-lr2",
@@ -10,6 +10,8 @@
       "stage": "Play-Ins: Lower Round 2",
       "team1": "Joblife",
       "team2": "FNATIC",
+      "team1_id": "11232",
+      "team2_id": "2593",
       "match_result": "2-0",
       "winner": "Joblife",
       "map_result": [
@@ -81,6 +83,8 @@
       "stage": "Play-Ins: Lower Round 1",
       "team1": "GIANTX",
       "team2": "FNATIC",
+      "team1_id": "14419",
+      "team2_id": "2593",
       "match_result": "0-2",
       "winner": "FNATIC",
       "map_result": [
@@ -145,6 +149,8 @@
       "stage": "Play-Ins: Upper Round 1",
       "team1": "FNATIC",
       "team2": "Enterprise Esports",
+      "team1_id": "2593",
+      "team2_id": "876",
       "match_result": "1-2",
       "winner": "Enterprise Esports",
       "map_result": [
@@ -241,6 +247,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "FNATIC",
       "team2": "Team Heretics",
+      "team1_id": "2593",
+      "team2_id": "1001",
       "match_result": "0-2",
       "winner": "Team Heretics",
       "map_result": [
@@ -304,6 +312,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "Eternal Fire",
       "team2": "FNATIC",
+      "team1_id": "6392",
+      "team2_id": "2593",
       "match_result": "2-0",
       "winner": "Eternal Fire",
       "map_result": [
@@ -377,6 +387,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Team Liquid",
       "team2": "FNATIC",
+      "team1_id": "474",
+      "team2_id": "2593",
       "match_result": "2-0",
       "winner": "Team Liquid",
       "map_result": [
@@ -440,6 +452,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "FNATIC",
       "team2": "Karmine Corp",
+      "team1_id": "2593",
+      "team2_id": "8877",
       "match_result": "2-1",
       "winner": "FNATIC",
       "map_result": [
@@ -554,6 +568,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "FNATIC",
       "team2": "GIANTX",
+      "team1_id": "2593",
+      "team2_id": "14419",
       "match_result": "2-0",
       "winner": "FNATIC",
       "map_result": [
@@ -630,6 +646,8 @@
       "stage": "Stage 2: Lower Round 2",
       "team1": "FNATIC",
       "team2": "Natus Vincere",
+      "team1_id": "2593",
+      "team2_id": "4915",
       "match_result": "1-2",
       "winner": "Natus Vincere",
       "map_result": [
@@ -739,6 +757,8 @@
       "stage": "Stage 2: Upper Semifinals",
       "team1": "FNATIC",
       "team2": "Karmine Corp",
+      "team1_id": "2593",
+      "team2_id": "8877",
       "match_result": "2-3",
       "winner": "Karmine Corp",
       "map_result": [
@@ -889,6 +909,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "FNATIC",
       "team2": "BBL Esports",
+      "team1_id": "2593",
+      "team2_id": "397",
       "match_result": "2-0",
       "winner": "FNATIC",
       "map_result": [
@@ -954,6 +976,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "FNATIC",
       "team2": "Team Heretics",
+      "team1_id": "2593",
+      "team2_id": "1001",
       "match_result": "1-2",
       "winner": "Team Heretics",
       "map_result": [
@@ -1037,77 +1061,6 @@
             "12-9",
             "12-10",
             "12-11",
-            "12-12",
-            "13-12",
-            "13-13",
-            "13-14",
-            "13-15"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/660384/fnatic-vs-team-vitality-vct-2026-emea-stage-1-ubsf",
-      "date": "2026-05-08 13:55:00",
-      "event": "VCT 2026: EMEA Stage 1",
-      "stage": "Playoffs: Upper Semifinals",
-      "team1": "FNATIC",
-      "team2": "Team Vitality",
-      "match_result": "0-2",
-      "winner": "Team Vitality",
-      "map_result": [
-        {
-          "map": "Breeze",
-          "score": "4-13",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "0-3",
-            "0-4",
-            "0-5",
-            "1-5",
-            "1-6",
-            "2-6",
-            "2-7",
-            "2-8",
-            "2-9",
-            "3-9",
-            "3-10",
-            "3-11",
-            "4-11",
-            "4-12",
-            "4-13"
-          ]
-        },
-        {
-          "map": "Haven",
-          "score": "13-15",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "3-0",
-            "3-1",
-            "3-2",
-            "4-2",
-            "5-2",
-            "6-2",
-            "6-3",
-            "7-3",
-            "8-3",
-            "9-3",
-            "9-4",
-            "9-5",
-            "9-6",
-            "10-6",
-            "10-7",
-            "10-8",
-            "10-9",
-            "10-10",
-            "10-11",
-            "10-12",
-            "11-12",
             "12-12",
             "13-12",
             "13-13",

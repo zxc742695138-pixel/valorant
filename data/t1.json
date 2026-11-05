@@ -1,7 +1,7 @@
 {
   "team_id": "14",
-  "crawled_at": "2026-11-02T08:00:44.759Z",
-  "since": "2026-05-06T07:59:02.730Z",
+  "crawled_at": "2026-11-05T11:30:38.658Z",
+  "since": "2026-05-09T11:29:36.619Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/754741/g2-esports-vs-t1-valorant-champions-2026-lr2",
@@ -10,6 +10,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "G2 Esports",
       "team2": "T1",
+      "team1_id": "11058",
+      "team2_id": "14",
       "match_result": "2-1",
       "winner": "G2 Esports",
       "map_result": [
@@ -109,6 +111,8 @@
       "stage": "Playoffs: Lower Round 1",
       "team1": "T1",
       "team2": "Paper Rex",
+      "team1_id": "14",
+      "team2_id": "624",
       "match_result": "2-1",
       "winner": "T1",
       "map_result": [
@@ -205,6 +209,8 @@
       "stage": "Playoffs: Upper Quarterfinals",
       "team1": "NRG",
       "team2": "T1",
+      "team1_id": "1034",
+      "team2_id": "14",
       "match_result": "2-0",
       "winner": "NRG",
       "map_result": [
@@ -275,6 +281,8 @@
       "stage": "Group Stage: Decider (A)",
       "team1": "FUT Esports",
       "team2": "T1",
+      "team1_id": "1184",
+      "team2_id": "14",
       "match_result": "0-2",
       "winner": "T1",
       "map_result": [
@@ -347,6 +355,8 @@
       "stage": "Group Stage: Elimination (A)",
       "team1": "T1",
       "team2": "JD Gaming",
+      "team1_id": "14",
+      "team2_id": "13576",
       "match_result": "2-1",
       "winner": "T1",
       "map_result": [
@@ -438,6 +448,8 @@
       "stage": "Group Stage: Opening (A)",
       "team1": "100 Thieves",
       "team2": "T1",
+      "team1_id": "120",
+      "team2_id": "14",
       "match_result": "2-0",
       "winner": "100 Thieves",
       "map_result": [
@@ -507,6 +519,8 @@
       "stage": "Playoffs: Lower Final",
       "team1": "Global Esports",
       "team2": "T1",
+      "team1_id": "918",
+      "team2_id": "14",
       "match_result": "3-1",
       "winner": "Global Esports",
       "map_result": [
@@ -629,6 +643,8 @@
       "stage": "Playoffs: Lower Round 3",
       "team1": "VARREL",
       "team2": "T1",
+      "team1_id": "11229",
+      "team2_id": "14",
       "match_result": "0-2",
       "winner": "T1",
       "map_result": [
@@ -699,6 +715,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "Gen.G",
       "team2": "T1",
+      "team1_id": "17",
+      "team2_id": "14",
       "match_result": "0-2",
       "winner": "T1",
       "map_result": [
@@ -767,6 +785,8 @@
       "stage": "Playoffs: Lower Round 1",
       "team1": "KIWOOM DRX",
       "team2": "T1",
+      "team1_id": "8185",
+      "team2_id": "14",
       "match_result": "0-2",
       "winner": "T1",
       "map_result": [
@@ -836,6 +856,8 @@
       "stage": "Play-Ins: Lower Round 3",
       "team1": "T1",
       "team2": "DetonatioN FocusMe",
+      "team1_id": "14",
+      "team2_id": "278",
       "match_result": "2-0",
       "winner": "T1",
       "map_result": [
@@ -903,6 +925,8 @@
       "stage": "Play-Ins: Upper Semifinals",
       "team1": "T1",
       "team2": "Nongshim RedForce",
+      "team1_id": "14",
+      "team2_id": "11060",
       "match_result": "0-2",
       "winner": "Nongshim RedForce",
       "map_result": [
@@ -970,6 +994,8 @@
       "stage": "Play-Ins: Upper Quarterfinals",
       "team1": "T1",
       "team2": "FULL SENSE",
+      "team1_id": "14",
+      "team2_id": "4050",
       "match_result": "2-0",
       "winner": "T1",
       "map_result": [
@@ -1031,6 +1057,8 @@
       "stage": "Group Stage: Week 4",
       "team1": "KIWOOM DRX",
       "team2": "T1",
+      "team1_id": "8185",
+      "team2_id": "14",
       "match_result": "0-2",
       "winner": "T1",
       "map_result": [
@@ -1097,6 +1125,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "T1",
       "team2": "DetonatioN FocusMe",
+      "team1_id": "14",
+      "team2_id": "278",
       "match_result": "1-2",
       "winner": "DetonatioN FocusMe",
       "map_result": [
@@ -1190,6 +1220,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Team Secret",
       "team2": "T1",
+      "team1_id": "6199",
+      "team2_id": "14",
       "match_result": "0-2",
       "winner": "T1",
       "map_result": [
@@ -1252,6 +1284,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "T1",
       "team2": "VARREL",
+      "team1_id": "14",
+      "team2_id": "11229",
       "match_result": "0-2",
       "winner": "VARREL",
       "map_result": [
@@ -1327,6 +1361,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Paper Rex",
       "team2": "T1",
+      "team1_id": "624",
+      "team2_id": "14",
       "match_result": "1-2",
       "winner": "T1",
       "map_result": [
@@ -1442,6 +1478,8 @@
       "stage": "Stage 2: Lower Round 2",
       "team1": "Gen.G",
       "team2": "T1",
+      "team1_id": "17",
+      "team2_id": "14",
       "match_result": "2-0",
       "winner": "Gen.G",
       "map_result": [
@@ -1513,6 +1551,8 @@
       "stage": "Stage 2: Lower Round 1",
       "team1": "T1",
       "team2": "DetonatioN FocusMe",
+      "team1_id": "14",
+      "team2_id": "278",
       "match_result": "2-1",
       "winner": "T1",
       "map_result": [
@@ -1613,6 +1653,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "T1",
       "team2": "Nongshim RedForce",
+      "team1_id": "14",
+      "team2_id": "11060",
       "match_result": "0-2",
       "winner": "Nongshim RedForce",
       "map_result": [
@@ -1688,6 +1730,8 @@
       "stage": "Playoffs: Lower Round 3",
       "team1": "T1",
       "team2": "Paper Rex",
+      "team1_id": "14",
+      "team2_id": "624",
       "match_result": "1-2",
       "winner": "Paper Rex",
       "map_result": [
@@ -1787,6 +1831,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "T1",
       "team2": "Rex Regum Qeon",
+      "team1_id": "14",
+      "team2_id": "878",
       "match_result": "2-1",
       "winner": "T1",
       "map_result": [
@@ -1869,75 +1915,6 @@
             "11-5",
             "12-5",
             "13-5"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/666491/t1-vs-full-sense-vct-2026-pacific-stage-1-ubsf",
-      "date": "2026-05-08 07:15:00",
-      "event": "VCT 2026: Pacific Stage 1",
-      "stage": "Playoffs: Upper Semifinals",
-      "team1": "T1",
-      "team2": "FULL SENSE",
-      "match_result": "0-2",
-      "winner": "FULL SENSE",
-      "map_result": [
-        {
-          "map": "Pearl",
-          "score": "9-13",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "2-1",
-            "2-2",
-            "2-3",
-            "2-4",
-            "2-5",
-            "2-6",
-            "3-6",
-            "3-7",
-            "4-7",
-            "4-8",
-            "4-9",
-            "4-10",
-            "4-11",
-            "5-11",
-            "5-12",
-            "6-12",
-            "7-12",
-            "8-12",
-            "9-12",
-            "9-13"
-          ]
-        },
-        {
-          "map": "Lotus",
-          "score": "8-13",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "0-3",
-            "1-3",
-            "1-4",
-            "1-5",
-            "2-5",
-            "3-5",
-            "3-6",
-            "4-6",
-            "4-7",
-            "4-8",
-            "5-8",
-            "6-8",
-            "6-9",
-            "7-9",
-            "7-10",
-            "7-11",
-            "8-11",
-            "8-12",
-            "8-13"
           ]
         }
       ]

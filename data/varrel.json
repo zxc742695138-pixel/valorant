@@ -1,7 +1,7 @@
 {
   "team_id": "11229",
-  "crawled_at": "2026-11-02T08:00:59.519Z",
-  "since": "2026-05-06T08:00:14.001Z",
+  "crawled_at": "2026-11-05T11:30:53.691Z",
+  "since": "2026-05-09T11:30:22.318Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/742486/varrel-vs-t1-vct-2026-pacific-stage-2-lr3",
@@ -10,6 +10,8 @@
       "stage": "Playoffs: Lower Round 3",
       "team1": "VARREL",
       "team2": "T1",
+      "team1_id": "11229",
+      "team2_id": "14",
       "match_result": "0-2",
       "winner": "T1",
       "map_result": [
@@ -80,6 +82,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "VARREL",
       "team2": "Paper Rex",
+      "team1_id": "11229",
+      "team2_id": "624",
       "match_result": "2-1",
       "winner": "VARREL",
       "map_result": [
@@ -183,6 +187,8 @@
       "stage": "Playoffs: Upper Semifinals",
       "team1": "VARREL",
       "team2": "Global Esports",
+      "team1_id": "11229",
+      "team2_id": "918",
       "match_result": "0-2",
       "winner": "Global Esports",
       "map_result": [
@@ -250,6 +256,8 @@
       "stage": "Group Stage: Week 4",
       "team1": "VARREL",
       "team2": "Paper Rex",
+      "team1_id": "11229",
+      "team2_id": "624",
       "match_result": "2-0",
       "winner": "VARREL",
       "map_result": [
@@ -322,6 +330,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "VARREL",
       "team2": "KIWOOM DRX",
+      "team1_id": "11229",
+      "team2_id": "8185",
       "match_result": "2-1",
       "winner": "VARREL",
       "map_result": [
@@ -418,6 +428,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "VARREL",
       "team2": "DetonatioN FocusMe",
+      "team1_id": "11229",
+      "team2_id": "278",
       "match_result": "1-2",
       "winner": "DetonatioN FocusMe",
       "map_result": [
@@ -519,6 +531,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "T1",
       "team2": "VARREL",
+      "team1_id": "14",
+      "team2_id": "11229",
       "match_result": "0-2",
       "winner": "VARREL",
       "map_result": [
@@ -594,6 +608,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Team Secret",
       "team2": "VARREL",
+      "team1_id": "6199",
+      "team2_id": "11229",
       "match_result": "1-2",
       "winner": "VARREL",
       "map_result": [
@@ -692,6 +708,8 @@
       "stage": "Stage 1: Grand Final",
       "team1": "VARREL",
       "team2": "Gen.G",
+      "team1_id": "11229",
+      "team2_id": "17",
       "match_result": "0-2",
       "winner": "Gen.G",
       "map_result": [
@@ -757,6 +775,8 @@
       "stage": "Stage 1: Upper Final",
       "team1": "VARREL",
       "team2": "Team Secret",
+      "team1_id": "11229",
+      "team2_id": "6199",
       "match_result": "2-1",
       "winner": "VARREL",
       "map_result": [
@@ -874,6 +894,8 @@
       "stage": "Stage 1: Upper Semifinals",
       "team1": "ZETA DIVISION",
       "team2": "VARREL",
+      "team1_id": "5448",
+      "team2_id": "11229",
       "match_result": "0-2",
       "winner": "VARREL",
       "map_result": [

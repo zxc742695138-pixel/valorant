@@ -1,7 +1,7 @@
 {
   "team_id": "4050",
-  "crawled_at": "2026-11-02T08:03:13.452Z",
-  "since": "2026-05-06T08:02:35.523Z",
+  "crawled_at": "2026-11-05T11:32:14.898Z",
+  "since": "2026-05-09T11:31:43.558Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/730549/onside-gaming-vs-full-sense-vct-2026-pacific-stage-2-lr2",
@@ -10,6 +10,8 @@
       "stage": "Play-Ins: Lower Round 2",
       "team1": "ONSIDE GAMING",
       "team2": "FULL SENSE",
+      "team1_id": "19189",
+      "team2_id": "4050",
       "match_result": "2-0",
       "winner": "ONSIDE GAMING",
       "map_result": [
@@ -78,6 +80,8 @@
       "stage": "Play-Ins: Lower Round 1",
       "team1": "FULL SENSE",
       "team2": "Rex Regum Qeon",
+      "team1_id": "4050",
+      "team2_id": "878",
       "match_result": "2-1",
       "winner": "FULL SENSE",
       "map_result": [
@@ -172,6 +176,8 @@
       "stage": "Play-Ins: Upper Quarterfinals",
       "team1": "T1",
       "team2": "FULL SENSE",
+      "team1_id": "14",
+      "team2_id": "4050",
       "match_result": "2-0",
       "winner": "T1",
       "map_result": [
@@ -233,6 +239,8 @@
       "stage": "Play-Ins: Upper Round 1",
       "team1": "FULL SENSE",
       "team2": "QT DIG∞",
+      "team1_id": "4050",
+      "team2_id": "18299",
       "match_result": "2-1",
       "winner": "FULL SENSE",
       "map_result": [
@@ -324,6 +332,8 @@
       "stage": "Group Stage: Week 4",
       "team1": "Gen.G",
       "team2": "FULL SENSE",
+      "team1_id": "17",
+      "team2_id": "4050",
       "match_result": "2-1",
       "winner": "Gen.G",
       "map_result": [
@@ -425,6 +435,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "FULL SENSE",
       "team2": "Rex Regum Qeon",
+      "team1_id": "4050",
+      "team2_id": "878",
       "match_result": "1-2",
       "winner": "Rex Regum Qeon",
       "map_result": [
@@ -518,6 +530,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "FULL SENSE",
       "team2": "ZETA DIVISION",
+      "team1_id": "4050",
+      "team2_id": "5448",
       "match_result": "1-2",
       "winner": "ZETA DIVISION",
       "map_result": [
@@ -624,6 +638,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Global Esports",
       "team2": "FULL SENSE",
+      "team1_id": "918",
+      "team2_id": "4050",
       "match_result": "2-0",
       "winner": "Global Esports",
       "map_result": [
@@ -686,6 +702,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "FULL SENSE",
       "team2": "Nongshim RedForce",
+      "team1_id": "4050",
+      "team2_id": "11060",
       "match_result": "2-1",
       "winner": "FULL SENSE",
       "map_result": [
@@ -780,6 +798,8 @@
       "stage": "Swiss Stage: Round 2 (0-1)",
       "team1": "Global Esports",
       "team2": "FULL SENSE",
+      "team1_id": "918",
+      "team2_id": "4050",
       "match_result": "2-1",
       "winner": "Global Esports",
       "map_result": [
@@ -877,6 +897,8 @@
       "stage": "Swiss Stage: Round 1",
       "team1": "FULL SENSE",
       "team2": "FUT Esports",
+      "team1_id": "4050",
+      "team2_id": "1184",
       "match_result": "0-2",
       "winner": "FUT Esports",
       "map_result": [
@@ -939,6 +961,8 @@
       "stage": "Stage 2: Lower Round 1",
       "team1": "FULL SENSE",
       "team2": "KIWOOM DRX",
+      "team1_id": "4050",
+      "team2_id": "8185",
       "match_result": "1-2",
       "winner": "KIWOOM DRX",
       "map_result": [
@@ -1033,6 +1057,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "FULL SENSE",
       "team2": "Gen.G",
+      "team1_id": "4050",
+      "team2_id": "17",
       "match_result": "1-2",
       "winner": "Gen.G",
       "map_result": [
@@ -1140,6 +1166,8 @@
       "stage": "Playoffs: Grand Final",
       "team1": "FULL SENSE",
       "team2": "Paper Rex",
+      "team1_id": "4050",
+      "team2_id": "624",
       "match_result": "0-3",
       "winner": "Paper Rex",
       "map_result": [
@@ -1241,6 +1269,8 @@
       "stage": "Playoffs: Upper Final",
       "team1": "Global Esports",
       "team2": "FULL SENSE",
+      "team1_id": "918",
+      "team2_id": "4050",
       "match_result": "0-2",
       "winner": "FULL SENSE",
       "map_result": [
@@ -1301,143 +1331,6 @@
             "7-12",
             "8-12",
             "8-13"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/666491/t1-vs-full-sense-vct-2026-pacific-stage-1-ubsf",
-      "date": "2026-05-08 07:15:00",
-      "event": "VCT 2026: Pacific Stage 1",
-      "stage": "Playoffs: Upper Semifinals",
-      "team1": "T1",
-      "team2": "FULL SENSE",
-      "match_result": "0-2",
-      "winner": "FULL SENSE",
-      "map_result": [
-        {
-          "map": "Pearl",
-          "score": "9-13",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "2-1",
-            "2-2",
-            "2-3",
-            "2-4",
-            "2-5",
-            "2-6",
-            "3-6",
-            "3-7",
-            "4-7",
-            "4-8",
-            "4-9",
-            "4-10",
-            "4-11",
-            "5-11",
-            "5-12",
-            "6-12",
-            "7-12",
-            "8-12",
-            "9-12",
-            "9-13"
-          ]
-        },
-        {
-          "map": "Lotus",
-          "score": "8-13",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "0-3",
-            "1-3",
-            "1-4",
-            "1-5",
-            "2-5",
-            "3-5",
-            "3-6",
-            "4-6",
-            "4-7",
-            "4-8",
-            "5-8",
-            "6-8",
-            "6-9",
-            "7-9",
-            "7-10",
-            "7-11",
-            "8-11",
-            "8-12",
-            "8-13"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/666489/kiwoom-drx-vs-full-sense-vct-2026-pacific-stage-1-ur1",
-      "date": "2026-05-07 06:35:00",
-      "event": "VCT 2026: Pacific Stage 1",
-      "stage": "Playoffs: Upper Round 1",
-      "team1": "KIWOOM DRX",
-      "team2": "FULL SENSE",
-      "match_result": "0-2",
-      "winner": "FULL SENSE",
-      "map_result": [
-        {
-          "map": "Lotus",
-          "score": "9-13",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "2-1",
-            "3-1",
-            "3-2",
-            "3-3",
-            "3-4",
-            "4-4",
-            "5-4",
-            "6-4",
-            "6-5",
-            "7-5",
-            "7-6",
-            "7-7",
-            "7-8",
-            "7-9",
-            "8-9",
-            "8-10",
-            "8-11",
-            "8-12",
-            "9-12",
-            "9-13"
-          ]
-        },
-        {
-          "map": "Fracture",
-          "score": "7-13",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "1-2",
-            "2-2",
-            "2-3",
-            "2-4",
-            "2-5",
-            "3-5",
-            "3-6",
-            "3-7",
-            "3-8",
-            "3-9",
-            "3-10",
-            "3-11",
-            "3-12",
-            "4-12",
-            "5-12",
-            "6-12",
-            "7-12",
-            "7-13"
           ]
         }
       ]

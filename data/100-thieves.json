@@ -1,7 +1,7 @@
 {
   "team_id": "120",
-  "crawled_at": "2026-11-02T07:49:05.827Z",
-  "since": "2026-05-06T07:46:47.467Z",
+  "crawled_at": "2026-11-05T11:23:16.025Z",
+  "since": "2026-05-09T11:21:50.357Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/754743/team-vitality-vs-100-thieves-valorant-champions-2026-lbf",
@@ -10,6 +10,8 @@
       "stage": "Playoffs: Lower Final",
       "team1": "Team Vitality",
       "team2": "100 Thieves",
+      "team1_id": "2059",
+      "team2_id": "120",
       "match_result": "3-1",
       "winner": "Team Vitality",
       "map_result": [
@@ -137,6 +139,8 @@
       "stage": "Playoffs: Lower Round 3",
       "team1": "100 Thieves",
       "team2": "G2 Esports",
+      "team1_id": "120",
+      "team2_id": "11058",
       "match_result": "2-1",
       "winner": "100 Thieves",
       "map_result": [
@@ -236,6 +240,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "NRG",
       "team2": "100 Thieves",
+      "team1_id": "1034",
+      "team2_id": "120",
       "match_result": "0-2",
       "winner": "100 Thieves",
       "map_result": [
@@ -305,6 +311,8 @@
       "stage": "Playoffs: Lower Round 1",
       "team1": "100 Thieves",
       "team2": "Nongshim RedForce",
+      "team1_id": "120",
+      "team2_id": "11060",
       "match_result": "2-1",
       "winner": "100 Thieves",
       "map_result": [
@@ -392,6 +400,8 @@
       "stage": "Playoffs: Upper Quarterfinals",
       "team1": "100 Thieves",
       "team2": "G2 Esports",
+      "team1_id": "120",
+      "team2_id": "11058",
       "match_result": "0-2",
       "winner": "G2 Esports",
       "map_result": [
@@ -460,6 +470,8 @@
       "stage": "Group Stage: Winner's (A)",
       "team1": "100 Thieves",
       "team2": "FUT Esports",
+      "team1_id": "120",
+      "team2_id": "1184",
       "match_result": "2-0",
       "winner": "100 Thieves",
       "map_result": [
@@ -527,6 +539,8 @@
       "stage": "Group Stage: Opening (A)",
       "team1": "100 Thieves",
       "team2": "T1",
+      "team1_id": "120",
+      "team2_id": "14",
       "match_result": "2-0",
       "winner": "100 Thieves",
       "map_result": [
@@ -596,6 +610,8 @@
       "stage": "Playoffs: Grand Final",
       "team1": "100 Thieves",
       "team2": "LOUD",
+      "team1_id": "120",
+      "team2_id": "6961",
       "match_result": "3-2",
       "winner": "100 Thieves",
       "map_result": [
@@ -753,6 +769,8 @@
       "stage": "Playoffs: Upper Final",
       "team1": "NRG",
       "team2": "100 Thieves",
+      "team1_id": "1034",
+      "team2_id": "120",
       "match_result": "0-2",
       "winner": "100 Thieves",
       "map_result": [
@@ -814,6 +832,8 @@
       "stage": "Playoffs: Upper Semifinals",
       "team1": "100 Thieves",
       "team2": "LEVIATÁN",
+      "team1_id": "120",
+      "team2_id": "2359",
       "match_result": "2-0",
       "winner": "100 Thieves",
       "map_result": [
@@ -875,6 +895,8 @@
       "stage": "Group Stage: Week 4",
       "team1": "LOUD",
       "team2": "100 Thieves",
+      "team1_id": "6961",
+      "team2_id": "120",
       "match_result": "0-2",
       "winner": "100 Thieves",
       "map_result": [
@@ -945,6 +967,8 @@
       "stage": "Group Stage: Week 4",
       "team1": "100 Thieves",
       "team2": "Cloud9",
+      "team1_id": "120",
+      "team2_id": "188",
       "match_result": "0-2",
       "winner": "Cloud9",
       "map_result": [
@@ -1023,6 +1047,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "100 Thieves",
       "team2": "Sentinels",
+      "team1_id": "120",
+      "team2_id": "2",
       "match_result": "2-1",
       "winner": "100 Thieves",
       "map_result": [
@@ -1123,6 +1149,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "100 Thieves",
       "team2": "KRÜ Esports",
+      "team1_id": "120",
+      "team2_id": "2355",
       "match_result": "2-0",
       "winner": "100 Thieves",
       "map_result": [
@@ -1185,6 +1213,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "G2 Esports",
       "team2": "100 Thieves",
+      "team1_id": "11058",
+      "team2_id": "120",
       "match_result": "1-2",
       "winner": "100 Thieves",
       "map_result": [
@@ -1288,6 +1318,8 @@
       "stage": "Playoffs: Grand Final",
       "team1": "100 Thieves",
       "team2": "NRG",
+      "team1_id": "120",
+      "team2_id": "1034",
       "match_result": "3-1",
       "winner": "100 Thieves",
       "map_result": [
@@ -1408,6 +1440,8 @@
       "stage": "Playoffs: Semifinals",
       "team1": "100 Thieves",
       "team2": "Nongshim RedForce",
+      "team1_id": "120",
+      "team2_id": "11060",
       "match_result": "2-1",
       "winner": "100 Thieves",
       "map_result": [
@@ -1504,6 +1538,8 @@
       "stage": "Playoffs: Quarterfinals",
       "team1": "100 Thieves",
       "team2": "MIBR",
+      "team1_id": "120",
+      "team2_id": "7386",
       "match_result": "2-1",
       "winner": "100 Thieves",
       "map_result": [
@@ -1593,6 +1629,8 @@
       "stage": "Group Stage: Winner's (A)",
       "team1": "100 Thieves",
       "team2": "BBL Esports",
+      "team1_id": "120",
+      "team2_id": "397",
       "match_result": "2-1",
       "winner": "100 Thieves",
       "map_result": [
@@ -1690,6 +1728,8 @@
       "stage": "Group Stage: Opening (A)",
       "team1": "Rex Regum Qeon",
       "team2": "100 Thieves",
+      "team1_id": "878",
+      "team2_id": "120",
       "match_result": "0-2",
       "winner": "100 Thieves",
       "map_result": [
@@ -1757,6 +1797,8 @@
       "stage": "Stage 2: Upper Semifinals",
       "team1": "100 Thieves",
       "team2": "LOUD",
+      "team1_id": "120",
+      "team2_id": "6961",
       "match_result": "3-0",
       "winner": "100 Thieves",
       "map_result": [
@@ -1851,6 +1893,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "100 Thieves",
       "team2": "FURIA",
+      "team1_id": "120",
+      "team2_id": "2406",
       "match_result": "2-0",
       "winner": "100 Thieves",
       "map_result": [
@@ -1916,6 +1960,8 @@
       "stage": "Playoffs: Lower Round 3",
       "team1": "NRG",
       "team2": "100 Thieves",
+      "team1_id": "1034",
+      "team2_id": "120",
       "match_result": "2-0",
       "winner": "NRG",
       "map_result": [
@@ -1988,6 +2034,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "MIBR",
       "team2": "100 Thieves",
+      "team1_id": "7386",
+      "team2_id": "120",
       "match_result": "0-2",
       "winner": "100 Thieves",
       "map_result": [
@@ -2058,6 +2106,8 @@
       "stage": "Playoffs: Lower Round 1",
       "team1": "100 Thieves",
       "team2": "LOUD",
+      "team1_id": "120",
+      "team2_id": "6961",
       "match_result": "2-0",
       "winner": "100 Thieves",
       "map_result": [
@@ -2119,6 +2169,8 @@
       "stage": "Playoffs: Upper Round 1",
       "team1": "G2 Esports",
       "team2": "100 Thieves",
+      "team1_id": "11058",
+      "team2_id": "120",
       "match_result": "2-0",
       "winner": "G2 Esports",
       "map_result": [
@@ -2171,101 +2223,6 @@
             "12-6",
             "12-7",
             "13-7"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/645499/furia-vs-100-thieves-vct-2026-americas-stage-1-w5",
-      "date": "2026-05-08 20:20:00",
-      "event": "VCT 2026: Americas Stage 1",
-      "stage": "Group Stage: Week 5",
-      "team1": "FURIA",
-      "team2": "100 Thieves",
-      "match_result": "1-2",
-      "winner": "100 Thieves",
-      "map_result": [
-        {
-          "map": "Pearl",
-          "score": "13-9",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "1-2",
-            "1-3",
-            "1-4",
-            "2-4",
-            "3-4",
-            "4-4",
-            "4-5",
-            "4-6",
-            "5-6",
-            "5-7",
-            "5-8",
-            "5-9",
-            "6-9",
-            "7-9",
-            "8-9",
-            "9-9",
-            "10-9",
-            "11-9",
-            "12-9",
-            "13-9"
-          ]
-        },
-        {
-          "map": "Haven",
-          "score": "8-13",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "1-2",
-            "2-2",
-            "3-2",
-            "3-3",
-            "3-4",
-            "3-5",
-            "3-6",
-            "3-7",
-            "4-7",
-            "4-8",
-            "5-8",
-            "6-8",
-            "7-8",
-            "8-8",
-            "8-9",
-            "8-10",
-            "8-11",
-            "8-12",
-            "8-13"
-          ]
-        },
-        {
-          "map": "Breeze",
-          "score": "6-13",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "2-1",
-            "2-2",
-            "2-3",
-            "2-4",
-            "2-5",
-            "3-5",
-            "3-6",
-            "3-7",
-            "3-8",
-            "4-8",
-            "4-9",
-            "4-10",
-            "4-11",
-            "5-11",
-            "6-11",
-            "6-12",
-            "6-13"
           ]
         }
       ]

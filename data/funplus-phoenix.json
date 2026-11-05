@@ -1,7 +1,7 @@
 {
   "team_id": "11328",
-  "crawled_at": "2026-11-02T07:58:16.093Z",
-  "since": "2026-05-06T07:56:56.261Z",
+  "crawled_at": "2026-11-05T11:29:06.166Z",
+  "since": "2026-05-09T11:28:14.116Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/777963/funplus-phoenix-vs-any-questions-gaming-vct-2026-china-threshold-week-2-qf",
@@ -10,6 +10,8 @@
       "stage": "Week 2: Quarterfinals",
       "team1": "FunPlus Phoenix",
       "team2": "Any Questions Gaming",
+      "team1_id": "11328",
+      "team2_id": "19531",
       "match_result": "1-2",
       "winner": "Any Questions Gaming",
       "map_result": [
@@ -106,6 +108,8 @@
       "stage": "Week 1: Quarterfinals",
       "team1": "FunPlus Phoenix",
       "team2": "Dragon Ranger Gaming",
+      "team1_id": "11328",
+      "team2_id": "11981",
       "match_result": "1-2",
       "winner": "Dragon Ranger Gaming",
       "map_result": [
@@ -217,6 +221,8 @@
       "stage": "Main Event: Grand Final",
       "team1": "KeepBest Gaming",
       "team2": "FunPlus Phoenix",
+      "team1_id": "12784",
+      "team2_id": "11328",
       "match_result": "2-3",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -373,6 +379,8 @@
       "stage": "Main Event: Semifinals",
       "team1": "FunPlus Phoenix",
       "team2": "Any Questions Gaming",
+      "team1_id": "11328",
+      "team2_id": "19531",
       "match_result": "2-1",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -466,6 +474,8 @@
       "stage": "Main Event: Quarterfinals",
       "team1": "Nova Esports",
       "team2": "FunPlus Phoenix",
+      "team1_id": "12064",
+      "team2_id": "11328",
       "match_result": "0-2",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -532,6 +542,8 @@
       "stage": "Main Event: Round of 16",
       "team1": "FunPlus Phoenix",
       "team2": "A Team",
+      "team1_id": "11328",
+      "team2_id": "20603",
       "match_result": "2-1",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -631,6 +643,8 @@
       "stage": "Play-Ins: Lower Round 2",
       "team1": "Trace Esports",
       "team2": "FunPlus Phoenix",
+      "team1_id": "12685",
+      "team2_id": "11328",
       "match_result": "2-0",
       "winner": "Trace Esports",
       "map_result": [
@@ -695,6 +709,8 @@
       "stage": "Play-Ins: Lower Round 1",
       "team1": "KeepBest Gaming",
       "team2": "FunPlus Phoenix",
+      "team1_id": "12784",
+      "team2_id": "11328",
       "match_result": "0-2",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -765,6 +781,8 @@
       "stage": "Play-Ins: Upper Quarterfinals",
       "team1": "FunPlus Phoenix",
       "team2": "JD Gaming",
+      "team1_id": "11328",
+      "team2_id": "13576",
       "match_result": "1-2",
       "winner": "JD Gaming",
       "map_result": [
@@ -856,6 +874,8 @@
       "stage": "Group Stage: Seeding",
       "team1": "FunPlus Phoenix",
       "team2": "Wolves Esports",
+      "team1_id": "11328",
+      "team2_id": "13790",
       "match_result": "2-0",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -929,6 +949,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "FunPlus Phoenix",
       "team2": "EDward Gaming",
+      "team1_id": "11328",
+      "team2_id": "1120",
       "match_result": "1-2",
       "winner": "EDward Gaming",
       "map_result": [
@@ -1024,6 +1046,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "TYLOO",
       "team2": "FunPlus Phoenix",
+      "team1_id": "731",
+      "team2_id": "11328",
       "match_result": "2-1",
       "winner": "TYLOO",
       "map_result": [
@@ -1124,6 +1148,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "JD Gaming",
       "team2": "FunPlus Phoenix",
+      "team1_id": "13576",
+      "team2_id": "11328",
       "match_result": "0-2",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -1193,6 +1219,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Nova Esports",
       "team2": "FunPlus Phoenix",
+      "team1_id": "12064",
+      "team2_id": "11328",
       "match_result": "2-0",
       "winner": "Nova Esports",
       "map_result": [
@@ -1260,6 +1288,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "FunPlus Phoenix",
       "team2": "Trace Esports",
+      "team1_id": "11328",
+      "team2_id": "12685",
       "match_result": "2-0",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -1324,6 +1354,8 @@
       "stage": "Playoffs: Quarterfinals",
       "team1": "All Gamers",
       "team2": "FunPlus Phoenix",
+      "team1_id": "1119",
+      "team2_id": "11328",
       "match_result": "2-0",
       "winner": "All Gamers",
       "map_result": [
@@ -1382,6 +1414,8 @@
       "stage": "Playoffs: Round of 16",
       "team1": "FunPlus Phoenix",
       "team2": "Wolves Esports",
+      "team1_id": "11328",
+      "team2_id": "13790",
       "match_result": "2-0",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -1459,6 +1493,8 @@
       "stage": "Stage 2: Lower Round 3",
       "team1": "FunPlus Phoenix",
       "team2": "All Gamers",
+      "team1_id": "11328",
+      "team2_id": "1119",
       "match_result": "0-2",
       "winner": "All Gamers",
       "map_result": [
@@ -1527,6 +1563,8 @@
       "stage": "Stage 2: Lower Round 2",
       "team1": "Trace Esports",
       "team2": "FunPlus Phoenix",
+      "team1_id": "12685",
+      "team2_id": "11328",
       "match_result": "0-2",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -1549,6 +1587,8 @@
       "stage": "Stage 2: Lower Round 1",
       "team1": "FunPlus Phoenix",
       "team2": "JD Gaming",
+      "team1_id": "11328",
+      "team2_id": "13576",
       "match_result": "2-1",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -1576,6 +1616,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "Xi Lai Gaming",
       "team2": "FunPlus Phoenix",
+      "team1_id": "13581",
+      "team2_id": "11328",
       "match_result": "2-1",
       "winner": "Xi Lai Gaming",
       "map_result": [
@@ -1603,6 +1645,8 @@
       "stage": "Stage 1: Grand Final",
       "team1": "Nova Esports",
       "team2": "FunPlus Phoenix",
+      "team1_id": "12064",
+      "team2_id": "11328",
       "match_result": "1-2",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -1630,6 +1674,8 @@
       "stage": "Stage 1: Lower Final",
       "team1": "Bilibili Gaming",
       "team2": "FunPlus Phoenix",
+      "team1_id": "12010",
+      "team2_id": "11328",
       "match_result": "1-2",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -1657,6 +1703,8 @@
       "stage": "Stage 1: Lower Round 1",
       "team1": "Wolves Esports",
       "team2": "FunPlus Phoenix",
+      "team1_id": "13790",
+      "team2_id": "11328",
       "match_result": "1-2",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -1684,6 +1732,8 @@
       "stage": "Stage 1: Upper Semifinals",
       "team1": "FunPlus Phoenix",
       "team2": "Nova Esports",
+      "team1_id": "11328",
+      "team2_id": "12064",
       "match_result": "1-2",
       "winner": "Nova Esports",
       "map_result": [

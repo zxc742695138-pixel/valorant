@@ -1,18 +1,14 @@
-Top 5 đội mỗi khu vực gây lật kèo nhiều nhất, theo thứ tự loại.
+**Cách dùng:** chỉ cược map khi **cả hai đội đều nằm trong whitelist** (kể cả trận quốc tế giữa các khu vực). Cược đội đang dẫn ≥ 3 round khi tổng round ≥ 17.
 
-- Dữ liệu: vlr.gg, 2026-05-06 → 2026-11-02
-- Map lật kèo: có thời điểm tổng round ≥ 17 mà một đội dẫn ≥ 3 round, nhưng đội đó thua map
-- Thuật toán: loại đội có nhiều map lật kèo nhất (bằng nhau thì xét tỉ lệ), bỏ các map có đội đó, tính lại; lặp 5 lần
-- Chỉ tính trận giữa hai đội nhượng quyền tier 1 (48 đội của 4 khu vực)
-- Xếp hạng theo số map lật kèo có trọng số: trọng số giảm một nửa sau mỗi 90 ngày
-- Chỉ áp dụng cho: Pacific, Americas, China (EMEA không áp dụng)
+- Dữ liệu: vlr.gg, 90 ngày gần nhất (2026-08-07 → 2026-11-05), chỉ trận giữa hai đội nhượng quyền
+- Lật được: bị dẫn ≥ 3 round khi tổng round ≥ 17 nhưng thắng map. Bị lật: dẫn như vậy nhưng thua map
+- **Whitelist** = nhóm Trung bình: |lật được − bị lật| < 1 và lật được + bị lật < 3
+- **Blacklist** = các đội còn lại: Mạnh (lật được − bị lật ≥ +1), Yếu (≤ −1), Không ổn định (lật được + bị lật ≥ 3)
 
-| Khu vực | Top 5 | Tỉ lệ lật kèo ban đầu → sau khi loại | Thay đổi so với lần trước |
+| Khu vực | Whitelist | Blacklist | Thay đổi whitelist so với lần trước |
 |---|---|---|---|
-| Pacific | T1, Nongshim RedForce, Global Esports, Paper Rex, Gen.G | 6.3% → 2.4% | không đổi |
-| Americas | NRG, LOUD, ENVY, Sentinels, 100 Thieves | 9.1% → 3.2% | không đổi |
-| China | All Gamers, EDward Gaming, JD Gaming, Xi Lai Gaming, TYLOO | 9.1% → 5.6% | không đổi |
+| Pacific | Gen.G, VARREL, ZETA DIVISION, DetonatioN FocusMe, Rex Regum Qeon, Team Secret, FULL SENSE | T1 (Mạnh), Global Esports (Mạnh), Nongshim RedForce (Mạnh), Paper Rex (Yếu), KIWOOM DRX (Yếu) | — |
+| Americas | LEVIATÁN, MIBR, Evil Geniuses, Sentinels, Cloud9, FURIA, KRÜ Esports | NRG (Mạnh), 100 Thieves (Mạnh), ENVY (Mạnh), LOUD (Không ổn định), G2 Esports (Yếu) | — |
+| China | Trace Esports, Titan Esports Club, EDward Gaming, FunPlus Phoenix, Wolves Esports | TYLOO (Mạnh), Nova Esports (Mạnh), All Gamers (Yếu), Bilibili Gaming (Yếu), Xi Lai Gaming (Yếu), Dragon Ranger Gaming (Yếu), JD Gaming (Yếu) | — |
 
-**Cách dùng:** bỏ qua mọi map có bất kỳ đội nào trong cả 3 danh sách (kể cả trận quốc tế giữa các khu vực).
-
-File `report-details.json` chứa bảng đầy đủ sau từng lần loại.
+File `report-details.json` chứa số lần lật được / bị lật của từng đội.

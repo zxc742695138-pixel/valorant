@@ -1,7 +1,7 @@
 {
   "team_id": "12685",
-  "crawled_at": "2026-11-02T07:59:02.271Z",
-  "since": "2026-05-06T07:58:02.108Z",
+  "crawled_at": "2026-11-05T11:29:38.690Z",
+  "since": "2026-05-09T11:28:56.754Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/748622/trace-esports-vs-unsettled-resentment-china-evolution-series-2026-act-3-ro16",
@@ -10,6 +10,8 @@
       "stage": "Main Event: Round of 16",
       "team1": "Trace Esports",
       "team2": "Unsettled Resentment",
+      "team1_id": "12685",
+      "team2_id": "21919",
       "match_result": "0-2",
       "winner": "Unsettled Resentment",
       "map_result": [
@@ -78,6 +80,8 @@
       "stage": "Playoffs: Lower Round 1",
       "team1": "All Gamers",
       "team2": "Trace Esports",
+      "team1_id": "1119",
+      "team2_id": "12685",
       "match_result": "2-1",
       "winner": "All Gamers",
       "map_result": [
@@ -189,6 +193,8 @@
       "stage": "Playoffs: Upper Quarterfinals",
       "team1": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "team2": "Trace Esports",
+      "team1_id": "12010",
+      "team2_id": "12685",
       "match_result": "2-1",
       "winner": "Guangzhou Huadu Bilibili Gaming (Bilibili Gaming)",
       "map_result": [
@@ -295,6 +301,8 @@
       "stage": "Play-Ins: Lower Final",
       "team1": "JD Gaming",
       "team2": "Trace Esports",
+      "team1_id": "13576",
+      "team2_id": "12685",
       "match_result": "0-2",
       "winner": "Trace Esports",
       "map_result": [
@@ -365,6 +373,8 @@
       "stage": "Play-Ins: Lower Round 3",
       "team1": "Dragon Ranger Gaming",
       "team2": "Trace Esports",
+      "team1_id": "11981",
+      "team2_id": "12685",
       "match_result": "1-2",
       "winner": "Trace Esports",
       "map_result": [
@@ -471,6 +481,8 @@
       "stage": "Play-Ins: Lower Round 2",
       "team1": "Trace Esports",
       "team2": "FunPlus Phoenix",
+      "team1_id": "12685",
+      "team2_id": "11328",
       "match_result": "2-0",
       "winner": "Trace Esports",
       "map_result": [
@@ -535,6 +547,8 @@
       "stage": "Play-Ins: Upper Quarterfinals",
       "team1": "All Gamers",
       "team2": "Trace Esports",
+      "team1_id": "1119",
+      "team2_id": "12685",
       "match_result": "2-1",
       "winner": "All Gamers",
       "map_result": [
@@ -622,6 +636,8 @@
       "stage": "Play-Ins: Upper Round 1",
       "team1": "Trace Esports",
       "team2": "A Team",
+      "team1_id": "12685",
+      "team2_id": "20603",
       "match_result": "2-0",
       "winner": "Trace Esports",
       "map_result": [
@@ -691,6 +707,8 @@
       "stage": "Group Stage: Seeding",
       "team1": "Trace Esports",
       "team2": "Wuxi Titan Esports Club (Titan Esports Club)",
+      "team1_id": "12685",
+      "team2_id": "14137",
       "match_result": "2-0",
       "winner": "Trace Esports",
       "map_result": [
@@ -765,6 +783,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "JD Gaming",
       "team2": "Trace Esports",
+      "team1_id": "13576",
+      "team2_id": "12685",
       "match_result": "2-0",
       "winner": "JD Gaming",
       "map_result": [
@@ -835,6 +855,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Trace Esports",
       "team2": "Nova Esports",
+      "team1_id": "12685",
+      "team2_id": "12064",
       "match_result": "1-2",
       "winner": "Nova Esports",
       "map_result": [
@@ -936,6 +958,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "Trace Esports",
       "team2": "EDward Gaming",
+      "team1_id": "12685",
+      "team2_id": "1120",
       "match_result": "0-2",
       "winner": "EDward Gaming",
       "map_result": [
@@ -1002,6 +1026,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "TYLOO",
       "team2": "Trace Esports",
+      "team1_id": "731",
+      "team2_id": "12685",
       "match_result": "2-0",
       "winner": "TYLOO",
       "map_result": [
@@ -1062,6 +1088,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "FunPlus Phoenix",
       "team2": "Trace Esports",
+      "team1_id": "11328",
+      "team2_id": "12685",
       "match_result": "2-0",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -1126,6 +1154,8 @@
       "stage": "Playoffs: Quarterfinals",
       "team1": "Trace Esports",
       "team2": "Titan Esports Club",
+      "team1_id": "12685",
+      "team2_id": "14137",
       "match_result": "0-2",
       "winner": "Titan Esports Club",
       "map_result": [
@@ -1199,6 +1229,8 @@
       "stage": "Playoffs: Round of 16",
       "team1": "Trace Esports",
       "team2": "Any Questions Gaming",
+      "team1_id": "12685",
+      "team2_id": "19531",
       "match_result": "2-0",
       "winner": "Trace Esports",
       "map_result": [
@@ -1270,6 +1302,8 @@
       "stage": "Stage 2: Lower Round 2",
       "team1": "Trace Esports",
       "team2": "FunPlus Phoenix",
+      "team1_id": "12685",
+      "team2_id": "11328",
       "match_result": "0-2",
       "winner": "FunPlus Phoenix",
       "map_result": [
@@ -1292,6 +1326,8 @@
       "stage": "Stage 2: Upper Semifinals",
       "team1": "Trace Esports",
       "team2": "Titan Esports Club",
+      "team1_id": "12685",
+      "team2_id": "14137",
       "match_result": "0-2",
       "winner": "Titan Esports Club",
       "map_result": [
@@ -1314,6 +1350,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "All Gamers",
       "team2": "Trace Esports",
+      "team1_id": "1119",
+      "team2_id": "12685",
       "match_result": "1-2",
       "winner": "Trace Esports",
       "map_result": [

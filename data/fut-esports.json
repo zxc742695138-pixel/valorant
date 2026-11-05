@@ -1,7 +1,7 @@
 {
   "team_id": "1184",
-  "crawled_at": "2026-11-02T07:54:32.251Z",
-  "since": "2026-05-06T07:52:32.611Z",
+  "crawled_at": "2026-11-05T11:26:41.552Z",
+  "since": "2026-05-09T11:25:26.508Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/772431/fut-esports-vs-fire-flux-esports-monsters-reloaded-2026-main-event-sf",
@@ -10,6 +10,8 @@
       "stage": "Main Event: Semifinals",
       "team1": "FUT Esports",
       "team2": "Fire Flux Esports",
+      "team1_id": "1184",
+      "team2_id": "20085",
       "match_result": "1-2",
       "winner": "Fire Flux Esports",
       "map_result": [
@@ -108,6 +110,8 @@
       "stage": "Group Stage: Decider (A)",
       "team1": "FUT Esports",
       "team2": "T1",
+      "team1_id": "1184",
+      "team2_id": "14",
       "match_result": "0-2",
       "winner": "T1",
       "map_result": [
@@ -180,6 +184,8 @@
       "stage": "Group Stage: Winner's (A)",
       "team1": "100 Thieves",
       "team2": "FUT Esports",
+      "team1_id": "120",
+      "team2_id": "1184",
       "match_result": "2-0",
       "winner": "100 Thieves",
       "map_result": [
@@ -247,6 +253,8 @@
       "stage": "Group Stage: Opening (A)",
       "team1": "JD Gaming",
       "team2": "FUT Esports",
+      "team1_id": "13576",
+      "team2_id": "1184",
       "match_result": "0-2",
       "winner": "FUT Esports",
       "map_result": [
@@ -310,6 +318,8 @@
       "stage": "Playoffs: Lower Final",
       "team1": "FUT Esports",
       "team2": "Team Liquid",
+      "team1_id": "1184",
+      "team2_id": "474",
       "match_result": "0-3",
       "winner": "Team Liquid",
       "map_result": [
@@ -405,6 +415,8 @@
       "stage": "Playoffs: Upper Final",
       "team1": "FUT Esports",
       "team2": "Karmine Corp",
+      "team1_id": "1184",
+      "team2_id": "8877",
       "match_result": "0-2",
       "winner": "Karmine Corp",
       "map_result": [
@@ -471,6 +483,8 @@
       "stage": "Playoffs: Upper Semifinals",
       "team1": "BBL Esports",
       "team2": "FUT Esports",
+      "team1_id": "397",
+      "team2_id": "1184",
       "match_result": "1-2",
       "winner": "FUT Esports",
       "map_result": [
@@ -562,6 +576,8 @@
       "stage": "Playoffs: Upper Round 1",
       "team1": "Team Liquid",
       "team2": "FUT Esports",
+      "team1_id": "474",
+      "team2_id": "1184",
       "match_result": "0-2",
       "winner": "FUT Esports",
       "map_result": [
@@ -636,6 +652,8 @@
       "stage": "Play-Ins: Upper Semifinals",
       "team1": "FUT Esports",
       "team2": "Eternal Fire",
+      "team1_id": "1184",
+      "team2_id": "6392",
       "match_result": "2-0",
       "winner": "FUT Esports",
       "map_result": [
@@ -712,6 +730,8 @@
       "stage": "Play-Ins: Upper Quarterfinals",
       "team1": "FUT Esports",
       "team2": "GIANTX",
+      "team1_id": "1184",
+      "team2_id": "14419",
       "match_result": "2-0",
       "winner": "FUT Esports",
       "map_result": [
@@ -780,6 +800,8 @@
       "stage": "Group Stage: Week 3",
       "team1": "FUT Esports",
       "team2": "Team Vitality",
+      "team1_id": "1184",
+      "team2_id": "2059",
       "match_result": "1-2",
       "winner": "Team Vitality",
       "map_result": [
@@ -877,6 +899,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "FUT Esports",
       "team2": "BBL Esports",
+      "team1_id": "1184",
+      "team2_id": "397",
       "match_result": "2-1",
       "winner": "FUT Esports",
       "map_result": [
@@ -974,6 +998,8 @@
       "stage": "Group Stage: Week 2",
       "team1": "FUT Esports",
       "team2": "PCIFIC Esports",
+      "team1_id": "1184",
+      "team2_id": "3478",
       "match_result": "2-1",
       "winner": "FUT Esports",
       "map_result": [
@@ -1070,6 +1096,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "Gentle Mates",
       "team2": "FUT Esports",
+      "team1_id": "12694",
+      "team2_id": "1184",
       "match_result": "0-2",
       "winner": "FUT Esports",
       "map_result": [
@@ -1144,6 +1172,8 @@
       "stage": "Group Stage: Week 1",
       "team1": "FUT Esports",
       "team2": "Natus Vincere",
+      "team1_id": "1184",
+      "team2_id": "4915",
       "match_result": "0-2",
       "winner": "Natus Vincere",
       "map_result": [
@@ -1211,6 +1241,8 @@
       "stage": "Playoffs: Lower Round 2",
       "team1": "Team Vitality",
       "team2": "FUT Esports",
+      "team1_id": "2059",
+      "team2_id": "1184",
       "match_result": "2-0",
       "winner": "Team Vitality",
       "map_result": [
@@ -1272,6 +1304,8 @@
       "stage": "Playoffs: Lower Round 1",
       "team1": "G2 Esports",
       "team2": "FUT Esports",
+      "team1_id": "11058",
+      "team2_id": "1184",
       "match_result": "0-2",
       "winner": "FUT Esports",
       "map_result": [
@@ -1345,6 +1379,8 @@
       "stage": "Playoffs: Upper Quarterfinals",
       "team1": "EDward Gaming",
       "team2": "FUT Esports",
+      "team1_id": "1120",
+      "team2_id": "1184",
       "match_result": "2-1",
       "winner": "EDward Gaming",
       "map_result": [
@@ -1439,6 +1475,8 @@
       "stage": "Swiss Stage: Round 3 (1-1)",
       "team1": "FUT Esports",
       "team2": "NRG",
+      "team1_id": "1184",
+      "team2_id": "1034",
       "match_result": "2-1",
       "winner": "FUT Esports",
       "map_result": [
@@ -1546,6 +1584,8 @@
       "stage": "Swiss Stage: Round 2 (1-0)",
       "team1": "Team Vitality",
       "team2": "FUT Esports",
+      "team1_id": "2059",
+      "team2_id": "1184",
       "match_result": "2-1",
       "winner": "Team Vitality",
       "map_result": [
@@ -1643,6 +1683,8 @@
       "stage": "Swiss Stage: Round 1",
       "team1": "FULL SENSE",
       "team2": "FUT Esports",
+      "team1_id": "4050",
+      "team2_id": "1184",
       "match_result": "0-2",
       "winner": "FUT Esports",
       "map_result": [
@@ -1705,6 +1747,8 @@
       "stage": "Stage 2: Lower Round 2",
       "team1": "FUT Esports",
       "team2": "BBL Esports",
+      "team1_id": "1184",
+      "team2_id": "397",
       "match_result": "1-2",
       "winner": "BBL Esports",
       "map_result": [
@@ -1798,6 +1842,8 @@
       "stage": "Stage 2: Upper Semifinals",
       "team1": "FUT Esports",
       "team2": "Gentle Mates",
+      "team1_id": "1184",
+      "team2_id": "12694",
       "match_result": "0-3",
       "winner": "Gentle Mates",
       "map_result": [
@@ -1900,6 +1946,8 @@
       "stage": "Stage 2: Upper Quarterfinals",
       "team1": "FUT Esports",
       "team2": "Natus Vincere",
+      "team1_id": "1184",
+      "team2_id": "4915",
       "match_result": "2-0",
       "winner": "FUT Esports",
       "map_result": [
@@ -1970,6 +2018,8 @@
       "stage": "Playoffs: Lower Final",
       "team1": "FUT Esports",
       "team2": "Team Heretics",
+      "team1_id": "1184",
+      "team2_id": "1001",
       "match_result": "1-3",
       "winner": "Team Heretics",
       "map_result": [
@@ -2088,6 +2138,8 @@
       "stage": "Playoffs: Upper Final",
       "team1": "FUT Esports",
       "team2": "Team Vitality",
+      "team1_id": "1184",
+      "team2_id": "2059",
       "match_result": "1-2",
       "winner": "Team Vitality",
       "map_result": [
@@ -2189,98 +2241,6 @@
             "12-12",
             "12-13",
             "12-14"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/660383/fut-esports-vs-eternal-fire-vct-2026-emea-stage-1-ubsf",
-      "date": "2026-05-08 11:00:00",
-      "event": "VCT 2026: EMEA Stage 1",
-      "stage": "Playoffs: Upper Semifinals",
-      "team1": "FUT Esports",
-      "team2": "Eternal Fire",
-      "match_result": "2-1",
-      "winner": "FUT Esports",
-      "map_result": [
-        {
-          "map": "Pearl",
-          "score": "5-13",
-          "rounds": [
-            "0-0",
-            "0-1",
-            "0-2",
-            "1-2",
-            "1-3",
-            "1-4",
-            "2-4",
-            "3-4",
-            "3-5",
-            "3-6",
-            "4-6",
-            "4-7",
-            "4-8",
-            "4-9",
-            "4-10",
-            "4-11",
-            "4-12",
-            "5-12",
-            "5-13"
-          ]
-        },
-        {
-          "map": "Ascent",
-          "score": "13-4",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "3-0",
-            "4-0",
-            "5-0",
-            "6-0",
-            "6-1",
-            "7-1",
-            "8-1",
-            "8-2",
-            "8-3",
-            "9-3",
-            "10-3",
-            "11-3",
-            "12-3",
-            "12-4",
-            "13-4"
-          ]
-        },
-        {
-          "map": "Split",
-          "score": "13-11",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "2-1",
-            "2-2",
-            "2-3",
-            "2-4",
-            "2-5",
-            "3-5",
-            "3-6",
-            "4-6",
-            "4-7",
-            "4-8",
-            "5-8",
-            "6-8",
-            "6-9",
-            "7-9",
-            "8-9",
-            "9-9",
-            "9-10",
-            "10-10",
-            "11-10",
-            "11-11",
-            "12-11",
-            "13-11"
           ]
         }
       ]
