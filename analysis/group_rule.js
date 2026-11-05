@@ -126,7 +126,7 @@ for (const e of test) {
     add(b.size === 3 ? 'Tất cả · dẫn 3' : 'Tất cả · dẫn ≥ 4', b);
     ledger.push({
       day: e.day, match: `${e.t1} vs ${e.t2}`, groups: `${g1} / ${g2}`, size: b.size, roundNo: b.roundNo, lost: b.reversed,
-      all: true, groups_only: keep, lead4: b.size >= 4, combined: b.size >= 4 || keep,
+      all: true, groups_only: keep, groups_lead3: keep && b.size === 3, lead4: b.size >= 4, combined: b.size >= 4 || keep,
     });
     const pair = [g1, g2].sort().join(' vs ');
     (pairCount[pair] = pairCount[pair] || { n: 0, l: 0 }).n++;
@@ -154,7 +154,9 @@ if (argv.includes('--ledger')) {
   const stake = Number(opt('--stake', 1e6));
   const label = `Chỉ ${wanted.join('/')} vs ${wanted.join('/')}`;
   // Rules that keep only bigger leads are not priced at the same odds, so they are not compared here.
-  const STRATS = { all: 'Cược tất cả', groups_only: label };
+  const STRATS = { all: 'Cược tất cả', groups_only: label, groups_lead3: `${label} · chỉ dẫn đúng 3` };
+  // --main lead3: show the month table for the lead-3 rule instead.
+  const mainKey = opt('--main') === 'lead3' ? `${label} · chỉ dẫn đúng 3` : label;
   const money = x => `${x < 0 ? '−' : x > 0 ? '+' : ''}${(Math.abs(x) / 1e6).toFixed(1)} tr`;
   const pnl = b => (b.lost ? -stake : stake * (odds - 1));
   const summary = {};
@@ -173,8 +175,8 @@ if (argv.includes('--ledger')) {
     }
     summary[name] = { n, l, bal, dd, months };
   }
-  const main = summary[label];
-  console.log(`\n=== ${label}: lãi theo tháng (mỗi cược ${(stake / 1e6).toFixed(1)} tr, ăn ${odds})`);
+  const main = summary[mainKey];
+  console.log(`\n=== ${mainKey}: lãi theo tháng (mỗi cược ${(stake / 1e6).toFixed(1)} tr, ăn ${odds})`);
   console.table(Object.entries(main.months).map(([mo, m]) => ({
     'tháng': mo, 'số cược': m.n, 'thua': m.l, 'lãi tháng': money(m.p), 'lũy kế': money(m.end),
     'cược tất cả (lũy kế)': money(summary['Cược tất cả'].months[mo]?.end ?? 0),
