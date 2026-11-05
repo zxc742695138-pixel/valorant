@@ -1,4 +1,4 @@
-# Weekly refresh of the comeback-influence top 5 per region, published as a
+# Daily refresh of the comeback-influence top 5 per region, published as a
 # GitHub release "vlr-blacklist vN" with vlr-blacklist.json attached.
 #
 # The release goes to vars.RELEASE_REPO (owner/name) when set, using
@@ -8,7 +8,7 @@ name: vlr-blacklist
 
 on:
   schedule:
-    - cron: "23 1 * * 1" # Mondays 01:23 UTC (08:23 Vietnam)
+    - cron: "23 1 * * *" # every day 01:23 UTC (08:23 Vietnam)
   workflow_dispatch:
     inputs:
       skip_crawl:
@@ -53,7 +53,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Weekly vlr-blacklist update $(date -u +%Y-%m-%d)"
+            git commit -m "Daily vlr-blacklist update $(date -u +%Y-%m-%d)"
             # Someone may have pushed while the pipeline ran: replay this commit on top.
             for attempt in 1 2 3; do
               git pull --rebase origin "$GITHUB_REF_NAME" && git push && break

@@ -20,9 +20,9 @@ Settings (window, steps, events, report URL) live in `pipeline/config.json`. Out
 `reports/latest.html`, `reports/latest.json`, and a dated copy in `reports/archive/`.
 Each run is compared with the previous one (teams entering/leaving the top 5).
 
-### Weekly release
+### Daily release
 
-`.github/workflows/vlr-blacklist.yml` runs the pipeline every Monday (01:23 UTC, or on
+`.github/workflows/vlr-blacklist.yml` runs the pipeline every day (01:23 UTC = 08:23 Vietnam, or on
 demand from the Actions tab) and publishes a release `vlr-blacklist vN` with
 `vlr-blacklist.json`:
 
