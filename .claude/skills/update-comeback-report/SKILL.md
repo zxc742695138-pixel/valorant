@@ -14,7 +14,9 @@ description: Refresh the VCT team whitelist/blacklist (teams grouped by recent c
   For a team, **made (lật được)** = it trailed like that and won; **blown (bị lật)** = it
   led like that and lost.
 - **Teams**: the 12 partner teams per region (Americas, EMEA, China, Pacific), from the
-  group stage of the events listed in `pipeline/config.json`. All four regions are used.
+  group stage of the events listed in `pipeline/config.json`. Lists are produced only for
+  `bet_regions` (Pacific, Americas, China; the user does not bet EMEA). EMEA is still crawled
+  and its teams count as partner teams; they are in no whitelist, so maps with them are skipped.
 - **Matches**: only matches between two tier-1 partner teams (any of the 48, so
   international matches between regions count). Matches against Challengers are ignored.
 - **Groups** (`analysis/team_groups.js`), from matches in the last `groups.window_days`

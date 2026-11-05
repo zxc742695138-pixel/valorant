@@ -139,7 +139,8 @@ function crawlAll(teams) {
     kind: 'groups', crawled_at: crawledAt, from, to, last_match: res.lastDay,
     window_days: G.window_days, net: G.net, volatile: G.volatile, min_maps: G.min_maps || 0,
     min_total: MIN_TOTAL, min_diff: MIN_DIFF, notes,
-    regions: regions.map(r => {
+    // Lists only for bet_regions; every crawled region still counts as partner teams.
+    regions: (config.bet_regions || regions).map(r => {
       const teams = res.regions[r];
       return {
         region: r, teams,

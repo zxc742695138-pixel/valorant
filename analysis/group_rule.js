@@ -22,6 +22,10 @@ const NET = Number(opt('--net', 2));
 const VOLATILE = Number(opt('--volatile', 6));
 const wanted = (opt('--groups', 'Trung bình')).split(',');
 const fixed = argv.includes('--fixed');
+// --regions a,b: only bet on maps where both teams belong to these regions.
+const betRegions = opt('--regions') ? opt('--regions').split(',') : null;
+const teamRegion = {};
+for (const r of REGIONS) for (const t of JSON.parse(fs.readFileSync(`crawler/teams/${r}.json`, 'utf8'))) teamRegion[t.name] = r;
 
 const partners = new Set(REGIONS.flatMap(r => JSON.parse(fs.readFileSync(`crawler/teams/${r}.json`, 'utf8')).map(t => t.name)));
 const byUrl = new Map();
@@ -90,6 +94,7 @@ const pairCount = {};
 const ledger = [];
 for (const e of test) {
   if (!partners.has(e.t1) || !partners.has(e.t2)) continue;
+  if (betRegions && !(betRegions.includes(teamRegion[e.t1]) && betRegions.includes(teamRegion[e.t2]))) continue;
   const g = groupAt(e.day);
   const g1 = g(e.t1), g2 = g(e.t2);
   const keep = wanted.includes(g1) && wanted.includes(g2);

@@ -7,6 +7,11 @@
     "volatile": 3,
     "min_maps": 0
   },
+  "bet_regions": [
+    "pacific",
+    "americas",
+    "china"
+  ],
   "regions": {
     "americas": "https://www.vlr.gg/event/2977/vct-2026-americas-stage-2",
     "emea": "https://www.vlr.gg/event/2976/vct-2026-emea-stage-2",

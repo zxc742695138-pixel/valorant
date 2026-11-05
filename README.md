@@ -15,7 +15,8 @@ and **blew** one when it led like that and lost. Only matches between two partne
 | Trung bình | the rest |
 
 **Whitelist** = Trung bình teams, **blacklist** = the others. Use: only bet on maps where both
-teams are in the whitelist. Settings live in `pipeline/config.json` (`groups`).
+teams are in the whitelist. Lists are produced for Pacific, Americas and China
+(`bet_regions`); EMEA is crawled but not bet on. Settings live in `pipeline/config.json`.
 
 Refresh everything (crawl → validate → group → report):
 
