@@ -28,18 +28,20 @@ description: Refresh the VCT comeback-influence report (top 5 teams per region w
 
 ## Daily release (automatic)
 
-`.github/workflows/vlr-blacklist.yml` runs every day at 01:23 UTC (08:23 Vietnam): it runs the pipeline,
-commits `data/` and `reports/`, and publishes a release `vlr-blacklist vN` (N = previous
-highest `vN` + 1) with `vlr-blacklist.json` (`{"Pacific": [...], "Americas": [...],
-"EMEA": [...], "China": [...]}`, teams in removal order) and `report-details.json`.
-Stable link to the newest file:
-`https://github.com/<release repo>/releases/latest/download/vlr-blacklist.json`.
+`.github/workflows/vlr-blacklist.yml` runs every day at 01:23 UTC (08:23 Vietnam): it runs the
+pipeline and commits `data/` and `reports/`. Only when a region's set of top 5 teams differs
+from the latest release (order within a list ignored) does it publish a release
+`vlr-blacklist vN` (N = previous highest `vN` + 1) with `vlr-blacklist.json`
+(`{"Pacific": [...], "Americas": [...], "China": [...]}`, teams in removal order) and
+`report-details.json`. The manual run input `force_release` publishes regardless.
+Stable public link to the newest file:
+`https://github.com/zxc742695138-pixel/valorant/releases/latest/download/vlr-blacklist.json`.
 The release repo is `vars.RELEASE_REPO` (with `secrets.RELEASE_TOKEN`) or this repo.
 
 When the user asks for an update between daily runs, prefer triggering that workflow
-(`workflow_dispatch`, GitHub MCP `actions_run_trigger` with `workflow_id: vlr-blacklist.yml`)
-so a release is published too; when it finishes, `git pull` and do step 4 below with the
-pulled `reports/latest.html`. The steps below are the local equivalent (no release).
+(`workflow_dispatch`, GitHub MCP `actions_run_trigger` with `workflow_id: vlr-blacklist.yml`);
+when it finishes, `git pull` and do step 4 below with the pulled `reports/latest.html`.
+The steps below are the local equivalent (no release).
 
 ## Steps
 

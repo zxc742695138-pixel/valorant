@@ -23,7 +23,7 @@ Each run is compared with the previous one (teams entering/leaving the top 5).
 ### Daily release
 
 `.github/workflows/vlr-blacklist.yml` runs the pipeline every day (01:23 UTC = 08:23 Vietnam, or on
-demand from the Actions tab) and publishes a release `vlr-blacklist vN` with
+demand from the Actions tab). When a region's top 5 changes (order ignored) it publishes a release `vlr-blacklist vN` with
 `vlr-blacklist.json`:
 
 ```json
