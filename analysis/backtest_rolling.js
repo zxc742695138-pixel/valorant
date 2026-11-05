@@ -20,6 +20,11 @@ const marks = (opt('--marks') || '').split(',').filter(Boolean);
 const trainDays = Number(opt('--train-days', 180));
 const odds = Number(opt('--odds', 1.1));
 const steps = Number(opt('--steps', 5));
+// --candidates all: the blacklist may pick any team seen in the region's matches
+// (Challengers, other regions), not only the region's 12 partner teams.
+const allCandidates = opt('--candidates') === 'all';
+// --partners-only: only bet on maps where both teams are partner teams of the lists.
+const partnersOnly = argv.includes('--partners-only');
 if (marks.length < 2) {
   console.error('Usage: node analysis/backtest_rolling.js --marks YYYY-MM-DD,YYYY-MM-DD,... [--data dir] [--train-days 180] [--odds 1.1]');
   process.exit(1);
@@ -29,6 +34,10 @@ const minusDays = (day, n) => new Date(Date.parse(day) - n * 864e5).toISOString(
 const ddmm = d => `${d.slice(8, 10)}/${d.slice(5, 7)}`;
 const pct = (n, d) => (d ? `${((100 * n) / d).toFixed(1)}%` : '—');
 const regions = Object.fromEntries(REGIONS.map(r => [r, loadRegion(r, dataDir)]));
+if (partnersOnly) {
+  const partners = new Set(Object.values(regions).flatMap(r => r.teams));
+  for (const r of Object.values(regions)) r.matches = r.matches.filter(m => partners.has(m.t1) && partners.has(m.t2));
+}
 const earliest = Object.values(regions).flatMap(r => r.matches.map(m => m.day)).sort()[0];
 
 const rows = [];
@@ -36,6 +45,9 @@ const rows = [];
 const periods = [];
 const sum = { f: { bets: 0, wins: 0, profit: 0 }, a: { bets: 0, wins: 0, profit: 0 }, in: { bets: 0, wins: 0, profit: 0 } };
 const add = (acc, r) => { acc.bets += r.bets; acc.wins += r.wins; acc.profit += r.profit; };
+// Per region, own matches filtered by its own blacklist only.
+const blank = () => ({ bets: 0, wins: 0, profit: 0 });
+const byRegion = Object.fromEntries(REGIONS.map(r => [r, { a: blank(), f: blank(), in: blank(), lists: [] }]));
 
 for (let i = 0; i < marks.length - 1; i++) {
   const [start, end] = [marks[i], marks[i + 1]];
@@ -44,11 +56,17 @@ for (let i = 0; i < marks.length - 1; i++) {
   const testAll = new Map(), testKept = new Map(), trainKept = new Map();
   const lists = {};
   for (const r of REGIONS) {
-    const { teams, matches } = regions[r];
+    const { teams, opponents, matches } = regions[r];
     const train = matches.filter(m => m.day >= trainFrom && m.day < start);
-    const ex = blacklist(teams, train, steps);
+    const ex = blacklist(allCandidates ? opponents : teams, train, steps);
     lists[r] = ex;
-    for (const m of matches.filter(m => m.day >= start && m.day < end)) {
+    const test = matches.filter(m => m.day >= start && m.day < end);
+    const R = byRegion[r];
+    add(R.a, settle(test, new Set(), odds));
+    add(R.f, settle(test, ex, odds));
+    add(R.in, settle(train, ex, odds));
+    R.lists.push(`${ddmm(start)}: ${[...ex].join(', ')}`);
+    for (const m of test) {
       testAll.set(m.url, m);
       if (!ex.has(m.t1) && !ex.has(m.t2)) testKept.set(m.url, m);
     }
@@ -79,6 +97,18 @@ console.log('Cộng dồn các khoảng:');
 line('Có lọc (thực tế)', sum.f);
 line('Không lọc', sum.a);
 line('In-sample (để tham khảo)', sum.in);
+
+const cell = s => `${s.bets} · lật ${pct(s.bets - s.wins, s.bets)} · ${s.profit >= 0 ? '+' : ''}${s.profit.toFixed(1)}`;
+console.log('\nTheo khu vực (cộng dồn các khoảng; mỗi khu vực chỉ lọc bằng blacklist của chính nó):');
+console.table(REGIONS.map(r => {
+  const R = byRegion[r];
+  const ra = (R.a.bets - R.a.wins) / R.a.bets, rf = (R.f.bets - R.f.wins) / R.f.bets;
+  return {
+    region: r, 'không lọc': cell(R.a), 'có lọc': cell(R.f), 'in-sample': cell(R.in),
+    'lọc giảm lật kèo?': rf < ra ? `có (−${(100 * (ra - rf)).toFixed(1)} điểm)` : `không (+${(100 * (rf - ra)).toFixed(1)} điểm)`,
+  };
+}));
+if (argv.includes('--lists')) for (const r of REGIONS) console.log(`\n${r}:\n  ${byRegion[r].lists.join('\n  ')}`);
 
 // Baseline: in each period keep the same number of matches as the filter, chosen at random.
 const RUNS = 5000;

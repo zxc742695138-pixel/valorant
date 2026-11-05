@@ -14,6 +14,7 @@ const REGIONS = ['americas', 'emea', 'china', 'pacific'];
 const normalize = name => (name.match(/\(([^)]+)\)$/) || [null, name])[1].trim();
 
 // A region's team names and its matches (de-duplicated by URL), with t1/t2 normalized.
+// `opponents` lists every team that appears in those matches, partner or not.
 function loadRegion(region, dataDir) {
   const teamList = JSON.parse(fs.readFileSync(`crawler/teams/${region}.json`, 'utf8'));
   const byUrl = new Map();
@@ -22,7 +23,9 @@ function loadRegion(region, dataDir) {
       byUrl.set(m.url, { ...m, day: m.date.slice(0, 10), t1: normalize(m.team1), t2: normalize(m.team2) });
     }
   }
-  return { teams: teamList.map(t => t.name), matches: [...byUrl.values()] };
+  const matches = [...byUrl.values()];
+  const opponents = [...new Set(matches.flatMap(m => [m.t1, m.t2]))];
+  return { teams: teamList.map(t => t.name), opponents, matches };
 }
 
 // The leader at the first qualifying moment, and whether that leader won the map.
