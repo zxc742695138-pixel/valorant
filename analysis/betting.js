@@ -6,7 +6,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { MIN_TOTAL, MIN_DIFF, analyzeMatches } = require('./comeback');
+const { MIN_TOTAL, MIN_DIFF, analyzeMap } = require('./comeback');
 
 const REGIONS = ['americas', 'emea', 'china', 'pacific'];
 
@@ -44,15 +44,34 @@ function firstLeadOutcome(rounds) {
   return null;
 }
 
+// Comeback maps and lead maps of a team, each map weighted by recency:
+// w = 0.5 ^ (age in days / halfLife), age counted back from `asOf`.
+// Without halfLife every map weighs 1 (plain counts).
+function weightedCounts(matches, { halfLife, asOf } = {}) {
+  let cb = 0, lead = 0;
+  for (const m of matches) {
+    const w = halfLife ? 0.5 ** ((Date.parse(asOf) - Date.parse(m.day)) / 864e5 / halfLife) : 1;
+    for (const mp of m.map_result) {
+      if (!mp.rounds.length) continue;
+      const r = analyzeMap(mp.rounds);
+      if (!r.leaders.size) continue;
+      lead += w;
+      if (r.blownBy) cb += w;
+    }
+  }
+  return { cb, rate: lead ? cb / lead : 0 };
+}
+
 // Same greedy algorithm as iterative_exclude.js: remove the team with the most
 // comeback maps (ties: higher rate), drop its matches, repeat `steps` times.
-function blacklist(teams, matches, steps) {
+// With `weights.halfLife`, "most comeback maps" uses recency-weighted counts.
+function blacklist(teams, matches, steps, weights = {}) {
   const excluded = new Set();
   for (let s = 0; s < steps; s++) {
     const keep = matches.filter(m => !excluded.has(m.t1) && !excluded.has(m.t2));
     const rows = teams.filter(t => !excluded.has(t)).map(t => {
-      const r = analyzeMatches(keep.filter(m => m.t1 === t || m.t2 === t));
-      return { t, cb: r.comebacks, rate: r.rate || 0 };
+      const r = weightedCounts(keep.filter(m => m.t1 === t || m.t2 === t), weights);
+      return { t, cb: r.cb, rate: r.rate };
     }).sort((a, b) => b.cb - a.cb || b.rate - a.rate);
     if (!rows.length || !rows[0].cb) break; // nothing left to explain
     excluded.add(rows[0].t);

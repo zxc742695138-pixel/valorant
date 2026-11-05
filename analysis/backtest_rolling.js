@@ -9,7 +9,7 @@
 //
 // Usage:
 //   node analysis/backtest_rolling.js --data data-history --marks 2026-07-15,2026-08-01,...,2026-11-01
-//     [--train-days 180] [--odds 1.1] [--steps 5] [--all-opponents] [--candidates all] [--lists]
+//     [--train-days 180] [--odds 1.1] [--steps 5] [--half-life 60] [--all-opponents] [--candidates all] [--lists]
 
 const { REGIONS, loadRegion, blacklist, settle } = require('./betting');
 
@@ -23,6 +23,8 @@ const steps = Number(opt('--steps', 5));
 // --candidates all: the blacklist may pick any team seen in the region's matches
 // (Challengers, other regions), not only the region's 12 partner teams.
 const allCandidates = opt('--candidates') === 'all';
+// --half-life N: rank teams by recency-weighted comeback maps (weight halves every N days).
+const halfLife = opt('--half-life') ? Number(opt('--half-life')) : null;
 // Only matches between two partner teams are used; --all-opponents keeps the rest too.
 const allOpponents = argv.includes('--all-opponents');
 if (marks.length < 2) {
@@ -54,7 +56,7 @@ for (let i = 0; i < marks.length - 1; i++) {
   for (const r of REGIONS) {
     const { teams, opponents, matches } = regions[r];
     const train = matches.filter(m => m.day >= trainFrom && m.day < start);
-    const ex = blacklist(allCandidates ? opponents : teams, train, steps);
+    const ex = blacklist(allCandidates ? opponents : teams, train, steps, { halfLife, asOf: start });
     lists[r] = ex;
     const test = matches.filter(m => m.day >= start && m.day < end);
     const R = byRegion[r];
