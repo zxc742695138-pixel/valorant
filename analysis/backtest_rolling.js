@@ -9,7 +9,7 @@
 //
 // Usage:
 //   node analysis/backtest_rolling.js --data data-history --marks 2026-07-15,2026-08-01,...,2026-11-01
-//     [--train-days 180] [--odds 1.1] [--steps 5] [--half-life 60] [--regions americas,china] [--all-opponents] [--candidates all] [--lists]
+//     [--train-days 180] [--odds 1.1] [--steps 5] [--half-life 60] [--last-matches 20] [--regions americas,china] [--all-opponents] [--candidates all] [--lists]
 
 const { REGIONS, loadRegion, blacklist, settle } = require('./betting');
 
@@ -25,6 +25,9 @@ const steps = Number(opt('--steps', 5));
 const allCandidates = opt('--candidates') === 'all';
 // --half-life N: rank teams by recency-weighted comeback maps (weight halves every N days).
 const halfLife = opt('--half-life') ? Number(opt('--half-life')) : null;
+// --last-matches M: judge each team on its own M most recent matches before the period
+// (any age) instead of every match in the last --train-days days.
+const lastMatches = opt('--last-matches') ? Number(opt('--last-matches')) : null;
 // Only matches between two partner teams are used; --all-opponents keeps the rest too.
 const allOpponents = argv.includes('--all-opponents');
 if (marks.length < 2) {
@@ -53,14 +56,14 @@ const byRegion = Object.fromEntries(ACTIVE.map(r => [r, { a: blank(), f: blank()
 
 for (let i = 0; i < marks.length - 1; i++) {
   const [start, end] = [marks[i], marks[i + 1]];
-  const trainFrom = minusDays(start, trainDays);
+  const trainFrom = lastMatches ? '0000-00-00' : minusDays(start, trainDays);
   // A match can belong to two regions (international events): settle it once.
   const testAll = new Map(), testKept = new Map(), trainKept = new Map();
   const lists = {};
   for (const r of ACTIVE) {
     const { teams, opponents, matches } = regions[r];
     const train = matches.filter(m => m.day >= trainFrom && m.day < start);
-    const ex = blacklist(allCandidates ? opponents : teams, train, steps, { halfLife, asOf: start });
+    const ex = blacklist(allCandidates ? opponents : teams, train, steps, { halfLife, asOf: start, lastMatches });
     lists[r] = ex;
     const test = matches.filter(m => m.day >= start && m.day < end);
     const R = byRegion[r];
@@ -82,13 +85,13 @@ for (let i = 0; i < marks.length - 1; i++) {
   periods.push({ all: [...testAll.values()], kept: testKept.size });
   rows.push({
     'khoảng cược': `${ddmm(start)}→${ddmm(end)}`,
-    'dữ liệu chọn': `${ddmm(trainFrom)}→${ddmm(minusDays(start, 1))}`,
+    'dữ liệu chọn': lastMatches ? `${lastMatches} trận gần nhất` : `${ddmm(trainFrom)}→${ddmm(minusDays(start, 1))}`,
     'cược trong 180 ngày (in-sample)': `${inS.bets} · lật ${pct(inS.losses, inS.bets)} · ${inS.profit >= 0 ? '+' : ''}${inS.profit.toFixed(1)}`,
     'không lọc': `${a.bets} · lật ${pct(a.losses, a.bets)} · ${a.profit >= 0 ? '+' : ''}${a.profit.toFixed(1)}`,
     'có lọc': `${f.bets} · lật ${pct(f.losses, f.bets)} · ${f.profit >= 0 ? '+' : ''}${f.profit.toFixed(1)}`,
     'lọc lãi?': f.bets ? (f.profit > 0 ? 'lãi' : 'lỗ') : '—',
   });
-  if (trainFrom < earliest) rows[rows.length - 1]['dữ liệu chọn'] += ' (thiếu)';
+  if (!lastMatches && trainFrom < earliest) rows[rows.length - 1]['dữ liệu chọn'] += ' (thiếu)';
 }
 
 console.log(`Mỗi khoảng: blacklist chọn từ ${trainDays} ngày trước ngày bắt đầu, cược trong khoảng đó. Tỉ lệ ăn ${odds}, hòa vốn khi lật kèo < ${(100 * (1 - 1 / odds)).toFixed(1)}%.`);

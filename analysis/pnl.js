@@ -4,7 +4,7 @@
 //
 // Usage:
 //   node analysis/pnl.js --data data-history --marks 2026-07-15,...,2026-11-01
-//     [--half-life 60] [--regions americas,china,pacific] [--stake 1000000] [--odds 1.1]
+//     [--half-life 60] [--last-matches 20] [--regions americas,china,pacific] [--stake 1000000] [--odds 1.1]
 //     [--train-days 180] [--steps 5] [--csv out.csv]
 
 const fs = require('fs');
@@ -15,6 +15,7 @@ const opt = (name, def) => { const i = argv.indexOf(name); return i >= 0 ? argv[
 const dataDir = opt('--data', 'data-history');
 const marks = (opt('--marks') || '').split(',').filter(Boolean);
 const halfLife = opt('--half-life') ? Number(opt('--half-life')) : null;
+const lastMatches = opt('--last-matches') ? Number(opt('--last-matches')) : null;
 const active = opt('--regions') ? opt('--regions').split(',') : REGIONS;
 const stake = Number(opt('--stake', 1e6));
 const odds = Number(opt('--odds', 1.1));
@@ -34,7 +35,7 @@ const regions = Object.fromEntries(active.map(r => [r, loadRegion(r, dataDir, { 
 const bets = new Map();
 for (let i = 0; i < marks.length - 1; i++) {
   const [start, end] = [marks[i], marks[i + 1]];
-  const lists = active.map(r => blacklist(regions[r].teams, regions[r].matches.filter(m => m.day >= minusDays(start, trainDays) && m.day < start), steps, { halfLife, asOf: start }));
+  const lists = active.map(r => blacklist(regions[r].teams, regions[r].matches.filter(m => (lastMatches || m.day >= minusDays(start, trainDays)) && m.day < start), steps, { halfLife, asOf: start, lastMatches }));
   const excluded = new Set(lists.flatMap(s => [...s]));
   for (const r of active) {
     for (const m of regions[r].matches) {
@@ -72,7 +73,7 @@ for (const b of ledger) {
   m.pnl += b.pnl;
   m.end = b.balance;
 }
-console.log(`${ledger.length} cược, mỗi cược ${money(stake).slice(1)}, tỉ lệ ăn ${odds}; khu vực: ${active.join(', ')}; ${halfLife ? `bán rã ${halfLife} ngày` : 'không trọng số'}\n`);
+console.log(`${ledger.length} cược, mỗi cược ${money(stake).slice(1)}, tỉ lệ ăn ${odds}; khu vực: ${active.join(', ')}; ${lastMatches ? `${lastMatches} trận gần nhất mỗi đội` : halfLife ? `bán rã ${halfLife} ngày` : 'không trọng số'}\n`);
 console.table(Object.entries(months).map(([k, m]) => ({
   'tháng': k, 'số cược': m.bets, 'thua': m.losses, 'lãi trong tháng': money(m.pnl), 'lũy kế cuối tháng': money(m.end),
 })));

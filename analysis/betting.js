@@ -74,12 +74,20 @@ function weightedCounts(matches, { halfLife, asOf } = {}) {
 // Same greedy algorithm as iterative_exclude.js: remove the team with the most
 // comeback maps (ties: higher rate), drop its matches, repeat `steps` times.
 // With `weights.halfLife`, "most comeback maps" uses recency-weighted counts.
+// With `weights.lastMatches` (M), each team is judged only on its own M most recent
+// matches in `matches` (pass every match before the cutoff), however old they are.
 function blacklist(teams, matches, steps, weights = {}) {
   const excluded = new Set();
+  const { lastMatches } = weights;
+  // Per team, its sample of matches: all of them, or its M most recent.
+  const samples = new Map(teams.map(t => {
+    const own = matches.filter(m => m.t1 === t || m.t2 === t);
+    return [t, lastMatches ? own.sort((a, b) => b.day.localeCompare(a.day)).slice(0, lastMatches) : own];
+  }));
   for (let s = 0; s < steps; s++) {
-    const keep = matches.filter(m => !excluded.has(m.t1) && !excluded.has(m.t2));
     const rows = teams.filter(t => !excluded.has(t)).map(t => {
-      const r = weightedCounts(keep.filter(m => m.t1 === t || m.t2 === t), weights);
+      const keep = samples.get(t).filter(m => !excluded.has(m.t1) && !excluded.has(m.t2));
+      const r = weightedCounts(keep, weights);
       return { t, cb: r.cb, rate: r.rate };
     }).sort((a, b) => b.cb - a.cb || b.rate - a.rate);
     if (!rows.length || !rows[0].cb) break; // nothing left to explain
