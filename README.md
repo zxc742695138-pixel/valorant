@@ -27,7 +27,7 @@ demand from the Actions tab) and publishes a release `vlr-blacklist vN` with
 `vlr-blacklist.json`:
 
 ```json
-{ "Pacific": ["T1", "..."], "Americas": ["NRG", "..."], "EMEA": ["..."], "China": ["..."] }
+{ "Pacific": ["T1", "..."], "Americas": ["NRG", "..."], "China": ["All Gamers", "..."] }
 ```
 
 Newest file: `https://github.com/<owner>/<repo>/releases/latest/download/vlr-blacklist.json`.
