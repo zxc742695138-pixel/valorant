@@ -24,6 +24,8 @@ const stake = Number(opt('--stake', 1e6));
 const betRegions = (opt('--regions', 'pacific,americas,china')).split(',');
 // loss: only a lost bet blacklists (default); comeback: any comeback map in the event does.
 const trigger = opt('--trigger', 'loss');
+// --trace TEXT: print every map of events whose name contains TEXT (lead-3 strategy).
+const trace = opt('--trace');
 
 const teamRegion = {};
 for (const r of REGIONS) for (const t of JSON.parse(fs.readFileSync(`crawler/teams/${r}.json`, 'utf8'))) teamRegion[t.name] = r;
@@ -59,7 +61,14 @@ function simulate(filter) {
       const bet = f && inScope && filter(f) && !blocked;
       if (bet) bets.push({ day: m.day, event: m.event, match: `${m.t1} vs ${m.t2}`, map: mp.map, score: mp.score, ...f });
       const hit = trigger === 'comeback' ? !!analyzeMap(mp.rounds).blownBy : bet && f.lost;
-      if (hit) { list.add(m.t1); list.add(m.t2); }
+      if (trace && m.event.includes(trace) && inScope) {
+        const why = !f ? 'không có tình huống dẫn ≥ 3' : !filter(f) ? `dẫn ${f.size} (không phải kèo dẫn đúng 3)` : blocked ? `BỎ QUA: ${[m.t1, m.t2].filter(t => list.has(t)).join(', ')} đang bị né` : `CƯỢC → ${f.lost ? 'THUA (bị lật)' : 'thắng'}`;
+        console.log(`  ${m.day}  ${m.t1} ${mp.score} ${m.t2} (${mp.map}) — ${why}`);
+      }
+      if (hit) {
+        list.add(m.t1); list.add(m.t2);
+        if (trace && m.event.includes(trace)) console.log(`      → né ${m.t1}, ${m.t2} đến hết giải`);
+      }
     }
   }
   return bets;
@@ -94,6 +103,13 @@ function simulateNoList(filter) {
   return bets;
 }
 
+if (trace) {
+  console.log(`Chi tiết các giải chứa "${trace}" (chỉ cược kèo dẫn đúng 3):`);
+  const b = simulate(f => f.size === 3).filter(x => x.event.includes(trace));
+  const l = b.filter(x => x.lost).length;
+  console.log(`\n  Tổng: ${b.length} kèo, thua ${l}, thắng ${b.length - l} → ăn 1.12: ${(((b.length - l) * 0.12 - l)).toFixed(2)} tr; ăn 1.15: ${(((b.length - l) * 0.15 - l)).toFixed(2)} tr\n`);
+  process.exit(0);
+}
 const rows = [];
 const add = (name, bets, odds) => {
   const s = summarize(bets, odds);
