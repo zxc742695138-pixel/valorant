@@ -16,6 +16,9 @@ const dataDir = opt('--data', 'data-history');
 const marks = (opt('--marks') || '').split(',').filter(Boolean);
 const halfLife = opt('--half-life') ? Number(opt('--half-life')) : null;
 const lastMatches = opt('--last-matches') ? Number(opt('--last-matches')) : null;
+// --independent: score every team on its whole sample and take the top N at once
+// (matches against already-picked teams still count); exclusion only applies to bets.
+const independent = argv.includes('--independent');
 const active = opt('--regions') ? opt('--regions').split(',') : REGIONS;
 const stake = Number(opt('--stake', 1e6));
 const odds = Number(opt('--odds', 1.1));
@@ -35,7 +38,7 @@ const regions = Object.fromEntries(active.map(r => [r, loadRegion(r, dataDir, { 
 const bets = new Map();
 for (let i = 0; i < marks.length - 1; i++) {
   const [start, end] = [marks[i], marks[i + 1]];
-  const lists = active.map(r => blacklist(regions[r].teams, regions[r].matches.filter(m => (lastMatches || m.day >= minusDays(start, trainDays)) && m.day < start), steps, { halfLife, asOf: start, lastMatches }));
+  const lists = active.map(r => blacklist(regions[r].teams, regions[r].matches.filter(m => (lastMatches || m.day >= minusDays(start, trainDays)) && m.day < start), steps, { halfLife, asOf: start, lastMatches, independent }));
   const excluded = new Set(lists.flatMap(s => [...s]));
   for (const r of active) {
     for (const m of regions[r].matches) {

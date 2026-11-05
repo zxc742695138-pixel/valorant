@@ -76,14 +76,23 @@ function weightedCounts(matches, { halfLife, asOf } = {}) {
 // With `weights.halfLife`, "most comeback maps" uses recency-weighted counts.
 // With `weights.lastMatches` (M), each team is judged only on its own M most recent
 // matches in `matches` (pass every match before the cutoff), however old they are.
+// With `weights.independent`, every team is scored on its full sample (matches against
+// already-picked teams still count) and the top `steps` teams are taken at once;
+// exclusion then only applies to betting.
 function blacklist(teams, matches, steps, weights = {}) {
   const excluded = new Set();
-  const { lastMatches } = weights;
+  const { lastMatches, independent } = weights;
   // Per team, its sample of matches: all of them, or its M most recent.
   const samples = new Map(teams.map(t => {
     const own = matches.filter(m => m.t1 === t || m.t2 === t);
     return [t, lastMatches ? own.sort((a, b) => b.day.localeCompare(a.day)).slice(0, lastMatches) : own];
   }));
+  if (independent) {
+    const rows = teams.map(t => ({ t, ...weightedCounts(samples.get(t), weights) }))
+      .filter(r => r.cb > 0)
+      .sort((a, b) => b.cb - a.cb || b.rate - a.rate);
+    return new Set(rows.slice(0, steps).map(r => r.t));
+  }
   for (let s = 0; s < steps; s++) {
     const rows = teams.filter(t => !excluded.has(t)).map(t => {
       const keep = samples.get(t).filter(m => !excluded.has(m.t1) && !excluded.has(m.t2));

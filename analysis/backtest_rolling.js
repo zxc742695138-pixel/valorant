@@ -28,6 +28,9 @@ const halfLife = opt('--half-life') ? Number(opt('--half-life')) : null;
 // --last-matches M: judge each team on its own M most recent matches before the period
 // (any age) instead of every match in the last --train-days days.
 const lastMatches = opt('--last-matches') ? Number(opt('--last-matches')) : null;
+// --independent: score every team on its whole sample and take the top N at once
+// (matches against already-picked teams still count); exclusion only applies to bets.
+const independent = argv.includes('--independent');
 // Only matches between two partner teams are used; --all-opponents keeps the rest too.
 const allOpponents = argv.includes('--all-opponents');
 if (marks.length < 2) {
@@ -63,7 +66,7 @@ for (let i = 0; i < marks.length - 1; i++) {
   for (const r of ACTIVE) {
     const { teams, opponents, matches } = regions[r];
     const train = matches.filter(m => m.day >= trainFrom && m.day < start);
-    const ex = blacklist(allCandidates ? opponents : teams, train, steps, { halfLife, asOf: start, lastMatches });
+    const ex = blacklist(allCandidates ? opponents : teams, train, steps, { halfLife, asOf: start, lastMatches, independent });
     lists[r] = ex;
     const test = matches.filter(m => m.day >= start && m.day < end);
     const R = byRegion[r];
