@@ -49,12 +49,22 @@ async function getMatchLinks(page, teamId, limit, since) {
   const links = [];
   let reachedCutoff = false;
   for (let pageNo = 1; links.length < limit && !reachedCutoff; pageNo++) {
-    await gotoWithRetry(page, `${BASE}/team/matches/${teamId}/?group=completed&page=${pageNo}`);
-    const items = await page.$$eval('a.m-item', as => as.map(a => ({
-      href: a.getAttribute('href'),
-      date: (a.innerText.match(/\d{4}\/\d{2}\/\d{2}/) || [null])[0],
-    })));
-    if (items.length === 0) break;
+    let items = [];
+    // Every team has completed matches, so an empty first page means vlr.gg served
+    // something else (rate limiting): retry, then fail rather than save no matches.
+    for (let attempt = 1; attempt <= (pageNo === 1 ? 4 : 1); attempt++) {
+      if (attempt > 1) await sleep(10000 * attempt);
+      await gotoWithRetry(page, `${BASE}/team/matches/${teamId}/?group=completed&page=${pageNo}`);
+      items = await page.$$eval('a.m-item', as => as.map(a => ({
+        href: a.getAttribute('href'),
+        date: (a.innerText.match(/\d{4}\/\d{2}\/\d{2}/) || [null])[0],
+      })));
+      if (items.length) break;
+    }
+    if (items.length === 0) {
+      if (pageNo === 1) throw new Error(`No matches on the first page for team ${teamId} (blocked or rate limited?)`);
+      break;
+    }
     for (const { href, date } of items) {
       if (since && date && new Date(date.replace(/\//g, '-')) < since) {
         reachedCutoff = true;

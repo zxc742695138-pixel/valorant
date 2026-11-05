@@ -1,0 +1,78 @@
+#!/usr/bin/env node
+// Rolling (walk-forward) backtest of the blacklist as a betting filter.
+//
+// For each period [mark_i, mark_i+1): choose the blacklist from the `trainDays`
+// days before mark_i, then settle bets on matches inside the period. Each period
+// uses only information available at its start, like a release published on mark_i.
+// For comparison it also settles the same blacklist on its own training window
+// (in-sample, optimistic by construction).
+//
+// Usage:
+//   node analysis/backtest_rolling.js --data data-history --marks 2026-07-15,2026-08-01,...,2026-11-01
+//     [--train-days 180] [--odds 1.1] [--steps 5]
+
+const { REGIONS, loadRegion, blacklist, settle } = require('./betting');
+
+const argv = process.argv.slice(2);
+const opt = (name, def) => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : def; };
+const dataDir = opt('--data', 'data-history');
+const marks = (opt('--marks') || '').split(',').filter(Boolean);
+const trainDays = Number(opt('--train-days', 180));
+const odds = Number(opt('--odds', 1.1));
+const steps = Number(opt('--steps', 5));
+if (marks.length < 2) {
+  console.error('Usage: node analysis/backtest_rolling.js --marks YYYY-MM-DD,YYYY-MM-DD,... [--data dir] [--train-days 180] [--odds 1.1]');
+  process.exit(1);
+}
+
+const minusDays = (day, n) => new Date(Date.parse(day) - n * 864e5).toISOString().slice(0, 10);
+const ddmm = d => `${d.slice(8, 10)}/${d.slice(5, 7)}`;
+const pct = (n, d) => (d ? `${((100 * n) / d).toFixed(1)}%` : '—');
+const regions = Object.fromEntries(REGIONS.map(r => [r, loadRegion(r, dataDir)]));
+const earliest = Object.values(regions).flatMap(r => r.matches.map(m => m.day)).sort()[0];
+
+const rows = [];
+const sum = { f: { bets: 0, wins: 0, profit: 0 }, a: { bets: 0, wins: 0, profit: 0 }, in: { bets: 0, wins: 0, profit: 0 } };
+const add = (acc, r) => { acc.bets += r.bets; acc.wins += r.wins; acc.profit += r.profit; };
+
+for (let i = 0; i < marks.length - 1; i++) {
+  const [start, end] = [marks[i], marks[i + 1]];
+  const trainFrom = minusDays(start, trainDays);
+  // A match can belong to two regions (international events): settle it once.
+  const testAll = new Map(), testKept = new Map(), trainKept = new Map();
+  const lists = {};
+  for (const r of REGIONS) {
+    const { teams, matches } = regions[r];
+    const train = matches.filter(m => m.day >= trainFrom && m.day < start);
+    const ex = blacklist(teams, train, steps);
+    lists[r] = ex;
+    for (const m of matches.filter(m => m.day >= start && m.day < end)) {
+      testAll.set(m.url, m);
+      if (!ex.has(m.t1) && !ex.has(m.t2)) testKept.set(m.url, m);
+    }
+    for (const m of train) if (!ex.has(m.t1) && !ex.has(m.t2)) trainKept.set(m.url, m);
+  }
+  const allEx = new Set(Object.values(lists).flatMap(s => [...s]));
+  const a = settle([...testAll.values()], new Set(), odds);
+  const f = settle([...testKept.values()], allEx, odds);
+  const inS = settle([...trainKept.values()], allEx, odds);
+  add(sum.a, a); add(sum.f, f); add(sum.in, inS);
+  rows.push({
+    'khoảng cược': `${ddmm(start)}→${ddmm(end)}`,
+    'dữ liệu chọn': `${ddmm(trainFrom)}→${ddmm(minusDays(start, 1))}`,
+    'cược trong 180 ngày (in-sample)': `${inS.bets} · lật ${pct(inS.losses, inS.bets)} · ${inS.profit >= 0 ? '+' : ''}${inS.profit.toFixed(1)}`,
+    'không lọc': `${a.bets} · lật ${pct(a.losses, a.bets)} · ${a.profit >= 0 ? '+' : ''}${a.profit.toFixed(1)}`,
+    'có lọc': `${f.bets} · lật ${pct(f.losses, f.bets)} · ${f.profit >= 0 ? '+' : ''}${f.profit.toFixed(1)}`,
+    'lọc lãi?': f.bets ? (f.profit > 0 ? 'lãi' : 'lỗ') : '—',
+  });
+  if (trainFrom < earliest) rows[rows.length - 1]['dữ liệu chọn'] += ' (thiếu)';
+}
+
+console.log(`Mỗi khoảng: blacklist chọn từ ${trainDays} ngày trước ngày bắt đầu, cược trong khoảng đó. Tỉ lệ ăn ${odds}, hòa vốn khi lật kèo < ${(100 * (1 - 1 / odds)).toFixed(1)}%.`);
+console.log('Mỗi ô: số cược · tỉ lệ lật kèo · lãi (unit)\n');
+console.table(rows);
+const line = (label, s) => console.log(`  ${label.padEnd(30)} ${s.bets} cược, lật ${pct(s.bets - s.wins, s.bets)}, lãi ${s.profit >= 0 ? '+' : ''}${s.profit.toFixed(1)} unit (${(100 * s.profit / s.bets).toFixed(1)}%/cược)`);
+console.log('Cộng dồn các khoảng:');
+line('Có lọc (thực tế)', sum.f);
+line('Không lọc', sum.a);
+line('In-sample (để tham khảo)', sum.in);
