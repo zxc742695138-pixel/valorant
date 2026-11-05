@@ -20,6 +20,11 @@ description: Refresh the VCT comeback-influence report (top 5 teams per region w
 - **Algorithm (loại lần lượt)**, per region, independently: rank teams by number of
   comeback maps, then by comeback rate; remove the top team and every match it played;
   recompute; repeat 5 times. The 5 removed teams are the answer.
+- **Weighting and regions (chosen by the user, `pipeline/config.json`)**: comeback maps
+  are weighted 0.5^(age in days / 90) when ranking (`half_life: 90`), and top 5 lists are
+  produced only for Pacific, Americas and China (`bet_regions`; EMEA is still crawled and
+  counts as partner teams). The user bets by skipping every map that involves any team
+  of any of the lists. Do not change these without the user asking.
 
 ## Weekly release (automatic)
 

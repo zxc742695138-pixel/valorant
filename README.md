@@ -7,6 +7,8 @@ region's comeback-map rate the most. A comeback map is one where, with total rou
 a team led by >= 3 rounds and still lost. Teams are removed one at a time: remove the team
 with the most comeback maps (ties: higher rate), drop its matches, recompute, 5 times.
 Only matches between two tier-1 partner teams (the 48 teams in `crawler/teams/`) count.
+Current settings (`pipeline/config.json`): comeback maps are weighted by recency (half-life
+90 days) when ranking, and lists are produced for Pacific, Americas and China only.
 
 Refresh everything (crawl → validate → analyse → report):
 

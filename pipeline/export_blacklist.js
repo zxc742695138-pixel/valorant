@@ -51,6 +51,7 @@ const ties = regions.flatMap(r => r.steps.filter(s => s.tie_with).map(s =>
   `- ${NAMES[r.region]}, lần loại ${s.step + 1}: ${s.removed.team} đồng hạng với ${s.tie_with}`
   + (s.tie_alt_rate != null ? ` (loại ${s.tie_with} thay thế: ${pct(s.tie_alt_rate)})` : '')));
 if (ties.length) lines.push('', '**Đồng hạng**', ...ties);
+lines.push('', `**Cách dùng:** bỏ qua mọi map có bất kỳ đội nào trong ${regions.length > 1 ? `cả ${regions.length} danh sách` : 'danh sách'} (kể cả trận quốc tế giữa các khu vực).`);
 lines.push('', 'File `report-details.json` chứa bảng đầy đủ sau từng lần loại.');
 fs.writeFileSync(path.join(ROOT, 'reports/release-notes.md'), lines.join('\n') + '\n');
 
