@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-// One-shot refresh of the comeback-influence report:
+// One-shot refresh of the team whitelist/blacklist report:
 //   1. (optional) rebuild team lists from the events in config.json
 //   2. crawl every team's matches in the last `days` days
 //   3. validate the data (maps without round data, score mismatches)
-//   4. run the iterative exclusion (+ random baseline) for config.bet_regions,
-//      ranking by recency-weighted comebacks when config.half_life is set → reports/latest.json
+//   4. group every partner team from the last `groups.window_days` days (see
+//      analysis/team_groups.js): whitelist = "Trung bình", blacklist = the rest
 //   5. compare with the previous run, build reports/latest.html, archive the JSON
 //
 // Usage:
@@ -13,6 +13,8 @@
 const fs = require('fs');
 const path = require('path');
 const { spawn, spawnSync } = require('child_process');
+const { computeGroups } = require('../analysis/team_groups');
+const { MIN_TOTAL, MIN_DIFF } = require('../analysis/comeback');
 
 const ROOT = path.join(__dirname, '..');
 const config = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json'), 'utf8'));
@@ -119,50 +121,57 @@ function crawlAll(teams) {
   log(`  ${seen.size} trận; ${Object.values(missingByEvent).reduce((s, e) => s + e.maps, 0)} map thiếu dữ liệu round; ${mismatches} map tỉ số không khớp`);
   if (mismatches) notes.push(`${mismatches} map có round cuối không khớp tỉ số map; cần kiểm tra lại crawler.`);
 
-  // 4. Iterative exclusion
+  // 4. Team groups from the last `groups.window_days` days: whitelist = "Trung bình",
+  //    blacklist = every other partner team.
   const latestJson = rel('reports/latest.json');
   const previous = fs.existsSync(latestJson) ? JSON.parse(fs.readFileSync(latestJson, 'utf8')) : null;
-  // Top 5 only for bet_regions; every crawled region still counts as partner teams.
-  const betRegions = config.bet_regions || regions;
-  log(`Chạy thuật toán loại lần lượt cho ${betRegions.join(', ')}${config.half_life ? `, bán rã ${config.half_life} ngày` : ''}`);
-  const text = run([
-    'analysis/iterative_exclude.js', ...betRegions.map(r => `crawler/teams/${r}.json`),
-    '--partners', regions.map(r => `crawler/teams/${r}.json`).join(','),
-    ...(config.half_life ? ['--half-life', String(config.half_life)] : []),
-    '--steps', String(config.steps), '--baseline', String(config.baseline), '--json', 'reports/latest.json',
-  ]);
-  fs.writeFileSync(rel('reports/latest.txt'), text);
-  const report = JSON.parse(fs.readFileSync(latestJson, 'utf8'));
+  const G = config.groups;
+  let crawledAt = '';
+  for (const t of allTeams) {
+    const d = JSON.parse(fs.readFileSync(rel(`data/${t.slug}.json`), 'utf8'));
+    if (d.crawled_at > crawledAt) crawledAt = d.crawled_at;
+  }
+  const to = crawledAt.slice(0, 10);
+  const from = new Date(Date.parse(to) - G.window_days * 864e5).toISOString().slice(0, 10);
+  log(`Xếp nhóm đội theo ${G.window_days} ngày gần nhất (${from} → ${to})`);
+  const res = computeGroups({ dataDir: rel('data'), teamsDir: rel('crawler/teams'), from, to, net: G.net, volatile: G.volatile, minMaps: G.min_maps || 0 });
+  const report = {
+    kind: 'groups', crawled_at: crawledAt, from, to, last_match: res.lastDay,
+    window_days: G.window_days, net: G.net, volatile: G.volatile, min_maps: G.min_maps || 0,
+    min_total: MIN_TOTAL, min_diff: MIN_DIFF, notes,
+    regions: regions.map(r => {
+      const teams = res.regions[r];
+      return {
+        region: r, teams,
+        whitelist: teams.filter(t => t.group === 'Trung bình').map(t => t.team),
+        blacklist: teams.filter(t => t.group !== 'Trung bình').map(t => t.team),
+      };
+    }),
+  };
 
-  // 5. Compare with the previous run
-  const top5 = r => r.steps.slice(0, report.steps).map(s => s.removed.team);
+  // 5. Compare with the previous run (whitelist changes)
   console.log('\n================ KẾT QUẢ ================');
   for (const r of report.regions) {
-    const a = r.steps[0], z = r.steps[report.steps];
-    const prev = previous?.regions.find(p => p.region === r.region);
+    const prev = previous?.kind === 'groups' ? previous.regions.find(p => p.region === r.region) : null;
     if (prev) {
-      const before = top5(prev), now = top5(r);
       r.previous = {
         crawled_at: previous.crawled_at,
-        top5: before,
-        start_rate: prev.steps[0].rate,
-        final_rate: prev.steps[previous.steps].rate,
-        added: now.filter(t => !before.includes(t)),
-        dropped: before.filter(t => !now.includes(t)),
+        added: r.whitelist.filter(t => !prev.whitelist.includes(t)),
+        removed: prev.whitelist.filter(t => !r.whitelist.includes(t)),
       };
     }
-    console.log(`\n${r.region.toUpperCase()}: ${(100 * a.rate).toFixed(1)}% → ${(100 * z.rate).toFixed(1)}% (−${(100 * (a.rate - z.rate)).toFixed(1)} điểm %)`);
-    console.log(`  Top 5: ${top5(r).join(', ')}`);
+    console.log(`\n${r.region.toUpperCase()}`);
+    console.log(`  Whitelist: ${r.whitelist.join(', ') || '—'}`);
+    console.log(`  Blacklist: ${r.teams.filter(t => t.group !== 'Trung bình').map(t => `${t.team} (${t.group})`).join(', ') || '—'}`);
     if (r.previous) {
       const p = r.previous;
-      console.log(`  So với ${p.crawled_at.slice(0, 10)}: ${p.added.length || p.dropped.length ? `vào top 5: ${p.added.join(', ') || 'không'}; rời top 5: ${p.dropped.join(', ') || 'không'}` : 'top 5 không đổi'}`);
+      console.log(`  So với ${p.crawled_at.slice(0, 10)}: ${p.added.length || p.removed.length ? `vào whitelist: ${p.added.join(', ') || 'không'}; rời whitelist: ${p.removed.join(', ') || 'không'}` : 'whitelist không đổi'}`);
     }
-    r.steps.filter(s => s.tie_with).forEach(s => console.log(`  Đồng hạng ở lần loại ${s.step + 1}: ${s.removed.team} / ${s.tie_with}`));
   }
   fs.writeFileSync(latestJson, JSON.stringify(report, null, 2) + '\n');
 
   // Build the HTML report and archive this run's JSON.
-  run(['reports/build.js', 'reports/latest.json', 'reports/latest.html', '--days', String(days), ...notes.flatMap(n => ['--note', n])]);
+  run(['reports/build.js', 'reports/latest.json', 'reports/latest.html']);
   const archive = rel(`reports/archive/${report.crawled_at.slice(0, 10)}.json`);
   fs.mkdirSync(path.dirname(archive), { recursive: true });
   fs.copyFileSync(latestJson, archive);

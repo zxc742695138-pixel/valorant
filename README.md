@@ -1,33 +1,39 @@
 # Valorant team analysis
 
-## Comeback-influence report
+## Team whitelist / blacklist
 
-Finds, per region (Americas, EMEA, China, Pacific), the 5 teams whose removal lowers the
-region's comeback-map rate the most. A comeback map is one where, with total rounds >= 17,
-a team led by >= 3 rounds and still lost. Teams are removed one at a time: remove the team
-with the most comeback maps (ties: higher rate), drop its matches, recompute, 5 times.
-Only matches between two tier-1 partner teams (the 48 teams in `crawler/teams/`) count.
-Current settings (`pipeline/config.json`): comeback maps are weighted by recency (half-life
-90 days) when ranking, and lists are produced for Pacific, Americas and China only.
+Groups every partner team (12 per region, Americas, EMEA, China, Pacific) by its comeback
+history over the last 90 days. A qualifying lead is a lead of >= 3 rounds at total rounds
+>= 17 (before the map ends); a team **made** a comeback when it trailed like that and won,
+and **blew** one when it led like that and lost. Only matches between two partner teams count.
 
-Refresh everything (crawl → validate → analyse → report):
+| Group | Rule |
+|---|---|
+| Mạnh | made − blown >= +1 |
+| Yếu | made − blown <= −1 |
+| Không ổn định | otherwise, made + blown >= 3 |
+| Trung bình | the rest |
+
+**Whitelist** = Trung bình teams, **blacklist** = the others. Use: only bet on maps where both
+teams are in the whitelist. Settings live in `pipeline/config.json` (`groups`).
+
+Refresh everything (crawl → validate → group → report):
 
 ```bash
 node pipeline/update.js
 ```
 
-Settings (window, steps, events, report URL) live in `pipeline/config.json`. Output:
-`reports/latest.html`, `reports/latest.json`, and a dated copy in `reports/archive/`.
-Each run is compared with the previous one (teams entering/leaving the top 5).
+Output: `reports/latest.html`, `reports/latest.json`, `reports/vlr-blacklist.json`, and a dated
+copy in `reports/archive/`. Each run is compared with the previous one (whitelist changes).
 
 ### Daily release
 
 `.github/workflows/vlr-blacklist.yml` runs the pipeline every day (01:23 UTC = 08:23 Vietnam, or on
-demand from the Actions tab). When a region's top 5 changes (order ignored) it publishes a release `vlr-blacklist vN` with
-`vlr-blacklist.json`:
+demand from the Actions tab). When a list changes (order ignored) it publishes a release
+`vlr-blacklist vN` with `vlr-blacklist.json`:
 
 ```json
-{ "Pacific": ["T1", "..."], "Americas": ["NRG", "..."], "China": ["All Gamers", "..."] }
+{ "Pacific": { "whitelist": ["Gen.G", "..."], "blacklist": ["T1", "..."] }, "Americas": { "...": [] } }
 ```
 
 Newest file: `https://github.com/<owner>/<repo>/releases/latest/download/vlr-blacklist.json`.

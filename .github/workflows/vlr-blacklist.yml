@@ -1,6 +1,6 @@
-# Daily refresh of the comeback-influence top 5 per region. Data and report are
+# Daily refresh of the per-region team whitelist/blacklist. Data and report are
 # committed every day; a GitHub release "vlr-blacklist vN" with vlr-blacklist.json
-# attached is published only when a region's top 5 changed (or when forced).
+# attached is published only when a list changed (or when forced).
 #
 # The release goes to vars.RELEASE_REPO (owner/name) when set, using
 # secrets.RELEASE_TOKEN (a token with Contents: write on that repo); otherwise
@@ -17,7 +17,7 @@ on:
         type: boolean
         default: false
       force_release:
-        description: "Publish a release even if the top 5 lists did not change"
+        description: "Publish a release even if the lists did not change"
         type: boolean
         default: false
 
@@ -70,11 +70,11 @@ jobs:
         env:
           FORCE_RELEASE: ${{ inputs.force_release && 'true' || 'false' }}
         run: |
-          # Only release when a region's set of teams changed (order within a list ignored).
+          # Only release when a list changed (order within a list ignored, any nesting).
           if [ "$FORCE_RELEASE" != "true" ] && gh release download --repo "$RELEASE_REPO" --pattern vlr-blacklist.json --output previous.json 2>/dev/null; then
-            norm='with_entries(.value |= sort)'
+            norm='walk(if type == "array" then sort else . end)'
             if [ "$(jq -S "$norm" previous.json)" = "$(jq -S "$norm" reports/vlr-blacklist.json)" ]; then
-              echo "Top 5 lists unchanged since the latest release; no new release." | tee -a "$GITHUB_STEP_SUMMARY"
+              echo "Lists unchanged since the latest release; no new release." | tee -a "$GITHUB_STEP_SUMMARY"
               exit 0
             fi
           fi

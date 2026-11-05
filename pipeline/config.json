@@ -1,10 +1,12 @@
 {
   "days": 180,
-  "steps": 5,
-  "baseline": 5000,
   "concurrency": 4,
-  "half_life": 90,
-  "bet_regions": ["pacific", "americas", "china"],
+  "groups": {
+    "window_days": 90,
+    "net": 1,
+    "volatile": 3,
+    "min_maps": 0
+  },
   "regions": {
     "americas": "https://www.vlr.gg/event/2977/vct-2026-americas-stage-2",
     "emea": "https://www.vlr.gg/event/2976/vct-2026-emea-stage-2",
