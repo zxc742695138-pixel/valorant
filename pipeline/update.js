@@ -3,7 +3,8 @@
 //   1. (optional) rebuild team lists from the events in config.json
 //   2. crawl every team's matches in the last `days` days
 //   3. validate the data (maps without round data, score mismatches)
-//   4. run the iterative exclusion (+ random baseline) → reports/latest.json
+//   4. run the iterative exclusion (+ random baseline) for config.bet_regions,
+//      ranking by recency-weighted comebacks when config.half_life is set → reports/latest.json
 //   5. compare with the previous run, build reports/latest.html, archive the JSON
 //
 // Usage:
@@ -121,9 +122,13 @@ function crawlAll(teams) {
   // 4. Iterative exclusion
   const latestJson = rel('reports/latest.json');
   const previous = fs.existsSync(latestJson) ? JSON.parse(fs.readFileSync(latestJson, 'utf8')) : null;
-  log('Chạy thuật toán loại lần lượt');
+  // Top 5 only for bet_regions; every crawled region still counts as partner teams.
+  const betRegions = config.bet_regions || regions;
+  log(`Chạy thuật toán loại lần lượt cho ${betRegions.join(', ')}${config.half_life ? `, bán rã ${config.half_life} ngày` : ''}`);
   const text = run([
-    'analysis/iterative_exclude.js', ...regions.map(r => `crawler/teams/${r}.json`),
+    'analysis/iterative_exclude.js', ...betRegions.map(r => `crawler/teams/${r}.json`),
+    '--partners', regions.map(r => `crawler/teams/${r}.json`).join(','),
+    ...(config.half_life ? ['--half-life', String(config.half_life)] : []),
     '--steps', String(config.steps), '--baseline', String(config.baseline), '--json', 'reports/latest.json',
   ]);
   fs.writeFileSync(rel('reports/latest.txt'), text);

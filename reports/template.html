@@ -121,7 +121,7 @@ footer { color: var(--ink-3); font-size: 13px; }
 
   <section>
     <div style="display:flex;flex-direction:column;gap:12px">
-      <h2>Tổng quan 4 khu vực</h2>
+      <h2 id="summary-title">Tổng quan các khu vực</h2>
       <div class="table-wrap"><table id="summary"></table></div>
       <p class="chart-cap" id="baseline-note"></p>
     </div>
@@ -150,7 +150,8 @@ document.getElementById('window').textContent = `${DATA.days} ngày · ${fmtDate
 document.getElementById('def').textContent =
   `Có thời điểm tổng round hai đội ≥ ${DATA.min_total} mà một đội dẫn ≥ ${DATA.min_diff} round, nhưng đội đó thua map.`;
 document.getElementById('algo').textContent =
-  `Loại đội có nhiều map lật kèo nhất (bằng nhau thì xét tỉ lệ cao hơn), bỏ mọi map có đội đó, tính lại. Lặp ${DATA.steps} lần cho mỗi khu vực.`;
+  `Loại đội có nhiều map lật kèo nhất${DATA.half_life ? ` (có trọng số, giảm một nửa sau mỗi ${DATA.half_life} ngày)` : ''}, bằng nhau thì xét tỉ lệ cao hơn; bỏ mọi map có đội đó, tính lại. Lặp ${DATA.steps} lần cho mỗi khu vực.`;
+document.getElementById('summary-title').textContent = `Tổng quan ${DATA.regions.length} khu vực`;
 
 // ---- Summary table ----
 const sumRows = DATA.regions.map(r => {
@@ -308,6 +309,8 @@ const notes = [
   'Kết quả mô tả giai đoạn đã qua. Muốn dùng để dự đoán, nên chạy thuật toán trên một giai đoạn và kiểm tra trên giai đoạn sau.',
   'Mỗi khu vực được xử lý độc lập: chỉ bỏ các đội đã bị loại khỏi chính khu vực đó. Trận quốc tế (Masters, EWC, Champions) được tính cho các đội tham gia.',
   ...(DATA.partners_only ? ['Chỉ tính trận giữa hai đội nhượng quyền tier 1 (48 đội của 4 khu vực). Trận gặp đội Challengers hoặc đội ngoài danh sách không được tính.'] : []),
+  ...(DATA.half_life ? [`Khi xếp hạng, mỗi map lật kèo được tính theo trọng số giảm một nửa sau mỗi ${DATA.half_life} ngày, nên trận gần đây ảnh hưởng nhiều hơn. Cột "Lật kèo" trong bảng vẫn là số map thực tế.`] : []),
+  ...(DATA.regions.length < 4 ? [`Báo cáo chỉ gồm ${DATA.regions.map(r => REGION_NAMES[r.region]).join(', ')}; các khu vực khác không áp dụng blacklist.`] : []),
   'Số trận mỗi đội khác nhau tùy đội đi sâu đến đâu ở các giải.',
 ];
 if (DATA.regions.some(r => r.steps.some(s => s.tie_with))) {

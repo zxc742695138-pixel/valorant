@@ -96,4 +96,4 @@ function settle(matches, excluded, odds) {
   return res;
 }
 
-module.exports = { REGIONS, PARTNERS, normalize, loadRegion, firstLeadOutcome, blacklist, settle };
+module.exports = { REGIONS, PARTNERS, normalize, loadRegion, firstLeadOutcome, weightedCounts, blacklist, settle };

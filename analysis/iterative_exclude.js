@@ -1,18 +1,23 @@
 #!/usr/bin/env node
 // Per region, repeatedly remove the top comeback team and recompute:
 //   1. rank teams by number of comeback maps, then by comeback rate
+//      (with --half-life N, each map weighs 0.5^(age in days / N), age counted
+//      back from the latest crawl date)
 //   2. remove the top team and every match it played in
 //   3. recompute the table; repeat STEPS times
 // Each region is filtered independently (only its own removed teams are excluded).
-// Only matches between two partner teams (any of the given team lists) count;
-// --all-opponents also keeps matches against Challengers and other teams.
+// Only matches between two partner teams count. Partners are the teams of the
+// given lists, or of --partners a.json,b.json when set (e.g. include a region
+// that is not analysed); --all-opponents keeps every match.
 //
 // Usage:
-//   node analysis/iterative_exclude.js crawler/teams/americas.json [...] [--steps 5] [--data data] [--json out.json] [--all-opponents]
+//   node analysis/iterative_exclude.js crawler/teams/americas.json [...] [--steps 5] [--data data] [--json out.json]
+//     [--half-life 60] [--partners crawler/teams/a.json,...] [--all-opponents]
 
 const fs = require('fs');
 const path = require('path');
 const { MIN_TOTAL, MIN_DIFF, analyzeMatches, pct } = require('./comeback');
+const { weightedCounts } = require('./betting');
 
 const argv = process.argv.slice(2);
 const takeFlag = name => {
@@ -24,6 +29,9 @@ const steps = Number(takeFlag('--steps') || 5);
 const jsonOut = takeFlag('--json');
 // Compare with removing the same number of random teams, N times.
 const baselineRuns = Number(takeFlag('--baseline') || 0);
+const halfLifeArg = takeFlag('--half-life');
+const halfLife = halfLifeArg ? Number(halfLifeArg) : null;
+const partnersArg = takeFlag('--partners');
 const allOpponents = argv.includes('--all-opponents');
 if (allOpponents) argv.splice(argv.indexOf('--all-opponents'), 1);
 if (!argv.length) {
@@ -34,6 +42,10 @@ if (!argv.length) {
 // "MIBR.LOS (MIBR)" → "MIBR"
 const normalize = name => (name.match(/\(([^)]+)\)$/) || [null, name])[1].trim();
 
+// Ranking keys: recency-weighted comeback maps and rate (plain counts without --half-life).
+let asOf = null;
+const rankKey = matches => weightedCounts(matches.map(m => ({ ...m, day: m.date.slice(0, 10) })), { halfLife, asOf });
+
 function table(teams, excluded) {
   const keep = m => !excluded.has(normalize(m.team1)) && !excluded.has(normalize(m.team2));
   const regionMatches = new Map();
@@ -43,16 +55,28 @@ function table(teams, excluded) {
     const matches = t.matches.filter(keep);
     for (const m of matches) regionMatches.set(m.url, m);
     const r = analyzeMatches(matches);
-    rows.push({ team: t.name, matches: matches.length, maps: r.totalMaps, lead_maps: r.mapsWithLead, comebacks: r.comebacks, rate: r.rate || 0 });
+    const w = rankKey(matches);
+    rows.push({
+      team: t.name, matches: matches.length, maps: r.totalMaps, lead_maps: r.mapsWithLead, comebacks: r.comebacks, rate: r.rate || 0,
+      ...(halfLife ? { weighted_comebacks: +w.cb.toFixed(3) } : {}), rank_cb: w.cb, rank_rate: w.rate,
+    });
   }
-  rows.sort((a, b) => b.comebacks - a.comebacks || b.rate - a.rate);
+  rows.sort((a, b) => b.rank_cb - a.rank_cb || b.rank_rate - a.rank_rate);
   return { rows, region: analyzeMatches([...regionMatches.values()]), matches: regionMatches.size };
 }
 
-const fmt = rows => rows.map(r => ({ ...r, rate: pct(r.comebacks, r.lead_maps) }));
+const fmt = rows => rows.map(({ rank_cb, rank_rate, ...r }) => ({ ...r, rate: pct(r.comebacks, r.lead_maps) }));
 const summary = [];
-const report = { min_total: MIN_TOTAL, min_diff: MIN_DIFF, steps, partners_only: !allOpponents, regions: [] };
-const partners = new Set(argv.flatMap(f => JSON.parse(fs.readFileSync(f, 'utf8')).map(t => t.name)));
+const report = { min_total: MIN_TOTAL, min_diff: MIN_DIFF, steps, partners_only: !allOpponents, half_life: halfLife, regions: [] };
+const partnerFiles = partnersArg ? partnersArg.split(',') : argv;
+const partners = new Set(partnerFiles.flatMap(f => JSON.parse(fs.readFileSync(f, 'utf8')).map(t => t.name)));
+// Weights count back from the latest crawl date across every analysed team.
+for (const f of argv) {
+  for (const t of JSON.parse(fs.readFileSync(f, 'utf8'))) {
+    const at = JSON.parse(fs.readFileSync(path.join(dataDir, `${t.slug}.json`), 'utf8')).crawled_at.slice(0, 10);
+    if (!asOf || at > asOf) asOf = at;
+  }
+}
 const partnerMatch = m => partners.has(normalize(m.team1)) && partners.has(normalize(m.team2));
 
 for (const teamsFile of argv) {
@@ -79,7 +103,7 @@ for (const teamsFile of argv) {
     const [top, next] = rows;
     const current = regionReport.steps[regionReport.steps.length - 1];
     current.removed = top;
-    if (next && next.comebacks === top.comebacks && next.rate === top.rate) {
+    if (next && next.rank_cb === top.rank_cb && next.rank_rate === top.rank_rate) {
       current.tie_with = next.team;
       // Region rate right after this step had the other team been removed instead.
       current.tie_alt_rate = table(teams, new Set([...excluded, next.team])).region.rate;
@@ -88,7 +112,7 @@ for (const teamsFile of argv) {
         + `tỉ lệ sau bước này: ${(100 * chosenRate).toFixed(1)}% nếu loại ${top.team}, ${(100 * current.tie_alt_rate).toFixed(1)}% nếu loại ${next.team}`);
     }
     excluded.add(top.team);
-    console.log(`>> Loại: ${top.team} (${top.comebacks} map lật kèo, ${pct(top.comebacks, top.lead_maps)})`);
+    console.log(`>> Loại: ${top.team} (${top.comebacks} map lật kèo${halfLife ? `, có trọng số ${top.rank_cb.toFixed(2)}` : ''}, ${pct(top.comebacks, top.lead_maps)})`);
   }
 
   if (baselineRuns) {

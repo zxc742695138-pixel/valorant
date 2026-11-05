@@ -31,6 +31,10 @@ const lines = [
   `- Map lật kèo: có thời điểm tổng round ≥ ${report.min_total} mà một đội dẫn ≥ ${report.min_diff} round, nhưng đội đó thua map`,
   `- Thuật toán: loại đội có nhiều map lật kèo nhất (bằng nhau thì xét tỉ lệ), bỏ các map có đội đó, tính lại; lặp ${report.steps} lần`,
   ...(report.partners_only ? ['- Chỉ tính trận giữa hai đội nhượng quyền tier 1 (48 đội của 4 khu vực)'] : []),
+  ...(report.half_life ? [`- Xếp hạng theo số map lật kèo có trọng số: trọng số giảm một nửa sau mỗi ${report.half_life} ngày`] : []),
+  ...(regions.length < ORDER.length
+    ? [`- Chỉ áp dụng cho: ${regions.map(r => NAMES[r.region]).join(', ')} (${ORDER.filter(o => !regions.some(r => r.region === o)).map(o => NAMES[o]).join(', ')} không áp dụng)`]
+    : []),
   '',
   '| Khu vực | Top 5 | Tỉ lệ lật kèo ban đầu → sau khi loại | Thay đổi so với lần trước |',
   '|---|---|---|---|',
