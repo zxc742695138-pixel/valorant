@@ -86,6 +86,8 @@ const groupAt = day => {
 const acc = {};
 const add = (k, b) => { const a = (acc[k] = acc[k] || { n: 0, l: 0 }); a.n++; a.l += b.reversed; };
 const pairCount = {};
+// Every bet in date order with the decisions of the compared strategies (for --ledger).
+const ledger = [];
 for (const e of test) {
   if (!partners.has(e.t1) || !partners.has(e.t2)) continue;
   const g = groupAt(e.day);
@@ -96,6 +98,10 @@ for (const e of test) {
     const b = mp.first;
     add('Cược tất cả', b);
     add(b.size === 3 ? 'Tất cả · dẫn 3' : 'Tất cả · dẫn ≥ 4', b);
+    ledger.push({
+      day: e.day, match: `${e.t1} vs ${e.t2}`, groups: `${g1} / ${g2}`, size: b.size, lost: b.reversed,
+      all: true, groups_only: keep, lead4: b.size >= 4, combined: b.size >= 4 || keep,
+    });
     const pair = [g1, g2].sort().join(' vs ');
     (pairCount[pair] = pairCount[pair] || { n: 0, l: 0 }).n++;
     pairCount[pair].l += b.reversed;
@@ -115,3 +121,47 @@ console.log(`Kèo ${from} → ${to}; nhóm ${fixed ? 'tính một lần trên ch
 console.table(Object.entries(acc).map(([k, a]) => fmt(k, a, all)));
 console.log('Theo cặp nhóm của hai đội:');
 console.table(Object.entries(pairCount).sort((a, b) => b[1].n - a[1].n).map(([k, a]) => fmt(k, a, all)));
+
+// --ledger: month-by-month profit (stake --stake, default 1,000,000) for the compared strategies,
+// and every lost bet of the group rule.
+if (argv.includes('--ledger')) {
+  const stake = Number(opt('--stake', 1e6));
+  const label = `Chỉ ${wanted.join('/')} vs ${wanted.join('/')}`;
+  const STRATS = { all: 'Cược tất cả', groups_only: label, lead4: 'Chỉ dẫn ≥ 4', combined: 'Kết hợp (dẫn ≥ 4, hoặc dẫn 3 + nhóm)' };
+  const money = x => `${x < 0 ? '−' : x > 0 ? '+' : ''}${(Math.abs(x) / 1e6).toFixed(1)} tr`;
+  const pnl = b => (b.lost ? -stake : stake * (odds - 1));
+  const summary = {};
+  for (const [k, name] of Object.entries(STRATS)) {
+    let bal = 0, peak = 0, dd = 0, n = 0, l = 0;
+    const months = {};
+    for (const b of ledger) {
+      if (!b[k]) continue;
+      n++; l += b.lost;
+      bal += pnl(b);
+      peak = Math.max(peak, bal);
+      dd = Math.max(dd, peak - bal);
+      const mo = b.day.slice(0, 7);
+      const m = (months[mo] = months[mo] || { n: 0, l: 0, p: 0, end: 0 });
+      m.n++; m.l += b.lost; m.p += pnl(b); m.end = bal;
+    }
+    summary[name] = { n, l, bal, dd, months };
+  }
+  const main = summary[label];
+  console.log(`\n=== ${label}: lãi theo tháng (mỗi cược ${(stake / 1e6).toFixed(1)} tr, ăn ${odds})`);
+  console.table(Object.entries(main.months).map(([mo, m]) => ({
+    'tháng': mo, 'số cược': m.n, 'thua': m.l, 'lãi tháng': money(m.p), 'lũy kế': money(m.end),
+    'cược tất cả (lũy kế)': money(summary['Cược tất cả'].months[mo]?.end ?? 0),
+  })));
+  console.log('So sánh:');
+  console.table(Object.entries(summary).map(([name, s]) => ({
+    'cách cược': name, 'số cược': s.n, 'thua': s.l, 'lật kèo': `${(100 * s.l / s.n).toFixed(1)}%`,
+    'lãi': money(s.bal), '%/cược': `${(100 * s.bal / (s.n * stake)).toFixed(1)}%`, 'sụt giảm lớn nhất': money(-s.dd),
+  })));
+  console.log(`Các lần thua của "${label}":`);
+  let bal = 0;
+  for (const b of ledger) {
+    if (!b.groups_only) continue;
+    bal += pnl(b);
+    if (b.lost) console.log(`  ${b.day}  ${b.match} (${b.groups}) · dẫn ${b.size} → lũy kế ${money(bal)}`);
+  }
+}
