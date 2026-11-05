@@ -9,7 +9,7 @@
 //
 // Usage:
 //   node analysis/backtest_rolling.js --data data-history --marks 2026-07-15,2026-08-01,...,2026-11-01
-//     [--train-days 180] [--odds 1.1] [--steps 5]
+//     [--train-days 180] [--odds 1.1] [--steps 5] [--all-opponents] [--candidates all] [--lists]
 
 const { REGIONS, loadRegion, blacklist, settle } = require('./betting');
 
@@ -23,8 +23,8 @@ const steps = Number(opt('--steps', 5));
 // --candidates all: the blacklist may pick any team seen in the region's matches
 // (Challengers, other regions), not only the region's 12 partner teams.
 const allCandidates = opt('--candidates') === 'all';
-// --partners-only: only bet on maps where both teams are partner teams of the lists.
-const partnersOnly = argv.includes('--partners-only');
+// Only matches between two partner teams are used; --all-opponents keeps the rest too.
+const allOpponents = argv.includes('--all-opponents');
 if (marks.length < 2) {
   console.error('Usage: node analysis/backtest_rolling.js --marks YYYY-MM-DD,YYYY-MM-DD,... [--data dir] [--train-days 180] [--odds 1.1]');
   process.exit(1);
@@ -33,11 +33,7 @@ if (marks.length < 2) {
 const minusDays = (day, n) => new Date(Date.parse(day) - n * 864e5).toISOString().slice(0, 10);
 const ddmm = d => `${d.slice(8, 10)}/${d.slice(5, 7)}`;
 const pct = (n, d) => (d ? `${((100 * n) / d).toFixed(1)}%` : '—');
-const regions = Object.fromEntries(REGIONS.map(r => [r, loadRegion(r, dataDir)]));
-if (partnersOnly) {
-  const partners = new Set(Object.values(regions).flatMap(r => r.teams));
-  for (const r of Object.values(regions)) r.matches = r.matches.filter(m => partners.has(m.t1) && partners.has(m.t2));
-}
+const regions = Object.fromEntries(REGIONS.map(r => [r, loadRegion(r, dataDir, { allOpponents })]));
 const earliest = Object.values(regions).flatMap(r => r.matches.map(m => m.day)).sort()[0];
 
 const rows = [];

@@ -14,6 +14,9 @@ description: Refresh the VCT comeback-influence report (top 5 teams per region w
 - **Window**: matches in the last 180 days (`pipeline/config.json` → `days`).
 - **Teams**: the 12 partner teams per region (Americas, EMEA, China, Pacific), from the
   group stage of the events listed in `pipeline/config.json`.
+- **Matches**: only matches between two tier-1 partner teams (any of the 48, so
+  international matches between regions count). Matches against Challengers or other
+  teams are ignored everywhere (top 5, report, backtests).
 - **Algorithm (loại lần lượt)**, per region, independently: rank teams by number of
   comeback maps, then by comeback rate; remove the top team and every match it played;
   recompute; repeat 5 times. The 5 removed teams are the answer.

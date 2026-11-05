@@ -4,9 +4,11 @@
 //   2. remove the top team and every match it played in
 //   3. recompute the table; repeat STEPS times
 // Each region is filtered independently (only its own removed teams are excluded).
+// Only matches between two partner teams (any of the given team lists) count;
+// --all-opponents also keeps matches against Challengers and other teams.
 //
 // Usage:
-//   node analysis/iterative_exclude.js crawler/teams/americas.json [...] [--steps 5] [--data data] [--json out.json]
+//   node analysis/iterative_exclude.js crawler/teams/americas.json [...] [--steps 5] [--data data] [--json out.json] [--all-opponents]
 
 const fs = require('fs');
 const path = require('path');
@@ -22,6 +24,8 @@ const steps = Number(takeFlag('--steps') || 5);
 const jsonOut = takeFlag('--json');
 // Compare with removing the same number of random teams, N times.
 const baselineRuns = Number(takeFlag('--baseline') || 0);
+const allOpponents = argv.includes('--all-opponents');
+if (allOpponents) argv.splice(argv.indexOf('--all-opponents'), 1);
 if (!argv.length) {
   console.error('Usage: node analysis/iterative_exclude.js <teams.json> [...] [--steps 5] [--data dataDir] [--json out.json]');
   process.exit(1);
@@ -47,7 +51,9 @@ function table(teams, excluded) {
 
 const fmt = rows => rows.map(r => ({ ...r, rate: pct(r.comebacks, r.lead_maps) }));
 const summary = [];
-const report = { min_total: MIN_TOTAL, min_diff: MIN_DIFF, steps, regions: [] };
+const report = { min_total: MIN_TOTAL, min_diff: MIN_DIFF, steps, partners_only: !allOpponents, regions: [] };
+const partners = new Set(argv.flatMap(f => JSON.parse(fs.readFileSync(f, 'utf8')).map(t => t.name)));
+const partnerMatch = m => partners.has(normalize(m.team1)) && partners.has(normalize(m.team2));
 
 for (const teamsFile of argv) {
   const region = path.basename(teamsFile, '.json');
@@ -56,7 +62,7 @@ for (const teamsFile of argv) {
     // Crawl window for the report: earliest cutoff, latest crawl time.
     if (d.since && (!report.since || d.since < report.since)) report.since = d.since;
     if (!report.crawled_at || d.crawled_at > report.crawled_at) report.crawled_at = report.until = d.crawled_at;
-    return { ...t, matches: d.matches };
+    return { ...t, matches: allOpponents ? d.matches : d.matches.filter(partnerMatch) };
   });
   const excluded = new Set();
   const regionReport = { region, steps: [] };

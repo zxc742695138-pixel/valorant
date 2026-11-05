@@ -30,6 +30,7 @@ const lines = [
   `- Dữ liệu: vlr.gg, ${day(report.since)} → ${day(report.crawled_at)}`,
   `- Map lật kèo: có thời điểm tổng round ≥ ${report.min_total} mà một đội dẫn ≥ ${report.min_diff} round, nhưng đội đó thua map`,
   `- Thuật toán: loại đội có nhiều map lật kèo nhất (bằng nhau thì xét tỉ lệ), bỏ các map có đội đó, tính lại; lặp ${report.steps} lần`,
+  ...(report.partners_only ? ['- Chỉ tính trận giữa hai đội nhượng quyền tier 1 (48 đội của 4 khu vực)'] : []),
   '',
   '| Khu vực | Top 5 | Tỉ lệ lật kèo ban đầu → sau khi loại | Thay đổi so với lần trước |',
   '|---|---|---|---|',

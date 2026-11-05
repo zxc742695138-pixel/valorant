@@ -6,6 +6,7 @@ Finds, per region (Americas, EMEA, China, Pacific), the 5 teams whose removal lo
 region's comeback-map rate the most. A comeback map is one where, with total rounds >= 17,
 a team led by >= 3 rounds and still lost. Teams are removed one at a time: remove the team
 with the most comeback maps (ties: higher rate), drop its matches, recompute, 5 times.
+Only matches between two tier-1 partner teams (the 48 teams in `crawler/teams/`) count.
 
 Refresh everything (crawl → validate → analyse → report):
 

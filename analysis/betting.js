@@ -13,19 +13,25 @@ const REGIONS = ['americas', 'emea', 'china', 'pacific'];
 // "MIBR.LOS (MIBR)" → "MIBR"
 const normalize = name => (name.match(/\(([^)]+)\)$/) || [null, name])[1].trim();
 
+const teamList = region => JSON.parse(fs.readFileSync(`crawler/teams/${region}.json`, 'utf8'));
+// The partner (franchise) teams of all regions.
+const PARTNERS = new Set(REGIONS.flatMap(r => teamList(r).map(t => t.name)));
+
 // A region's team names and its matches (de-duplicated by URL), with t1/t2 normalized.
-// `opponents` lists every team that appears in those matches, partner or not.
-function loadRegion(region, dataDir) {
-  const teamList = JSON.parse(fs.readFileSync(`crawler/teams/${region}.json`, 'utf8'));
+// Only matches between two partner teams are kept unless `allOpponents` is set.
+// `opponents` lists every team that appears in the kept matches.
+function loadRegion(region, dataDir, { allOpponents = false } = {}) {
+  const teams = teamList(region);
   const byUrl = new Map();
-  for (const t of teamList) {
+  for (const t of teams) {
     for (const m of JSON.parse(fs.readFileSync(path.join(dataDir, `${t.slug}.json`), 'utf8')).matches) {
-      byUrl.set(m.url, { ...m, day: m.date.slice(0, 10), t1: normalize(m.team1), t2: normalize(m.team2) });
+      const row = { ...m, day: m.date.slice(0, 10), t1: normalize(m.team1), t2: normalize(m.team2) };
+      if (allOpponents || (PARTNERS.has(row.t1) && PARTNERS.has(row.t2))) byUrl.set(m.url, row);
     }
   }
   const matches = [...byUrl.values()];
   const opponents = [...new Set(matches.flatMap(m => [m.t1, m.t2]))];
-  return { teams: teamList.map(t => t.name), opponents, matches };
+  return { teams: teams.map(t => t.name), opponents, matches };
 }
 
 // The leader at the first qualifying moment, and whether that leader won the map.
@@ -71,4 +77,4 @@ function settle(matches, excluded, odds) {
   return res;
 }
 
-module.exports = { REGIONS, normalize, loadRegion, firstLeadOutcome, blacklist, settle };
+module.exports = { REGIONS, PARTNERS, normalize, loadRegion, firstLeadOutcome, blacklist, settle };
