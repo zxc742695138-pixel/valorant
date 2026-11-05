@@ -754,10 +754,10 @@
       ],
       "baseline": {
         "runs": 5000,
-        "mean": 0.06420749902296342,
-        "p05": 0.03278688524590164,
-        "p95": 0.09195402298850575,
-        "p_value": 0.017
+        "mean": 0.06428088254909795,
+        "p05": 0.03225806451612903,
+        "p95": 0.09219858156028368,
+        "p_value": 0.0206
       },
       "previous": {
         "crawled_at": "2026-11-02T08:03:13.452Z",
@@ -765,17 +765,13 @@
           "T1",
           "Nongshim RedForce",
           "Global Esports",
-          "ZETA DIVISION",
+          "Paper Rex",
           "Gen.G"
         ],
         "start_rate": 0.06349206349206349,
-        "final_rate": 0.014492753623188406,
-        "added": [
-          "Paper Rex"
-        ],
-        "dropped": [
-          "ZETA DIVISION"
-        ]
+        "final_rate": 0.024390243902439025,
+        "added": [],
+        "dropped": []
       }
     },
     {
@@ -1527,28 +1523,24 @@
       ],
       "baseline": {
         "runs": 5000,
-        "mean": 0.08214077135271723,
-        "p05": 0.0379746835443038,
-        "p95": 0.125,
-        "p_value": 0.028
+        "mean": 0.08302768543271455,
+        "p05": 0.039603960396039604,
+        "p95": 0.1262135922330097,
+        "p_value": 0.022
       },
       "previous": {
         "crawled_at": "2026-11-02T08:03:13.452Z",
         "top5": [
           "NRG",
+          "LOUD",
           "ENVY",
           "Sentinels",
-          "100 Thieves",
-          "Evil Geniuses"
+          "100 Thieves"
         ],
         "start_rate": 0.0912280701754386,
-        "final_rate": 0.0196078431372549,
-        "added": [
-          "LOUD"
-        ],
-        "dropped": [
-          "Evil Geniuses"
-        ]
+        "final_rate": 0.031914893617021274,
+        "added": [],
+        "dropped": []
       }
     },
     {
@@ -2300,30 +2292,24 @@
       ],
       "baseline": {
         "runs": 5000,
-        "mean": 0.09631565337512511,
+        "mean": 0.09632805384385051,
         "p05": 0.07142857142857142,
-        "p95": 0.12121212121212122,
-        "p_value": 0.0132
+        "p95": 0.12087912087912088,
+        "p_value": 0.0134
       },
       "previous": {
         "crawled_at": "2026-11-02T08:03:13.452Z",
         "top5": [
-          "EDward Gaming",
           "All Gamers",
+          "EDward Gaming",
           "JD Gaming",
-          "Bilibili Gaming",
-          "Nova Esports"
-        ],
-        "start_rate": 0.0912863070539419,
-        "final_rate": 0.04411764705882353,
-        "added": [
           "Xi Lai Gaming",
           "TYLOO"
         ],
-        "dropped": [
-          "Bilibili Gaming",
-          "Nova Esports"
-        ]
+        "start_rate": 0.0912863070539419,
+        "final_rate": 0.05555555555555555,
+        "added": [],
+        "dropped": []
       }
     }
   ],

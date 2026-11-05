@@ -9,9 +9,9 @@ Top 5 đội mỗi khu vực gây lật kèo nhiều nhất, theo thứ tự lo�
 
 | Khu vực | Top 5 | Tỉ lệ lật kèo ban đầu → sau khi loại | Thay đổi so với lần trước |
 |---|---|---|---|
-| Pacific | T1, Nongshim RedForce, Global Esports, Paper Rex, Gen.G | 6.3% → 2.4% | vào: Paper Rex; rời: ZETA DIVISION |
-| Americas | NRG, LOUD, ENVY, Sentinels, 100 Thieves | 9.1% → 3.2% | vào: LOUD; rời: Evil Geniuses |
-| China | All Gamers, EDward Gaming, JD Gaming, Xi Lai Gaming, TYLOO | 9.1% → 5.6% | vào: Xi Lai Gaming, TYLOO; rời: Bilibili Gaming, Nova Esports |
+| Pacific | T1, Nongshim RedForce, Global Esports, Paper Rex, Gen.G | 6.3% → 2.4% | không đổi |
+| Americas | NRG, LOUD, ENVY, Sentinels, 100 Thieves | 9.1% → 3.2% | không đổi |
+| China | All Gamers, EDward Gaming, JD Gaming, Xi Lai Gaming, TYLOO | 9.1% → 5.6% | không đổi |
 
 **Cách dùng:** bỏ qua mọi map có bất kỳ đội nào trong cả 3 danh sách (kể cả trận quốc tế giữa các khu vực).
 
