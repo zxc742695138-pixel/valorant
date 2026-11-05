@@ -17,6 +17,9 @@ const dataDir = opt('--data', 'data-backtest');
 const from = opt('--from', '2026-05-01');
 const to = opt('--to', '2026-12-31');
 const windowDays = Number(opt('--window', 300));
+// --last-matches M: judge each team on its own M most recent matches before the day
+// (any age) instead of every match in the last --window days.
+const lastMatches = opt('--last-matches') ? Number(opt('--last-matches')) : null;
 const odds = Number(opt('--odds', 1.1));
 const NET = Number(opt('--net', 2));
 const VOLATILE = Number(opt('--volatile', 6));
@@ -78,8 +81,26 @@ function groupsFrom(list) {
 const test = events.filter(e => e.day >= from && e.day <= to);
 const fixedGroup = fixed ? groupsFrom(test) : null;
 const cache = new Map();
+// Per team, its events newest first (for --last-matches).
+const teamEvents = new Map();
+for (const e of [...events].reverse()) {
+  for (const t of [e.t1, e.t2]) (teamEvents.get(t) || teamEvents.set(t, []).get(t)).push(e);
+}
 const groupAt = day => {
   if (fixedGroup) return fixedGroup;
+  if (lastMatches) {
+    if (!cache.has(day)) {
+      const memo = new Map();
+      cache.set(day, t => {
+        if (!memo.has(t)) {
+          const own = (teamEvents.get(t) || []).filter(e => e.day < day).slice(0, lastMatches);
+          memo.set(t, groupsFrom(own)(t));
+        }
+        return memo.get(t);
+      });
+    }
+    return cache.get(day);
+  }
   if (!cache.has(day)) {
     const start = new Date(Date.parse(day) - windowDays * 864e5).toISOString().slice(0, 10);
     cache.set(day, groupsFrom(events.filter(e => e.day >= start && e.day < day)));
@@ -122,7 +143,7 @@ const fmt = (k, a, all) => ({
   'giữ lại': `${(100 * a.n / all).toFixed(0)}%`,
 });
 const all = acc['Cược tất cả'].n;
-console.log(`Kèo ${from} → ${to}; nhóm ${fixed ? 'tính một lần trên chính giai đoạn này (nhìn lại)' : `tính lại mỗi ngày từ ${windowDays} ngày trước đó`}; tỉ lệ ăn ${odds}\n`);
+console.log(`Kèo ${from} → ${to}; nhóm ${fixed ? 'tính một lần trên chính giai đoạn này (nhìn lại)' : (lastMatches ? `tính lại mỗi ngày từ ${lastMatches} trận gần nhất của từng đội` : `tính lại mỗi ngày từ ${windowDays} ngày trước đó`)}; tỉ lệ ăn ${odds}\n`);
 console.table(Object.entries(acc).map(([k, a]) => fmt(k, a, all)));
 console.log('Theo cặp nhóm của hai đội:');
 console.table(Object.entries(pairCount).sort((a, b) => b[1].n - a[1].n).map(([k, a]) => fmt(k, a, all)));
