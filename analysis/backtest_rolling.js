@@ -9,7 +9,7 @@
 //
 // Usage:
 //   node analysis/backtest_rolling.js --data data-history --marks 2026-07-15,2026-08-01,...,2026-11-01
-//     [--train-days 180] [--odds 1.1] [--steps 5] [--half-life 60] [--all-opponents] [--candidates all] [--lists]
+//     [--train-days 180] [--odds 1.1] [--steps 5] [--half-life 60] [--regions americas,china] [--all-opponents] [--candidates all] [--lists]
 
 const { REGIONS, loadRegion, blacklist, settle } = require('./betting');
 
@@ -35,7 +35,9 @@ if (marks.length < 2) {
 const minusDays = (day, n) => new Date(Date.parse(day) - n * 864e5).toISOString().slice(0, 10);
 const ddmm = d => `${d.slice(8, 10)}/${d.slice(5, 7)}`;
 const pct = (n, d) => (d ? `${((100 * n) / d).toFixed(1)}%` : '—');
-const regions = Object.fromEntries(REGIONS.map(r => [r, loadRegion(r, dataDir, { allOpponents })]));
+// --regions americas,china: only bet on (and blacklist for) these regions.
+const ACTIVE = opt('--regions') ? opt('--regions').split(',') : REGIONS;
+const regions = Object.fromEntries(ACTIVE.map(r => [r, loadRegion(r, dataDir, { allOpponents })]));
 const earliest = Object.values(regions).flatMap(r => r.matches.map(m => m.day)).sort()[0];
 
 const rows = [];
@@ -45,7 +47,7 @@ const sum = { f: { bets: 0, wins: 0, profit: 0 }, a: { bets: 0, wins: 0, profit:
 const add = (acc, r) => { acc.bets += r.bets; acc.wins += r.wins; acc.profit += r.profit; };
 // Per region, own matches filtered by its own blacklist only.
 const blank = () => ({ bets: 0, wins: 0, profit: 0 });
-const byRegion = Object.fromEntries(REGIONS.map(r => [r, { a: blank(), f: blank(), in: blank(), lists: [] }]));
+const byRegion = Object.fromEntries(ACTIVE.map(r => [r, { a: blank(), f: blank(), in: blank(), lists: [] }]));
 
 for (let i = 0; i < marks.length - 1; i++) {
   const [start, end] = [marks[i], marks[i + 1]];
@@ -53,7 +55,7 @@ for (let i = 0; i < marks.length - 1; i++) {
   // A match can belong to two regions (international events): settle it once.
   const testAll = new Map(), testKept = new Map(), trainKept = new Map();
   const lists = {};
-  for (const r of REGIONS) {
+  for (const r of ACTIVE) {
     const { teams, opponents, matches } = regions[r];
     const train = matches.filter(m => m.day >= trainFrom && m.day < start);
     const ex = blacklist(allCandidates ? opponents : teams, train, steps, { halfLife, asOf: start });
@@ -98,7 +100,7 @@ line('In-sample (để tham khảo)', sum.in);
 
 const cell = s => `${s.bets} · lật ${pct(s.bets - s.wins, s.bets)} · ${s.profit >= 0 ? '+' : ''}${s.profit.toFixed(1)}`;
 console.log('\nTheo khu vực (cộng dồn các khoảng; mỗi khu vực chỉ lọc bằng blacklist của chính nó):');
-console.table(REGIONS.map(r => {
+console.table(ACTIVE.map(r => {
   const R = byRegion[r];
   const ra = (R.a.bets - R.a.wins) / R.a.bets, rf = (R.f.bets - R.f.wins) / R.f.bets;
   return {
@@ -106,7 +108,7 @@ console.table(REGIONS.map(r => {
     'lọc giảm lật kèo?': rf < ra ? `có (−${(100 * (ra - rf)).toFixed(1)} điểm)` : `không (+${(100 * (rf - ra)).toFixed(1)} điểm)`,
   };
 }));
-if (argv.includes('--lists')) for (const r of REGIONS) console.log(`\n${r}:\n  ${byRegion[r].lists.join('\n  ')}`);
+if (argv.includes('--lists')) for (const r of ACTIVE) console.log(`\n${r}:\n  ${byRegion[r].lists.join('\n  ')}`);
 
 // Baseline: in each period keep the same number of matches as the filter, chosen at random.
 const RUNS = 5000;
