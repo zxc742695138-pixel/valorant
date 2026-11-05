@@ -32,6 +32,8 @@ const regions = Object.fromEntries(REGIONS.map(r => [r, loadRegion(r, dataDir)])
 const earliest = Object.values(regions).flatMap(r => r.matches.map(m => m.day)).sort()[0];
 
 const rows = [];
+// Per period: all test matches and how many the filter kept, for the random baseline.
+const periods = [];
 const sum = { f: { bets: 0, wins: 0, profit: 0 }, a: { bets: 0, wins: 0, profit: 0 }, in: { bets: 0, wins: 0, profit: 0 } };
 const add = (acc, r) => { acc.bets += r.bets; acc.wins += r.wins; acc.profit += r.profit; };
 
@@ -57,6 +59,7 @@ for (let i = 0; i < marks.length - 1; i++) {
   const f = settle([...testKept.values()], allEx, odds);
   const inS = settle([...trainKept.values()], allEx, odds);
   add(sum.a, a); add(sum.f, f); add(sum.in, inS);
+  periods.push({ all: [...testAll.values()], kept: testKept.size });
   rows.push({
     'khoảng cược': `${ddmm(start)}→${ddmm(end)}`,
     'dữ liệu chọn': `${ddmm(trainFrom)}→${ddmm(minusDays(start, 1))}`,
@@ -76,3 +79,28 @@ console.log('Cộng dồn các khoảng:');
 line('Có lọc (thực tế)', sum.f);
 line('Không lọc', sum.a);
 line('In-sample (để tham khảo)', sum.in);
+
+// Baseline: in each period keep the same number of matches as the filter, chosen at random.
+const RUNS = 5000;
+const profits = [];
+for (let i = 0; i < RUNS; i++) {
+  let p = 0;
+  for (const { all, kept } of periods) {
+    const pick = all.slice().sort(() => Math.random() - 0.5).slice(0, kept);
+    p += settle(pick, new Set(), odds).profit;
+  }
+  profits.push(p);
+}
+profits.sort((x, y) => x - y);
+const mean = profits.reduce((s, x) => s + x, 0) / RUNS;
+const atLeast = profits.filter(x => x >= sum.f.profit).length / RUNS;
+console.log(`\nSo với bỏ ngẫu nhiên cùng số trận (${RUNS} lần): lãi trung bình ${mean >= 0 ? '+' : ''}${mean.toFixed(1)} unit, `
+  + `khoảng 90% ${profits[Math.floor(RUNS * 0.05)].toFixed(1)} → ${profits[Math.floor(RUNS * 0.95)].toFixed(1)}; `
+  + `${(100 * atLeast).toFixed(1)}% số lần chọn ngẫu nhiên lãi bằng hoặc hơn có lọc.`);
+
+// Spread of the filtered result itself: SD per bet for a win/lose bet at this win rate.
+const p = sum.f.wins / sum.f.bets;
+const sd = Math.sqrt(p * (1 - p)) * odds;
+const se = sd / Math.sqrt(sum.f.bets);
+const perBet = sum.f.profit / sum.f.bets;
+console.log(`Lãi mỗi cược khi có lọc: ${(100 * perBet).toFixed(1)}%, khoảng tin cậy 95% ≈ ${(100 * (perBet - 1.96 * se)).toFixed(1)}% → ${(100 * (perBet + 1.96 * se)).toFixed(1)}%.`);
