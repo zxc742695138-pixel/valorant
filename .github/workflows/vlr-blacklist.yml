@@ -54,7 +54,11 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Weekly vlr-blacklist update $(date -u +%Y-%m-%d)"
-            git push
+            # Someone may have pushed while the pipeline ran: replay this commit on top.
+            for attempt in 1 2 3; do
+              git pull --rebase origin "$GITHUB_REF_NAME" && git push && break
+              sleep $((attempt * 5))
+            done
           fi
 
       - name: Publish release
