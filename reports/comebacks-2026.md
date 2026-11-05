@@ -1,8 +1,10 @@
-# Map lật kèo năm 2026
+# Map lật kèo 2026
 
-Định nghĩa: có thời điểm tổng round ≥ 17 mà một đội dẫn ≥ 3 round, nhưng đội đó thua map. Chỉ tính trận giữa hai đội nhượng quyền 2026. Dữ liệu vlr.gg, 01/01/2026 → 2026-10-25.
+Định nghĩa: trước khi map kết thúc, có thời điểm tổng round ≥ 17 mà một đội dẫn ≥ 3 round, nhưng đội đó thua map. Chỉ tính trận giữa hai đội nhượng quyền. Dữ liệu vlr.gg, 2026-01-01 → 2026-10-25.
 
-## Americas — 26 map lật kèo / 301 map có tình huống dẫn ≥ 3 (8.6%)
+**Tổng: 121 map lật kèo / 1281 map có tình huống dẫn ≥ 3 (9.4%).**
+
+## Americas — 26 map lật kèo / 259 map có tình huống dẫn ≥ 3 (10.0%)
 
 | Ngày | Map | Tỉ số | Đội bị lật (lúc dẫn) | Đội lật kèo | Giải |
 |---|---|---|---|---|---|
@@ -33,9 +35,7 @@
 | 06/09 | Ascent | 100 Thieves 14-12 LOUD | LOUD (7-10) | 100 Thieves | Americas Stage 2 |
 | 10/10 | Sunset | NRG 13-10 LOUD | LOUD (7-10) | NRG | Champions 2026 |
 
-Theo đội (bị lật / lật được): NRG 2/6, Sentinels 4/3, Evil Geniuses 5/1, ENVY 3/2, 100 Thieves 1/4, LOUD 3/2, Cloud9 1/3, LEVIATÁN 2/1, MIBR 1/2, G2 Esports 2/0, KRÜ Esports 1/1, FURIA 1/1
-
-## EMEA — 32 map lật kèo / 280 map có tình huống dẫn ≥ 3 (11.4%)
+## EMEA — 32 map lật kèo / 247 map có tình huống dẫn ≥ 3 (13.0%)
 
 | Ngày | Map | Tỉ số | Đội bị lật (lúc dẫn) | Đội lật kèo | Giải |
 |---|---|---|---|---|---|
@@ -72,9 +72,7 @@ Theo đội (bị lật / lật được): NRG 2/6, Sentinels 4/3, Evil Geniuses
 | 20/08 | Haven | Team Liquid 11-13 FUT Esports | Team Liquid (10-7) | FUT Esports | EMEA Stage 2 |
 | 03/10 | Sunset | Eternal Fire 11-13 PCIFIC Esports | Eternal Fire (11-6) | PCIFIC Esports | Monsters Reloaded 2026 |
 
-Theo đội (bị lật / lật được): FNATIC 5/3, Gentle Mates 3/4, Team Heretics 4/3, Team Liquid 3/4, GIANTX 4/2, FUT Esports 3/3, PCIFIC Esports 3/3, Team Vitality 2/4, Eternal Fire 3/1, Karmine Corp 1/2, BBL Esports 1/1, Natus Vincere 0/2
-
-## China — 32 map lật kèo / 376 map có tình huống dẫn ≥ 3 (8.5%)
+## China — 32 map lật kèo / 335 map có tình huống dẫn ≥ 3 (9.6%)
 
 | Ngày | Map | Tỉ số | Đội bị lật (lúc dẫn) | Đội lật kèo | Giải |
 |---|---|---|---|---|---|
@@ -111,9 +109,7 @@ Theo đội (bị lật / lật được): FNATIC 5/3, Gentle Mates 3/4, Team He
 | 20/08 | Split | TYLOO 14-12 All Gamers | All Gamers (6-11) | TYLOO | China Stage 2 |
 | 22/08 | Split | Bilibili Gaming 15-17 TYLOO | Bilibili Gaming (12-9) | TYLOO | China Stage 2 |
 
-Theo đội (bị lật / lật được): All Gamers 3/7, JD Gaming 3/4, Nova Esports 3/4, Dragon Ranger Gaming 5/1, Trace Esports 4/2, Bilibili Gaming 2/4, TYLOO 2/4, Xi Lai Gaming 5/1, Titan Esports Club 3/2, FunPlus Phoenix 1/1, EDward Gaming 1/1, Wolves Esports 0/1
-
-## Pacific — 16 map lật kèo / 305 map có tình huống dẫn ≥ 3 (5.2%)
+## Pacific — 16 map lật kèo / 276 map có tình huống dẫn ≥ 3 (5.8%)
 
 | Ngày | Map | Tỉ số | Đội bị lật (lúc dẫn) | Đội lật kèo | Giải |
 |---|---|---|---|---|---|
@@ -134,9 +130,7 @@ Theo đội (bị lật / lật được): All Gamers 3/7, JD Gaming 3/4, Nova E
 | 26/08 | Lotus | Global Esports 13-11 KIWOOM DRX | KIWOOM DRX (7-10) | Global Esports | Pacific Stage 2 |
 | 09/10 | Summit | T1 13-11 Paper Rex | Paper Rex (6-11) | T1 | Champions 2026 |
 
-Theo đội (bị lật / lật được): Nongshim RedForce 1/3, Paper Rex 3/1, T1 2/2, Global Esports 1/3, Gen.G 2/1, VARREL 0/3, Rex Regum Qeon 1/1, FULL SENSE 1/1, Team Secret 2/0, KIWOOM DRX 1/1, DetonatioN FocusMe 1/0, ZETA DIVISION 1/0
-
-## Quốc tế (giữa các khu vực) — 15 map lật kèo / 198 map có tình huống dẫn ≥ 3 (7.6%)
+## Quốc tế (giữa các khu vực) — 15 map lật kèo / 164 map có tình huống dẫn ≥ 3 (9.1%)
 
 | Ngày | Map | Tỉ số | Đội bị lật (lúc dẫn) | Đội lật kèo | Giải |
 |---|---|---|---|---|---|
@@ -155,6 +149,4 @@ Theo đội (bị lật / lật được): Nongshim RedForce 1/3, Paper Rex 3/1,
 | 02/10 | Lotus | T1 13-11 JD Gaming | JD Gaming (6-11) | T1 | Champions 2026 |
 | 07/10 | Lotus | NRG 13-11 T1 | T1 (7-10) | NRG | Champions 2026 |
 | 18/10 | Summit | LOUD 13-11 Team Vitality | Team Vitality (7-10) | LOUD | Champions 2026 |
-
-Theo đội (bị lật / lật được): NRG 1/4, T1 3/1, EDward Gaming 1/2, Nongshim RedForce 1/2, Team Liquid 1/1, BBL Esports 2/0, Xi Lai Gaming 2/0, Team Vitality 1/1, G2 Esports 0/1, Paper Rex 1/0, LEVIATÁN 0/1, Gentle Mates 1/0, 100 Thieves 0/1, JD Gaming 1/0, LOUD 0/1
 
