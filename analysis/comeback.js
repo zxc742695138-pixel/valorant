@@ -22,7 +22,8 @@ function analyzeMap(rounds) {
   // Teams (1 or 2) that held a qualifying lead at some point.
   const leaders = new Set();
   let leadAt = {};
-  for (const [a, b] of states) {
+  // The last state is the final score: the map is over, so it is not a lead anyone can lose.
+  for (const [a, b] of states.slice(0, -1)) {
     if (a + b < MIN_TOTAL || Math.abs(a - b) < MIN_DIFF) continue;
     const leader = a > b ? 1 : 2;
     if (!leaders.has(leader)) leadAt[leader] = `${a}-${b}`;

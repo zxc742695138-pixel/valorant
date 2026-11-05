@@ -38,10 +38,10 @@ for (const m of matches) {
     const states = mp.rounds.map(s => s.split('-').map(Number));
     const [f1, f2] = states[states.length - 1];
     let first = null;
-    for (const [x, y] of states) {
+    for (const [x, y] of states.slice(0, -1)) { // last state = final score, map over
       if (x + y >= MIN_TOTAL && Math.abs(x - y) >= MIN_DIFF) {
         const leader = x > y ? 1 : 2;
-        first = { leader, reversed: leader !== (f1 > f2 ? 1 : 2), size: Math.abs(x - y) };
+        first = { leader, reversed: leader !== (f1 > f2 ? 1 : 2), size: Math.abs(x - y), roundNo: x + y };
         break;
       }
     }
@@ -99,7 +99,7 @@ for (const e of test) {
     add('Cược tất cả', b);
     add(b.size === 3 ? 'Tất cả · dẫn 3' : 'Tất cả · dẫn ≥ 4', b);
     ledger.push({
-      day: e.day, match: `${e.t1} vs ${e.t2}`, groups: `${g1} / ${g2}`, size: b.size, lost: b.reversed,
+      day: e.day, match: `${e.t1} vs ${e.t2}`, groups: `${g1} / ${g2}`, size: b.size, roundNo: b.roundNo, lost: b.reversed,
       all: true, groups_only: keep, lead4: b.size >= 4, combined: b.size >= 4 || keep,
     });
     const pair = [g1, g2].sort().join(' vs ');
@@ -127,7 +127,8 @@ console.table(Object.entries(pairCount).sort((a, b) => b[1].n - a[1].n).map(([k,
 if (argv.includes('--ledger')) {
   const stake = Number(opt('--stake', 1e6));
   const label = `Chỉ ${wanted.join('/')} vs ${wanted.join('/')}`;
-  const STRATS = { all: 'Cược tất cả', groups_only: label, lead4: 'Chỉ dẫn ≥ 4', combined: 'Kết hợp (dẫn ≥ 4, hoặc dẫn 3 + nhóm)' };
+  // Rules that keep only bigger leads are not priced at the same odds, so they are not compared here.
+  const STRATS = { all: 'Cược tất cả', groups_only: label };
   const money = x => `${x < 0 ? '−' : x > 0 ? '+' : ''}${(Math.abs(x) / 1e6).toFixed(1)} tr`;
   const pnl = b => (b.lost ? -stake : stake * (odds - 1));
   const summary = {};
@@ -165,3 +166,4 @@ if (argv.includes('--ledger')) {
     if (b.lost) console.log(`  ${b.day}  ${b.match} (${b.groups}) · dẫn ${b.size} → lũy kế ${money(bal)}`);
   }
 }
+

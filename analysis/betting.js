@@ -47,7 +47,7 @@ function loadRegion(region, dataDir, { allOpponents = false, teamsDir = DEFAULT_
 function firstLeadOutcome(rounds) {
   const states = rounds.map(s => s.split('-').map(Number));
   const [f1, f2] = states[states.length - 1];
-  for (const [a, b] of states) {
+  for (const [a, b] of states.slice(0, -1)) { // last state = final score, map over
     if (a + b >= MIN_TOTAL && Math.abs(a - b) >= MIN_DIFF) return { won: (a > b) === (f1 > f2) };
   }
   return null;
