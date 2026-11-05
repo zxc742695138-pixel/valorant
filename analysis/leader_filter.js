@@ -66,7 +66,10 @@ while (i < matches.length) {
       if (!f) continue;
       const leader = f.leader === 1 ? m.t1 : m.t2;
       const inScope = regions.includes(teamRegion[m.t1]) || regions.includes(teamRegion[m.t2]);
-      if (day >= from && day <= to && inScope) bets.push({ day, leader, region: teamRegion[leader], reversed: f.reversed, size: f.size, ...pastRate(leader, day) });
+      if (day >= from && day <= to && inScope) {
+        bets.push({ day, leader, region: teamRegion[leader], reversed: f.reversed, size: f.size, ...pastRate(leader, day),
+          url: m.url, match: `${m.t1} vs ${m.t2}`, map: mp.map, score: mp.score });
+      }
     }
   }
   for (const m of today) {
@@ -116,3 +119,19 @@ for (const [label, cond] of [['dẫn 3', b => b.size === 3], ['dẫn ≥ 4', b =
   bySize.push(fmt(`${label} · đội dẫn ≤ 7%`, summarize(part.filter(b => b.rate <= 0.07)), part.length));
 }
 console.table(bySize);
+
+// --examples TH: matches where the rule skipped one map (leader's rate > TH) and bet another.
+if (argv.includes('--examples')) {
+  const th = Number(opt('--examples'));
+  const byMatch = new Map();
+  for (const b of bets) (byMatch.get(b.url) || byMatch.set(b.url, []).get(b.url)).push(b);
+  const mixed = [...byMatch.values()].filter(list => list.some(b => b.rate > th) && list.some(b => b.rate <= th)
+    && new Set(list.map(b => b.leader)).size > 1).slice(-5);
+  console.log(`\nVí dụ (ngưỡng ${(th * 100).toFixed(0)}%): trong cùng một trận, map có đội dễ bị lật dẫn thì bỏ, map có đội kia dẫn thì cược`);
+  for (const list of mixed) {
+    console.log(`  ${list[0].day} ${list[0].match}`);
+    for (const b of list) {
+      console.log(`    ${b.map.padEnd(8)} ${b.score.padEnd(6)} đội dẫn: ${b.leader} (đã bị lật ${b.k}/${b.n} lần dẫn trước đó → ${(b.rate * 100).toFixed(1)}%) → ${b.rate > th ? 'BỎ' : 'CƯỢC'}${b.rate > th ? '' : b.reversed ? ' · thua' : ' · thắng'}`);
+    }
+  }
+}
