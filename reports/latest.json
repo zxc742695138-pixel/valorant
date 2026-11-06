@@ -1,8 +1,8 @@
 {
   "kind": "groups",
-  "crawled_at": "2026-11-05T11:32:14.898Z",
-  "from": "2026-08-07",
-  "to": "2026-11-05",
+  "crawled_at": "2026-11-06T08:14:14.302Z",
+  "from": "2026-08-08",
+  "to": "2026-11-06",
   "last_match": "2026-10-25",
   "window_days": 90,
   "net": 1,
@@ -50,11 +50,11 @@
         {
           "team": "Gen.G",
           "group": "Trung bình",
-          "maps": 8,
-          "wins": 3,
-          "lead": 3,
+          "maps": 5,
+          "wins": 1,
+          "lead": 1,
           "blown": 0,
-          "trail": 4,
+          "trail": 3,
           "made": 0
         },
         {
@@ -80,9 +80,9 @@
         {
           "team": "DetonatioN FocusMe",
           "group": "Trung bình",
-          "maps": 6,
-          "wins": 4,
-          "lead": 2,
+          "maps": 4,
+          "wins": 2,
+          "lead": 0,
           "blown": 0,
           "trail": 2,
           "made": 0
@@ -100,21 +100,21 @@
         {
           "team": "Team Secret",
           "group": "Trung bình",
-          "maps": 4,
+          "maps": 2,
           "wins": 0,
           "lead": 0,
           "blown": 0,
-          "trail": 4,
+          "trail": 2,
           "made": 0
         },
         {
           "team": "FULL SENSE",
           "group": "Trung bình",
-          "maps": 8,
-          "wins": 3,
-          "lead": 3,
+          "maps": 5,
+          "wins": 2,
+          "lead": 2,
           "blown": 0,
-          "trail": 3,
+          "trail": 1,
           "made": 0
         },
         {
@@ -153,7 +153,12 @@
         "Nongshim RedForce",
         "Paper Rex",
         "KIWOOM DRX"
-      ]
+      ],
+      "previous": {
+        "crawled_at": "2026-11-05T11:32:14.898Z",
+        "added": [],
+        "removed": []
+      }
     },
     {
       "region": "americas",
@@ -171,11 +176,11 @@
         {
           "team": "100 Thieves",
           "group": "Mạnh",
-          "maps": 31,
+          "maps": 29,
           "wins": 20,
           "lead": 11,
           "blown": 0,
-          "trail": 9,
+          "trail": 8,
           "made": 1
         },
         {
@@ -191,8 +196,8 @@
         {
           "team": "LOUD",
           "group": "Không ổn định",
-          "maps": 41,
-          "wins": 27,
+          "maps": 39,
+          "wins": 25,
           "lead": 16,
           "blown": 2,
           "trail": 13,
@@ -241,9 +246,9 @@
         {
           "team": "Cloud9",
           "group": "Trung bình",
-          "maps": 5,
-          "wins": 3,
-          "lead": 2,
+          "maps": 3,
+          "wins": 1,
+          "lead": 1,
           "blown": 0,
           "trail": 2,
           "made": 0
@@ -271,7 +276,7 @@
         {
           "team": "G2 Esports",
           "group": "Yếu",
-          "maps": 33,
+          "maps": 31,
           "wins": 17,
           "lead": 13,
           "blown": 1,
@@ -294,7 +299,12 @@
         "ENVY",
         "LOUD",
         "G2 Esports"
-      ]
+      ],
+      "previous": {
+        "crawled_at": "2026-11-05T11:32:14.898Z",
+        "added": [],
+        "removed": []
+      }
     },
     {
       "region": "china",
@@ -322,31 +332,31 @@
         {
           "team": "Trace Esports",
           "group": "Trung bình",
-          "maps": 16,
-          "wins": 9,
-          "lead": 8,
+          "maps": 13,
+          "wins": 8,
+          "lead": 7,
           "blown": 1,
-          "trail": 6,
+          "trail": 5,
           "made": 1
         },
         {
           "team": "Titan Esports Club",
           "group": "Trung bình",
-          "maps": 18,
-          "wins": 8,
-          "lead": 5,
+          "maps": 15,
+          "wins": 6,
+          "lead": 4,
           "blown": 1,
-          "trail": 8,
+          "trail": 7,
           "made": 1
         },
         {
           "team": "EDward Gaming",
           "group": "Trung bình",
-          "maps": 15,
-          "wins": 4,
-          "lead": 3,
+          "maps": 12,
+          "wins": 3,
+          "lead": 2,
           "blown": 0,
-          "trail": 10,
+          "trail": 9,
           "made": 0
         },
         {
@@ -372,11 +382,11 @@
         {
           "team": "All Gamers",
           "group": "Yếu",
-          "maps": 18,
-          "wins": 8,
-          "lead": 6,
+          "maps": 15,
+          "wins": 6,
+          "lead": 5,
           "blown": 2,
-          "trail": 8,
+          "trail": 7,
           "made": 1
         },
         {
@@ -435,7 +445,12 @@
         "Xi Lai Gaming",
         "Dragon Ranger Gaming",
         "JD Gaming"
-      ]
+      ],
+      "previous": {
+        "crawled_at": "2026-11-05T11:32:14.898Z",
+        "added": [],
+        "removed": []
+      }
     }
   ]
 }

@@ -1,0 +1,456 @@
+{
+  "kind": "groups",
+  "crawled_at": "2026-11-06T08:14:14.302Z",
+  "from": "2026-08-08",
+  "to": "2026-11-06",
+  "last_match": "2026-10-25",
+  "window_days": 90,
+  "net": 1,
+  "volatile": 3,
+  "min_maps": 0,
+  "min_total": 17,
+  "min_diff": 3,
+  "notes": [
+    "43 map của Esports World Cup 2026: China Qualifier (12/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính."
+  ],
+  "regions": [
+    {
+      "region": "pacific",
+      "teams": [
+        {
+          "team": "T1",
+          "group": "Mạnh",
+          "maps": 33,
+          "wins": 20,
+          "lead": 16,
+          "blown": 1,
+          "trail": 13,
+          "made": 2
+        },
+        {
+          "team": "Global Esports",
+          "group": "Mạnh",
+          "maps": 26,
+          "wins": 16,
+          "lead": 14,
+          "blown": 0,
+          "trail": 8,
+          "made": 1
+        },
+        {
+          "team": "Nongshim RedForce",
+          "group": "Mạnh",
+          "maps": 33,
+          "wins": 19,
+          "lead": 14,
+          "blown": 0,
+          "trail": 12,
+          "made": 1
+        },
+        {
+          "team": "Gen.G",
+          "group": "Trung bình",
+          "maps": 5,
+          "wins": 1,
+          "lead": 1,
+          "blown": 0,
+          "trail": 3,
+          "made": 0
+        },
+        {
+          "team": "VARREL",
+          "group": "Trung bình",
+          "maps": 9,
+          "wins": 4,
+          "lead": 3,
+          "blown": 0,
+          "trail": 5,
+          "made": 0
+        },
+        {
+          "team": "ZETA DIVISION",
+          "group": "Trung bình",
+          "maps": 7,
+          "wins": 1,
+          "lead": 1,
+          "blown": 0,
+          "trail": 3,
+          "made": 0
+        },
+        {
+          "team": "DetonatioN FocusMe",
+          "group": "Trung bình",
+          "maps": 4,
+          "wins": 2,
+          "lead": 0,
+          "blown": 0,
+          "trail": 2,
+          "made": 0
+        },
+        {
+          "team": "Rex Regum Qeon",
+          "group": "Trung bình",
+          "maps": 6,
+          "wins": 3,
+          "lead": 2,
+          "blown": 0,
+          "trail": 3,
+          "made": 0
+        },
+        {
+          "team": "Team Secret",
+          "group": "Trung bình",
+          "maps": 2,
+          "wins": 0,
+          "lead": 0,
+          "blown": 0,
+          "trail": 2,
+          "made": 0
+        },
+        {
+          "team": "FULL SENSE",
+          "group": "Trung bình",
+          "maps": 5,
+          "wins": 2,
+          "lead": 2,
+          "blown": 0,
+          "trail": 1,
+          "made": 0
+        },
+        {
+          "team": "Paper Rex",
+          "group": "Yếu",
+          "maps": 18,
+          "wins": 6,
+          "lead": 6,
+          "blown": 1,
+          "trail": 9,
+          "made": 0
+        },
+        {
+          "team": "KIWOOM DRX",
+          "group": "Yếu",
+          "maps": 10,
+          "wins": 3,
+          "lead": 3,
+          "blown": 1,
+          "trail": 6,
+          "made": 0
+        }
+      ],
+      "whitelist": [
+        "Gen.G",
+        "VARREL",
+        "ZETA DIVISION",
+        "DetonatioN FocusMe",
+        "Rex Regum Qeon",
+        "Team Secret",
+        "FULL SENSE"
+      ],
+      "blacklist": [
+        "T1",
+        "Global Esports",
+        "Nongshim RedForce",
+        "Paper Rex",
+        "KIWOOM DRX"
+      ],
+      "previous": {
+        "crawled_at": "2026-11-05T11:32:14.898Z",
+        "added": [],
+        "removed": []
+      }
+    },
+    {
+      "region": "americas",
+      "teams": [
+        {
+          "team": "NRG",
+          "group": "Mạnh",
+          "maps": 24,
+          "wins": 13,
+          "lead": 11,
+          "blown": 1,
+          "trail": 6,
+          "made": 2
+        },
+        {
+          "team": "100 Thieves",
+          "group": "Mạnh",
+          "maps": 29,
+          "wins": 20,
+          "lead": 11,
+          "blown": 0,
+          "trail": 8,
+          "made": 1
+        },
+        {
+          "team": "ENVY",
+          "group": "Mạnh",
+          "maps": 8,
+          "wins": 4,
+          "lead": 2,
+          "blown": 0,
+          "trail": 5,
+          "made": 1
+        },
+        {
+          "team": "LOUD",
+          "group": "Không ổn định",
+          "maps": 39,
+          "wins": 25,
+          "lead": 16,
+          "blown": 2,
+          "trail": 13,
+          "made": 2
+        },
+        {
+          "team": "LEVIATÁN",
+          "group": "Trung bình",
+          "maps": 9,
+          "wins": 5,
+          "lead": 4,
+          "blown": 0,
+          "trail": 3,
+          "made": 0
+        },
+        {
+          "team": "MIBR",
+          "group": "Trung bình",
+          "maps": 14,
+          "wins": 6,
+          "lead": 5,
+          "blown": 0,
+          "trail": 5,
+          "made": 0
+        },
+        {
+          "team": "Evil Geniuses",
+          "group": "Trung bình",
+          "maps": 14,
+          "wins": 6,
+          "lead": 4,
+          "blown": 0,
+          "trail": 6,
+          "made": 0
+        },
+        {
+          "team": "Sentinels",
+          "group": "Trung bình",
+          "maps": 7,
+          "wins": 1,
+          "lead": 1,
+          "blown": 0,
+          "trail": 5,
+          "made": 0
+        },
+        {
+          "team": "Cloud9",
+          "group": "Trung bình",
+          "maps": 3,
+          "wins": 1,
+          "lead": 1,
+          "blown": 0,
+          "trail": 2,
+          "made": 0
+        },
+        {
+          "team": "FURIA",
+          "group": "Trung bình",
+          "maps": 11,
+          "wins": 5,
+          "lead": 5,
+          "blown": 0,
+          "trail": 3,
+          "made": 0
+        },
+        {
+          "team": "KRÜ Esports",
+          "group": "Trung bình",
+          "maps": 10,
+          "wins": 5,
+          "lead": 5,
+          "blown": 0,
+          "trail": 4,
+          "made": 0
+        },
+        {
+          "team": "G2 Esports",
+          "group": "Yếu",
+          "maps": 31,
+          "wins": 17,
+          "lead": 13,
+          "blown": 1,
+          "trail": 10,
+          "made": 0
+        }
+      ],
+      "whitelist": [
+        "LEVIATÁN",
+        "MIBR",
+        "Evil Geniuses",
+        "Sentinels",
+        "Cloud9",
+        "FURIA",
+        "KRÜ Esports"
+      ],
+      "blacklist": [
+        "NRG",
+        "100 Thieves",
+        "ENVY",
+        "LOUD",
+        "G2 Esports"
+      ],
+      "previous": {
+        "crawled_at": "2026-11-05T11:32:14.898Z",
+        "added": [],
+        "removed": []
+      }
+    },
+    {
+      "region": "china",
+      "teams": [
+        {
+          "team": "TYLOO",
+          "group": "Mạnh",
+          "maps": 24,
+          "wins": 15,
+          "lead": 10,
+          "blown": 0,
+          "trail": 7,
+          "made": 2
+        },
+        {
+          "team": "Nova Esports",
+          "group": "Mạnh",
+          "maps": 17,
+          "wins": 6,
+          "lead": 4,
+          "blown": 0,
+          "trail": 9,
+          "made": 1
+        },
+        {
+          "team": "Trace Esports",
+          "group": "Trung bình",
+          "maps": 13,
+          "wins": 8,
+          "lead": 7,
+          "blown": 1,
+          "trail": 5,
+          "made": 1
+        },
+        {
+          "team": "Titan Esports Club",
+          "group": "Trung bình",
+          "maps": 15,
+          "wins": 6,
+          "lead": 4,
+          "blown": 1,
+          "trail": 7,
+          "made": 1
+        },
+        {
+          "team": "EDward Gaming",
+          "group": "Trung bình",
+          "maps": 12,
+          "wins": 3,
+          "lead": 2,
+          "blown": 0,
+          "trail": 9,
+          "made": 0
+        },
+        {
+          "team": "FunPlus Phoenix",
+          "group": "Trung bình",
+          "maps": 7,
+          "wins": 3,
+          "lead": 3,
+          "blown": 0,
+          "trail": 2,
+          "made": 0
+        },
+        {
+          "team": "Wolves Esports",
+          "group": "Trung bình",
+          "maps": 3,
+          "wins": 1,
+          "lead": 1,
+          "blown": 0,
+          "trail": 2,
+          "made": 0
+        },
+        {
+          "team": "All Gamers",
+          "group": "Yếu",
+          "maps": 15,
+          "wins": 6,
+          "lead": 5,
+          "blown": 2,
+          "trail": 7,
+          "made": 1
+        },
+        {
+          "team": "Bilibili Gaming",
+          "group": "Yếu",
+          "maps": 13,
+          "wins": 6,
+          "lead": 6,
+          "blown": 1,
+          "trail": 6,
+          "made": 0
+        },
+        {
+          "team": "Xi Lai Gaming",
+          "group": "Yếu",
+          "maps": 15,
+          "wins": 4,
+          "lead": 5,
+          "blown": 1,
+          "trail": 5,
+          "made": 0
+        },
+        {
+          "team": "Dragon Ranger Gaming",
+          "group": "Yếu",
+          "maps": 14,
+          "wins": 9,
+          "lead": 6,
+          "blown": 1,
+          "trail": 3,
+          "made": 0
+        },
+        {
+          "team": "JD Gaming",
+          "group": "Yếu",
+          "maps": 24,
+          "wins": 12,
+          "lead": 11,
+          "blown": 1,
+          "trail": 7,
+          "made": 0
+        }
+      ],
+      "whitelist": [
+        "Trace Esports",
+        "Titan Esports Club",
+        "EDward Gaming",
+        "FunPlus Phoenix",
+        "Wolves Esports"
+      ],
+      "blacklist": [
+        "TYLOO",
+        "Nova Esports",
+        "All Gamers",
+        "Bilibili Gaming",
+        "Xi Lai Gaming",
+        "Dragon Ranger Gaming",
+        "JD Gaming"
+      ],
+      "previous": {
+        "crawled_at": "2026-11-05T11:32:14.898Z",
+        "added": [],
+        "removed": []
+      }
+    }
+  ]
+}
