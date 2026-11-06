@@ -23,6 +23,8 @@ const lastMatches = opt('--last-matches') ? Number(opt('--last-matches')) : null
 // --season: groups use every match since the start of the current season (1 January
 // of the day's year) instead of the last --window days; the season start resets them.
 const seasonMode = argv.includes('--season');
+// --events REGEX: only bet on maps of events whose name matches (groups still use every event).
+const eventFilter = opt('--events') ? new RegExp(opt('--events')) : null;
 const odds = Number(opt('--odds', 1.1));
 const NET = Number(opt('--net', 2));
 const VOLATILE = Number(opt('--volatile', 6));
@@ -57,7 +59,7 @@ for (const m of matches) {
     }
     maps.push({ leaders: a.leaders, blownBy: a.blownBy, first });
   }
-  events.push({ day: m.day, t1: m.t1, t2: m.t2, maps });
+  events.push({ day: m.day, t1: m.t1, t2: m.t2, event: m.event, maps });
 }
 
 function groupsFrom(list) {
@@ -117,6 +119,7 @@ const pairCount = {};
 // Every bet in date order with the decisions of the compared strategies (for --ledger).
 const ledger = [];
 for (const e of test) {
+  if (eventFilter && !eventFilter.test(e.event)) continue;
   if (!partners.has(e.t1) || !partners.has(e.t2)) continue;
   if (betRegions && !(betRegions.includes(teamRegion[e.t1]) && betRegions.includes(teamRegion[e.t2]))) continue;
   const g = groupAt(e.day);
