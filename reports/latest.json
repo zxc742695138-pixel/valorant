@@ -1,8 +1,8 @@
 {
   "kind": "groups",
-  "crawled_at": "2026-11-06T08:14:14.302Z",
-  "from": "2026-08-08",
-  "to": "2026-11-06",
+  "crawled_at": "2026-11-07T07:35:56.213Z",
+  "from": "2026-08-09",
+  "to": "2026-11-07",
   "last_match": "2026-10-25",
   "window_days": 90,
   "net": 1,
@@ -20,9 +20,9 @@
         {
           "team": "T1",
           "group": "Mạnh",
-          "maps": 33,
-          "wins": 20,
-          "lead": 16,
+          "maps": 31,
+          "wins": 18,
+          "lead": 14,
           "blown": 1,
           "trail": 13,
           "made": 2
@@ -30,9 +30,9 @@
         {
           "team": "Global Esports",
           "group": "Mạnh",
-          "maps": 26,
-          "wins": 16,
-          "lead": 14,
+          "maps": 24,
+          "wins": 14,
+          "lead": 12,
           "blown": 0,
           "trail": 8,
           "made": 1
@@ -70,11 +70,11 @@
         {
           "team": "ZETA DIVISION",
           "group": "Trung bình",
-          "maps": 7,
+          "maps": 5,
           "wins": 1,
           "lead": 1,
           "blown": 0,
-          "trail": 3,
+          "trail": 1,
           "made": 0
         },
         {
@@ -130,11 +130,11 @@
         {
           "team": "KIWOOM DRX",
           "group": "Yếu",
-          "maps": 10,
+          "maps": 8,
           "wins": 3,
           "lead": 3,
           "blown": 1,
-          "trail": 6,
+          "trail": 4,
           "made": 0
         }
       ],
@@ -155,7 +155,7 @@
         "KIWOOM DRX"
       ],
       "previous": {
-        "crawled_at": "2026-11-05T11:32:14.898Z",
+        "crawled_at": "2026-11-06T08:14:14.302Z",
         "added": [],
         "removed": []
       }
@@ -206,9 +206,9 @@
         {
           "team": "LEVIATÁN",
           "group": "Trung bình",
-          "maps": 9,
-          "wins": 5,
-          "lead": 4,
+          "maps": 7,
+          "wins": 3,
+          "lead": 2,
           "blown": 0,
           "trail": 3,
           "made": 0
@@ -216,11 +216,11 @@
         {
           "team": "MIBR",
           "group": "Trung bình",
-          "maps": 14,
+          "maps": 12,
           "wins": 6,
           "lead": 5,
           "blown": 0,
-          "trail": 5,
+          "trail": 3,
           "made": 0
         },
         {
@@ -236,11 +236,11 @@
         {
           "team": "Sentinels",
           "group": "Trung bình",
-          "maps": 7,
-          "wins": 1,
-          "lead": 1,
+          "maps": 4,
+          "wins": 0,
+          "lead": 0,
           "blown": 0,
-          "trail": 5,
+          "trail": 3,
           "made": 0
         },
         {
@@ -266,11 +266,11 @@
         {
           "team": "KRÜ Esports",
           "group": "Trung bình",
-          "maps": 10,
-          "wins": 5,
-          "lead": 5,
+          "maps": 7,
+          "wins": 3,
+          "lead": 3,
           "blown": 0,
-          "trail": 4,
+          "trail": 3,
           "made": 0
         },
         {
@@ -301,7 +301,7 @@
         "G2 Esports"
       ],
       "previous": {
-        "crawled_at": "2026-11-05T11:32:14.898Z",
+        "crawled_at": "2026-11-06T08:14:14.302Z",
         "added": [],
         "removed": []
       }
@@ -447,7 +447,7 @@
         "JD Gaming"
       ],
       "previous": {
-        "crawled_at": "2026-11-05T11:32:14.898Z",
+        "crawled_at": "2026-11-06T08:14:14.302Z",
         "added": [],
         "removed": []
       }

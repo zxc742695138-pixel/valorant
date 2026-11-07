@@ -1,6 +1,6 @@
 **Cách dùng:** chỉ cược map khi **cả hai đội đều nằm trong whitelist** (kể cả trận quốc tế giữa các khu vực). Cược đội đang dẫn ≥ 3 round khi tổng round ≥ 17.
 
-- Dữ liệu: vlr.gg, 90 ngày gần nhất (2026-08-08 → 2026-11-06), chỉ trận giữa hai đội nhượng quyền
+- Dữ liệu: vlr.gg, 90 ngày gần nhất (2026-08-09 → 2026-11-07), chỉ trận giữa hai đội nhượng quyền
 - Lật được: bị dẫn ≥ 3 round khi tổng round ≥ 17 nhưng thắng map. Bị lật: dẫn như vậy nhưng thua map
 - **Whitelist** = nhóm Trung bình: |lật được − bị lật| < 1 và lật được + bị lật < 3
 - **Blacklist** = các đội còn lại: Mạnh (lật được − bị lật ≥ +1), Yếu (≤ −1), Không ổn định (lật được + bị lật ≥ 3)

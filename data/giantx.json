@@ -1,7 +1,7 @@
 {
   "team_id": "14419",
-  "crawled_at": "2026-11-06T08:07:55.607Z",
-  "since": "2026-05-10T08:07:14.083Z",
+  "crawled_at": "2026-11-07T07:28:36.432Z",
+  "since": "2026-05-11T07:27:53.506Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/772432/giantx-vs-bbl-esports-monsters-reloaded-2026-main-event-sf",
@@ -815,71 +815,6 @@
             "6-12",
             "7-12",
             "7-13"
-          ]
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/673539/karmine-corp-vs-giantx-esports-world-cup-2026-emea-qualifier-stage-1-opening",
-      "date": "2026-05-11 11:00:00",
-      "event": "Esports World Cup 2026: EMEA Qualifier",
-      "stage": "Stage 1: Opening",
-      "team1": "Karmine Corp",
-      "team2": "GIANTX",
-      "team1_id": "8877",
-      "team2_id": "14419",
-      "match_result": "2-0",
-      "winner": "Karmine Corp",
-      "map_result": [
-        {
-          "map": "Pearl",
-          "score": "13-7",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "2-1",
-            "3-1",
-            "4-1",
-            "5-1",
-            "6-1",
-            "7-1",
-            "8-1",
-            "9-1",
-            "10-1",
-            "11-1",
-            "11-2",
-            "11-3",
-            "11-4",
-            "11-5",
-            "11-6",
-            "11-7",
-            "12-7",
-            "13-7"
-          ]
-        },
-        {
-          "map": "Haven",
-          "score": "13-4",
-          "rounds": [
-            "0-0",
-            "1-0",
-            "2-0",
-            "2-1",
-            "3-1",
-            "4-1",
-            "5-1",
-            "6-1",
-            "7-1",
-            "8-1",
-            "9-1",
-            "10-1",
-            "10-2",
-            "10-3",
-            "10-4",
-            "11-4",
-            "12-4",
-            "13-4"
           ]
         }
       ]
