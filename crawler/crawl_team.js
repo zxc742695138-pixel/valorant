@@ -3,7 +3,7 @@
 // including round-by-round score progression for every map.
 //
 // Usage:
-//   node crawler/crawl_team.js --team-id 624 [--limit 20] [--out data/paper-rex.json]
+//   node crawler/crawl_team.js --team-id 624 [--limit 20 | --days N] [--until YYYY-MM-DD] [--out data/paper-rex.json]
 
 const fs = require('fs');
 const path = require('path');
@@ -25,6 +25,8 @@ function parseArgs(argv) {
   // Both may be combined; with neither, default to the 20 most recent matches.
   args.limit = args.limit ? Number(args.limit) : (args.days ? Infinity : 20);
   args.since = args.days ? new Date(Date.now() - Number(args.days) * 86400000) : null;
+  // --until YYYY-MM-DD: skip matches played after this date (to fill an older range).
+  args.until = args.until ? new Date(`${args.until}T23:59:59Z`) : null;
   args.delay = Number(args.delay);
   return args;
 }
@@ -45,7 +47,7 @@ async function gotoWithRetry(page, url, tries = 3) {
 
 // Collect match URLs from the team's "completed" match list (newest first), following
 // pagination until `limit` matches are found or matches get older than `since`.
-async function getMatchLinks(page, teamId, limit, since) {
+async function getMatchLinks(page, teamId, limit, since, until) {
   const links = [];
   let reachedCutoff = false;
   for (let pageNo = 1; links.length < limit && !reachedCutoff; pageNo++) {
@@ -70,6 +72,7 @@ async function getMatchLinks(page, teamId, limit, since) {
         reachedCutoff = true;
         break;
       }
+      if (until && date && new Date(date.replace(/\//g, '-')) > until) continue;
       if (!links.includes(href)) links.push(href);
     }
   }
@@ -128,7 +131,7 @@ async function getMatch(page, url) {
   const browser = await chromium.launch();
   const page = await browser.newPage();
   try {
-    const links = await getMatchLinks(page, args.teamId, args.limit, args.since);
+    const links = await getMatchLinks(page, args.teamId, args.limit, args.since, args.until);
     console.error(`Found ${links.length} matches`);
     const matches = [];
     for (const [i, url] of links.entries()) {
