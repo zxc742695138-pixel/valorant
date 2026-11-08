@@ -27,8 +27,9 @@ description: Refresh the VCT team whitelist (per region, the 8 "Một chiều" t
   maps). The rest are "Giằng co"; teams below the minimum are "Chưa đủ dữ liệu" (not bet).
   Early in a season the whitelist is short or empty.
 - **How the user bets**: only on maps where BOTH teams are whitelisted (international
-  matches included), on the team leading by >= 3 rounds at total rounds >= 17, at odds of
-  about 1.12 or more. Backtest (walk-forward, `analysis/style_groups.js --top 8`): 2026 9.9%
+  matches included), on the team leading by exactly 3 rounds at total rounds >= 17, only when
+  the leader won the round that produced that lead (9-7 → 10-7 yes, 10-6 → 10-7 no), at odds
+  of about 1.12 or more (`style_groups.js --momentum`: 2026 8.9%, 2025 9.9% comebacks). Backtest (walk-forward, `analysis/style_groups.js --top 8`): 2026 9.9%
   comebacks vs 14.0% unfiltered, 2025 10.4% vs 17.5%.
 - The crawl window is extended automatically to reach 1 January (`pipeline/update.js`).
 

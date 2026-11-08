@@ -14,7 +14,7 @@
 //                test of whether the style predicts comebacks.
 //
 // Usage: node analysis/style_groups.js [--season 2026] [--gap 4] [--min-maps 10]
-//   [--regions americas,emea,china,pacific] [--data data-backtest] [--top 8] [--list]
+//   [--regions americas,emea,china,pacific] [--data data-backtest] [--top 8] [--list] [--momentum]
 
 const fs = require('fs');
 const { REGIONS, loadRegion } = require('./betting');
@@ -43,13 +43,16 @@ for (const m of matches) {
     if (!mp.rounds.length) continue;
     const st = mp.rounds.map(s => s.split('-').map(Number));
     const [f1, f2] = st[st.length - 1];
-    const first = st.slice(0, -1).find(([x, y]) => x + y >= MIN_TOTAL && Math.abs(x - y) >= MIN_DIFF);
+    const fi = st.slice(0, -1).findIndex(([x, y]) => x + y >= MIN_TOTAL && Math.abs(x - y) >= MIN_DIFF);
+    const first = fi >= 0 ? st[fi] : null;
+    // momentum: the round that produced this lead was won by the leader (9-7 → 10-7, not 10-6 → 10-7).
+    const momentum = first && fi > 0 ? (first[0] > first[1] ? first[0] > st[fi - 1][0] : first[1] > st[fi - 1][1]) : false;
     let lead = null;
     if (first) {
       const l1 = first[0] > first[1];
       // reversed: ANY team that held a qualifying lead lost (the comeback definition).
       const leaders = new Set(st.slice(0, -1).filter(([x, y]) => x + y >= MIN_TOTAL && Math.abs(x - y) >= MIN_DIFF).map(([x, y]) => (x > y ? 1 : 2)));
-      lead = { leader: l1 ? m.t1 : m.t2, size: Math.abs(first[0] - first[1]), lost: l1 !== (f1 > f2), comeback: [...leaders].some(s => s !== (f1 > f2 ? 1 : 2)) };
+      lead = { leader: l1 ? m.t1 : m.t2, size: Math.abs(first[0] - first[1]), momentum, lost: l1 !== (f1 > f2), comeback: [...leaders].some(s => s !== (f1 > f2 ? 1 : 2)) };
     }
     maps.push({ day: m.day, event: m.event, t1: m.t1, t2: m.t2, map: mp.map, score: `${f1}-${f2}`, at: first ? `${first[0]}-${first[1]}` : null, gap: Math.abs(f1 - f2), lead });
   }
@@ -128,8 +131,10 @@ console.table(PAIRS.map(p => {
 // (leads of 4+ are priced lower by the bookmaker, so they are not mixed in at the same odds)
 const stake = Number(opt('--stake', 1e6));
 const money = x => `${x < 0 ? '−' : x > 0 ? '+' : ''}${(Math.abs(x) / 1e6).toFixed(1)} tr`;
-const allLead3 = maps.filter(x => x.lead && inScope(x) && x.lead.size === 3);
-const wf3 = rowsWf.filter(r => r.lead.size === 3);
+// --momentum: only bet a 3-round lead when the leader won the round that produced it.
+const mom = argv.includes('--momentum');
+const allLead3 = maps.filter(x => x.lead && inScope(x) && x.lead.size === 3 && (!mom || x.lead.momentum));
+const wf3 = rowsWf.filter(r => r.lead.size === 3 && (!mom || r.lead.momentum));
 const STRATS = [
   ['Mọi kèo dẫn 3 (không lọc)', allLead3],
   ['Bỏ Giằng co vs Giằng co', wf3.filter(r => r.pair !== 'Giằng co vs Giằng co')],
@@ -148,7 +153,7 @@ function run(list, odds) {
   }
   return { n: list.length, l, bal, dd, months };
 }
-console.log(`\n[C] Cược ${(stake / 1e6).toFixed(1)} tr mỗi kèo dẫn đúng 3 (cuốn chiếu):`);
+console.log(`\n[C] Cược ${(stake / 1e6).toFixed(1)} tr mỗi kèo dẫn đúng 3${mom ? ', chỉ khi đội dẫn vừa thắng round tạo ra mức dẫn' : ''} (cuốn chiếu):`);
 console.table(STRATS.flatMap(([name, list]) => [1.10, 1.12, 1.15].map(o => {
   const s = run(list, o);
   return { 'cách cược': name, 'ăn': o, 'số kèo': s.n, 'thua': s.l, 'lật kèo': pct(s.l, s.n), 'lãi': money(s.bal), 'sụt giảm lớn nhất': money(-s.dd) };
