@@ -1,10 +1,10 @@
 {
   "days": 180,
   "concurrency": 4,
-  "groups": {
+  "close_blacklist": {
     "window_days": 90,
-    "net": 1,
-    "volatile": 3,
+    "top": 4,
+    "exclude_events": "Esports World Cup|Champions",
     "min_maps": 0
   },
   "bet_regions": [

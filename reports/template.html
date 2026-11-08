@@ -1,9 +1,9 @@
-<title>Whitelist đội VCT</title>
+<title>Blacklist đội VCT</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: one reading column; the bet rule and an all-region whitelist up top, then one table per region. */
+/* Layout: one reading column; the bet rule and an all-region blacklist up top, then one table per region. */
 :root {
   --bg: #f6f7f9;
   --surface: #ffffff;
@@ -53,7 +53,7 @@ p { margin: 0; max-width: 68ch; }
 header { display: flex; flex-direction: column; gap: 12px; }
 .lede { color: var(--ink-2); font-size: 16px; }
 
-.rule { background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--ok); border-radius: 6px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.rule { background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 6px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
 .rule b { font-family: var(--font-display); font-weight: 600; }
 .method { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
 .method div { display: flex; flex-direction: column; gap: 4px; border-top: 2px solid var(--ink); padding-top: 10px; }
@@ -62,7 +62,9 @@ header { display: flex; flex-direction: column; gap: 12px; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { font-size: 13px; padding: 3px 9px; border-radius: 999px; background: var(--muted-bg); color: var(--ink); white-space: nowrap; }
-.chip.ok { background: var(--ok-bg); color: var(--ok); font-weight: 600; }
+.chip.bad { background: var(--weak-bg); color: var(--weak); font-weight: 600; }
+.bar { display: inline-block; height: 8px; border-radius: 4px; background: var(--ink-3); vertical-align: middle; margin-right: 8px; }
+tr.black .bar { background: var(--weak); }
 .pill { font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
 .g-tb { background: var(--ok-bg); color: var(--ok); }
 .g-manh { background: var(--strong-bg); color: var(--strong); }
@@ -84,7 +86,7 @@ th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rul
 th { font-family: var(--font-data); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
 td.r, th.r { text-align: right; }
 td.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
-tr.white td:first-child { font-weight: 600; }
+tr.black td:first-child { font-weight: 600; color: var(--weak); }
 
 .notes { display: flex; flex-direction: column; gap: 10px; color: var(--ink-2); font-size: 14px; }
 .notes ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; max-width: 72ch; }
@@ -94,19 +96,19 @@ footer { color: var(--ink-3); font-size: 13px; }
 <main>
   <header>
     <div class="eyebrow" id="window"></div>
-    <h1>Whitelist đội VCT</h1>
-    <p class="lede">Các đội nhóm Trung bình (whitelist) và các đội còn lại (blacklist) ở từng khu vực, xếp theo lịch sử lật kèo gần đây.</p>
+    <h1>Blacklist đội VCT</h1>
+    <p class="lede">Mỗi khu vực, các đội có tỉ lệ map kết thúc 13-11 hoặc phải đá hiệp phụ cao nhất trong thời gian gần đây.</p>
   </header>
 
   <div class="rule">
     <b>Cách dùng</b>
-    <span>Chỉ cược map khi <strong>cả hai đội đều nằm trong whitelist</strong>, kể cả trận quốc tế giữa các khu vực. Cược đội đang dẫn ≥ 3 round khi tổng round ≥ 17.</span>
+    <span><strong>Không cược map có đội nằm trong blacklist.</strong> Cược đội đang dẫn ≥ 3 round khi tổng round ≥ 17.</span>
   </div>
 
   <div class="method" id="method"></div>
 
   <section style="display:flex;flex-direction:column;gap:12px">
-    <h2>Whitelist theo khu vực</h2>
+    <h2>Blacklist theo khu vực</h2>
     <div class="overview" id="overview"></div>
   </section>
 
@@ -124,27 +126,23 @@ footer { color: var(--ink-3); font-size: 13px; }
 const DATA = /*DATA*/null;
 
 const REGION_NAMES = { americas: 'Americas', emea: 'EMEA', china: 'China', pacific: 'Pacific' };
-const GROUP_CLASS = { 'Trung bình': 'g-tb', 'Mạnh': 'g-manh', 'Yếu': 'g-yeu', 'Không ổn định': 'g-kod', 'Chưa đủ dữ liệu': 'g-na' };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const fmtDate = iso => { const d = new Date(iso); return `${String(d.getUTCDate()).padStart(2, '0')}/${String(d.getUTCMonth() + 1).padStart(2, '0')}/${d.getUTCFullYear()}`; };
-const pct = (k, n) => (n ? `${Math.round(100 * k / n)}%` : '—');
-const signed = x => `${x > 0 ? '+' : ''}${x}`;
+const pct = x => `${Math.round(100 * x)}%`;
 
 document.getElementById('window').textContent = `${DATA.window_days} ngày · ${fmtDate(DATA.from)} – ${fmtDate(DATA.to)} · nguồn vlr.gg`;
 
 document.getElementById('method').innerHTML = [
-  ['Lật được / bị lật', `Lật được: bị dẫn ≥ ${DATA.min_diff} round khi tổng round ≥ ${DATA.min_total} nhưng thắng map. Bị lật: dẫn như vậy nhưng thua map.`],
-  ['Whitelist (Trung bình)', `|Lật được − bị lật| nhỏ hơn ${DATA.net}, và tổng lật được + bị lật dưới ${DATA.volatile}.`],
-  ['Blacklist', `Mạnh: chênh lệch ≥ +${DATA.net}. Yếu: ≤ −${DATA.net}. Không ổn định: tổng ≥ ${DATA.volatile}.${DATA.min_maps ? ` Chưa đủ dữ liệu: dưới ${DATA.min_maps} map có tình huống dẫn ≥ ${DATA.min_diff}.` : ''}`],
+  ['Chỉ số', 'Tỉ lệ map của đội kết thúc 13-11 (thắng hoặc thua) hoặc phải đá hiệp phụ, trên tổng số map đội đã đá trong kỳ.'],
+  ['Blacklist', `${DATA.top} đội có tỉ lệ cao nhất mỗi khu vực. Bằng tỉ lệ thì đội đá nhiều map hơn xếp trên.`],
+  ['Dữ liệu', `Chỉ trận giữa hai đội nhượng quyền.${DATA.exclude_events ? ` Không tính các giải: ${DATA.exclude_events.split('|').join(', ')}.` : ''}`],
 ].map(([b, s]) => `<div><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join('');
 
 document.getElementById('overview').innerHTML = DATA.regions.map(r => `
   <div class="card">
     <h3>${REGION_NAMES[r.region]}</h3>
-    <span class="label">Whitelist (${r.whitelist.length})</span>
-    <div class="chips">${r.whitelist.map(t => `<span class="chip ok">${esc(t)}</span>`).join('') || '<span class="chip">—</span>'}</div>
     <span class="label">Blacklist (${r.blacklist.length})</span>
-    <div class="chips">${r.blacklist.map(t => `<span class="chip">${esc(t)}</span>`).join('') || '<span class="chip">—</span>'}</div>
+    <div class="chips">${r.blacklist.map(t => `<span class="chip bad">${esc(t)}</span>`).join('') || '<span class="chip">—</span>'}</div>
   </div>`).join('');
 
 const regionsEl = document.getElementById('regions');
@@ -155,23 +153,22 @@ for (const r of DATA.regions) {
   const p = r.previous;
   const changes = p
     ? `<p class="changes">So với lần cập nhật ${fmtDate(p.crawled_at)}: ${p.added.length || p.removed.length
-        ? [p.added.length && `<b>vào whitelist:</b> ${p.added.map(esc).join(', ')}`, p.removed.length && `<b>rời whitelist:</b> ${p.removed.map(esc).join(', ')}`].filter(Boolean).join(' · ')
-        : 'whitelist không đổi'}.</p>`
+        ? [p.added.length && `<b>vào blacklist:</b> ${p.added.map(esc).join(', ')}`, p.removed.length && `<b>ra khỏi blacklist:</b> ${p.removed.map(esc).join(', ')}`].filter(Boolean).join(' · ')
+        : 'blacklist không đổi'}.</p>`
     : '';
+  const max = Math.max(0.01, ...r.teams.map(t => t.rate));
   sec.innerHTML = `
     <h2>${REGION_NAMES[r.region]}</h2>
     ${changes}
     <div class="table-wrap"><table>
-      <thead><tr><th>Đội</th><th>Nhóm</th><th class="r">Lật được</th><th class="r">Bị lật</th><th class="r">Chênh lệch</th><th class="r">Tổng dính</th><th class="r">Thắng map</th></tr></thead>
+      <thead><tr><th>Đội</th><th>Tỉ lệ 13-11 / OT</th><th class="r">13-11</th><th class="r">Hiệp phụ</th><th class="r">Số map</th></tr></thead>
       <tbody>${r.teams.map(t => `
-        <tr class="${t.group === 'Trung bình' ? 'white' : ''}">
+        <tr class="${t.blacklisted ? 'black' : ''}">
           <td>${esc(t.team)}</td>
-          <td><span class="pill ${GROUP_CLASS[t.group] || 'g-na'}">${esc(t.group)}</span></td>
-          <td class="r num">${t.made}/${t.trail}</td>
-          <td class="r num">${t.blown}/${t.lead}</td>
-          <td class="r num">${signed(t.made - t.blown)}</td>
-          <td class="r num">${t.made + t.blown}</td>
-          <td class="r num">${pct(t.wins, t.maps)}</td>
+          <td class="num"><span class="bar" style="width:${Math.round(80 * t.rate / max)}px"></span>${t.maps ? pct(t.rate) : '—'}</td>
+          <td class="r num">${t.c1311}</td>
+          <td class="r num">${t.ot}</td>
+          <td class="r num">${t.maps}</td>
         </tr>`).join('')}
       </tbody>
     </table></div>`;
@@ -179,10 +176,9 @@ for (const r of DATA.regions) {
 }
 
 const notes = [
-  'Nhóm được xếp lại mỗi ngày từ dữ liệu gần nhất, nên một đội có thể đổi nhóm khi có trận mới.',
+  'Danh sách được tính lại mỗi ngày từ dữ liệu gần nhất, nên một đội có thể vào hoặc ra blacklist khi có trận mới.',
   'Chỉ tính trận giữa hai đội nhượng quyền tier 1 (48 đội của 4 khu vực). Trận gặp đội Challengers không được tính.',
-  'Lật được a/b nghĩa là lật được a lần trong b lần bị dẫn ≥ 3; bị lật a/b nghĩa là bị lật a lần trong b lần dẫn ≥ 3.',
-  'Đội ít thi đấu trong kỳ có ít số liệu nên dễ rơi vào nhóm Trung bình.',
+  'Đội ít thi đấu trong kỳ có ít số liệu, tỉ lệ dễ dao động mạnh.',
   ...(DATA.notes || []),
 ];
 document.getElementById('notes').innerHTML = notes.map(n => `<li>${esc(n)}</li>`).join('');

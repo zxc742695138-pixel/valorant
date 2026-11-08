@@ -1,31 +1,25 @@
 # Valorant team analysis
 
-## Team whitelist / blacklist
+## Team blacklist (close finishes)
 
-Groups every partner team (12 per region, Americas, EMEA, China, Pacific) by its comeback
-history over the last 90 days. A qualifying lead is a lead of >= 3 rounds at total rounds
->= 17 (before the map ends); a team **made** a comeback when it trailed like that and won,
-and **blew** one when it led like that and lost. Only matches between two partner teams count.
+For every partner team (12 per region), the share of its maps in the last 90 days that
+finished **13-11** (either way) or went to **overtime**. Only matches between two partner
+teams count, and the events matching `exclude_events` (EWC and its qualifiers, Champions) are
+left out. In each region the **4 teams with the highest share form the blacklist**
+(ties: more maps first). Use: do not bet on maps involving a blacklisted team; bet the team
+leading by >= 3 rounds at total rounds >= 17. Lists are produced for Pacific, Americas and
+China (`bet_regions`); EMEA is crawled but not bet on. Settings live in
+`pipeline/config.json` (`close_blacklist`: `window_days`, `top`, `exclude_events`, `min_maps`).
 
-| Group | Rule |
-|---|---|
-| Mạnh | made − blown >= +1 |
-| Yếu | made − blown <= −1 |
-| Không ổn định | otherwise, made + blown >= 3 |
-| Trung bình | the rest |
-
-**Whitelist** = Trung bình teams, **blacklist** = the others. Use: only bet on maps where both
-teams are in the whitelist. Lists are produced for Pacific, Americas and China
-(`bet_regions`); EMEA is crawled but not bet on. Settings live in `pipeline/config.json`.
-
-Refresh everything (crawl → validate → group → report):
+Refresh everything (crawl → validate → rank → report):
 
 ```bash
 node pipeline/update.js
 ```
 
 Output: `reports/latest.html`, `reports/latest.json`, `reports/vlr-blacklist.json`, and a dated
-copy in `reports/archive/`. Each run is compared with the previous one (whitelist changes).
+copy in `reports/archive/`. Each run is compared with the previous one (blacklist changes).
+The ranking alone: `node analysis/close_blacklist.js --data data --to YYYY-MM-DD`.
 
 ### Daily release
 
@@ -34,7 +28,7 @@ demand from the Actions tab). When a list changes (order ignored) it publishes a
 `vlr-blacklist vN` with `vlr-blacklist.json`:
 
 ```json
-{ "Pacific": { "whitelist": ["Gen.G", "..."], "blacklist": ["T1", "..."] }, "Americas": { "...": [] } }
+{ "Pacific": { "blacklist": ["Gen.G", "..."] }, "Americas": { "blacklist": ["..."] }, "China": { "blacklist": ["..."] } }
 ```
 
 Newest file: `https://github.com/<owner>/<repo>/releases/latest/download/vlr-blacklist.json`.

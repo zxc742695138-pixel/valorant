@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-// One-shot refresh of the team whitelist/blacklist report:
+// One-shot refresh of the team blacklist report:
 //   1. (optional) rebuild team lists from the events in config.json
 //   2. crawl every team's matches in the last `days` days
 //   3. validate the data (maps without round data, score mismatches)
-//   4. group every partner team from the last `groups.window_days` days (see
-//      analysis/team_groups.js): whitelist = "Trung bình", blacklist = the rest
+//   4. per region, rank teams by their share of maps finishing 13-11 or in overtime in the
+//      last `close_blacklist.window_days` days (events matching `exclude_events` left out;
+//      see analysis/close_blacklist.js); the `top` highest form the blacklist
 //   5. compare with the previous run, build reports/latest.html, archive the JSON
 //
 // Usage:
@@ -13,8 +14,7 @@
 const fs = require('fs');
 const path = require('path');
 const { spawn, spawnSync } = require('child_process');
-const { computeGroups } = require('../analysis/team_groups');
-const { MIN_TOTAL, MIN_DIFF } = require('../analysis/comeback');
+const { computeCloseBlacklist } = require('../analysis/close_blacklist');
 
 const ROOT = path.join(__dirname, '..');
 const config = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json'), 'utf8'));
@@ -121,52 +121,47 @@ function crawlAll(teams) {
   log(`  ${seen.size} trận; ${Object.values(missingByEvent).reduce((s, e) => s + e.maps, 0)} map thiếu dữ liệu round; ${mismatches} map tỉ số không khớp`);
   if (mismatches) notes.push(`${mismatches} map có round cuối không khớp tỉ số map; cần kiểm tra lại crawler.`);
 
-  // 4. Team groups from the last `groups.window_days` days: whitelist = "Trung bình",
-  //    blacklist = every other partner team.
+  // 4. Close-finish blacklist from the last `close_blacklist.window_days` days.
   const latestJson = rel('reports/latest.json');
   const previous = fs.existsSync(latestJson) ? JSON.parse(fs.readFileSync(latestJson, 'utf8')) : null;
-  const G = config.groups;
+  const C = config.close_blacklist;
   let crawledAt = '';
   for (const t of allTeams) {
     const d = JSON.parse(fs.readFileSync(rel(`data/${t.slug}.json`), 'utf8'));
     if (d.crawled_at > crawledAt) crawledAt = d.crawled_at;
   }
   const to = crawledAt.slice(0, 10);
-  const from = new Date(Date.parse(to) - G.window_days * 864e5).toISOString().slice(0, 10);
-  log(`Xếp nhóm đội theo ${G.window_days} ngày gần nhất (${from} → ${to})`);
-  const res = computeGroups({ dataDir: rel('data'), teamsDir: rel('crawler/teams'), from, to, net: G.net, volatile: G.volatile, minMaps: G.min_maps || 0 });
+  const betRegions = config.bet_regions || regions;
+  const res = computeCloseBlacklist({
+    dataDir: rel('data'), teamsDir: rel('crawler/teams'), to, windowDays: C.window_days, top: C.top,
+    exclude: C.exclude_events || null, minMaps: C.min_maps || 0, regions: betRegions,
+  });
+  log(`Tính % map 13-11 hoặc hiệp phụ, ${C.window_days} ngày gần nhất (${res.from} → ${to}), bỏ giải: ${C.exclude_events || 'không'}`);
   const report = {
-    kind: 'groups', crawled_at: crawledAt, from, to, last_match: res.lastDay,
-    window_days: G.window_days, net: G.net, volatile: G.volatile, min_maps: G.min_maps || 0,
-    min_total: MIN_TOTAL, min_diff: MIN_DIFF, notes,
-    // Lists only for bet_regions; every crawled region still counts as partner teams.
-    regions: (config.bet_regions || regions).map(r => {
-      const teams = res.regions[r];
-      return {
-        region: r, teams,
-        whitelist: teams.filter(t => t.group === 'Trung bình').map(t => t.team),
-        blacklist: teams.filter(t => t.group !== 'Trung bình').map(t => t.team),
-      };
-    }),
+    kind: 'close', crawled_at: crawledAt, from: res.from, to, last_match: res.lastDay,
+    window_days: C.window_days, top: C.top, exclude_events: C.exclude_events || null, min_maps: C.min_maps || 0, notes,
+    regions: betRegions.map(r => ({ region: r, ...res.regions[r] })),
   };
+  const thin = report.regions.flatMap(r => r.teams.filter(t => t.maps < 5).map(t => `${t.team} (${t.maps})`));
+  if (thin.length) notes.push(`Đội có dưới 5 map trong kỳ (số liệu ít, tỉ lệ dễ dao động): ${thin.join(', ')}.`);
 
-  // 5. Compare with the previous run (whitelist changes)
+  // 5. Compare with the previous run (blacklist changes)
   console.log('\n================ KẾT QUẢ ================');
   for (const r of report.regions) {
-    const prev = previous?.kind === 'groups' ? previous.regions.find(p => p.region === r.region) : null;
+    const prev = previous?.kind === 'close' ? previous.regions.find(p => p.region === r.region) : null;
     if (prev) {
       r.previous = {
         crawled_at: previous.crawled_at,
-        added: r.whitelist.filter(t => !prev.whitelist.includes(t)),
-        removed: prev.whitelist.filter(t => !r.whitelist.includes(t)),
+        added: r.blacklist.filter(t => !prev.blacklist.includes(t)),
+        removed: prev.blacklist.filter(t => !r.blacklist.includes(t)),
       };
     }
     console.log(`\n${r.region.toUpperCase()}`);
-    console.log(`  Whitelist: ${r.whitelist.join(', ') || '—'}`);
-    console.log(`  Blacklist: ${r.teams.filter(t => t.group !== 'Trung bình').map(t => `${t.team} (${t.group})`).join(', ') || '—'}`);
+    console.log(`  Blacklist: ${r.teams.filter(t => t.blacklisted).map(t => `${t.team} ${(100 * t.rate).toFixed(0)}% (${t.close}/${t.maps})`).join(', ') || '—'}`);
+    if (r.tied.length) console.log(`  Bằng tỉ lệ đội thứ ${C.top} nhưng không vào: ${r.tied.join(', ')}`);
     if (r.previous) {
       const p = r.previous;
-      console.log(`  So với ${p.crawled_at.slice(0, 10)}: ${p.added.length || p.removed.length ? `vào whitelist: ${p.added.join(', ') || 'không'}; rời whitelist: ${p.removed.join(', ') || 'không'}` : 'whitelist không đổi'}`);
+      console.log(`  So với ${p.crawled_at.slice(0, 10)}: ${p.added.length || p.removed.length ? `vào: ${p.added.join(', ') || 'không'}; ra: ${p.removed.join(', ') || 'không'}` : 'blacklist không đổi'}`);
     }
   }
   fs.writeFileSync(latestJson, JSON.stringify(report, null, 2) + '\n');

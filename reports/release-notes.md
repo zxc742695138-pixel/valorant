@@ -1,14 +1,16 @@
-**Cách dùng:** chỉ cược map khi **cả hai đội đều nằm trong whitelist** (kể cả trận quốc tế giữa các khu vực). Cược đội đang dẫn ≥ 3 round khi tổng round ≥ 17.
+**Cách dùng:** không cược map có đội nằm trong blacklist. Cược đội đang dẫn ≥ 3 round khi tổng round ≥ 17.
 
-- Dữ liệu: vlr.gg, 90 ngày gần nhất (2026-08-10 → 2026-11-08), chỉ trận giữa hai đội nhượng quyền
-- Lật được: bị dẫn ≥ 3 round khi tổng round ≥ 17 nhưng thắng map. Bị lật: dẫn như vậy nhưng thua map
-- **Whitelist** = nhóm Trung bình: |lật được − bị lật| < 1 và lật được + bị lật < 3
-- **Blacklist** = các đội còn lại: Mạnh (lật được − bị lật ≥ +1), Yếu (≤ −1), Không ổn định (lật được + bị lật ≥ 3)
+- Dữ liệu: vlr.gg, 90 ngày gần nhất (2026-08-10 → 2026-11-08), chỉ trận giữa hai đội nhượng quyền; không tính giải khớp `Esports World Cup|Champions`
+- Chỉ số: % map của đội kết thúc **13-11** (thắng hoặc thua) hoặc phải đá **hiệp phụ**
+- **Blacklist** = 4 đội có tỉ lệ cao nhất mỗi khu vực
 
-| Khu vực | Whitelist | Blacklist | Thay đổi whitelist so với lần trước |
-|---|---|---|---|
-| Pacific | Gen.G, VARREL, ZETA DIVISION, DetonatioN FocusMe, Rex Regum Qeon, Team Secret, FULL SENSE | T1 (Mạnh), Global Esports (Mạnh), Nongshim RedForce (Mạnh), Paper Rex (Yếu), KIWOOM DRX (Yếu) | không đổi |
-| Americas | LEVIATÁN, MIBR, Evil Geniuses, Sentinels, Cloud9, FURIA, KRÜ Esports | NRG (Mạnh), 100 Thieves (Mạnh), ENVY (Mạnh), LOUD (Không ổn định), G2 Esports (Yếu) | không đổi |
-| China | Trace Esports, Titan Esports Club, EDward Gaming, FunPlus Phoenix, Wolves Esports | TYLOO (Mạnh), Nova Esports (Mạnh), All Gamers (Yếu), Bilibili Gaming (Yếu), Xi Lai Gaming (Yếu), Dragon Ranger Gaming (Yếu), JD Gaming (Yếu) | không đổi |
+| Khu vực | Blacklist (tỉ lệ 13-11/OT, số map) | Thay đổi so với lần trước |
+|---|---|---|
+| Pacific | Gen.G 40% (2/5), ZETA DIVISION 40% (2/5), KIWOOM DRX 38% (3/8), Rex Regum Qeon 33% (1/3) | — |
+| Americas | 100 Thieves 33% (3/9), Cloud9 33% (1/3), LOUD 21% (4/19), Evil Geniuses 17% (2/12) | — |
+| China | Trace Esports 45% (5/11), Bilibili Gaming 38% (5/13), All Gamers 31% (4/13), Dragon Ranger Gaming 27% (3/11) | — |
 
-File `report-details.json` chứa số lần lật được / bị lật của từng đội.
+- 38 map của Esports World Cup 2026: China Qualifier (13/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính.
+- Đội có dưới 5 map trong kỳ (số liệu ít, tỉ lệ dễ dao động): Rex Regum Qeon (3), DetonatioN FocusMe (4), Team Secret (2), Cloud9 (3), Sentinels (4), Wolves Esports (0).
+
+File `report-details.json` chứa tỉ lệ của cả 12 đội mỗi khu vực.
