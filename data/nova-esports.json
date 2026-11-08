@@ -1,7 +1,7 @@
 {
   "team_id": "12064",
-  "crawled_at": "2026-11-07T07:29:27.630Z",
-  "since": "2026-05-11T07:28:01.160Z",
+  "crawled_at": "2026-11-08T07:39:13.521Z",
+  "since": "2026-05-12T07:37:50.081Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/777966/unsettled-resentment-vs-nova-esports-vct-2026-china-threshold-week-2-gf",
@@ -1933,35 +1933,6 @@
         {
           "map": "Split",
           "score": "7-13",
-          "rounds": []
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/675341/funplus-phoenix-vs-nova-esports-esports-world-cup-2026-china-qualifier-stage-1-ubsf",
-      "date": "2026-05-12 05:00:00",
-      "event": "Esports World Cup 2026: China Qualifier",
-      "stage": "Stage 1: Upper Semifinals",
-      "team1": "FunPlus Phoenix",
-      "team2": "Nova Esports",
-      "team1_id": "11328",
-      "team2_id": "12064",
-      "match_result": "1-2",
-      "winner": "Nova Esports",
-      "map_result": [
-        {
-          "map": "Ascent",
-          "score": "13-10",
-          "rounds": []
-        },
-        {
-          "map": "Haven",
-          "score": "7-13",
-          "rounds": []
-        },
-        {
-          "map": "Pearl",
-          "score": "10-13",
           "rounds": []
         }
       ]

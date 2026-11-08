@@ -1,8 +1,8 @@
 {
   "kind": "groups",
-  "crawled_at": "2026-11-07T07:35:56.213Z",
-  "from": "2026-08-09",
-  "to": "2026-11-07",
+  "crawled_at": "2026-11-08T07:45:22.806Z",
+  "from": "2026-08-10",
+  "to": "2026-11-08",
   "last_match": "2026-10-25",
   "window_days": 90,
   "net": 1,
@@ -11,7 +11,7 @@
   "min_total": 17,
   "min_diff": 3,
   "notes": [
-    "43 map của Esports World Cup 2026: China Qualifier (12/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính."
+    "38 map của Esports World Cup 2026: China Qualifier (13/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính."
   ],
   "regions": [
     {
@@ -40,11 +40,11 @@
         {
           "team": "Nongshim RedForce",
           "group": "Mạnh",
-          "maps": 33,
-          "wins": 19,
-          "lead": 14,
+          "maps": 30,
+          "wins": 18,
+          "lead": 13,
           "blown": 0,
-          "trail": 12,
+          "trail": 10,
           "made": 1
         },
         {
@@ -60,9 +60,9 @@
         {
           "team": "VARREL",
           "group": "Trung bình",
-          "maps": 9,
-          "wins": 4,
-          "lead": 3,
+          "maps": 7,
+          "wins": 2,
+          "lead": 2,
           "blown": 0,
           "trail": 5,
           "made": 0
@@ -90,11 +90,11 @@
         {
           "team": "Rex Regum Qeon",
           "group": "Trung bình",
-          "maps": 6,
-          "wins": 3,
-          "lead": 2,
+          "maps": 3,
+          "wins": 1,
+          "lead": 0,
           "blown": 0,
-          "trail": 3,
+          "trail": 2,
           "made": 0
         },
         {
@@ -120,11 +120,11 @@
         {
           "team": "Paper Rex",
           "group": "Yếu",
-          "maps": 18,
+          "maps": 16,
           "wins": 6,
           "lead": 6,
           "blown": 1,
-          "trail": 9,
+          "trail": 8,
           "made": 0
         },
         {
@@ -155,7 +155,7 @@
         "KIWOOM DRX"
       ],
       "previous": {
-        "crawled_at": "2026-11-06T08:14:14.302Z",
+        "crawled_at": "2026-11-07T07:35:56.213Z",
         "added": [],
         "removed": []
       }
@@ -166,9 +166,9 @@
         {
           "team": "NRG",
           "group": "Mạnh",
-          "maps": 24,
-          "wins": 13,
-          "lead": 11,
+          "maps": 22,
+          "wins": 11,
+          "lead": 10,
           "blown": 1,
           "trail": 6,
           "made": 2
@@ -176,9 +176,9 @@
         {
           "team": "100 Thieves",
           "group": "Mạnh",
-          "maps": 29,
-          "wins": 20,
-          "lead": 11,
+          "maps": 27,
+          "wins": 18,
+          "lead": 9,
           "blown": 0,
           "trail": 8,
           "made": 1
@@ -196,11 +196,11 @@
         {
           "team": "LOUD",
           "group": "Không ổn định",
-          "maps": 39,
+          "maps": 37,
           "wins": 25,
           "lead": 16,
           "blown": 2,
-          "trail": 13,
+          "trail": 11,
           "made": 2
         },
         {
@@ -226,11 +226,11 @@
         {
           "team": "Evil Geniuses",
           "group": "Trung bình",
-          "maps": 14,
+          "maps": 12,
           "wins": 6,
           "lead": 4,
           "blown": 0,
-          "trail": 6,
+          "trail": 5,
           "made": 0
         },
         {
@@ -301,7 +301,7 @@
         "G2 Esports"
       ],
       "previous": {
-        "crawled_at": "2026-11-06T08:14:14.302Z",
+        "crawled_at": "2026-11-07T07:35:56.213Z",
         "added": [],
         "removed": []
       }
@@ -332,9 +332,9 @@
         {
           "team": "Trace Esports",
           "group": "Trung bình",
-          "maps": 13,
-          "wins": 8,
-          "lead": 7,
+          "maps": 11,
+          "wins": 6,
+          "lead": 5,
           "blown": 1,
           "trail": 5,
           "made": 1
@@ -352,31 +352,31 @@
         {
           "team": "EDward Gaming",
           "group": "Trung bình",
-          "maps": 12,
-          "wins": 3,
-          "lead": 2,
+          "maps": 9,
+          "wins": 1,
+          "lead": 0,
           "blown": 0,
-          "trail": 9,
+          "trail": 8,
           "made": 0
         },
         {
           "team": "FunPlus Phoenix",
           "group": "Trung bình",
-          "maps": 7,
+          "maps": 5,
           "wins": 3,
           "lead": 3,
           "blown": 0,
-          "trail": 2,
+          "trail": 0,
           "made": 0
         },
         {
           "team": "Wolves Esports",
           "group": "Trung bình",
-          "maps": 3,
-          "wins": 1,
-          "lead": 1,
+          "maps": 0,
+          "wins": 0,
+          "lead": 0,
           "blown": 0,
-          "trail": 2,
+          "trail": 0,
           "made": 0
         },
         {
@@ -447,7 +447,7 @@
         "JD Gaming"
       ],
       "previous": {
-        "crawled_at": "2026-11-06T08:14:14.302Z",
+        "crawled_at": "2026-11-07T07:35:56.213Z",
         "added": [],
         "removed": []
       }

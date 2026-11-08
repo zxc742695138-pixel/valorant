@@ -1,7 +1,7 @@
 {
   "team_id": "12010",
-  "crawled_at": "2026-11-07T07:29:00.897Z",
-  "since": "2026-05-11T07:28:01.983Z",
+  "crawled_at": "2026-11-08T07:38:47.036Z",
+  "since": "2026-05-12T07:37:54.872Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/748627/bilibili-gaming-vs-keepbest-gaming-china-evolution-series-2026-act-3-qf",
@@ -1279,30 +1279,6 @@
         {
           "map": "Split",
           "score": "7-13",
-          "rounds": []
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/675340/bilibili-gaming-vs-wolves-esports-esports-world-cup-2026-china-qualifier-stage-1-ubsf",
-      "date": "2026-05-12 05:00:00",
-      "event": "Esports World Cup 2026: China Qualifier",
-      "stage": "Stage 1: Upper Semifinals",
-      "team1": "Bilibili Gaming",
-      "team2": "Wolves Esports",
-      "team1_id": "12010",
-      "team2_id": "13790",
-      "match_result": "2-0",
-      "winner": "Bilibili Gaming",
-      "map_result": [
-        {
-          "map": "Lotus",
-          "score": "13-7",
-          "rounds": []
-        },
-        {
-          "map": "Pearl",
-          "score": "13-8",
           "rounds": []
         }
       ]

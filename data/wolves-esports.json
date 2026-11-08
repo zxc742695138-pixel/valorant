@@ -1,7 +1,7 @@
 {
   "team_id": "13790",
-  "crawled_at": "2026-11-07T07:31:04.135Z",
-  "since": "2026-05-11T07:30:13.269Z",
+  "crawled_at": "2026-11-08T07:40:41.042Z",
+  "since": "2026-05-12T07:39:51.964Z",
   "matches": [
     {
       "url": "https://www.vlr.gg/777957/wolves-esports-vs-world-sports-invictus-gaming-vct-2026-china-threshold-week-2-ro12",
@@ -1204,30 +1204,6 @@
         {
           "map": "Pearl",
           "score": "10-13",
-          "rounds": []
-        }
-      ]
-    },
-    {
-      "url": "https://www.vlr.gg/675340/bilibili-gaming-vs-wolves-esports-esports-world-cup-2026-china-qualifier-stage-1-ubsf",
-      "date": "2026-05-12 05:00:00",
-      "event": "Esports World Cup 2026: China Qualifier",
-      "stage": "Stage 1: Upper Semifinals",
-      "team1": "Bilibili Gaming",
-      "team2": "Wolves Esports",
-      "team1_id": "12010",
-      "team2_id": "13790",
-      "match_result": "2-0",
-      "winner": "Bilibili Gaming",
-      "map_result": [
-        {
-          "map": "Lotus",
-          "score": "13-7",
-          "rounds": []
-        },
-        {
-          "map": "Pearl",
-          "score": "13-8",
           "rounds": []
         }
       ]
