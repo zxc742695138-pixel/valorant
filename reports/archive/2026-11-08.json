@@ -134,15 +134,9 @@
         "Paper Rex"
       ],
       "previous": {
-        "crawled_at": "2026-11-08T07:45:22.806Z",
-        "added": [
-          "ZETA DIVISION",
-          "Paper Rex"
-        ],
-        "removed": [
-          "Rex Regum Qeon",
-          "Nongshim RedForce"
-        ]
+        "crawled_at": "2026-11-08T10:06:22.228Z",
+        "added": [],
+        "removed": []
       }
     },
     {
@@ -268,15 +262,9 @@
         "Evil Geniuses"
       ],
       "previous": {
-        "crawled_at": "2026-11-08T07:45:22.806Z",
-        "added": [
-          "MIBR",
-          "G2 Esports"
-        ],
-        "removed": [
-          "Sentinels",
-          "LOUD"
-        ]
+        "crawled_at": "2026-11-08T10:06:22.228Z",
+        "added": [],
+        "removed": []
       }
     },
     {
@@ -402,13 +390,9 @@
         "TYLOO"
       ],
       "previous": {
-        "crawled_at": "2026-11-08T07:45:22.806Z",
-        "added": [
-          "JD Gaming"
-        ],
-        "removed": [
-          "All Gamers"
-        ]
+        "crawled_at": "2026-11-08T10:06:22.228Z",
+        "added": [],
+        "removed": []
       }
     }
   ]
