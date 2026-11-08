@@ -51,7 +51,7 @@ for (const m of matches) {
       const leaders = new Set(st.slice(0, -1).filter(([x, y]) => x + y >= MIN_TOTAL && Math.abs(x - y) >= MIN_DIFF).map(([x, y]) => (x > y ? 1 : 2)));
       lead = { leader: l1 ? m.t1 : m.t2, size: Math.abs(first[0] - first[1]), lost: l1 !== (f1 > f2), comeback: [...leaders].some(s => s !== (f1 > f2 ? 1 : 2)) };
     }
-    maps.push({ day: m.day, event: m.event, t1: m.t1, t2: m.t2, gap: Math.abs(f1 - f2), lead });
+    maps.push({ day: m.day, event: m.event, t1: m.t1, t2: m.t2, map: mp.map, score: `${f1}-${f2}`, at: first ? `${first[0]}-${first[1]}` : null, gap: Math.abs(f1 - f2), lead });
   }
 }
 
@@ -158,5 +158,13 @@ console.table(Object.keys(base.months).map(mo => ({
   'chỉ Một chiều vs Một chiều': mc.months[mo] ? `${mc.months[mo].n} · ${mc.months[mo].l} · ${money(mc.months[mo].end)}` : '0 kèo',
   'không lọc': `${base.months[mo].n} · ${base.months[mo].l} · ${money(base.months[mo].end)}`,
 })));
+if (argv.includes('--list')) {
+  console.log('Toàn bộ kèo "chỉ Một chiều vs Một chiều" (dẫn đúng 3):');
+  let bal = 0;
+  for (const b of STRATS[2][1]) {
+    bal += b.lead.lost ? -stake : stake * 0.15;
+    console.log(`  ${b.day.slice(8)}/${b.day.slice(5, 7)}  ${b.t1} ${b.score} ${b.t2} (${b.map}) · cược ${b.lead.leader} lúc ${b.at} · ${b.lead.lost ? 'THUA' : 'thắng'} · ${b.event.replace('Valorant ', '').replace(/^VCT 2026: /, '')} · lũy kế 1.15: ${money(bal)}`);
+  }
+}
 console.log('Các kèo thua của "chỉ Một chiều vs Một chiều":');
 for (const b of STRATS[2][1].filter(b => b.lead.lost)) console.log(`  ${b.day}  ${b.t1} vs ${b.t2} · cược ${b.lead.leader} · ${b.event.replace('Valorant ', '')}`);
