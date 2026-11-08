@@ -5,7 +5,7 @@
 3. Map có ít nhất một đội **không** nằm trong whitelist → bỏ.
 4. Chỉ cược khi **tỉ lệ ăn từ khoảng 1.12 trở lên** (ăn 1.10 chưa có lãi trong backtest).
 
-Ví dụ (Americas): KRÜ Esports vs ENVY → được cược đội dẫn trước; KRÜ Esports vs MIBR → bỏ (MIBR thuộc nhóm Giằng co).
+Ví dụ (Americas): ENVY vs KRÜ Esports → được cược đội dẫn trước; ENVY vs LOUD → bỏ (LOUD thuộc nhóm Giằng co).
 
 ## Danh sách
 
@@ -15,10 +15,10 @@ Ví dụ (Americas): KRÜ Esports vs ENVY → được cược đội dẫn trư
 
 | Khu vực | Whitelist — Một chiều (% map đậm) | Giằng co | Thay đổi whitelist so với lần trước |
 |---|---|---|---|
-| Pacific | Team Secret 73%, KIWOOM DRX 70%, Rex Regum Qeon 67%, Global Esports 61%, FULL SENSE 60%, DetonatioN FocusMe 59%, T1 58%, Nongshim RedForce 57% | Paper Rex 55%, Gen.G 54%, VARREL 50%, ZETA DIVISION 47% | — |
-| Americas | KRÜ Esports 82%, ENVY 79%, FURIA 75%, Evil Geniuses 75%, Sentinels 74%, Cloud9 71%, LEVIATÁN 70%, LOUD 68% | MIBR 67%, NRG 63%, 100 Thieves 63%, G2 Esports 59% | — |
-| China | Nova Esports 76%, Bilibili Gaming 70%, TYLOO 69%, Xi Lai Gaming 68%, Dragon Ranger Gaming 68%, FunPlus Phoenix 68%, EDward Gaming 68%, All Gamers 62% | JD Gaming 62%, Trace Esports 61%, Titan Esports Club 58%, Wolves Esports 54% | — |
+| Pacific | FULL SENSE 71%, Team Secret 70%, KIWOOM DRX 68%, T1 65%, DetonatioN FocusMe 63%, ZETA DIVISION 61%, Global Esports 61%, Paper Rex 59% | Nongshim RedForce 58%, Rex Regum Qeon 58%, Gen.G 56%, VARREL 43% | vào: ZETA DIVISION, Paper Rex; ra: Rex Regum Qeon, Nongshim RedForce |
+| Americas | ENVY 75%, KRÜ Esports 75%, FURIA 73%, LEVIATÁN 67%, Cloud9 67%, MIBR 66%, G2 Esports 65%, Evil Geniuses 65% | LOUD 65%, NRG 62%, Sentinels 61%, 100 Thieves 61% | vào: MIBR, G2 Esports; ra: Sentinels, LOUD |
+| China | EDward Gaming 74%, Bilibili Gaming 73%, Dragon Ranger Gaming 71%, FunPlus Phoenix 70%, Xi Lai Gaming 70%, JD Gaming 69%, Nova Esports 69%, TYLOO 69% | All Gamers 68%, Wolves Esports 63%, Trace Esports 63%, Titan Esports Club 61% | vào: JD Gaming; ra: All Gamers |
 
-- 38 map của Esports World Cup 2026: China Qualifier (13/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính.
+- 43 map của Esports World Cup 2026: China Qualifier (12/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính.
 
 File `report-details.json` chứa số map thắng đậm / thua đậm của từng đội.

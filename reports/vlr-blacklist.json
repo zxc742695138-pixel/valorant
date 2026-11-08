@@ -1,38 +1,38 @@
 {
   "Pacific": {
     "whitelist": [
+      "FULL SENSE",
       "Team Secret",
       "KIWOOM DRX",
-      "Rex Regum Qeon",
-      "Global Esports",
-      "FULL SENSE",
-      "DetonatioN FocusMe",
       "T1",
-      "Nongshim RedForce"
+      "DetonatioN FocusMe",
+      "ZETA DIVISION",
+      "Global Esports",
+      "Paper Rex"
     ]
   },
   "Americas": {
     "whitelist": [
-      "KRÜ Esports",
       "ENVY",
+      "KRÜ Esports",
       "FURIA",
-      "Evil Geniuses",
-      "Sentinels",
-      "Cloud9",
       "LEVIATÁN",
-      "LOUD"
+      "Cloud9",
+      "MIBR",
+      "G2 Esports",
+      "Evil Geniuses"
     ]
   },
   "China": {
     "whitelist": [
-      "Nova Esports",
+      "EDward Gaming",
       "Bilibili Gaming",
-      "TYLOO",
-      "Xi Lai Gaming",
       "Dragon Ranger Gaming",
       "FunPlus Phoenix",
-      "EDward Gaming",
-      "All Gamers"
+      "Xi Lai Gaming",
+      "JD Gaming",
+      "Nova Esports",
+      "TYLOO"
     ]
   }
 }

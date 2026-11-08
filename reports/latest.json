@@ -1,6 +1,6 @@
 {
   "kind": "one_sided",
-  "crawled_at": "2026-11-08T07:45:22.806Z",
+  "crawled_at": "2026-11-08T10:06:22.228Z",
   "from": "2026-01-01",
   "to": "2026-11-08",
   "last_match": "2026-10-25",
@@ -8,377 +8,408 @@
   "top": 8,
   "min_maps": 10,
   "notes": [
-    "38 map của Esports World Cup 2026: China Qualifier (13/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính."
+    "43 map của Esports World Cup 2026: China Qualifier (12/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính."
   ],
   "regions": [
     {
       "region": "pacific",
       "teams": [
         {
+          "team": "FULL SENSE",
+          "maps": 63,
+          "bigW": 21,
+          "bigL": 24,
+          "share": 0.7142857142857143,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
           "team": "Team Secret",
-          "maps": 15,
-          "bigW": 3,
-          "bigL": 8,
-          "share": 0.7333333333333333,
+          "maps": 40,
+          "bigW": 8,
+          "bigL": 20,
+          "share": 0.7,
           "enough": true,
           "group": "Một chiều"
         },
         {
           "team": "KIWOOM DRX",
-          "maps": 27,
-          "bigW": 6,
-          "bigL": 13,
-          "share": 0.7037037037037037,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "Rex Regum Qeon",
-          "maps": 27,
-          "bigW": 8,
-          "bigL": 10,
-          "share": 0.6666666666666666,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "Global Esports",
-          "maps": 61,
-          "bigW": 20,
-          "bigL": 17,
-          "share": 0.6065573770491803,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "FULL SENSE",
-          "maps": 35,
-          "bigW": 5,
-          "bigL": 16,
-          "share": 0.6,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "DetonatioN FocusMe",
-          "maps": 22,
-          "bigW": 5,
-          "bigL": 8,
-          "share": 0.5909090909090909,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "T1",
-          "maps": 53,
-          "bigW": 16,
-          "bigL": 15,
-          "share": 0.5849056603773585,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "Nongshim RedForce",
-          "maps": 75,
-          "bigW": 27,
-          "bigL": 16,
-          "share": 0.5733333333333334,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "Paper Rex",
-          "maps": 55,
-          "bigW": 17,
-          "bigL": 13,
-          "share": 0.5454545454545454,
-          "enough": true,
-          "group": "Giằng co"
-        },
-        {
-          "team": "Gen.G",
-          "maps": 37,
-          "bigW": 12,
-          "bigL": 8,
-          "share": 0.5405405405405406,
-          "enough": true,
-          "group": "Giằng co"
-        },
-        {
-          "team": "VARREL",
-          "maps": 22,
-          "bigW": 5,
-          "bigL": 6,
-          "share": 0.5,
-          "enough": true,
-          "group": "Giằng co"
-        },
-        {
-          "team": "ZETA DIVISION",
-          "maps": 17,
-          "bigW": 2,
-          "bigL": 6,
-          "share": 0.47058823529411764,
-          "enough": true,
-          "group": "Giằng co"
-        }
-      ],
-      "whitelist": [
-        "Team Secret",
-        "KIWOOM DRX",
-        "Rex Regum Qeon",
-        "Global Esports",
-        "FULL SENSE",
-        "DetonatioN FocusMe",
-        "T1",
-        "Nongshim RedForce"
-      ]
-    },
-    {
-      "region": "americas",
-      "teams": [
-        {
-          "team": "KRÜ Esports",
-          "maps": 28,
-          "bigW": 7,
-          "bigL": 16,
-          "share": 0.8214285714285714,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "ENVY",
-          "maps": 24,
-          "bigW": 4,
-          "bigL": 15,
-          "share": 0.7916666666666666,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "FURIA",
-          "maps": 32,
-          "bigW": 6,
-          "bigL": 18,
-          "share": 0.75,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "Evil Geniuses",
-          "maps": 28,
-          "bigW": 9,
-          "bigL": 12,
-          "share": 0.75,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "Sentinels",
-          "maps": 34,
-          "bigW": 12,
-          "bigL": 13,
-          "share": 0.7352941176470589,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "Cloud9",
-          "maps": 17,
-          "bigW": 4,
-          "bigL": 8,
-          "share": 0.7058823529411765,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "LEVIATÁN",
-          "maps": 64,
-          "bigW": 31,
-          "bigL": 14,
-          "share": 0.703125,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "LOUD",
-          "maps": 62,
-          "bigW": 23,
-          "bigL": 19,
-          "share": 0.6774193548387096,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "MIBR",
-          "maps": 43,
-          "bigW": 19,
-          "bigL": 10,
-          "share": 0.6744186046511628,
-          "enough": true,
-          "group": "Giằng co"
-        },
-        {
-          "team": "NRG",
-          "maps": 81,
-          "bigW": 31,
-          "bigL": 20,
-          "share": 0.6296296296296297,
-          "enough": true,
-          "group": "Giằng co"
-        },
-        {
-          "team": "100 Thieves",
-          "maps": 67,
-          "bigW": 31,
-          "bigL": 11,
-          "share": 0.6268656716417911,
-          "enough": true,
-          "group": "Giằng co"
-        },
-        {
-          "team": "G2 Esports",
-          "maps": 73,
-          "bigW": 25,
-          "bigL": 18,
-          "share": 0.589041095890411,
-          "enough": true,
-          "group": "Giằng co"
-        }
-      ],
-      "whitelist": [
-        "KRÜ Esports",
-        "ENVY",
-        "FURIA",
-        "Evil Geniuses",
-        "Sentinels",
-        "Cloud9",
-        "LEVIATÁN",
-        "LOUD"
-      ]
-    },
-    {
-      "region": "china",
-      "teams": [
-        {
-          "team": "Nova Esports",
-          "maps": 46,
-          "bigW": 21,
-          "bigL": 14,
-          "share": 0.7608695652173914,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "Bilibili Gaming",
-          "maps": 37,
-          "bigW": 9,
-          "bigL": 17,
-          "share": 0.7027027027027027,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "TYLOO",
-          "maps": 58,
-          "bigW": 21,
-          "bigL": 19,
-          "share": 0.6896551724137931,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "Xi Lai Gaming",
           "maps": 63,
-          "bigW": 21,
-          "bigL": 22,
+          "bigW": 18,
+          "bigL": 25,
           "share": 0.6825396825396826,
           "enough": true,
           "group": "Một chiều"
         },
         {
-          "team": "Dragon Ranger Gaming",
-          "maps": 44,
-          "bigW": 13,
-          "bigL": 17,
-          "share": 0.6818181818181818,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "FunPlus Phoenix",
-          "maps": 47,
-          "bigW": 17,
-          "bigL": 15,
-          "share": 0.6808510638297872,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "EDward Gaming",
-          "maps": 50,
-          "bigW": 12,
-          "bigL": 22,
-          "share": 0.68,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "All Gamers",
-          "maps": 65,
-          "bigW": 23,
-          "bigL": 17,
-          "share": 0.6153846153846154,
-          "enough": true,
-          "group": "Một chiều"
-        },
-        {
-          "team": "JD Gaming",
-          "maps": 52,
-          "bigW": 18,
-          "bigL": 14,
-          "share": 0.6153846153846154,
-          "enough": true,
-          "group": "Giằng co"
-        },
-        {
-          "team": "Trace Esports",
-          "maps": 38,
-          "bigW": 10,
-          "bigL": 13,
-          "share": 0.6052631578947368,
-          "enough": true,
-          "group": "Giằng co"
-        },
-        {
-          "team": "Titan Esports Club",
-          "maps": 53,
-          "bigW": 8,
+          "team": "T1",
+          "maps": 91,
+          "bigW": 36,
           "bigL": 23,
-          "share": 0.5849056603773585,
+          "share": 0.6483516483516484,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "DetonatioN FocusMe",
+          "maps": 54,
+          "bigW": 16,
+          "bigL": 18,
+          "share": 0.6296296296296297,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "ZETA DIVISION",
+          "maps": 44,
+          "bigW": 7,
+          "bigL": 20,
+          "share": 0.6136363636363636,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "Global Esports",
+          "maps": 93,
+          "bigW": 33,
+          "bigL": 24,
+          "share": 0.6129032258064516,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "Paper Rex",
+          "maps": 116,
+          "bigW": 40,
+          "bigL": 28,
+          "share": 0.5862068965517241,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "Nongshim RedForce",
+          "maps": 114,
+          "bigW": 43,
+          "bigL": 23,
+          "share": 0.5789473684210527,
           "enough": true,
           "group": "Giằng co"
         },
         {
-          "team": "Wolves Esports",
-          "maps": 26,
+          "team": "Rex Regum Qeon",
+          "maps": 64,
+          "bigW": 15,
+          "bigL": 22,
+          "share": 0.578125,
+          "enough": true,
+          "group": "Giằng co"
+        },
+        {
+          "team": "Gen.G",
+          "maps": 66,
+          "bigW": 18,
+          "bigL": 19,
+          "share": 0.5606060606060606,
+          "enough": true,
+          "group": "Giằng co"
+        },
+        {
+          "team": "VARREL",
+          "maps": 47,
           "bigW": 5,
-          "bigL": 9,
-          "share": 0.5384615384615384,
+          "bigL": 15,
+          "share": 0.425531914893617,
           "enough": true,
           "group": "Giằng co"
         }
       ],
       "whitelist": [
-        "Nova Esports",
+        "FULL SENSE",
+        "Team Secret",
+        "KIWOOM DRX",
+        "T1",
+        "DetonatioN FocusMe",
+        "ZETA DIVISION",
+        "Global Esports",
+        "Paper Rex"
+      ],
+      "previous": {
+        "crawled_at": "2026-11-08T07:45:22.806Z",
+        "added": [
+          "ZETA DIVISION",
+          "Paper Rex"
+        ],
+        "removed": [
+          "Rex Regum Qeon",
+          "Nongshim RedForce"
+        ]
+      }
+    },
+    {
+      "region": "americas",
+      "teams": [
+        {
+          "team": "ENVY",
+          "maps": 52,
+          "bigW": 15,
+          "bigL": 24,
+          "share": 0.75,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "KRÜ Esports",
+          "maps": 48,
+          "bigW": 13,
+          "bigL": 23,
+          "share": 0.75,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "FURIA",
+          "maps": 64,
+          "bigW": 19,
+          "bigL": 28,
+          "share": 0.734375,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "LEVIATÁN",
+          "maps": 87,
+          "bigW": 37,
+          "bigL": 21,
+          "share": 0.6666666666666666,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "Cloud9",
+          "maps": 48,
+          "bigW": 10,
+          "bigL": 22,
+          "share": 0.6666666666666666,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "MIBR",
+          "maps": 71,
+          "bigW": 27,
+          "bigL": 20,
+          "share": 0.6619718309859155,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "G2 Esports",
+          "maps": 113,
+          "bigW": 47,
+          "bigL": 27,
+          "share": 0.6548672566371682,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "Evil Geniuses",
+          "maps": 54,
+          "bigW": 13,
+          "bigL": 22,
+          "share": 0.6481481481481481,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "LOUD",
+          "maps": 82,
+          "bigW": 25,
+          "bigL": 28,
+          "share": 0.6463414634146342,
+          "enough": true,
+          "group": "Giằng co"
+        },
+        {
+          "team": "NRG",
+          "maps": 127,
+          "bigW": 46,
+          "bigL": 33,
+          "share": 0.6220472440944882,
+          "enough": true,
+          "group": "Giằng co"
+        },
+        {
+          "team": "Sentinels",
+          "maps": 57,
+          "bigW": 16,
+          "bigL": 19,
+          "share": 0.6140350877192983,
+          "enough": true,
+          "group": "Giằng co"
+        },
+        {
+          "team": "100 Thieves",
+          "maps": 100,
+          "bigW": 44,
+          "bigL": 17,
+          "share": 0.61,
+          "enough": true,
+          "group": "Giằng co"
+        }
+      ],
+      "whitelist": [
+        "ENVY",
+        "KRÜ Esports",
+        "FURIA",
+        "LEVIATÁN",
+        "Cloud9",
+        "MIBR",
+        "G2 Esports",
+        "Evil Geniuses"
+      ],
+      "previous": {
+        "crawled_at": "2026-11-08T07:45:22.806Z",
+        "added": [
+          "MIBR",
+          "G2 Esports"
+        ],
+        "removed": [
+          "Sentinels",
+          "LOUD"
+        ]
+      }
+    },
+    {
+      "region": "china",
+      "teams": [
+        {
+          "team": "EDward Gaming",
+          "maps": 101,
+          "bigW": 37,
+          "bigL": 38,
+          "share": 0.7425742574257426,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "Bilibili Gaming",
+          "maps": 80,
+          "bigW": 30,
+          "bigL": 28,
+          "share": 0.725,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "Dragon Ranger Gaming",
+          "maps": 87,
+          "bigW": 30,
+          "bigL": 32,
+          "share": 0.7126436781609196,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "FunPlus Phoenix",
+          "maps": 74,
+          "bigW": 23,
+          "bigL": 29,
+          "share": 0.7027027027027027,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "Xi Lai Gaming",
+          "maps": 112,
+          "bigW": 45,
+          "bigL": 33,
+          "share": 0.6964285714285714,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "JD Gaming",
+          "maps": 95,
+          "bigW": 32,
+          "bigL": 34,
+          "share": 0.6947368421052632,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "Nova Esports",
+          "maps": 68,
+          "bigW": 24,
+          "bigL": 23,
+          "share": 0.6911764705882353,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "TYLOO",
+          "maps": 106,
+          "bigW": 39,
+          "bigL": 34,
+          "share": 0.6886792452830188,
+          "enough": true,
+          "group": "Một chiều"
+        },
+        {
+          "team": "All Gamers",
+          "maps": 111,
+          "bigW": 38,
+          "bigL": 37,
+          "share": 0.6756756756756757,
+          "enough": true,
+          "group": "Giằng co"
+        },
+        {
+          "team": "Wolves Esports",
+          "maps": 54,
+          "bigW": 9,
+          "bigL": 25,
+          "share": 0.6296296296296297,
+          "enough": true,
+          "group": "Giằng co"
+        },
+        {
+          "team": "Trace Esports",
+          "maps": 72,
+          "bigW": 20,
+          "bigL": 25,
+          "share": 0.625,
+          "enough": true,
+          "group": "Giằng co"
+        },
+        {
+          "team": "Titan Esports Club",
+          "maps": 87,
+          "bigW": 16,
+          "bigL": 37,
+          "share": 0.6091954022988506,
+          "enough": true,
+          "group": "Giằng co"
+        }
+      ],
+      "whitelist": [
+        "EDward Gaming",
         "Bilibili Gaming",
-        "TYLOO",
-        "Xi Lai Gaming",
         "Dragon Ranger Gaming",
         "FunPlus Phoenix",
-        "EDward Gaming",
-        "All Gamers"
-      ]
+        "Xi Lai Gaming",
+        "JD Gaming",
+        "Nova Esports",
+        "TYLOO"
+      ],
+      "previous": {
+        "crawled_at": "2026-11-08T07:45:22.806Z",
+        "added": [
+          "JD Gaming"
+        ],
+        "removed": [
+          "All Gamers"
+        ]
+      }
     }
   ]
 }
