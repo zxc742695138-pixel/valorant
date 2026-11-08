@@ -8,7 +8,7 @@
 //
 // Usage: node analysis/ot_filter.js [--season 2026] [--window season|90] [--top 4]
 //   [--min-maps 10] [--regions americas,china,pacific] [--stake 1000000]
-//   [--metric ot|close] [--exclude REGEX] [--bet-exclude REGEX] [--fixed] [--quiet]
+//   [--last-matches N] [--metric ot|close] [--exclude REGEX] [--bet-exclude REGEX] [--fixed] [--quiet]
 
 const fs = require('fs');
 const { REGIONS, loadRegion } = require('./betting');
@@ -48,17 +48,37 @@ for (const m of matches) {
     const first = st.slice(0, -1).find(([x, y]) => x + y >= MIN_TOTAL && Math.abs(x - y) >= MIN_DIFF);
     const lead = first ? { leader: first[0] > first[1] ? m.t1 : m.t2, size: Math.abs(first[0] - first[1]), lost: (first[0] > first[1]) !== (f1 > f2) } : null;
     const close = metric === 'close' ? (Math.max(f1, f2) === 13 && Math.min(f1, f2) === 11) || f1 + f2 > 24 : f1 + f2 > 24;
-    maps.push({ day: m.day, event: m.event, t1: m.t1, t2: m.t2, ot: close, lead });
+    maps.push({ day: m.day, url: m.url, event: m.event, t1: m.t1, t2: m.t2, ot: close, lead });
   }
 }
 
 const pct = (k, n) => (n ? `${(100 * k / n).toFixed(1)}%` : '—');
 const money = x => `${x < 0 ? '−' : x > 0 ? '+' : ''}${(Math.abs(x) / 1e6).toFixed(1)} tr`;
 
+// --last-matches N: judge each team on its own last N matches (any age, a match = all its
+// maps) instead of a day window.
+const lastMatches = opt('--last-matches') ? Number(opt('--last-matches')) : null;
+const history = new Map(); // team → [{ day, n, ot }] per match, in date order
+{
+  const byMatch = new Map();
+  for (const x of maps) {
+    if (statExclude && statExclude.test(x.event)) continue;
+    const m = byMatch.get(x.url) || byMatch.set(x.url, { day: x.day, t1: x.t1, t2: x.t2, n: 0, ot: 0 }).get(x.url);
+    m.n++; m.ot += x.ot;
+  }
+  for (const m of byMatch.values()) for (const t of [m.t1, m.t2]) (history.get(t) || history.set(t, []).get(t)).push(m);
+}
+
 function flaggedAt(day, idx) {
   const start = windowOpt === 'season' ? `${day.slice(0, 4)}-01-01` : new Date(Date.parse(day) - Number(windowOpt) * 864e5).toISOString().slice(0, 10);
   const s = {};
-  for (let j = 0; j < idx; j++) {
+  if (lastMatches) {
+    // Each team's last N matches (series) before this day, every map of those matches.
+    for (const t of Object.keys(teamRegion)) {
+      const list = (history.get(t) || []).filter(h => h.day < day).slice(-lastMatches);
+      s[t] = list.reduce((v, h) => ({ n: v.n + h.n, ot: v.ot + h.ot }), { n: 0, ot: 0 });
+    }
+  } else for (let j = 0; j < idx; j++) {
     const x = maps[j];
     if (x.day < start) continue;
     if (statExclude && statExclude.test(x.event)) continue;
@@ -102,7 +122,7 @@ function run(list, odds) {
 }
 
 const r3 = rows.filter(r => r.lead.size === 3);
-console.log(`Mùa ${season}; ${regions.join(', ')}; gắn cờ ${TOP} đội/khu vực có % map ${metric === 'close' ? '13-11 hoặc hiệp phụ' : 'hiệp phụ'} cao nhất (${fixed ? 'tính một lần trên cả mùa — nhìn lại' : `${windowOpt === 'season' ? 'từ đầu mùa' : `${windowOpt} ngày gần nhất`}, ≥ ${minMaps} map, tính trước mỗi ngày đấu`})${statExclude ? `; thống kê bỏ: ${statExclude.source}` : ''}${betExclude ? `; không cược: ${betExclude.source}` : ''}\n`);
+console.log(`Mùa ${season}; ${regions.join(', ')}; gắn cờ ${TOP} đội/khu vực có % map ${metric === 'close' ? '13-11 hoặc hiệp phụ' : 'hiệp phụ'} cao nhất (${fixed ? 'tính một lần trên cả mùa — nhìn lại' : `${lastMatches ? `${lastMatches} trận gần nhất của mỗi đội` : windowOpt === 'season' ? 'từ đầu mùa' : `${windowOpt} ngày gần nhất`}, ≥ ${minMaps} map, tính trước mỗi ngày đấu`})${statExclude ? `; thống kê bỏ: ${statExclude.source}` : ''}${betExclude ? `; không cược: ${betExclude.source}` : ''}\n`);
 if (fixed) for (const r of regions) console.log(`  ${r}: ${[...flaggedAt(`${season}-12-31`, maps.length)].filter(t => teamRegion[t] === r).join(', ')}`);
 console.log('Tỉ lệ lật kèo theo số đội bị gắn cờ trong map:');
 console.table([0, 1, 2].map(k => {
