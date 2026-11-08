@@ -14,7 +14,7 @@
 //                test of whether the style predicts comebacks.
 //
 // Usage: node analysis/style_groups.js [--season 2026] [--gap 4] [--min-maps 10]
-//   [--regions americas,emea,china,pacific] [--data data-backtest]
+//   [--regions americas,emea,china,pacific] [--data data-backtest] [--top 8] [--list]
 
 const fs = require('fs');
 const { REGIONS, loadRegion } = require('./betting');
@@ -62,7 +62,9 @@ function classify(s, need) {
   const g = {};
   for (const r of REGIONS) {
     const list = Object.keys(teamRegion).filter(t => teamRegion[t] === r && s[t] && s[t].n >= need).sort((a, b) => s[b].big / s[b].n - s[a].big / s[a].n);
-    list.forEach((t, i) => { g[t] = i < list.length / 2 ? 'Một chiều' : 'Giằng co'; });
+    // --top K: the K teams (of 12) with the highest share are "Một chiều" (default: half).
+    const k = opt('--top') ? Math.round(Number(opt('--top')) * list.length / 12) : list.length / 2;
+    list.forEach((t, i) => { g[t] = i < k ? 'Một chiều' : 'Giằng co'; });
   }
   return g;
 }
