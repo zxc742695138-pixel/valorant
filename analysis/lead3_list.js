@@ -7,7 +7,7 @@
 // regions are listed as international. Only matches between partner teams of that year.
 //
 // Usage:
-//   node analysis/lead3_list.js [--exact3] [--data data-backtest] [--out reports/lead-maps.md]
+//   node analysis/lead3_list.js [--exact3] [--season 2026] [--data data-backtest] [--out reports/lead-maps.md]
 
 const fs = require('fs');
 const { REGIONS, loadRegion } = require('./betting');
@@ -17,7 +17,9 @@ const argv = process.argv.slice(2);
 const opt = (name, def) => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : def; };
 const dataDir = opt('--data', 'data-backtest');
 const exact3 = argv.includes('--exact3');
-const out = opt('--out', exact3 ? 'reports/lead3-maps.md' : 'reports/lead-maps.md');
+// --season YYYY: only that year.
+const season = opt('--season');
+const out = opt('--out', `reports/${exact3 ? 'lead3-maps' : 'lead-maps'}${season ? `-${season}` : ''}.md`);
 const LEAD = exact3 ? 'dẫn đúng 3' : `có dẫn ≥ ${MIN_DIFF}`;
 const NAME = { americas: 'Americas', emea: 'EMEA', china: 'China', pacific: 'Pacific', intl: 'Quốc tế' };
 
@@ -37,6 +39,7 @@ const firstDay = matches[0].day, lastDay = matches[matches.length - 1].day;
 const years = {};
 for (const m of matches) {
   const year = m.day.slice(0, 4);
+  if (season && year !== season) continue;
   const reg = regionOf[year];
   if (!reg || !reg[m.t1] || !reg[m.t2]) continue;
   const ev = ((years[year] = years[year] || new Map()).get(m.event)
