@@ -143,7 +143,12 @@
         "KIWOOM DRX",
         "Rex Regum Qeon"
       ],
-      "tied": []
+      "tied": [],
+      "previous": {
+        "crawled_at": "2026-11-08T07:45:22.806Z",
+        "added": [],
+        "removed": []
+      }
     },
     {
       "region": "americas",
@@ -275,7 +280,12 @@
         "LOUD",
         "Evil Geniuses"
       ],
-      "tied": []
+      "tied": [],
+      "previous": {
+        "crawled_at": "2026-11-08T07:45:22.806Z",
+        "added": [],
+        "removed": []
+      }
     },
     {
       "region": "china",
@@ -407,7 +417,12 @@
         "All Gamers",
         "Dragon Ranger Gaming"
       ],
-      "tied": []
+      "tied": [],
+      "previous": {
+        "crawled_at": "2026-11-08T07:45:22.806Z",
+        "added": [],
+        "removed": []
+      }
     }
   ]
 }

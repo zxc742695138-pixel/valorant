@@ -6,9 +6,9 @@
 
 | Khu vực | Blacklist (tỉ lệ 13-11/OT, số map) | Thay đổi so với lần trước |
 |---|---|---|
-| Pacific | Gen.G 40% (2/5), ZETA DIVISION 40% (2/5), KIWOOM DRX 38% (3/8), Rex Regum Qeon 33% (1/3) | — |
-| Americas | 100 Thieves 33% (3/9), Cloud9 33% (1/3), LOUD 21% (4/19), Evil Geniuses 17% (2/12) | — |
-| China | Trace Esports 45% (5/11), Bilibili Gaming 38% (5/13), All Gamers 31% (4/13), Dragon Ranger Gaming 27% (3/11) | — |
+| Pacific | Gen.G 40% (2/5), ZETA DIVISION 40% (2/5), KIWOOM DRX 38% (3/8), Rex Regum Qeon 33% (1/3) | không đổi |
+| Americas | 100 Thieves 33% (3/9), Cloud9 33% (1/3), LOUD 21% (4/19), Evil Geniuses 17% (2/12) | không đổi |
+| China | Trace Esports 45% (5/11), Bilibili Gaming 38% (5/13), All Gamers 31% (4/13), Dragon Ranger Gaming 27% (3/11) | không đổi |
 
 - 38 map của Esports World Cup 2026: China Qualifier (13/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính.
 - Đội có dưới 5 map trong kỳ (số liệu ít, tỉ lệ dễ dao động): Rex Regum Qeon (3), DetonatioN FocusMe (4), Team Secret (2), Cloud9 (3), Sentinels (4), Wolves Esports (0).
