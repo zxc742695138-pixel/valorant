@@ -121,3 +121,42 @@ console.table(PAIRS.map(p => {
   for (const h of ['nửa đầu', 'nửa sau']) { const l = rowsWf.filter(r => r.pair === p && half(r.day) === h); o[h] = `${l.filter(r => r.lead.comeback).length}/${l.length} (${pct(l.filter(r => r.lead.comeback).length, l.length)})`; }
   return o;
 }));
+
+// ---- Betting (walk-forward): 1 unit on the first leader, lead exactly 3 only ----
+// (leads of 4+ are priced lower by the bookmaker, so they are not mixed in at the same odds)
+const stake = Number(opt('--stake', 1e6));
+const money = x => `${x < 0 ? '−' : x > 0 ? '+' : ''}${(Math.abs(x) / 1e6).toFixed(1)} tr`;
+const allLead3 = maps.filter(x => x.lead && inScope(x) && x.lead.size === 3);
+const wf3 = rowsWf.filter(r => r.lead.size === 3);
+const STRATS = [
+  ['Mọi kèo dẫn 3 (không lọc)', allLead3],
+  ['Bỏ Giằng co vs Giằng co', wf3.filter(r => r.pair !== 'Giằng co vs Giằng co')],
+  ['Chỉ Một chiều vs Một chiều', wf3.filter(r => r.pair === 'Một chiều vs Một chiều')],
+];
+function run(list, odds) {
+  let bal = 0, peak = 0, dd = 0, l = 0;
+  const months = {};
+  for (const b of list) {
+    l += b.lead.lost;
+    bal += b.lead.lost ? -stake : stake * (odds - 1);
+    peak = Math.max(peak, bal); dd = Math.max(dd, peak - bal);
+    const mo = b.day.slice(0, 7);
+    const x = (months[mo] = months[mo] || { n: 0, l: 0, end: 0 });
+    x.n++; x.l += b.lead.lost; x.end = bal;
+  }
+  return { n: list.length, l, bal, dd, months };
+}
+console.log(`\n[C] Cược ${(stake / 1e6).toFixed(1)} tr mỗi kèo dẫn đúng 3 (cuốn chiếu):`);
+console.table(STRATS.flatMap(([name, list]) => [1.10, 1.12, 1.15].map(o => {
+  const s = run(list, o);
+  return { 'cách cược': name, 'ăn': o, 'số kèo': s.n, 'thua': s.l, 'lật kèo': pct(s.l, s.n), 'lãi': money(s.bal), 'sụt giảm lớn nhất': money(-s.dd) };
+})));
+const mc = run(STRATS[2][1], 1.15), base = run(STRATS[0][1], 1.15);
+console.log('Theo tháng (ăn 1.15): số kèo · thua · lũy kế');
+console.table(Object.keys(base.months).map(mo => ({
+  'tháng': mo,
+  'chỉ Một chiều vs Một chiều': mc.months[mo] ? `${mc.months[mo].n} · ${mc.months[mo].l} · ${money(mc.months[mo].end)}` : '0 kèo',
+  'không lọc': `${base.months[mo].n} · ${base.months[mo].l} · ${money(base.months[mo].end)}`,
+})));
+console.log('Các kèo thua của "chỉ Một chiều vs Một chiều":');
+for (const b of STRATS[2][1].filter(b => b.lead.lost)) console.log(`  ${b.day}  ${b.t1} vs ${b.t2} · cược ${b.lead.leader} · ${b.event.replace('Valorant ', '')}`);
