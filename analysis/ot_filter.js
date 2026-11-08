@@ -134,6 +134,8 @@ const STRATS = [
   ['Bỏ map có đội bị gắn cờ', r3.filter(r => r.nFlag === 0)],
   ['Bỏ khi đội đang dẫn bị gắn cờ', r3.filter(r => !r.leaderFlag)],
 ];
+// --dump FILE: write the bets of the leader rule (date order) as JSON, for bankroll simulations.
+if (opt('--dump')) fs.writeFileSync(opt('--dump'), JSON.stringify(STRATS[2][1].map(b => ({ day: b.day, match: `${b.t1} vs ${b.t2}`, leader: b.lead.leader, lost: b.lead.lost }))));
 console.log('Cược 1 tr mỗi kèo dẫn đúng 3:');
 console.table(STRATS.flatMap(([name, list]) => [1.10, 1.12, 1.15].map(o => {
   const s = run(list, o);
