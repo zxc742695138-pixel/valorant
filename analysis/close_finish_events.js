@@ -3,7 +3,7 @@
 // Columns are the season's tournaments in date order (small ones grouped as "Khác").
 //
 // Usage: node analysis/close_finish_events.js [--season 2026] [--regions americas,china,pacific]
-//   [--out reports/close-finish-events-2026.md]
+//   [--exclude "Esports World Cup|Champions"] [--out reports/close-finish-events-2026.md]
 
 const fs = require('fs');
 const { REGIONS, loadRegion } = require('./betting');
@@ -12,7 +12,9 @@ const argv = process.argv.slice(2);
 const opt = (name, def) => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : def; };
 const season = opt('--season', '2026');
 const regions = opt('--regions', 'americas,china,pacific').split(',');
-const out = opt('--out', `reports/close-finish-events-${season}.md`);
+const out = opt('--out', `reports/close-finish-events-${season}${opt('--exclude') ? '-filtered' : ''}.md`);
+// --exclude REGEX: leave out events whose name matches (e.g. "Esports World Cup|Champions").
+const exclude = opt('--exclude') ? new RegExp(opt('--exclude')) : null;
 const NAME = { americas: 'Americas', emea: 'EMEA', china: 'China', pacific: 'Pacific' };
 
 const teamRegion = {};
@@ -37,6 +39,7 @@ const s = {}; // team → col → { n, c }
 const events = {}; // col → Set(event names)
 for (const m of all.values()) {
   if (!teamRegion[m.t1] || !teamRegion[m.t2]) continue;
+  if (exclude && exclude.test(m.event)) continue;
   const c = col(m.event);
   (events[c] = events[c] || new Set()).add(m.event.replace('Valorant ', '').replace(/^VCT 20\d\d: /, ''));
   for (const mp of m.map_result) {
@@ -52,7 +55,7 @@ for (const m of all.values()) {
 
 const cell = x => (x ? `${x.c}/${x.n} (${Math.round(100 * x.c / x.n)}%)` : '');
 const md = [`# Tỉ lệ map 13-11 hoặc hiệp phụ theo giải — mùa ${season}`, '',
-  'Mỗi ô: số map kết thúc 13-11 (thắng hoặc thua) hoặc hiệp phụ / số map đội đá ở giải đó. Chỉ trận giữa hai đội nhượng quyền. "Khác" gồm: ' +
+  (exclude ? `Không tính các giải khớp: ${exclude.source}. ` : '') + 'Mỗi ô: số map kết thúc 13-11 (thắng hoặc thua) hoặc hiệp phụ / số map đội đá ở giải đó. Chỉ trận giữa hai đội nhượng quyền. "Khác" gồm: ' +
   [...(events['Khác'] || [])].join(', ') + '.', ''];
 for (const r of regions) {
   const teams = Object.keys(teamRegion).filter(t => teamRegion[t] === r && s[t]);
