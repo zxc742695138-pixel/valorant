@@ -1,6 +1,6 @@
 ---
 name: update-comeback-report
-description: Refresh the VCT team blacklist (per region, the 4 teams with the highest share of maps finishing 13-11 or in overtime over each team's last 5 matches). Use when the user asks to update / cập nhật the blacklist, the comeback ("lật kèo") report, or re-run the analysis on the latest matches.
+description: Refresh the VCT team blacklist (per region, the 5 teams with the highest share of maps finishing 13-11 or in overtime over each team's last 5 matches). Use when the user asks to update / cập nhật the blacklist, the comeback ("lật kèo") report, or re-run the analysis on the latest matches.
 ---
 
 # Update the team blacklist
@@ -26,10 +26,11 @@ description: Refresh the VCT team blacklist (per region, the 4 teams with the hi
   ("Esports World Cup|Champions": EWC, its qualifiers and Champions) are skipped, so the
   5 matches are the last 5 outside those events. (If `last_matches` is removed,
   `window_days` days are used instead.)
-- **Blacklist** = per region, the `close_blacklist.top` (4) teams with the highest share
-  (ties: more maps first; teams tied with the 4th are reported in the notes, not added).
+- **Blacklist** = per region, the `close_blacklist.top` (5) teams with the highest share
+  (ties: more maps first; teams tied with the 5th are reported in the notes, not added).
 - **How the user bets**: on the team leading by >= 3 rounds at total rounds >= 17, **except
-  when that leading team is blacklisted** (a blacklisted trailing team does not block the bet).
+  when that leading team is blacklisted** (a blacklisted trailing team does not block the bet);
+  never on EWC, its qualifiers or Champions; only at odds of about 1.12 or more.
   (Backtest, `analysis/ot_filter.js --metric close --last-matches 5`: 2026 better than no
   filter, 2025 worse. Mention it only if asked about expected results.)
 

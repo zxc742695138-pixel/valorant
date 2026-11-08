@@ -6,12 +6,12 @@
   "last_match": "2026-10-25",
   "window_days": null,
   "last_matches": 5,
-  "top": 4,
+  "top": 5,
   "exclude_events": "Esports World Cup|Champions",
   "min_maps": 0,
   "notes": [
     "38 map của Esports World Cup 2026: China Qualifier (13/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính.",
-    "Bằng tỉ lệ với đội thứ 4 nhưng đá ít map hơn nên không vào blacklist — pacific: Rex Regum Qeon; americas: FURIA, Sentinels; china: Wolves Esports."
+    "Bằng tỉ lệ với đội thứ 5 nhưng đá ít map hơn nên không vào blacklist — americas: Sentinels."
   ],
   "regions": [
     {
@@ -75,7 +75,7 @@
           "close": 4,
           "rate": 0.2857142857142857,
           "enough": true,
-          "blacklisted": false
+          "blacklisted": true
         },
         {
           "team": "KIWOOM DRX",
@@ -166,14 +166,15 @@
         "ZETA DIVISION",
         "Gen.G",
         "DetonatioN FocusMe",
-        "FULL SENSE"
-      ],
-      "tied": [
+        "FULL SENSE",
         "Rex Regum Qeon"
       ],
+      "tied": [],
       "previous": {
         "crawled_at": "2026-11-08T07:45:22.806Z",
-        "added": [],
+        "added": [
+          "Rex Regum Qeon"
+        ],
         "removed": []
       }
     },
@@ -238,7 +239,7 @@
           "close": 2,
           "rate": 0.15384615384615385,
           "enough": true,
-          "blacklisted": false
+          "blacklisted": true
         },
         {
           "team": "Sentinels",
@@ -329,15 +330,17 @@
         "100 Thieves",
         "Cloud9",
         "LOUD",
-        "ENVY"
+        "ENVY",
+        "FURIA"
       ],
       "tied": [
-        "FURIA",
         "Sentinels"
       ],
       "previous": {
         "crawled_at": "2026-11-08T07:45:22.806Z",
-        "added": [],
+        "added": [
+          "FURIA"
+        ],
         "removed": []
       }
     },
@@ -402,7 +405,7 @@
           "close": 4,
           "rate": 0.2857142857142857,
           "enough": true,
-          "blacklisted": false
+          "blacklisted": true
         },
         {
           "team": "FunPlus Phoenix",
@@ -493,14 +496,15 @@
         "Bilibili Gaming",
         "Trace Esports",
         "All Gamers",
-        "TYLOO"
-      ],
-      "tied": [
+        "TYLOO",
         "Wolves Esports"
       ],
+      "tied": [],
       "previous": {
         "crawled_at": "2026-11-08T07:45:22.806Z",
-        "added": [],
+        "added": [
+          "Wolves Esports"
+        ],
         "removed": []
       }
     }

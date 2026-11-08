@@ -3,7 +3,7 @@
   "concurrency": 4,
   "close_blacklist": {
     "last_matches": 5,
-    "top": 4,
+    "top": 5,
     "exclude_events": "Esports World Cup|Champions",
     "min_maps": 0
   },

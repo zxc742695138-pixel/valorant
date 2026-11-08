@@ -5,7 +5,7 @@
 For every partner team (12 per region), the share of maps in its **last 5 matches** (every
 map of those matches) that finished **13-11** (either way) or went to **overtime**. Only
 matches between two partner teams count, and the events matching `exclude_events` (EWC and
-its qualifiers, Champions) are left out. In each region the **4 teams with the highest share
+its qualifiers, Champions) are left out. In each region the **5 teams with the highest share
 form the blacklist** (ties: more maps first). Use: bet the team leading by >= 3 rounds at
 total rounds >= 17, **unless the leading team is blacklisted** (a blacklisted trailing team
 does not matter). Lists are produced for Pacific, Americas and China (`bet_regions`); EMEA is
