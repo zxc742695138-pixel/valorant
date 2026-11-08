@@ -3,7 +3,7 @@
 //   reports/vlr-blacklist.json   { "Pacific": { "blacklist": [...] }, ... }
 //   reports/release-notes.md     human-readable summary for the release page
 // Blacklist = per region, the teams with the highest share of maps finishing 13-11 or in
-// overtime in the last window_days days.
+// overtime over each team's last matches. Use: skip a bet when the leading team is blacklisted.
 //
 // Usage:
 //   node pipeline/export_blacklist.js [reports/latest.json]
@@ -24,9 +24,9 @@ fs.writeFileSync(path.join(ROOT, 'reports/vlr-blacklist.json'), JSON.stringify(l
 
 const pct = t => `${Math.round(100 * t.rate)}% (${t.close}/${t.maps})`;
 const lines = [
-  '**Cách dùng:** không cược map có đội nằm trong blacklist. Cược đội đang dẫn ≥ 3 round khi tổng round ≥ 17.',
+  '**Cách dùng:** cược đội đang dẫn ≥ 3 round khi tổng round ≥ 17, **trừ khi đội đang dẫn nằm trong blacklist** (đội bị dẫn nằm trong blacklist thì vẫn cược).',
   '',
-  `- Dữ liệu: vlr.gg, ${report.window_days} ngày gần nhất (${report.from} → ${report.to}), chỉ trận giữa hai đội nhượng quyền${report.exclude_events ? `; không tính giải khớp \`${report.exclude_events}\`` : ''}`,
+  `- Dữ liệu: vlr.gg, ${report.last_matches ? `${report.last_matches} trận gần nhất của mỗi đội (mỗi trận gồm mọi map), tính đến ${report.to}` : `${report.window_days} ngày gần nhất (${report.from} → ${report.to})`}, chỉ trận giữa hai đội nhượng quyền${report.exclude_events ? `; không tính giải khớp \`${report.exclude_events}\`` : ''}`,
   `- Chỉ số: % map của đội kết thúc **13-11** (thắng hoặc thua) hoặc phải đá **hiệp phụ**`,
   `- **Blacklist** = ${report.top} đội có tỉ lệ cao nhất mỗi khu vực`,
   '',

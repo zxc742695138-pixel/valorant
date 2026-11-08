@@ -97,12 +97,12 @@ footer { color: var(--ink-3); font-size: 13px; }
   <header>
     <div class="eyebrow" id="window"></div>
     <h1>Blacklist đội VCT</h1>
-    <p class="lede">Mỗi khu vực, các đội có tỉ lệ map kết thúc 13-11 hoặc phải đá hiệp phụ cao nhất trong thời gian gần đây.</p>
+    <p class="lede">Mỗi khu vực, các đội có tỉ lệ map kết thúc 13-11 hoặc phải đá hiệp phụ cao nhất trong các trận gần đây.</p>
   </header>
 
   <div class="rule">
     <b>Cách dùng</b>
-    <span><strong>Không cược map có đội nằm trong blacklist.</strong> Cược đội đang dẫn ≥ 3 round khi tổng round ≥ 17.</span>
+    <span>Cược đội đang dẫn ≥ 3 round khi tổng round ≥ 17, <strong>trừ khi đội đang dẫn nằm trong blacklist</strong>. Đội bị dẫn nằm trong blacklist thì vẫn cược.</span>
   </div>
 
   <div class="method" id="method"></div>
@@ -130,10 +130,12 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
 const fmtDate = iso => { const d = new Date(iso); return `${String(d.getUTCDate()).padStart(2, '0')}/${String(d.getUTCMonth() + 1).padStart(2, '0')}/${d.getUTCFullYear()}`; };
 const pct = x => `${Math.round(100 * x)}%`;
 
-document.getElementById('window').textContent = `${DATA.window_days} ngày · ${fmtDate(DATA.from)} – ${fmtDate(DATA.to)} · nguồn vlr.gg`;
+document.getElementById('window').textContent = DATA.last_matches
+  ? `${DATA.last_matches} trận gần nhất mỗi đội · tính đến ${fmtDate(DATA.to)} · nguồn vlr.gg`
+  : `${DATA.window_days} ngày · ${fmtDate(DATA.from)} – ${fmtDate(DATA.to)} · nguồn vlr.gg`;
 
 document.getElementById('method').innerHTML = [
-  ['Chỉ số', 'Tỉ lệ map của đội kết thúc 13-11 (thắng hoặc thua) hoặc phải đá hiệp phụ, trên tổng số map đội đã đá trong kỳ.'],
+  ['Chỉ số', `Tỉ lệ map của đội kết thúc 13-11 (thắng hoặc thua) hoặc phải đá hiệp phụ, trên tổng số map ${DATA.last_matches ? `trong ${DATA.last_matches} trận gần nhất của đội (mỗi trận gồm mọi map)` : 'đội đã đá trong kỳ'}.`],
   ['Blacklist', `${DATA.top} đội có tỉ lệ cao nhất mỗi khu vực. Bằng tỉ lệ thì đội đá nhiều map hơn xếp trên.`],
   ['Dữ liệu', `Chỉ trận giữa hai đội nhượng quyền.${DATA.exclude_events ? ` Không tính các giải: ${DATA.exclude_events.split('|').join(', ')}.` : ''}`],
 ].map(([b, s]) => `<div><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join('');
@@ -161,7 +163,7 @@ for (const r of DATA.regions) {
     <h2>${REGION_NAMES[r.region]}</h2>
     ${changes}
     <div class="table-wrap"><table>
-      <thead><tr><th>Đội</th><th>Tỉ lệ 13-11 / OT</th><th class="r">13-11</th><th class="r">Hiệp phụ</th><th class="r">Số map</th></tr></thead>
+      <thead><tr><th>Đội</th><th>Tỉ lệ 13-11 / OT</th><th class="r">13-11</th><th class="r">Hiệp phụ</th><th class="r">Số map</th><th class="r">Từ ngày</th></tr></thead>
       <tbody>${r.teams.map(t => `
         <tr class="${t.blacklisted ? 'black' : ''}">
           <td>${esc(t.team)}</td>
@@ -169,6 +171,7 @@ for (const r of DATA.regions) {
           <td class="r num">${t.c1311}</td>
           <td class="r num">${t.ot}</td>
           <td class="r num">${t.maps}</td>
+          <td class="r num">${t.since ? fmtDate(t.since) : '—'}</td>
         </tr>`).join('')}
       </tbody>
     </table></div>`;
@@ -176,7 +179,8 @@ for (const r of DATA.regions) {
 }
 
 const notes = [
-  'Danh sách được tính lại mỗi ngày từ dữ liệu gần nhất, nên một đội có thể vào hoặc ra blacklist khi có trận mới.',
+  'Danh sách được tính lại mỗi ngày, nên một đội có thể vào hoặc ra blacklist sau mỗi trận mới.',
+  'Cột "Từ ngày" là ngày của trận cũ nhất trong các trận được tính.',
   'Chỉ tính trận giữa hai đội nhượng quyền tier 1 (48 đội của 4 khu vực). Trận gặp đội Challengers không được tính.',
   'Đội ít thi đấu trong kỳ có ít số liệu, tỉ lệ dễ dao động mạnh.',
   ...(DATA.notes || []),

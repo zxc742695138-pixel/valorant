@@ -2,7 +2,7 @@
   "days": 180,
   "concurrency": 4,
   "close_blacklist": {
-    "window_days": 90,
+    "last_matches": 5,
     "top": 4,
     "exclude_events": "Esports World Cup|Champions",
     "min_maps": 0

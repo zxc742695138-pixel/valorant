@@ -1,6 +1,6 @@
 ---
 name: update-comeback-report
-description: Refresh the VCT team blacklist (per region, the 4 teams with the highest share of maps finishing 13-11 or in overtime over the last 90 days). Use when the user asks to update / cập nhật the blacklist, the comeback ("lật kèo") report, or re-run the analysis on the latest matches.
+description: Refresh the VCT team blacklist (per region, the 4 teams with the highest share of maps finishing 13-11 or in overtime over each team's last 5 matches). Use when the user asks to update / cập nhật the blacklist, the comeback ("lật kèo") report, or re-run the analysis on the latest matches.
 ---
 
 # Update the team blacklist
@@ -19,18 +19,19 @@ description: Refresh the VCT team blacklist (per region, the 4 teams with the hi
   and its teams count as partner teams (they get no list of their own).
 - **Matches**: only matches between two tier-1 partner teams (any of the 48, so
   international matches between regions count). Matches against Challengers are ignored.
-- **Close-finish share** (`analysis/close_blacklist.js`): for each team, maps in the last
-  `close_blacklist.window_days` days (90, counted back from the crawl date) that finished
-  13-11 (won or lost) or went to overtime (total rounds > 24), divided by all its maps in
-  that window. Events matching `close_blacklist.exclude_events` ("Esports World Cup|Champions":
-  EWC, its qualifiers and Champions) are left out.
+- **Close-finish share** (`analysis/close_blacklist.js`): for each team, the maps of its
+  last `close_blacklist.last_matches` matches (5; a match = every map of the series) that
+  finished 13-11 (won or lost) or went to overtime (total rounds > 24), divided by all maps
+  of those matches. Matches of events matching `close_blacklist.exclude_events`
+  ("Esports World Cup|Champions": EWC, its qualifiers and Champions) are skipped, so the
+  5 matches are the last 5 outside those events. (If `last_matches` is removed,
+  `window_days` days are used instead.)
 - **Blacklist** = per region, the `close_blacklist.top` (4) teams with the highest share
-  (ties: more maps first; teams tied with the 4th are reported, not added). Teams with no
-  map in the window are never blacklisted.
-- **How the user bets**: never on maps involving a blacklisted team; on the team leading
-  by >= 3 rounds at total rounds >= 17. (The user chose this rule; the walk-forward backtest
-  in `analysis/ot_filter.js --metric close` did not show a profit over no filter. Mention it
-  only if asked about expected results.)
+  (ties: more maps first; teams tied with the 4th are reported in the notes, not added).
+- **How the user bets**: on the team leading by >= 3 rounds at total rounds >= 17, **except
+  when that leading team is blacklisted** (a blacklisted trailing team does not block the bet).
+  (Backtest, `analysis/ot_filter.js --metric close --last-matches 5`: 2026 better than no
+  filter, 2025 worse. Mention it only if asked about expected results.)
 
 ## Daily release (automatic)
 
@@ -66,8 +67,8 @@ The steps below are the local equivalent (no release).
      `node crawler/crawl_team.js --team-id <id> --days 180 --out data/<slug>.json` and then
      `node pipeline/update.js --skip-crawl`;
    - "0 map tỉ số không khớp"; any mismatch means vlr.gg changed its markup;
-   - teams with very few maps in the window (listed in the notes, < 5 maps) have unstable
-     shares; mention it when that happens (off-season).
+   - ties with the 4th team (listed in the notes) and teams whose last matches are old
+     (column "Từ ngày"); mention them, especially in the off-season.
 
 3. Commit `data/`, `reports/` and push to the default branch `claude/sleepy-pascal-bpcnf8`
    (pull with rebase first). Check the "vlr-blacklist" Actions run for that commit.

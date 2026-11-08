@@ -2,14 +2,15 @@
 
 ## Team blacklist (close finishes)
 
-For every partner team (12 per region), the share of its maps in the last 90 days that
-finished **13-11** (either way) or went to **overtime**. Only matches between two partner
-teams count, and the events matching `exclude_events` (EWC and its qualifiers, Champions) are
-left out. In each region the **4 teams with the highest share form the blacklist**
-(ties: more maps first). Use: do not bet on maps involving a blacklisted team; bet the team
-leading by >= 3 rounds at total rounds >= 17. Lists are produced for Pacific, Americas and
-China (`bet_regions`); EMEA is crawled but not bet on. Settings live in
-`pipeline/config.json` (`close_blacklist`: `window_days`, `top`, `exclude_events`, `min_maps`).
+For every partner team (12 per region), the share of maps in its **last 5 matches** (every
+map of those matches) that finished **13-11** (either way) or went to **overtime**. Only
+matches between two partner teams count, and the events matching `exclude_events` (EWC and
+its qualifiers, Champions) are left out. In each region the **4 teams with the highest share
+form the blacklist** (ties: more maps first). Use: bet the team leading by >= 3 rounds at
+total rounds >= 17, **unless the leading team is blacklisted** (a blacklisted trailing team
+does not matter). Lists are produced for Pacific, Americas and China (`bet_regions`); EMEA is
+crawled but not bet on. Settings live in `pipeline/config.json` (`close_blacklist`:
+`last_matches`, or `window_days` instead to use a day window; `top`, `exclude_events`, `min_maps`).
 
 Refresh everything (crawl → validate → rank → report):
 
@@ -19,7 +20,7 @@ node pipeline/update.js
 
 Output: `reports/latest.html`, `reports/latest.json`, `reports/vlr-blacklist.json`, and a dated
 copy in `reports/archive/`. Each run is compared with the previous one (blacklist changes).
-The ranking alone: `node analysis/close_blacklist.js --data data --to YYYY-MM-DD`.
+The ranking alone: `node analysis/close_blacklist.js --data data --to YYYY-MM-DD --last-matches 5`.
 
 ### Daily release
 

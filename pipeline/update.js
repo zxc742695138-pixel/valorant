@@ -3,9 +3,10 @@
 //   1. (optional) rebuild team lists from the events in config.json
 //   2. crawl every team's matches in the last `days` days
 //   3. validate the data (maps without round data, score mismatches)
-//   4. per region, rank teams by their share of maps finishing 13-11 or in overtime in the
-//      last `close_blacklist.window_days` days (events matching `exclude_events` left out;
-//      see analysis/close_blacklist.js); the `top` highest form the blacklist
+//   4. per region, rank teams by their share of maps finishing 13-11 or in overtime over
+//      each team's last `close_blacklist.last_matches` matches (or `window_days` days); events
+//      matching `exclude_events` left out (analysis/close_blacklist.js); the `top` highest form
+//      the blacklist. Use: skip a bet when the LEADING team is blacklisted.
 //   5. compare with the previous run, build reports/latest.html, archive the JSON
 //
 // Usage:
@@ -121,7 +122,7 @@ function crawlAll(teams) {
   log(`  ${seen.size} trận; ${Object.values(missingByEvent).reduce((s, e) => s + e.maps, 0)} map thiếu dữ liệu round; ${mismatches} map tỉ số không khớp`);
   if (mismatches) notes.push(`${mismatches} map có round cuối không khớp tỉ số map; cần kiểm tra lại crawler.`);
 
-  // 4. Close-finish blacklist from the last `close_blacklist.window_days` days.
+  // 4. Close-finish blacklist from each team's last matches.
   const latestJson = rel('reports/latest.json');
   const previous = fs.existsSync(latestJson) ? JSON.parse(fs.readFileSync(latestJson, 'utf8')) : null;
   const C = config.close_blacklist;
@@ -133,17 +134,19 @@ function crawlAll(teams) {
   const to = crawledAt.slice(0, 10);
   const betRegions = config.bet_regions || regions;
   const res = computeCloseBlacklist({
-    dataDir: rel('data'), teamsDir: rel('crawler/teams'), to, windowDays: C.window_days, top: C.top,
+    dataDir: rel('data'), teamsDir: rel('crawler/teams'), to, windowDays: C.window_days || 90, lastMatches: C.last_matches || null, top: C.top,
     exclude: C.exclude_events || null, minMaps: C.min_maps || 0, regions: betRegions,
   });
-  log(`Tính % map 13-11 hoặc hiệp phụ, ${C.window_days} ngày gần nhất (${res.from} → ${to}), bỏ giải: ${C.exclude_events || 'không'}`);
+  log(`Tính % map 13-11 hoặc hiệp phụ, ${C.last_matches ? `${C.last_matches} trận gần nhất mỗi đội` : `${C.window_days} ngày gần nhất (${res.from} → ${to})`}, bỏ giải: ${C.exclude_events || 'không'}`);
   const report = {
     kind: 'close', crawled_at: crawledAt, from: res.from, to, last_match: res.lastDay,
-    window_days: C.window_days, top: C.top, exclude_events: C.exclude_events || null, min_maps: C.min_maps || 0, notes,
+    window_days: C.last_matches ? null : C.window_days, last_matches: C.last_matches || null, top: C.top, exclude_events: C.exclude_events || null, min_maps: C.min_maps || 0, notes,
     regions: betRegions.map(r => ({ region: r, ...res.regions[r] })),
   };
   const thin = report.regions.flatMap(r => r.teams.filter(t => t.maps < 5).map(t => `${t.team} (${t.maps})`));
   if (thin.length) notes.push(`Đội có dưới 5 map trong kỳ (số liệu ít, tỉ lệ dễ dao động): ${thin.join(', ')}.`);
+  const tied = report.regions.filter(r => r.tied.length).map(r => `${r.region}: ${r.tied.join(', ')}`);
+  if (tied.length) notes.push(`Bằng tỉ lệ với đội thứ ${C.top} nhưng đá ít map hơn nên không vào blacklist — ${tied.join('; ')}.`);
 
   // 5. Compare with the previous run (blacklist changes)
   console.log('\n================ KẾT QUẢ ================');
