@@ -1,6 +1,6 @@
 # Map dẫn đúng 3 và lật kèo theo mùa
 
-Map có thời điểm đầu tiên tổng round ≥ 17 và một đội dẫn ≥ 3 mà mức dẫn lúc đó đúng 3; **lật kèo** = đội dẫn đó thua map. Chỉ trận giữa hai đội nhượng quyền của năm đó. Dữ liệu vlr.gg 2025-06-29 → 2026-10-25 (năm 2025 chỉ có từ cuối tháng 6).
+Map có thời điểm đầu tiên tổng round ≥ 17 và một đội dẫn ≥ 3 mà mức dẫn lúc đó đúng 3; **lật kèo** = đội dẫn đó thua map.  Chỉ trận giữa hai đội nhượng quyền của năm đó. Dữ liệu vlr.gg 2025-06-29 → 2026-10-25 (năm 2025 chỉ có từ cuối tháng 6).
 
 ## Mùa 2025 — 46 lật kèo / 253 map dẫn đúng 3 (18.2%)
 

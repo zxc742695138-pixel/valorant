@@ -1,20 +1,24 @@
 #!/usr/bin/env node
-// Every map whose first qualifying lead (total rounds >= MIN_TOTAL, lead >= MIN_DIFF)
-// is exactly 3 rounds, and which of them were comebacks (that leader lost the map).
+// Every map with a qualifying lead (total rounds >= MIN_TOTAL, lead >= MIN_DIFF before
+// the map ends) and which of them were comebacks (a team that held such a lead lost).
+// With --exact3: only maps whose first qualifying lead is exactly 3, and a comeback
+// means that first leader lost.
 // Grouped by year → region → tournament (vlr.gg event); events with teams from several
 // regions are listed as international. Only matches between partner teams of that year.
 //
 // Usage:
-//   node analysis/lead3_list.js [--data data-backtest] [--out reports/lead3-maps.md]
+//   node analysis/lead3_list.js [--exact3] [--data data-backtest] [--out reports/lead-maps.md]
 
 const fs = require('fs');
 const { REGIONS, loadRegion } = require('./betting');
-const { MIN_TOTAL, MIN_DIFF } = require('./comeback');
+const { analyzeMap, MIN_TOTAL, MIN_DIFF } = require('./comeback');
 
 const argv = process.argv.slice(2);
 const opt = (name, def) => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : def; };
 const dataDir = opt('--data', 'data-backtest');
-const out = opt('--out', 'reports/lead3-maps.md');
+const exact3 = argv.includes('--exact3');
+const out = opt('--out', exact3 ? 'reports/lead3-maps.md' : 'reports/lead-maps.md');
+const LEAD = exact3 ? 'dẫn đúng 3' : `có dẫn ≥ ${MIN_DIFF}`;
 const NAME = { americas: 'Americas', emea: 'EMEA', china: 'China', pacific: 'Pacific', intl: 'Quốc tế' };
 
 // Partner teams per year (2025 list for 2025 matches, current list for 2026).
@@ -44,18 +48,24 @@ for (const m of matches) {
     const states = mp.rounds.map(s => s.split('-').map(Number));
     const [f1, f2] = states[states.length - 1];
     const first = states.slice(0, -1).find(([x, y]) => x + y >= MIN_TOTAL && Math.abs(x - y) >= MIN_DIFF);
-    if (!first || Math.abs(first[0] - first[1]) !== 3) continue;
-    const leader = first[0] > first[1] ? m.t1 : m.t2;
-    const lost = (first[0] > first[1]) !== (f1 > f2);
-    ev.maps.push({ day: m.day, t1: m.t1, t2: m.t2, map: mp.map, score: `${f1}-${f2}`, at: `${first[0]}-${first[1]}`, leader, lost });
+    if (!first || (exact3 && Math.abs(first[0] - first[1]) !== 3)) continue;
+    let leader = first[0] > first[1] ? m.t1 : m.t2, at = `${first[0]}-${first[1]}`;
+    let lost = (first[0] > first[1]) !== (f1 > f2);
+    if (!exact3) {
+      // Any team that held a qualifying lead and lost; show that team and its first lead.
+      const a = analyzeMap(mp.rounds);
+      lost = !!a.blownBy;
+      if (lost) { leader = a.blownBy === 1 ? m.t1 : m.t2; at = a.leadAt[a.blownBy]; }
+    }
+    ev.maps.push({ day: m.day, t1: m.t1, t2: m.t2, map: mp.map, score: `${f1}-${f2}`, at, leader, lost });
   }
 }
 
 const pct = (k, n) => (n ? `${(100 * k / n).toFixed(1)}%` : '—');
 const dm = d => d.slice(5).split('-').reverse().join('/');
 const short = s => s.replace('Valorant ', '').replace(/^VCT 20\d\d: /, '');
-const md = ['# Map dẫn đúng 3 và lật kèo theo mùa', '',
-  `Map có thời điểm đầu tiên tổng round ≥ ${MIN_TOTAL} và một đội dẫn ≥ ${MIN_DIFF} mà mức dẫn lúc đó đúng 3; **lật kèo** = đội dẫn đó thua map. Chỉ trận giữa hai đội nhượng quyền của năm đó. Dữ liệu vlr.gg ${firstDay} → ${lastDay} (năm 2025 chỉ có từ cuối tháng 6).`, ''];
+const md = [`# Map ${LEAD} và lật kèo theo mùa`, '',
+  (exact3 ? `Map có thời điểm đầu tiên tổng round ≥ ${MIN_TOTAL} và một đội dẫn ≥ ${MIN_DIFF} mà mức dẫn lúc đó đúng 3; **lật kèo** = đội dẫn đó thua map.` : `Map có thời điểm (trước khi map kết thúc) tổng round ≥ ${MIN_TOTAL} và một đội dẫn ≥ ${MIN_DIFF}; **lật kèo** = đội từng dẫn như vậy thua map.`) + `  Chỉ trận giữa hai đội nhượng quyền của năm đó. Dữ liệu vlr.gg ${firstDay} → ${lastDay} (năm 2025 chỉ có từ cuối tháng 6).`, ''];
 
 for (const year of Object.keys(years).sort()) {
   const groups = {};
@@ -66,16 +76,16 @@ for (const year of Object.keys(years).sort()) {
   }
   const all = Object.values(groups).flat().flatMap(e => e.maps);
   const yl = all.filter(x => x.lost).length;
-  md.push(`## Mùa ${year} — ${yl} lật kèo / ${all.length} map dẫn đúng 3 (${pct(yl, all.length)})`, '');
+  md.push(`## Mùa ${year} — ${yl} lật kèo / ${all.length} map ${LEAD} (${pct(yl, all.length)})`, '');
   console.log(`\n##### Mùa ${year}: ${yl}/${all.length} (${pct(yl, all.length)})`);
   const summary = [];
   for (const g of [...REGIONS, 'intl']) {
     const list = (groups[g] || []).sort((a, b) => a.first.localeCompare(b.first));
     if (!list.length) continue;
     const maps = list.flatMap(e => e.maps), l = maps.filter(x => x.lost).length;
-    summary.push({ 'khu vực': NAME[g], 'map dẫn đúng 3': maps.length, 'lật kèo': l, 'tỉ lệ': pct(l, maps.length) });
+    summary.push({ 'khu vực': NAME[g], [`map ${LEAD}`]: maps.length, 'lật kèo': l, 'tỉ lệ': pct(l, maps.length) });
     md.push(`### ${NAME[g]} — ${l} / ${maps.length} (${pct(l, maps.length)})`, '');
-    md.push('| Giải | Thời gian | Map dẫn đúng 3 | Lật kèo | Tỉ lệ |', '|---|---|---|---|---|');
+    md.push(`| Giải | Thời gian | Map ${LEAD} | Lật kèo | Tỉ lệ |`, '|---|---|---|---|---|');
     for (const e of list) {
       const el = e.maps.filter(x => x.lost).length;
       md.push(`| ${short(e.name)} | ${dm(e.first)}–${dm(e.last)} | ${e.maps.length} | ${el} | ${pct(el, e.maps.length)} |`);
@@ -84,7 +94,7 @@ for (const year of Object.keys(years).sort()) {
     for (const e of list) {
       const el = e.maps.filter(x => x.lost).length;
       md.push(`<details><summary>${short(e.name)} — ${el} lật / ${e.maps.length} map</summary>`, '',
-        '| Ngày | Trận | Map | Tỉ số | Đội dẫn (lúc dẫn) | Kết quả |', '|---|---|---|---|---|---|');
+        `| Ngày | Trận | Map | Tỉ số | ${exact3 ? 'Đội dẫn' : 'Đội dẫn (đội bị lật nếu lật kèo)'} (lúc dẫn) | Kết quả |`, '|---|---|---|---|---|---|');
       for (const x of e.maps) md.push(`| ${dm(x.day)} | ${x.t1} vs ${x.t2} | ${x.map} | ${x.score} | ${x.leader} (${x.at}) | ${x.lost ? '**LẬT KÈO**' : 'giữ được'} |`);
       md.push('', '</details>', '');
     }
