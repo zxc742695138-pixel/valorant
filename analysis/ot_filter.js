@@ -8,6 +8,7 @@
 //
 // Usage: node analysis/ot_filter.js [--season 2026] [--window season|90] [--top 4]
 //   [--min-maps 10] [--regions americas,china,pacific] [--stake 1000000]
+//   [--metric ot|close] [--exclude REGEX] [--bet-exclude REGEX] [--fixed] [--quiet]
 
 const fs = require('fs');
 const { REGIONS, loadRegion } = require('./betting');
@@ -22,6 +23,13 @@ const minMaps = Number(opt('--min-maps', 10));
 const regions = opt('--regions', 'americas,china,pacific').split(',');
 const stake = Number(opt('--stake', 1e6));
 const quiet = argv.includes('--quiet');
+// --metric ot|close: overtime share, or share of maps finishing 13-11 or in overtime.
+const metric = opt('--metric', 'ot');
+// --exclude REGEX: events left out of the team statistics; --bet-exclude REGEX: events not bet on.
+const statExclude = opt('--exclude') ? new RegExp(opt('--exclude')) : null;
+const betExclude = opt('--bet-exclude') ? new RegExp(opt('--bet-exclude')) : null;
+// --fixed: flag the top teams of the whole season once (hindsight, for comparison only).
+const fixed = argv.includes('--fixed');
 const teamsDir = season === '2025' ? 'crawler/teams/2025' : 'crawler/teams';
 
 const teamRegion = {};
@@ -39,7 +47,8 @@ for (const m of matches) {
     const [f1, f2] = st[st.length - 1];
     const first = st.slice(0, -1).find(([x, y]) => x + y >= MIN_TOTAL && Math.abs(x - y) >= MIN_DIFF);
     const lead = first ? { leader: first[0] > first[1] ? m.t1 : m.t2, size: Math.abs(first[0] - first[1]), lost: (first[0] > first[1]) !== (f1 > f2) } : null;
-    maps.push({ day: m.day, event: m.event, t1: m.t1, t2: m.t2, ot: f1 + f2 > 24, lead });
+    const close = metric === 'close' ? (Math.max(f1, f2) === 13 && Math.min(f1, f2) === 11) || f1 + f2 > 24 : f1 + f2 > 24;
+    maps.push({ day: m.day, event: m.event, t1: m.t1, t2: m.t2, ot: close, lead });
   }
 }
 
@@ -52,6 +61,7 @@ function flaggedAt(day, idx) {
   for (let j = 0; j < idx; j++) {
     const x = maps[j];
     if (x.day < start) continue;
+    if (statExclude && statExclude.test(x.event)) continue;
     for (const t of [x.t1, x.t2]) { const v = (s[t] = s[t] || { n: 0, ot: 0 }); v.n++; v.ot += x.ot; }
   }
   const flagged = new Set();
@@ -63,15 +73,17 @@ function flaggedAt(day, idx) {
 }
 
 const rows = [];
+let fixedFlags = null;
 let i = 0;
 while (i < maps.length) {
   const day = maps[i].day;
   const inSeason = day.startsWith(season);
-  const flagged = inSeason ? flaggedAt(day, i) : null;
+  const flagged = !inSeason ? null : fixed ? (fixedFlags || (fixedFlags = flaggedAt(`${season}-12-31`, maps.length))) : flaggedAt(day, i);
   while (i < maps.length && maps[i].day === day) {
     const x = maps[i++];
     if (!inSeason || !x.lead || !teamRegion[x.t1] || !teamRegion[x.t2]) continue;
     if (!regions.includes(teamRegion[x.t1]) || !regions.includes(teamRegion[x.t2])) continue;
+    if (betExclude && betExclude.test(x.event)) continue;
     const nFlag = [x.t1, x.t2].filter(t => flagged.has(t)).length;
     rows.push({ ...x, nFlag, leaderFlag: flagged.has(x.lead.leader) });
   }
@@ -90,7 +102,8 @@ function run(list, odds) {
 }
 
 const r3 = rows.filter(r => r.lead.size === 3);
-console.log(`Mùa ${season}; ${regions.join(', ')}; gắn cờ ${TOP} đội/khu vực có % map hiệp phụ cao nhất (${windowOpt === 'season' ? 'từ đầu mùa' : `${windowOpt} ngày gần nhất`}, ≥ ${minMaps} map), tính trước mỗi ngày đấu\n`);
+console.log(`Mùa ${season}; ${regions.join(', ')}; gắn cờ ${TOP} đội/khu vực có % map ${metric === 'close' ? '13-11 hoặc hiệp phụ' : 'hiệp phụ'} cao nhất (${fixed ? 'tính một lần trên cả mùa — nhìn lại' : `${windowOpt === 'season' ? 'từ đầu mùa' : `${windowOpt} ngày gần nhất`}, ≥ ${minMaps} map, tính trước mỗi ngày đấu`})${statExclude ? `; thống kê bỏ: ${statExclude.source}` : ''}${betExclude ? `; không cược: ${betExclude.source}` : ''}\n`);
+if (fixed) for (const r of regions) console.log(`  ${r}: ${[...flaggedAt(`${season}-12-31`, maps.length)].filter(t => teamRegion[t] === r).join(', ')}`);
 console.log('Tỉ lệ lật kèo theo số đội bị gắn cờ trong map:');
 console.table([0, 1, 2].map(k => {
   const a = rows.filter(r => r.nFlag === k), b = r3.filter(r => r.nFlag === k);
