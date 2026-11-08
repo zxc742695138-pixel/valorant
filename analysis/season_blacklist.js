@@ -7,7 +7,7 @@
 //
 // Usage:
 //   node analysis/season_blacklist.js [--season 2026] [--regions pacific,americas,china]
-//     [--data data-backtest] [--stake 1000000]
+//     [--data data-backtest] [--stake 1000000] [--who both|blown|made] [--side any|leader] [--expire N]
 
 const fs = require('fs');
 const { REGIONS, loadRegion } = require('./betting');
@@ -23,6 +23,9 @@ const betRegions = (opt('--regions', 'pacific,americas,china')).split(',');
 const who = opt('--who', 'both');
 // --expire N: a team leaves the list N days after it was added (default: end of season).
 const expireDays = opt('--expire') ? Number(opt('--expire')) : null;
+// --side any|leader: skip maps where a listed team plays (any, default) or only where a
+// listed team is the one leading, i.e. the side we would bet on (leader).
+const side = opt('--side', 'any');
 
 const teamRegion = {};
 for (const r of REGIONS) for (const t of JSON.parse(fs.readFileSync(`crawler/teams/${r}.json`, 'utf8'))) teamRegion[t.name] = r;
@@ -37,7 +40,7 @@ function firstLead(rounds) {
   for (const [a, b] of states.slice(0, -1)) { // last state = final score, map over
     if (a + b >= MIN_TOTAL && Math.abs(a - b) >= MIN_DIFF) {
       const leader = a > b ? 1 : 2;
-      return { lost: leader !== (f1 > f2 ? 1 : 2), size: Math.abs(a - b) };
+      return { lost: leader !== (f1 > f2 ? 1 : 2), size: Math.abs(a - b), leader };
     }
   }
   return null;
@@ -53,7 +56,8 @@ for (const m of matches) {
   for (const mp of m.map_result) {
     if (!mp.rounds.length) continue;
     const f = firstLead(mp.rounds);
-    if (f && inScope) bets.push({ day: m.day, match: `${m.t1} vs ${m.t2}`, map: mp.map, score: mp.score, ...f, skip: blocked });
+    if (f && inScope) bets.push({ day: m.day, match: `${m.t1} vs ${m.t2}`, map: mp.map, score: mp.score, ...f, leaderTeam: f.leader === 1 ? m.t1 : m.t2,
+      skip: side === 'leader' ? listed(f.leader === 1 ? m.t1 : m.t2) : blocked });
   }
   for (const mp of m.map_result) {
     const a = mp.rounds.length ? analyzeMap(mp.rounds) : null;
@@ -90,7 +94,7 @@ const STRATS = [
     [`Dẫn đúng 3 · blacklist mùa · ăn ${o}`, b => b.size === 3 && !b.skip, o],
   ]),
 ];
-console.log(`Mùa ${season}; cược trận giữa đội ${betRegions.join(', ')}; vào blacklist: ${who}; ${expireDays ? `hết hạn sau ${expireDays} ngày` : 'tới hết mùa'}; mỗi cược ${(stake / 1e6).toFixed(1)} tr\n`);
+console.log(`Mùa ${season}; cược trận giữa đội ${betRegions.join(', ')}; vào blacklist: ${who}; bỏ khi đội trong list ${side === 'leader' ? 'đang dẫn' : 'có mặt'}; ${expireDays ? `hết hạn sau ${expireDays} ngày` : 'tới hết mùa'}; mỗi cược ${(stake / 1e6).toFixed(1)} tr\n`);
 console.table(STRATS.map(([name, f, o]) => {
   const r = run(f, o);
   return { 'cách cược': name, 'số cược': r.n, 'thua': r.l, 'lật kèo': r.n ? `${(100 * r.l / r.n).toFixed(1)}%` : '—', 'lãi': money(r.bal), 'sụt giảm lớn nhất': money(-r.dd) };
