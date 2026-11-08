@@ -53,11 +53,11 @@ for (const m of matches) {
     for (const [x, y] of states.slice(0, -1)) { // last state = final score, map over
       if (x + y >= MIN_TOTAL && Math.abs(x - y) >= MIN_DIFF) {
         const leader = x > y ? 1 : 2;
-        first = { leader, reversed: leader !== (f1 > f2 ? 1 : 2), size: Math.abs(x - y), roundNo: x + y };
+        first = { leader, reversed: leader !== (f1 > f2 ? 1 : 2), size: Math.abs(x - y), roundNo: x + y, at: `${x}-${y}` };
         break;
       }
     }
-    maps.push({ leaders: a.leaders, blownBy: a.blownBy, first });
+    maps.push({ leaders: a.leaders, blownBy: a.blownBy, first, map: mp.map, score: `${f1}-${f2}` });
   }
   events.push({ day: m.day, t1: m.t1, t2: m.t2, event: m.event, maps });
 }
@@ -132,6 +132,7 @@ for (const e of test) {
     add(b.size === 3 ? 'Tất cả · dẫn 3' : 'Tất cả · dẫn ≥ 4', b);
     ledger.push({
       day: e.day, match: `${e.t1} vs ${e.t2}`, groups: `${g1} / ${g2}`, size: b.size, roundNo: b.roundNo, lost: b.reversed,
+      event: e.event, map: mp.map, score: mp.score, at: b.at, leaderTeam: b.leader === 1 ? e.t1 : e.t2,
       all: true, groups_only: keep, groups_lead3: keep && b.size === 3, lead4: b.size >= 4, combined: b.size >= 4 || keep,
     });
     const pair = [g1, g2].sort().join(' vs ');
@@ -192,12 +193,13 @@ if (argv.includes('--ledger')) {
     'cách cược': name, 'số cược': s.n, 'thua': s.l, 'lật kèo': `${(100 * s.l / s.n).toFixed(1)}%`,
     'lãi': money(s.bal), '%/cược': `${(100 * s.bal / (s.n * stake)).toFixed(1)}%`, 'sụt giảm lớn nhất': money(-s.dd),
   })));
-  console.log(`Các lần thua của "${label}":`);
+  const lossKey = opt('--main') === 'lead3' ? 'groups_lead3' : 'groups_only';
+  console.log(`Các lần thua của "${mainKey}":`);
   let bal = 0;
   for (const b of ledger) {
-    if (!b.groups_only) continue;
+    if (!b[lossKey]) continue;
     bal += pnl(b);
-    if (b.lost) console.log(`  ${b.day}  ${b.match} (${b.groups}) · dẫn ${b.size} → lũy kế ${money(bal)}`);
+    if (b.lost) console.log(`  ${b.day}  ${b.match} · ${b.map} ${b.score} · cược ${b.leaderTeam} lúc ${b.at} (dẫn ${b.size}) · ${b.event} → lũy kế ${money(bal)}`);
   }
 }
 
