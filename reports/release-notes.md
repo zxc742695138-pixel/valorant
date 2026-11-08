@@ -17,9 +17,9 @@ Ví dụ (Americas: 100 Thieves, Cloud9, LOUD, ENVY, FURIA): 100 Thieves dẫn S
 
 | Khu vực | Blacklist (tỉ lệ 13-11/OT, số map) | Thay đổi so với lần trước |
 |---|---|---|
-| Pacific | ZETA DIVISION 46% (6/13), Gen.G 43% (6/14), DetonatioN FocusMe 33% (4/12), FULL SENSE 29% (4/14), Rex Regum Qeon 29% (4/14) | vào: Rex Regum Qeon |
-| Americas | 100 Thieves 38% (5/13), Cloud9 25% (3/12), LOUD 24% (4/17), ENVY 15% (2/13), FURIA 15% (2/13) | vào: FURIA |
-| China | Bilibili Gaming 38% (5/13), Trace Esports 38% (5/13), All Gamers 31% (4/13), TYLOO 29% (4/14), Wolves Esports 29% (4/14) | vào: Wolves Esports |
+| Pacific | ZETA DIVISION 46% (6/13), Gen.G 43% (6/14), DetonatioN FocusMe 33% (4/12), FULL SENSE 29% (4/14), Rex Regum Qeon 29% (4/14) | không đổi |
+| Americas | 100 Thieves 38% (5/13), Cloud9 25% (3/12), LOUD 24% (4/17), ENVY 15% (2/13), FURIA 15% (2/13) | không đổi |
+| China | Bilibili Gaming 38% (5/13), Trace Esports 38% (5/13), All Gamers 31% (4/13), TYLOO 29% (4/14), Wolves Esports 29% (4/14) | không đổi |
 
 - 38 map của Esports World Cup 2026: China Qualifier (13/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính.
 - Bằng tỉ lệ với đội thứ 5 nhưng đá ít map hơn nên không vào blacklist — americas: Sentinels.
