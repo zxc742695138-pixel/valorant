@@ -173,14 +173,8 @@
       ],
       "previous": {
         "crawled_at": "2026-11-08T07:45:22.806Z",
-        "added": [
-          "DetonatioN FocusMe",
-          "FULL SENSE"
-        ],
-        "removed": [
-          "KIWOOM DRX",
-          "Rex Regum Qeon"
-        ]
+        "added": [],
+        "removed": []
       }
     },
     {
@@ -343,12 +337,8 @@
       ],
       "previous": {
         "crawled_at": "2026-11-08T07:45:22.806Z",
-        "added": [
-          "ENVY"
-        ],
-        "removed": [
-          "Evil Geniuses"
-        ]
+        "added": [],
+        "removed": []
       }
     },
     {
@@ -510,12 +500,8 @@
       ],
       "previous": {
         "crawled_at": "2026-11-08T07:45:22.806Z",
-        "added": [
-          "TYLOO"
-        ],
-        "removed": [
-          "Dragon Ranger Gaming"
-        ]
+        "added": [],
+        "removed": []
       }
     }
   ]
