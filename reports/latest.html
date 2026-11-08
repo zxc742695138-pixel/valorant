@@ -1,9 +1,9 @@
-<title>Blacklist đội VCT</title>
+<title>Whitelist đội VCT</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: one reading column; the bet rule and an all-region blacklist up top, then one table per region. */
+/* Layout: one reading column; the bet rule and an all-region whitelist up top, then one table per region. */
 :root {
   --bg: #f6f7f9;
   --surface: #ffffff;
@@ -53,7 +53,7 @@ p { margin: 0; max-width: 68ch; }
 header { display: flex; flex-direction: column; gap: 12px; }
 .lede { color: var(--ink-2); font-size: 16px; }
 
-.rule { background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 6px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.rule { background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--ok); border-radius: 6px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
 .rule b { font-family: var(--font-display); font-weight: 600; }
 .method { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
 .method div { display: flex; flex-direction: column; gap: 4px; border-top: 2px solid var(--ink); padding-top: 10px; }
@@ -62,9 +62,13 @@ header { display: flex; flex-direction: column; gap: 12px; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { font-size: 13px; padding: 3px 9px; border-radius: 999px; background: var(--muted-bg); color: var(--ink); white-space: nowrap; }
-.chip.bad { background: var(--weak-bg); color: var(--weak); font-weight: 600; }
+.chip.ok { background: var(--ok-bg); color: var(--ok); font-weight: 600; }
+.pill { font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.g-mc { background: var(--ok-bg); color: var(--ok); }
+.g-gc { background: var(--volatile-bg); color: var(--volatile); }
+.g-na { background: var(--muted-bg); color: var(--ink-3); }
 .bar { display: inline-block; height: 8px; border-radius: 4px; background: var(--ink-3); vertical-align: middle; margin-right: 8px; }
-tr.black .bar { background: var(--weak); }
+tr.white .bar { background: var(--ok); }
 .pill { font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
 .g-tb { background: var(--ok-bg); color: var(--ok); }
 .g-manh { background: var(--strong-bg); color: var(--strong); }
@@ -86,7 +90,7 @@ th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rul
 th { font-family: var(--font-data); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
 td.r, th.r { text-align: right; }
 td.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
-tr.black td:first-child { font-weight: 600; color: var(--weak); }
+tr.white td:first-child { font-weight: 600; }
 
 .notes { display: flex; flex-direction: column; gap: 10px; color: var(--ink-2); font-size: 14px; }
 .notes ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; max-width: 72ch; }
@@ -96,19 +100,19 @@ footer { color: var(--ink-3); font-size: 13px; }
 <main>
   <header>
     <div class="eyebrow" id="window"></div>
-    <h1>Blacklist đội VCT</h1>
-    <p class="lede">Mỗi khu vực, các đội có tỉ lệ map kết thúc 13-11 hoặc phải đá hiệp phụ cao nhất trong các trận gần đây.</p>
+    <h1>Whitelist đội VCT</h1>
+    <p class="lede">Mỗi khu vực, các đội "Một chiều": thắng hoặc thua thường cách biệt lớn, ít khi kết thúc sát nút.</p>
   </header>
 
   <div class="rule">
     <b>Cách dùng</b>
-    <span>Khi tổng round ≥ 17 và có đội dẫn ≥ 3 round: nếu <strong>đội đang dẫn nằm trong blacklist thì bỏ</strong>, nếu không thì cược đội đang dẫn (đội bị dẫn nằm trong blacklist vẫn cược). Không cược EWC, vòng loại EWC và Champions. Chỉ cược khi tỉ lệ ăn từ khoảng 1.12 trở lên.</span>
+    <span>Chỉ cược map khi <strong>cả hai đội đều nằm trong whitelist</strong>, kể cả trận quốc tế giữa các khu vực. Khi tổng round ≥ 17 và có đội dẫn ≥ 3 round, cược đội đang dẫn. Chỉ cược khi tỉ lệ ăn từ khoảng 1.12 trở lên.</span>
   </div>
 
   <div class="method" id="method"></div>
 
   <section style="display:flex;flex-direction:column;gap:12px">
-    <h2>Blacklist theo khu vực</h2>
+    <h2>Whitelist theo khu vực</h2>
     <div class="overview" id="overview"></div>
   </section>
 
@@ -123,28 +127,27 @@ footer { color: var(--ink-3); font-size: 13px; }
 </main>
 
 <script>
-const DATA = {"kind":"close","crawled_at":"2026-11-08T07:45:22.806Z","from":null,"to":"2026-11-08","last_match":"2026-10-25","window_days":null,"last_matches":5,"top":5,"exclude_events":"Esports World Cup|Champions","min_maps":0,"notes":["38 map của Esports World Cup 2026: China Qualifier (13/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính.","Bằng tỉ lệ với đội thứ 5 nhưng đá ít map hơn nên không vào blacklist — americas: Sentinels."],"regions":[{"region":"pacific","teams":[{"team":"ZETA DIVISION","matches":5,"since":"2026-07-30","maps":13,"c1311":3,"ot":3,"close":6,"rate":0.46153846153846156,"enough":true,"blacklisted":true},{"team":"Gen.G","matches":5,"since":"2026-07-26","maps":14,"c1311":5,"ot":1,"close":6,"rate":0.42857142857142855,"enough":true,"blacklisted":true},{"team":"DetonatioN FocusMe","matches":5,"since":"2026-07-30","maps":12,"c1311":3,"ot":1,"close":4,"rate":0.3333333333333333,"enough":true,"blacklisted":true},{"team":"FULL SENSE","matches":5,"since":"2026-07-30","maps":14,"c1311":3,"ot":1,"close":4,"rate":0.2857142857142857,"enough":true,"blacklisted":true},{"team":"Rex Regum Qeon","matches":5,"since":"2026-07-24","maps":14,"c1311":3,"ot":1,"close":4,"rate":0.2857142857142857,"enough":true,"blacklisted":true},{"team":"KIWOOM DRX","matches":5,"since":"2026-08-02","maps":13,"c1311":3,"ot":0,"close":3,"rate":0.23076923076923078,"enough":true,"blacklisted":false},{"team":"Nongshim RedForce","matches":5,"since":"2026-08-21","maps":15,"c1311":2,"ot":1,"close":3,"rate":0.2,"enough":true,"blacklisted":false},{"team":"Paper Rex","matches":5,"since":"2026-07-26","maps":11,"c1311":1,"ot":1,"close":2,"rate":0.18181818181818182,"enough":true,"blacklisted":false},{"team":"Global Esports","matches":5,"since":"2026-08-26","maps":17,"c1311":2,"ot":1,"close":3,"rate":0.17647058823529413,"enough":true,"blacklisted":false},{"team":"VARREL","matches":5,"since":"2026-08-02","maps":12,"c1311":1,"ot":1,"close":2,"rate":0.16666666666666666,"enough":true,"blacklisted":false},{"team":"Team Secret","matches":5,"since":"2026-07-19","maps":10,"c1311":1,"ot":0,"close":1,"rate":0.1,"enough":true,"blacklisted":false},{"team":"T1","matches":5,"since":"2026-08-23","maps":12,"c1311":1,"ot":0,"close":1,"rate":0.08333333333333333,"enough":true,"blacklisted":false}],"blacklist":["ZETA DIVISION","Gen.G","DetonatioN FocusMe","FULL SENSE","Rex Regum Qeon"],"tied":[],"previous":{"crawled_at":"2026-11-08T07:45:22.806Z","added":[],"removed":[]}},{"region":"americas","teams":[{"team":"100 Thieves","matches":5,"since":"2026-08-07","maps":13,"c1311":2,"ot":3,"close":5,"rate":0.38461538461538464,"enough":true,"blacklisted":true},{"team":"Cloud9","matches":5,"since":"2026-07-25","maps":12,"c1311":2,"ot":1,"close":3,"rate":0.25,"enough":true,"blacklisted":true},{"team":"LOUD","matches":5,"since":"2026-08-28","maps":17,"c1311":2,"ot":2,"close":4,"rate":0.23529411764705882,"enough":true,"blacklisted":true},{"team":"ENVY","matches":5,"since":"2026-08-01","maps":13,"c1311":0,"ot":2,"close":2,"rate":0.15384615384615385,"enough":true,"blacklisted":true},{"team":"FURIA","matches":5,"since":"2026-08-06","maps":13,"c1311":1,"ot":1,"close":2,"rate":0.15384615384615385,"enough":true,"blacklisted":true},{"team":"Sentinels","matches":5,"since":"2026-07-30","maps":13,"c1311":1,"ot":1,"close":2,"rate":0.15384615384615385,"enough":true,"blacklisted":false},{"team":"Evil Geniuses","matches":5,"since":"2026-08-09","maps":14,"c1311":1,"ot":1,"close":2,"rate":0.14285714285714285,"enough":true,"blacklisted":false},{"team":"G2 Esports","matches":5,"since":"2026-08-16","maps":14,"c1311":0,"ot":2,"close":2,"rate":0.14285714285714285,"enough":true,"blacklisted":false},{"team":"LEVIATÁN","matches":5,"since":"2026-08-01","maps":12,"c1311":0,"ot":1,"close":1,"rate":0.08333333333333333,"enough":true,"blacklisted":false},{"team":"MIBR","matches":5,"since":"2026-08-15","maps":12,"c1311":0,"ot":1,"close":1,"rate":0.08333333333333333,"enough":true,"blacklisted":false},{"team":"NRG","matches":5,"since":"2026-08-06","maps":14,"c1311":1,"ot":0,"close":1,"rate":0.07142857142857142,"enough":true,"blacklisted":false},{"team":"KRÜ Esports","matches":5,"since":"2026-08-02","maps":12,"c1311":0,"ot":0,"close":0,"rate":0,"enough":true,"blacklisted":false}],"blacklist":["100 Thieves","Cloud9","LOUD","ENVY","FURIA"],"tied":["Sentinels"],"previous":{"crawled_at":"2026-11-08T07:45:22.806Z","added":[],"removed":[]}},{"region":"china","teams":[{"team":"Bilibili Gaming","matches":5,"since":"2026-08-15","maps":13,"c1311":2,"ot":3,"close":5,"rate":0.38461538461538464,"enough":true,"blacklisted":true},{"team":"Trace Esports","matches":5,"since":"2026-08-09","maps":13,"c1311":0,"ot":5,"close":5,"rate":0.38461538461538464,"enough":true,"blacklisted":true},{"team":"All Gamers","matches":5,"since":"2026-08-12","maps":13,"c1311":0,"ot":4,"close":4,"rate":0.3076923076923077,"enough":true,"blacklisted":true},{"team":"TYLOO","matches":5,"since":"2026-08-20","maps":14,"c1311":0,"ot":4,"close":4,"rate":0.2857142857142857,"enough":true,"blacklisted":true},{"team":"Wolves Esports","matches":5,"since":"2026-07-19","maps":14,"c1311":3,"ot":1,"close":4,"rate":0.2857142857142857,"enough":true,"blacklisted":true},{"team":"FunPlus Phoenix","matches":5,"since":"2026-07-26","maps":12,"c1311":2,"ot":1,"close":3,"rate":0.25,"enough":true,"blacklisted":false},{"team":"Titan Esports Club","matches":5,"since":"2026-08-12","maps":12,"c1311":1,"ot":2,"close":3,"rate":0.25,"enough":true,"blacklisted":false},{"team":"EDward Gaming","matches":5,"since":"2026-07-24","maps":13,"c1311":3,"ot":0,"close":3,"rate":0.23076923076923078,"enough":true,"blacklisted":false},{"team":"Xi Lai Gaming","matches":5,"since":"2026-07-25","maps":13,"c1311":2,"ot":1,"close":3,"rate":0.23076923076923078,"enough":true,"blacklisted":false},{"team":"Dragon Ranger Gaming","matches":5,"since":"2026-08-10","maps":14,"c1311":0,"ot":3,"close":3,"rate":0.21428571428571427,"enough":true,"blacklisted":false},{"team":"Nova Esports","matches":5,"since":"2026-08-20","maps":13,"c1311":1,"ot":0,"close":1,"rate":0.07692307692307693,"enough":true,"blacklisted":false},{"team":"JD Gaming","matches":5,"since":"2026-08-14","maps":13,"c1311":0,"ot":0,"close":0,"rate":0,"enough":true,"blacklisted":false}],"blacklist":["Bilibili Gaming","Trace Esports","All Gamers","TYLOO","Wolves Esports"],"tied":[],"previous":{"crawled_at":"2026-11-08T07:45:22.806Z","added":[],"removed":[]}}]};
+const DATA = {"kind":"one_sided","crawled_at":"2026-11-08T07:45:22.806Z","from":"2026-01-01","to":"2026-11-08","last_match":"2026-10-25","gap":4,"top":8,"min_maps":10,"notes":["38 map của Esports World Cup 2026: China Qualifier (13/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính."],"regions":[{"region":"pacific","teams":[{"team":"Team Secret","maps":15,"bigW":3,"bigL":8,"share":0.7333333333333333,"enough":true,"group":"Một chiều"},{"team":"KIWOOM DRX","maps":27,"bigW":6,"bigL":13,"share":0.7037037037037037,"enough":true,"group":"Một chiều"},{"team":"Rex Regum Qeon","maps":27,"bigW":8,"bigL":10,"share":0.6666666666666666,"enough":true,"group":"Một chiều"},{"team":"Global Esports","maps":61,"bigW":20,"bigL":17,"share":0.6065573770491803,"enough":true,"group":"Một chiều"},{"team":"FULL SENSE","maps":35,"bigW":5,"bigL":16,"share":0.6,"enough":true,"group":"Một chiều"},{"team":"DetonatioN FocusMe","maps":22,"bigW":5,"bigL":8,"share":0.5909090909090909,"enough":true,"group":"Một chiều"},{"team":"T1","maps":53,"bigW":16,"bigL":15,"share":0.5849056603773585,"enough":true,"group":"Một chiều"},{"team":"Nongshim RedForce","maps":75,"bigW":27,"bigL":16,"share":0.5733333333333334,"enough":true,"group":"Một chiều"},{"team":"Paper Rex","maps":55,"bigW":17,"bigL":13,"share":0.5454545454545454,"enough":true,"group":"Giằng co"},{"team":"Gen.G","maps":37,"bigW":12,"bigL":8,"share":0.5405405405405406,"enough":true,"group":"Giằng co"},{"team":"VARREL","maps":22,"bigW":5,"bigL":6,"share":0.5,"enough":true,"group":"Giằng co"},{"team":"ZETA DIVISION","maps":17,"bigW":2,"bigL":6,"share":0.47058823529411764,"enough":true,"group":"Giằng co"}],"whitelist":["Team Secret","KIWOOM DRX","Rex Regum Qeon","Global Esports","FULL SENSE","DetonatioN FocusMe","T1","Nongshim RedForce"]},{"region":"americas","teams":[{"team":"KRÜ Esports","maps":28,"bigW":7,"bigL":16,"share":0.8214285714285714,"enough":true,"group":"Một chiều"},{"team":"ENVY","maps":24,"bigW":4,"bigL":15,"share":0.7916666666666666,"enough":true,"group":"Một chiều"},{"team":"FURIA","maps":32,"bigW":6,"bigL":18,"share":0.75,"enough":true,"group":"Một chiều"},{"team":"Evil Geniuses","maps":28,"bigW":9,"bigL":12,"share":0.75,"enough":true,"group":"Một chiều"},{"team":"Sentinels","maps":34,"bigW":12,"bigL":13,"share":0.7352941176470589,"enough":true,"group":"Một chiều"},{"team":"Cloud9","maps":17,"bigW":4,"bigL":8,"share":0.7058823529411765,"enough":true,"group":"Một chiều"},{"team":"LEVIATÁN","maps":64,"bigW":31,"bigL":14,"share":0.703125,"enough":true,"group":"Một chiều"},{"team":"LOUD","maps":62,"bigW":23,"bigL":19,"share":0.6774193548387096,"enough":true,"group":"Một chiều"},{"team":"MIBR","maps":43,"bigW":19,"bigL":10,"share":0.6744186046511628,"enough":true,"group":"Giằng co"},{"team":"NRG","maps":81,"bigW":31,"bigL":20,"share":0.6296296296296297,"enough":true,"group":"Giằng co"},{"team":"100 Thieves","maps":67,"bigW":31,"bigL":11,"share":0.6268656716417911,"enough":true,"group":"Giằng co"},{"team":"G2 Esports","maps":73,"bigW":25,"bigL":18,"share":0.589041095890411,"enough":true,"group":"Giằng co"}],"whitelist":["KRÜ Esports","ENVY","FURIA","Evil Geniuses","Sentinels","Cloud9","LEVIATÁN","LOUD"]},{"region":"china","teams":[{"team":"Nova Esports","maps":46,"bigW":21,"bigL":14,"share":0.7608695652173914,"enough":true,"group":"Một chiều"},{"team":"Bilibili Gaming","maps":37,"bigW":9,"bigL":17,"share":0.7027027027027027,"enough":true,"group":"Một chiều"},{"team":"TYLOO","maps":58,"bigW":21,"bigL":19,"share":0.6896551724137931,"enough":true,"group":"Một chiều"},{"team":"Xi Lai Gaming","maps":63,"bigW":21,"bigL":22,"share":0.6825396825396826,"enough":true,"group":"Một chiều"},{"team":"Dragon Ranger Gaming","maps":44,"bigW":13,"bigL":17,"share":0.6818181818181818,"enough":true,"group":"Một chiều"},{"team":"FunPlus Phoenix","maps":47,"bigW":17,"bigL":15,"share":0.6808510638297872,"enough":true,"group":"Một chiều"},{"team":"EDward Gaming","maps":50,"bigW":12,"bigL":22,"share":0.68,"enough":true,"group":"Một chiều"},{"team":"All Gamers","maps":65,"bigW":23,"bigL":17,"share":0.6153846153846154,"enough":true,"group":"Một chiều"},{"team":"JD Gaming","maps":52,"bigW":18,"bigL":14,"share":0.6153846153846154,"enough":true,"group":"Giằng co"},{"team":"Trace Esports","maps":38,"bigW":10,"bigL":13,"share":0.6052631578947368,"enough":true,"group":"Giằng co"},{"team":"Titan Esports Club","maps":53,"bigW":8,"bigL":23,"share":0.5849056603773585,"enough":true,"group":"Giằng co"},{"team":"Wolves Esports","maps":26,"bigW":5,"bigL":9,"share":0.5384615384615384,"enough":true,"group":"Giằng co"}],"whitelist":["Nova Esports","Bilibili Gaming","TYLOO","Xi Lai Gaming","Dragon Ranger Gaming","FunPlus Phoenix","EDward Gaming","All Gamers"]}]};
 
 const REGION_NAMES = { americas: 'Americas', emea: 'EMEA', china: 'China', pacific: 'Pacific' };
+const GROUP_CLASS = { 'Một chiều': 'g-mc', 'Giằng co': 'g-gc', 'Chưa đủ dữ liệu': 'g-na' };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const fmtDate = iso => { const d = new Date(iso); return `${String(d.getUTCDate()).padStart(2, '0')}/${String(d.getUTCMonth() + 1).padStart(2, '0')}/${d.getUTCFullYear()}`; };
 const pct = x => `${Math.round(100 * x)}%`;
 
-document.getElementById('window').textContent = DATA.last_matches
-  ? `${DATA.last_matches} trận gần nhất mỗi đội · tính đến ${fmtDate(DATA.to)} · nguồn vlr.gg`
-  : `${DATA.window_days} ngày · ${fmtDate(DATA.from)} – ${fmtDate(DATA.to)} · nguồn vlr.gg`;
+document.getElementById('window').textContent = `Mùa ${DATA.to.slice(0, 4)} · ${fmtDate(DATA.from)} – ${fmtDate(DATA.to)} · nguồn vlr.gg`;
 
 document.getElementById('method').innerHTML = [
-  ['Chỉ số', `Tỉ lệ map của đội kết thúc 13-11 (thắng hoặc thua) hoặc phải đá hiệp phụ, trên tổng số map ${DATA.last_matches ? `trong ${DATA.last_matches} trận gần nhất của đội (mỗi trận gồm mọi map)` : 'đội đã đá trong kỳ'}.`],
-  ['Blacklist', `${DATA.top} đội có tỉ lệ cao nhất mỗi khu vực. Bằng tỉ lệ thì đội đá nhiều map hơn xếp trên.`],
-  ['Dữ liệu', `Chỉ trận giữa hai đội nhượng quyền.${DATA.exclude_events ? ` Không tính các giải: ${DATA.exclude_events.split('|').join(', ')}.` : ''}`],
+  ['Chỉ số', `Tỉ lệ map của đội kết thúc cách nhau ≥ ${DATA.gap} round (thắng đậm hoặc thua đậm), tính trên mọi map của mùa giải này.`],
+  ['Whitelist (Một chiều)', `${DATA.top}/12 đội có tỉ lệ cao nhất mỗi khu vực. Các đội còn lại là Giằng co.`],
+  ['Chưa đủ dữ liệu', `Đội có dưới ${DATA.min_maps} map trong mùa chưa được xếp nhóm và không được cược. Đầu mùa, whitelist có thể ngắn hoặc trống.`],
 ].map(([b, s]) => `<div><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join('');
 
 document.getElementById('overview').innerHTML = DATA.regions.map(r => `
   <div class="card">
     <h3>${REGION_NAMES[r.region]}</h3>
-    <span class="label">Blacklist (${r.blacklist.length})</span>
-    <div class="chips">${r.blacklist.map(t => `<span class="chip bad">${esc(t)}</span>`).join('') || '<span class="chip">—</span>'}</div>
+    <span class="label">Whitelist (${r.whitelist.length})</span>
+    <div class="chips">${r.whitelist.map(t => `<span class="chip ok">${esc(t)}</span>`).join('') || '<span class="chip">—</span>'}</div>
   </div>`).join('');
 
 const regionsEl = document.getElementById('regions');
@@ -155,23 +158,22 @@ for (const r of DATA.regions) {
   const p = r.previous;
   const changes = p
     ? `<p class="changes">So với lần cập nhật ${fmtDate(p.crawled_at)}: ${p.added.length || p.removed.length
-        ? [p.added.length && `<b>vào blacklist:</b> ${p.added.map(esc).join(', ')}`, p.removed.length && `<b>ra khỏi blacklist:</b> ${p.removed.map(esc).join(', ')}`].filter(Boolean).join(' · ')
-        : 'blacklist không đổi'}.</p>`
+        ? [p.added.length && `<b>vào whitelist:</b> ${p.added.map(esc).join(', ')}`, p.removed.length && `<b>rời whitelist:</b> ${p.removed.map(esc).join(', ')}`].filter(Boolean).join(' · ')
+        : 'whitelist không đổi'}.</p>`
     : '';
-  const max = Math.max(0.01, ...r.teams.map(t => t.rate));
   sec.innerHTML = `
     <h2>${REGION_NAMES[r.region]}</h2>
     ${changes}
     <div class="table-wrap"><table>
-      <thead><tr><th>Đội</th><th>Tỉ lệ 13-11 / OT</th><th class="r">13-11</th><th class="r">Hiệp phụ</th><th class="r">Số map</th><th class="r">Từ ngày</th></tr></thead>
+      <thead><tr><th>Đội</th><th>Nhóm</th><th>% map đậm</th><th class="r">Thắng đậm</th><th class="r">Thua đậm</th><th class="r">Số map</th></tr></thead>
       <tbody>${r.teams.map(t => `
-        <tr class="${t.blacklisted ? 'black' : ''}">
+        <tr class="${t.group === 'Một chiều' ? 'white' : ''}">
           <td>${esc(t.team)}</td>
-          <td class="num"><span class="bar" style="width:${Math.round(80 * t.rate / max)}px"></span>${t.maps ? pct(t.rate) : '—'}</td>
-          <td class="r num">${t.c1311}</td>
-          <td class="r num">${t.ot}</td>
+          <td><span class="pill ${GROUP_CLASS[t.group] || 'g-na'}">${esc(t.group)}</span></td>
+          <td class="num"><span class="bar" style="width:${Math.round(80 * t.share)}px"></span>${t.maps ? pct(t.share) : '—'}</td>
+          <td class="r num">${t.bigW}</td>
+          <td class="r num">${t.bigL}</td>
           <td class="r num">${t.maps}</td>
-          <td class="r num">${t.since ? fmtDate(t.since) : '—'}</td>
         </tr>`).join('')}
       </tbody>
     </table></div>`;
@@ -179,10 +181,9 @@ for (const r of DATA.regions) {
 }
 
 const notes = [
-  'Danh sách được tính lại mỗi ngày, nên một đội có thể vào hoặc ra blacklist sau mỗi trận mới.',
-  'Cột "Từ ngày" là ngày của trận cũ nhất trong các trận được tính.',
+  'Danh sách được tính lại mỗi ngày từ đầu mùa đến hiện tại, nên một đội có thể đổi nhóm sau trận mới.',
   'Chỉ tính trận giữa hai đội nhượng quyền tier 1 (48 đội của 4 khu vực). Trận gặp đội Challengers không được tính.',
-  'Đội ít thi đấu trong kỳ có ít số liệu, tỉ lệ dễ dao động mạnh.',
+  'Map đậm: kết thúc cách nhau từ ' + DATA.gap + ' round trở lên, ví dụ 13-9, 13-5. Map sát: 13-10, 13-11, hiệp phụ.',
   ...(DATA.notes || []),
 ];
 document.getElementById('notes').innerHTML = notes.map(n => `<li>${esc(n)}</li>`).join('');

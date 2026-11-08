@@ -1,27 +1,24 @@
 ## Cách cược
 
-1. Chờ tới lúc **tổng round của hai đội ≥ 17** và có một đội **dẫn ≥ 3 round**.
-2. Xem **đội đang dẫn** có trong blacklist của khu vực nó không:
-   - **Có** → bỏ, không cược map này.
-   - **Không** → cược đội đang dẫn, **kể cả khi đội bị dẫn nằm trong blacklist**.
-3. **Không cược** các giải EWC, vòng loại EWC và Champions.
-4. Chỉ cược khi **tỉ lệ ăn từ khoảng 1.12 trở lên** (ăn 1.10 là lỗ trong backtest).
+1. Chỉ xét map mà **cả hai đội đều nằm trong whitelist** (nhóm Một chiều) của khu vực mình — kể cả trận quốc tế giữa các khu vực.
+2. Chờ tới lúc **tổng round của hai đội ≥ 17** và có một đội **dẫn ≥ 3 round** → cược đội đang dẫn.
+3. Map có ít nhất một đội **không** nằm trong whitelist → bỏ.
+4. Chỉ cược khi **tỉ lệ ăn từ khoảng 1.12 trở lên** (ăn 1.10 chưa có lãi trong backtest).
 
-Ví dụ (Americas: 100 Thieves, Cloud9, LOUD, ENVY, FURIA): 100 Thieves dẫn Sentinels 10-7 → không cược; Sentinels dẫn 100 Thieves 10-7 → cược Sentinels.
+Ví dụ (Americas): KRÜ Esports vs ENVY → được cược đội dẫn trước; KRÜ Esports vs MIBR → bỏ (MIBR thuộc nhóm Giằng co).
 
 ## Danh sách
 
-- Dữ liệu: vlr.gg, 5 trận gần nhất của mỗi đội (mỗi trận gồm mọi map), tính đến 2026-11-08, chỉ trận giữa hai đội nhượng quyền; không tính giải khớp `Esports World Cup|Champions`
-- Chỉ số: % map của đội kết thúc **13-11** (thắng hoặc thua) hoặc phải đá **hiệp phụ**
-- **Blacklist** = 5 đội có tỉ lệ cao nhất mỗi khu vực (bằng tỉ lệ: đội đá nhiều map hơn xếp trên)
+- Dữ liệu: vlr.gg, mùa 2026 (2026-01-01 → 2026-11-08), mọi giải, chỉ trận giữa hai đội nhượng quyền
+- Chỉ số: % map của đội kết thúc **cách ≥ 4 round** (thắng đậm hoặc thua đậm)
+- **Whitelist (Một chiều)** = 8/12 đội có tỉ lệ cao nhất mỗi khu vực; đội có dưới 10 map trong mùa chưa được xếp nhóm (không cược)
 
-| Khu vực | Blacklist (tỉ lệ 13-11/OT, số map) | Thay đổi so với lần trước |
-|---|---|---|
-| Pacific | ZETA DIVISION 46% (6/13), Gen.G 43% (6/14), DetonatioN FocusMe 33% (4/12), FULL SENSE 29% (4/14), Rex Regum Qeon 29% (4/14) | không đổi |
-| Americas | 100 Thieves 38% (5/13), Cloud9 25% (3/12), LOUD 24% (4/17), ENVY 15% (2/13), FURIA 15% (2/13) | không đổi |
-| China | Bilibili Gaming 38% (5/13), Trace Esports 38% (5/13), All Gamers 31% (4/13), TYLOO 29% (4/14), Wolves Esports 29% (4/14) | không đổi |
+| Khu vực | Whitelist — Một chiều (% map đậm) | Giằng co | Thay đổi whitelist so với lần trước |
+|---|---|---|---|
+| Pacific | Team Secret 73%, KIWOOM DRX 70%, Rex Regum Qeon 67%, Global Esports 61%, FULL SENSE 60%, DetonatioN FocusMe 59%, T1 58%, Nongshim RedForce 57% | Paper Rex 55%, Gen.G 54%, VARREL 50%, ZETA DIVISION 47% | — |
+| Americas | KRÜ Esports 82%, ENVY 79%, FURIA 75%, Evil Geniuses 75%, Sentinels 74%, Cloud9 71%, LEVIATÁN 70%, LOUD 68% | MIBR 67%, NRG 63%, 100 Thieves 63%, G2 Esports 59% | — |
+| China | Nova Esports 76%, Bilibili Gaming 70%, TYLOO 69%, Xi Lai Gaming 68%, Dragon Ranger Gaming 68%, FunPlus Phoenix 68%, EDward Gaming 68%, All Gamers 62% | JD Gaming 62%, Trace Esports 61%, Titan Esports Club 58%, Wolves Esports 54% | — |
 
 - 38 map của Esports World Cup 2026: China Qualifier (13/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính.
-- Bằng tỉ lệ với đội thứ 5 nhưng đá ít map hơn nên không vào blacklist — americas: Sentinels.
 
-File `report-details.json` chứa tỉ lệ của cả 12 đội mỗi khu vực.
+File `report-details.json` chứa số map thắng đậm / thua đậm của từng đội.

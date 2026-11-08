@@ -1,11 +1,10 @@
 {
   "days": 180,
   "concurrency": 4,
-  "close_blacklist": {
-    "last_matches": 5,
-    "top": 5,
-    "exclude_events": "Esports World Cup|Champions",
-    "min_maps": 0
+  "one_sided": {
+    "gap": 4,
+    "top": 8,
+    "min_maps": 10
   },
   "bet_regions": [
     "pacific",

@@ -1,26 +1,27 @@
 # Valorant team analysis
 
-## Team blacklist (close finishes)
+## Team whitelist (one-sided teams)
 
-For every partner team (12 per region), the share of maps in its **last 5 matches** (every
-map of those matches) that finished **13-11** (either way) or went to **overtime**. Only
-matches between two partner teams count, and the events matching `exclude_events` (EWC and
-its qualifiers, Champions) are left out. In each region the **5 teams with the highest share
-form the blacklist** (ties: more maps first). Use: bet the team leading by >= 3 rounds at
-total rounds >= 17, **unless the leading team is blacklisted** (a blacklisted trailing team
-does not matter). Lists are produced for Pacific, Americas and China (`bet_regions`); EMEA is
-crawled but not bet on. Settings live in `pipeline/config.json` (`close_blacklist`:
-`last_matches`, or `window_days` instead to use a day window; `top`, `exclude_events`, `min_maps`).
+For every partner team (12 per region), the share of its maps this season (from 1 January)
+that ended with a gap of **>= 4 rounds** (won or lost big). In each region the **8 teams with
+the highest share are "Một chiều" = the whitelist**; the other 4 are "Giằng co". Teams with
+fewer than 10 maps this season are not classified (not bet). Only matches between two partner
+teams count; every event counts. Use: bet only on maps where **both teams are whitelisted**
+(international matches included), on the team leading by >= 3 rounds at total rounds >= 17,
+at odds of about 1.12 or more. Lists are produced for Pacific, Americas and China
+(`bet_regions`); EMEA is crawled but not bet on. Settings: `pipeline/config.json`
+(`one_sided`: `gap`, `top`, `min_maps`). Walk-forward backtest:
+`node analysis/style_groups.js --regions americas,china,pacific --top 8 --season 2025|2026`.
 
-Refresh everything (crawl → validate → rank → report):
+Refresh everything (crawl since 1 January → validate → rank → report):
 
 ```bash
 node pipeline/update.js
 ```
 
 Output: `reports/latest.html`, `reports/latest.json`, `reports/vlr-blacklist.json`, and a dated
-copy in `reports/archive/`. Each run is compared with the previous one (blacklist changes).
-The ranking alone: `node analysis/close_blacklist.js --data data --to YYYY-MM-DD --last-matches 5`.
+copy in `reports/archive/`. Each run is compared with the previous one (whitelist changes).
+The ranking alone: `node analysis/one_sided.js --data data --to YYYY-MM-DD`.
 
 ### Daily release
 
@@ -29,7 +30,7 @@ demand from the Actions tab). When a list changes (order ignored) it publishes a
 `vlr-blacklist vN` with `vlr-blacklist.json`:
 
 ```json
-{ "Pacific": { "blacklist": ["Gen.G", "..."] }, "Americas": { "blacklist": ["..."] }, "China": { "blacklist": ["..."] } }
+{ "Pacific": { "whitelist": ["T1", "..."] }, "Americas": { "whitelist": ["..."] }, "China": { "whitelist": ["..."] } }
 ```
 
 Newest file: `https://github.com/<owner>/<repo>/releases/latest/download/vlr-blacklist.json`.

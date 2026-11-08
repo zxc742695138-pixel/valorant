@@ -1,4 +1,4 @@
-# Daily refresh of the per-region team blacklist (close finishes: 13-11 or overtime). Data and report are
+# Daily refresh of the per-region team whitelist (one-sided teams). Data and report are
 # committed every day; a GitHub release "vlr-blacklist vN" with vlr-blacklist.json
 # attached is published only when a list changed (or when forced).
 #
