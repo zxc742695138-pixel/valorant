@@ -10,7 +10,7 @@ Ví dụ (Americas): ENVY vs KRÜ Esports → được cược đội dẫn trư
 
 ## Danh sách
 
-- Dữ liệu: vlr.gg, mùa 2026 (2026-01-01 → 2026-11-08), mọi giải, chỉ trận giữa hai đội nhượng quyền
+- Dữ liệu: vlr.gg, mùa 2026 (2026-01-01 → 2026-11-09), mọi giải, chỉ trận giữa hai đội nhượng quyền
 - Chỉ số: % map của đội kết thúc **cách ≥ 4 round** (thắng đậm hoặc thua đậm)
 - **Whitelist (Một chiều)** = 8/12 đội có tỉ lệ cao nhất mỗi khu vực; đội có dưới 10 map trong mùa chưa được xếp nhóm (không cược)
 
