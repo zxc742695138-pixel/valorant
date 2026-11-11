@@ -1,10 +1,10 @@
 ## Cách cược
 
 1. Chỉ xét map mà **cả hai đội đều nằm trong whitelist** (nhóm Một chiều) của khu vực mình — kể cả trận quốc tế giữa các khu vực.
-2. Chờ tới lúc **tổng round của hai đội ≥ 17** và có một đội **dẫn đúng 3 round** → cược đội đang dẫn,
-   **chỉ khi round vừa rồi do đội dẫn thắng** (9-7 → 10-7 thì cược; 10-6 → 10-7 thì bỏ).
+2. Lần đầu **tổng round của hai đội ≥ 17** và có một đội **dẫn ≥ 3 round** → cược đội đang dẫn,
+   **chỉ khi round vừa rồi do đội dẫn thắng** (9-7 → 10-7, 10-8 → 11-8 thì cược; 10-6 → 10-7 thì bỏ map).
 3. Map có ít nhất một đội **không** nằm trong whitelist → bỏ.
-4. Chỉ cược khi **tỉ lệ ăn từ khoảng 1.12 trở lên** (ăn 1.10 chưa có lãi trong backtest).
+4. Kèo dẫn đúng 3 nên có tỉ lệ ăn từ khoảng 1.12 trở lên; kèo dẫn ≥ 4 ít bị lật hơn nhưng nhà cái thường trả thấp hơn.
 
 Ví dụ (Americas): ENVY vs KRÜ Esports → được cược đội dẫn trước; ENVY vs LOUD → bỏ (LOUD thuộc nhóm Giằng co).
 

@@ -7,8 +7,8 @@ that ended with a gap of **>= 4 rounds** (won or lost big). In each region the *
 the highest share are "Một chiều" = the whitelist**; the other 4 are "Giằng co". Teams with
 fewer than 10 maps this season are not classified (not bet). Only matches between two partner
 teams count; every event counts. Use: bet only on maps where **both teams are whitelisted**
-(international matches included), on the team leading by exactly 3 rounds at total rounds >= 17 — only when the leader won the
-round that produced that lead (9-7 → 10-7 yes, 10-6 → 10-7 no) — at odds of about 1.12 or more. Lists are produced for Pacific, Americas and China
+(international matches included), at the first moment with total rounds >= 17 and a lead of >= 3 rounds, on the leading team —
+only when the leader won the round that produced that lead (9-7 → 10-7 yes, 10-6 → 10-7 no). Lists are produced for Pacific, Americas and China
 (`bet_regions`); EMEA is crawled but not bet on. Settings: `pipeline/config.json`
 (`one_sided`: `gap`, `top`, `min_maps`). Walk-forward backtest:
 `node analysis/style_groups.js --regions americas,china,pacific --top 8 --season 2025|2026`.

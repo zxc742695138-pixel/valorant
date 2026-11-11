@@ -14,7 +14,7 @@
 //                test of whether the style predicts comebacks.
 //
 // Usage: node analysis/style_groups.js [--season 2026] [--gap 4] [--min-maps 10]
-//   [--regions americas,emea,china,pacific] [--data data-backtest] [--top 8] [--list] [--momentum]
+//   [--regions americas,emea,china,pacific] [--data data-backtest] [--top 8] [--list] [--momentum] [--any-lead]
 
 const fs = require('fs');
 const { REGIONS, loadRegion } = require('./betting');
@@ -133,8 +133,11 @@ const stake = Number(opt('--stake', 1e6));
 const money = x => `${x < 0 ? '−' : x > 0 ? '+' : ''}${(Math.abs(x) / 1e6).toFixed(1)} tr`;
 // --momentum: only bet a 3-round lead when the leader won the round that produced it.
 const mom = argv.includes('--momentum');
-const allLead3 = maps.filter(x => x.lead && inScope(x) && x.lead.size === 3 && (!mom || x.lead.momentum));
-const wf3 = rowsWf.filter(r => r.lead.size === 3 && (!mom || r.lead.momentum));
+// --any-lead: bet any first lead >= 3 (not only exactly 3).
+const anyLead = argv.includes('--any-lead');
+const sizeOk = x => anyLead || x.lead.size === 3;
+const allLead3 = maps.filter(x => x.lead && inScope(x) && sizeOk(x) && (!mom || x.lead.momentum));
+const wf3 = rowsWf.filter(r => sizeOk(r) && (!mom || r.lead.momentum));
 const STRATS = [
   ['Mọi kèo dẫn 3 (không lọc)', allLead3],
   ['Bỏ Giằng co vs Giằng co', wf3.filter(r => r.pair !== 'Giằng co vs Giằng co')],
