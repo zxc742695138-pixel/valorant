@@ -1,8 +1,32 @@
 {
   "team_id": "14137",
-  "crawled_at": "2026-11-13T08:21:13.485Z",
-  "since": "2025-12-29T08:19:57.377Z",
+  "crawled_at": "2026-11-14T07:52:43.794Z",
+  "since": "2025-12-29T07:51:23.746Z",
   "matches": [
+    {
+      "url": "https://www.vlr.gg/787993/ambitious-legend-gaming-vs-titan-esports-club-china-national-tournament-season-7-pro-qualifier-swiss-stage",
+      "date": "2026-11-13 01:00:00",
+      "event": "China National Tournament Season 7: Pro Qualifier",
+      "stage": "Group Stage: Day 1",
+      "team1": "Ambitious Legend Gaming",
+      "team2": "Titan Esports Club",
+      "team1_id": "15893",
+      "team2_id": "14137",
+      "match_result": "0-2",
+      "winner": "Titan Esports Club",
+      "map_result": [
+        {
+          "map": "Lotus",
+          "score": "8-13",
+          "rounds": []
+        },
+        {
+          "map": "Bind",
+          "score": "7-13",
+          "rounds": []
+        }
+      ]
+    },
     {
       "url": "https://www.vlr.gg/777961/titan-esports-club-vs-world-sports-invictus-gaming-vct-2026-china-threshold-week-2-qf",
       "date": "2026-10-29 08:00:00",

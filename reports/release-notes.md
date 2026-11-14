@@ -10,7 +10,7 @@ Ví dụ (Americas): ENVY vs KRÜ Esports → được cược đội dẫn trư
 
 ## Danh sách
 
-- Dữ liệu: vlr.gg, mùa 2026 (2026-01-01 → 2026-11-13), mọi giải, chỉ trận giữa hai đội nhượng quyền
+- Dữ liệu: vlr.gg, mùa 2026 (2026-01-01 → 2026-11-14), mọi giải, chỉ trận giữa hai đội nhượng quyền
 - Chỉ số: % map của đội kết thúc **cách ≥ 4 round** (thắng đậm hoặc thua đậm)
 - **Whitelist (Một chiều)** = 8/12 đội có tỉ lệ cao nhất mỗi khu vực; đội có dưới 10 map trong mùa chưa được xếp nhóm (không cược)
 
@@ -21,5 +21,6 @@ Ví dụ (Americas): ENVY vs KRÜ Esports → được cược đội dẫn trư
 | China | EDward Gaming 74%, Bilibili Gaming 73%, Dragon Ranger Gaming 71%, FunPlus Phoenix 70%, Xi Lai Gaming 70%, JD Gaming 69%, Nova Esports 69%, TYLOO 69% | All Gamers 68%, Wolves Esports 63%, Trace Esports 63%, Titan Esports Club 61% | không đổi |
 
 - 43 map của Esports World Cup 2026: China Qualifier (12/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính.
+- 2 map của China National Tournament Season 7: Pro Qualifier (13/11–13/11) không có dữ liệu từng round trên vlr.gg nên không được tính.
 
 File `report-details.json` chứa số map thắng đậm / thua đậm của từng đội.
