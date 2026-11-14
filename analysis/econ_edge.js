@@ -55,7 +55,7 @@ for (const m of matches) {
     for (let i = 1; i < st.length - 1; i++) {
       const [a, b] = st[i], [pa] = st[i - 1];
       const won = a > pa ? 1 : -1; streak = Math.sign(streak) === won ? streak + won : won;
-      const row = { id, season: m.day.slice(0, 4), map: mp.map, a, b, t: a + b, y, mom: won, streak: Math.max(-5, Math.min(5, streak)), elo: ed / 100, g, econ: null };
+      const row = { id, day: m.day, match: `${m.t1} vs ${m.t2}`, event: m.event, season: m.day.slice(0, 4), map: mp.map, a, b, t: a + b, y, mom: won, streak: Math.max(-5, Math.min(5, streak)), elo: ed / 100, g, econ: null };
       if (er && er.rounds[i]) {
         const prev = er.rounds[i - 1], next = er.rounds[i]; // prev = round i (just played), next = round i+1 (buy phase now)
         row.econ = { prevBuy: prev.buy, nextBuy: next.buy, nextLoad: next.load, bank: next.bank, side1: next.side1, prevWin: prev.win, prevLoad: prev.load };
@@ -81,7 +81,7 @@ const pct = x => `${x >= 0 ? '+' : ''}${(100 * x).toFixed(1)}`;
 // side-symmetric view: each state from both teams' perspective
 const sides = E.flatMap(s => [1, -1].map(sg => {
   const e = s.econ, me = sg > 0 ? 0 : 1, op = 1 - me;
-  return { id: s.id, season: s.season, map: s.map, a: sg > 0 ? s.a : s.b, b: sg > 0 ? s.b : s.a, t: s.t, y: sg > 0 ? s.y : 1 - s.y, pq: sg > 0 ? s.pq : 1 - s.pq,
+  return { id: s.id, day: s.day, match: s.match, event: s.event, season: s.season, map: s.map, team: sg > 0 ? s.match.split(' vs ')[0] : s.match.split(' vs ')[1], a: sg > 0 ? s.a : s.b, b: sg > 0 ? s.b : s.a, t: s.t, y: sg > 0 ? s.y : 1 - s.y, pq: sg > 0 ? s.pq : 1 - s.pq,
     mom: sg * s.mom, streak: sg * s.streak,
     myNext: e.nextBuy[me], opNext: e.nextBuy[op], myPrev: e.prevBuy[me], opPrev: e.prevBuy[op], wonPrev: e.prevWin === (sg > 0 ? 1 : 2),
     loadDiff: (e.nextLoad[me] ?? 0) - (e.nextLoad[op] ?? 0), bankDiff: (e.bank[me] ?? 0) - (e.bank[op] ?? 0),
@@ -144,3 +144,41 @@ for (const [name, f] of Object.entries(RULES)) {
   rows.push(row);
 }
 console.table(rows);
+
+// --ledger [season]: the chosen rule as a betting ledger — month by month, odds bands, drawdown.
+if (argv.includes('--ledger')) {
+  const season = opt('--ledger', '2026');
+  const stake = Number(opt('--stake', 1e6));
+  // --max-odds X: ignore bets priced above X (extreme scores where the simulated price is unrealistic)
+  const maxOdds = Number(opt('--max-odds', 99));
+  const money = x => `${x < 0 ? '−' : x > 0 ? '+' : ''}${(Math.abs(x) / 1e6).toFixed(1)} tr`;
+  const CT = new Set(['Fracture', 'Ascent', 'Bind', 'Pearl', 'Icebox', 'Haven']);
+  const VARIANTS = {
+    'Mình full, đối eco, không chuỗi thắng 2+': r => r.myNext === 'full' && r.opNext === 'eco' && r.streak < 2,
+    '… + phòng thủ ở map thiên CT': r => r.myNext === 'full' && r.opNext === 'eco' && r.streak < 2 && r.side === 'ct' && CT.has(r.map),
+    '… + vừa thua ván eco': r => r.myNext === 'full' && r.opNext === 'eco' && r.streak < 2 && !r.wonPrev && r.myPrev === 'eco',
+    '… + chỉ khi ăn ≥ 1.5': r => r.myNext === 'full' && r.opNext === 'eco' && r.streak < 2 && r.pq * (1 + M) <= 1 / 1.5,
+  };
+  console.log(`\n[8] Sổ cược mùa ${season}, trận giữa đội nhượng quyền, mỗi kèo ${(stake / 1e6).toFixed(1)} tr, giá = 1/(P nhà cái × ${1 + M})${maxOdds < 99 ? `, chỉ kèo ăn ≤ ${maxOdds}` : ''}, mỗi map 1 kèo/bên`);
+  const summary = [];
+  let mainBets = null;
+  for (const [name, f] of Object.entries(VARIANTS)) {
+    const seen = new Set(); const bets = [];
+    for (const r of sides.filter(x => x.season === season).sort((x, y) => x.day.localeCompare(y.day) || x.id - y.id || x.t - y.t)) {
+      if (!f(r)) continue; const q = r.pq * (1 + M); if (q >= 1 || 1 / q > maxOdds) continue;
+      const key = `${r.id}:${r.team}`; if (seen.has(key)) continue; seen.add(key);
+      bets.push({ day: r.day, match: r.match, team: r.team, map: r.map, score: `${r.a}-${r.b}`, odds: 1 / q, y: r.y, pnl: r.y ? stake * (1 / q - 1) : -stake });
+    }
+    let bal = 0, peak = 0, dd = 0; for (const b of bets) { bal += b.pnl; peak = Math.max(peak, bal); dd = Math.max(dd, peak - bal); }
+    summary.push({ 'cách cược': name, 'kèo': bets.length, 'thắng': `${(100 * bets.filter(b => b.y).length / Math.max(1, bets.length)).toFixed(1)}%`, 'ăn TB': (bets.reduce((s, b) => s + b.odds, 0) / Math.max(1, bets.length)).toFixed(2), 'lãi': money(bal), 'ROI': `${(100 * bal / Math.max(1, bets.length * stake)).toFixed(1)}%`, 'sụt giảm lớn nhất': money(-dd) });
+    if (!mainBets) mainBets = bets;
+  }
+  console.table(summary);
+  const months = {}; let bal = 0;
+  for (const b of mainBets) { const mo = b.day.slice(0, 7); const x = (months[mo] = months[mo] || { n: 0, w: 0, pnl: 0 }); x.n++; x.w += b.y; x.pnl += b.pnl; bal += b.pnl; x.end = bal; }
+  console.log('Theo tháng (cách đầu tiên):');
+  console.table(Object.entries(months).map(([mo, x]) => ({ 'tháng': mo, 'kèo': x.n, 'thắng': x.w, 'lãi tháng': money(x.pnl), 'lũy kế': money(x.end) })));
+  const bands = [[1, 1.3], [1.3, 1.6], [1.6, 2], [2, 3], [3, 99]];
+  console.log('Theo khoảng giá (cách đầu tiên):');
+  console.table(bands.map(([lo, hi]) => { const l = mainBets.filter(b => b.odds >= lo && b.odds < hi); if (!l.length) return null; return { 'ăn': `${lo}–${hi}`, 'kèo': l.length, 'thắng': `${(100 * l.filter(b => b.y).length / l.length).toFixed(1)}%`, 'nhà cái ngụ ý': `${(100 * l.reduce((s, b) => s + 1 / b.odds, 0) / l.length).toFixed(1)}%`, 'lãi': money(l.reduce((s, b) => s + b.pnl, 0)) }; }).filter(Boolean));
+}
