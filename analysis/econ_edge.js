@@ -44,7 +44,8 @@ for (const m of matches) {
       er = (cand.length === 1 ? cand[0] : econ.maps[idx]) || null;
       if (er) {
         // consistency: winners must reproduce the score progression
-        let c1 = 0, c2 = 0, ok = er.rounds.length === st.length - 1;
+        // the economy tab lists the 24 regulation rounds only (no overtime)
+        let c1 = 0, c2 = 0, ok = er.rounds.length === Math.min(24, st.length - 1);
         if (ok) for (let i = 0; i < er.rounds.length; i++) { if (er.rounds[i].win === 1) c1++; else c2++; if (st[i + 1][0] !== c1 || st[i + 1][1] !== c2) { ok = false; break; } }
         if (!ok) { mismatched++; er = null; } else joined++;
       }
@@ -55,7 +56,7 @@ for (const m of matches) {
       const [a, b] = st[i], [pa] = st[i - 1];
       const won = a > pa ? 1 : -1; streak = Math.sign(streak) === won ? streak + won : won;
       const row = { id, season: m.day.slice(0, 4), map: mp.map, a, b, t: a + b, y, mom: won, streak: Math.max(-5, Math.min(5, streak)), elo: ed / 100, g, econ: null };
-      if (er) {
+      if (er && er.rounds[i]) {
         const prev = er.rounds[i - 1], next = er.rounds[i]; // prev = round i (just played), next = round i+1 (buy phase now)
         row.econ = { prevBuy: prev.buy, nextBuy: next.buy, nextLoad: next.load, bank: next.bank, side1: next.side1, prevWin: prev.win, prevLoad: prev.load };
       }
@@ -113,6 +114,9 @@ excess(sides.filter(r => r.t >= 3), r => (r.bankDiff <= -6 ? 'a. ≤ −6k' : r.
 console.log('[6] Bên round tới (tấn công / phòng thủ) theo bản đồ');
 excess(sides.filter(r => r.side), r => `${r.map} ${r.side === 't' ? 'tấn công' : 'phòng thủ'}`, 'map/bên', 300);
 
+console.log('[6b] Xếp chồng: round tới mình full / đối eco, cộng thêm điều kiện');
+const CT_MAPS = new Set(['Fracture', 'Ascent', 'Bind', 'Pearl', 'Icebox', 'Haven']);
+excess(sides.filter(r => r.myNext === 'full' && r.opNext === 'eco'), r => [r.side === 'ct' && CT_MAPS.has(r.map) ? 'phòng thủ ở map thiên CT' : 'khác bên/map', !r.wonPrev && r.myPrev === 'eco' ? '+ vừa thua ván eco' : '', r.streak >= 2 ? '+ đang thắng 2+' : ''].filter(Boolean).join(' '), 'điều kiện thêm', 150);
 // hand rules per season
 console.log('\n[7] Quy tắc tay vs nhà cái (tỉ số+Elo+đà), phí 7%, mỗi map 1 kèo/bên:');
 const RULES = {
