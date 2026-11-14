@@ -110,3 +110,37 @@ if (argv.includes('--rules')) {
     console.log(name); console.table([row]);
   }
 }
+
+// --book: the region rulebook as a ledger (1 tr per bet): per rule and combined, per season.
+if (argv.includes('--book')) {
+  const stake = Number(opt('--stake', 1e6));
+  const money = x => `${x < 0 ? '−' : x > 0 ? '+' : ''}${(Math.abs(x) / 1e6).toFixed(1)} tr`;
+  const BOOK = [
+    ['R1 Americas: cược đội 0-2 sau round 2', r => r.region === 'americas' && r.t === 2 && r.b === 2],
+    ['R1 Quốc tế: cược đội 0-2 sau round 2', r => r.region === 'intl' && r.t === 2 && r.b === 2],
+    ['R1 EMEA: cược đội 0-2 sau round 2', r => r.region === 'emea' && r.t === 2 && r.b === 2],
+    ['R2 EMEA: thua hiệp 1 ≤ 4-8, cược đầu hiệp 2', r => r.region === 'emea' && r.h1 <= -2 && r.t === 13],
+  ];
+  for (const season of ['2025', '2026']) {
+    console.log(`\n[Sổ cược mùa ${season}] mỗi kèo ${(stake / 1e6).toFixed(1)} tr, giá = 1/(P nhà cái × ${1 + M}), kèo ăn ≤ ${MAX_ODDS}`);
+    const allBets = [];
+    const rows = [];
+    for (const [name, f] of BOOK) {
+      const seen = new Set(); const bets = [];
+      for (const r of sides.filter(x => x.season === season).sort((x, y) => x.day.localeCompare(y.day) || x.id - y.id || x.t - y.t)) {
+        if (!f(r)) continue; const q = r.pq * (1 + M); if (q >= 1 || 1 / q > MAX_ODDS) continue;
+        const k = `${r.id}:${r.team}`; if (seen.has(k)) continue; seen.add(k);
+        bets.push({ day: r.day, rule: name, odds: 1 / q, y: r.y, pnl: r.y ? stake * (1 / q - 1) : -stake });
+      }
+      allBets.push(...bets);
+      const pnl = bets.reduce((s, b) => s + b.pnl, 0);
+      rows.push({ 'quy tắc': name, 'kèo': bets.length, 'thắng': `${(100 * bets.filter(b => b.y).length / Math.max(1, bets.length)).toFixed(1)}%`, 'ăn TB': (bets.reduce((s, b) => s + b.odds, 0) / Math.max(1, bets.length)).toFixed(2), 'lãi': money(pnl), 'ROI': `${(100 * pnl / Math.max(1, bets.length * stake)).toFixed(1)}%` });
+    }
+    allBets.sort((a, b) => a.day.localeCompare(b.day));
+    let bal = 0, peak = 0, dd = 0; const months = {};
+    for (const b of allBets) { bal += b.pnl; peak = Math.max(peak, bal); dd = Math.max(dd, peak - bal); const mo = b.day.slice(0, 7); const x = (months[mo] = months[mo] || { n: 0, pnl: 0 }); x.n++; x.pnl += b.pnl; x.end = bal; }
+    rows.push({ 'quy tắc': 'TỔNG', 'kèo': allBets.length, 'thắng': `${(100 * allBets.filter(b => b.y).length / Math.max(1, allBets.length)).toFixed(1)}%`, 'ăn TB': (allBets.reduce((s, b) => s + b.odds, 0) / Math.max(1, allBets.length)).toFixed(2), 'lãi': money(bal), 'ROI': `${(100 * bal / Math.max(1, allBets.length * stake)).toFixed(1)}%`, 'sụt giảm lớn nhất': money(-dd) });
+    console.table(rows);
+    console.table(Object.entries(months).map(([mo, x]) => ({ 'tháng': mo, 'kèo': x.n, 'lãi tháng': money(x.pnl), 'lũy kế': money(x.end) })));
+  }
+}
