@@ -179,3 +179,35 @@ if (argv.includes('--why02b')) {
   }
   console.table(rows);
 }
+
+// --deep REGION: a wider situation scan for one region, per season.
+if (opt('--deep')) {
+  const rg = opt('--deep');
+  const P = sides.filter(r => r.region === rg);
+  const SIT2 = {
+    'Thắng pistol hiệp 1 (xét round 2–4)': r => r.p1 > 0 && r.t >= 1 && r.t <= 3,
+    'Thắng pistol hiệp 2 (xét round 14–16)': r => r.p13 > 0 && r.t >= 13 && r.t <= 15,
+    'Dẫn hiệp 1 ≥ 7-5 (xét ngay sau hiệp 1, t=12)': r => r.t === 12 && r.a >= 7,
+    'Dẫn hiệp 1 ≥ 8-4 (t=12)': r => r.t === 12 && r.a >= 8,
+    'Dẫn 2 round, tổng 9–16 (giữa map)': r => r.t >= 9 && r.t <= 16 && r.a - r.b === 2,
+    'Dẫn 3–4 round, tổng 9–16': r => r.t >= 9 && r.t <= 16 && r.a - r.b >= 3 && r.a - r.b <= 4,
+    'Dẫn ≥5 round, tổng ≥ 12': r => r.t >= 12 && r.a - r.b >= 5,
+    'Đang 11-x (còn 2 round là thắng), bị dẫn ≤3 trước đó': r => r.a === 11 && r.b <= 8,
+    'Đang 12-x (match point), x ≤ 10': r => r.a === 12 && r.b <= 10,
+    'Hiệp phụ, bất kỳ (từng dẫn ≥3 trước đó)': r => r.t >= 24 && r.a === r.b && r.myMax >= 3 && r.opMax < 3,
+    'Mạnh hơn ≥150 Elo, đang bị dẫn 1–3': r => r.elo >= 1.5 && r.b - r.a >= 1 && r.b - r.a <= 3,
+    'Mạnh hơn ≥150 Elo, tỉ số sát (≤1)': r => r.elo >= 1.5 && Math.abs(r.a - r.b) <= 1,
+    'Yếu hơn ≥150 Elo, đang dẫn ≥3': r => r.elo <= -1.5 && r.a - r.b >= 3,
+    'Chuỗi thắng 4+ round': r => r.streak >= 4,
+    'Chuỗi thua 4+ round': r => r.streak <= -4,
+    'Map 1 của series, tỉ số sát': r => r.mapIdx === 0 && Math.abs(r.a - r.b) <= 1 && r.t >= 6,
+    'Map 3 (quyết định), đội thắng map 2, tỉ số sát': r => r.mapIdx === 2 && r.ser === 0 && Math.abs(r.a - r.b) <= 1 && r.t >= 6,
+  };
+  console.log(`\n===== Quét sâu ${NAME[rg]} — thật − nhà cái (điểm %) [90%] n = map`);
+  console.table(Object.entries(SIT2).map(([name, f]) => { const hit = P.filter(f); const row = { 'tình huống': name }; for (const se of ['2025', '2026']) row[se] = cell(hit.filter(r => r.season === se)); row['cả hai'] = cell(hit); return row; }));
+  // by map (leader perspective, lead 2–4 mid-map) and by event type
+  const etype = e => /Kickoff/.test(e) ? 'Kickoff' : /Stage/.test(e) ? 'Stage' : 'Khác';
+  console.log('Theo bản đồ — đội dẫn ≥3 khi tổng ≥17 (comeback theo map):');
+  const maps = [...new Set(P.map(r => r.map))];
+  console.table(maps.map(mp => { const hit = P.filter(r => r.map === mp && r.t >= 17 && r.a - r.b >= 3); const row = { 'map': mp }; for (const se of ['2025', '2026']) row[se] = cell(hit.filter(r => r.season === se)); row['cả hai'] = cell(hit); return row; }).filter(r => !r['cả hai'].startsWith('(')));
+}
