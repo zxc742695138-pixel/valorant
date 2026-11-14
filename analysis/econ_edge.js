@@ -26,6 +26,9 @@ for (const r of REGIONS) for (const m of loadRegion(r, 'data-backtest', { allOpp
 const matches = [...byUrl.values()].sort((a, b) => a.date.localeCompare(b.date));
 const elo = new Map(); const R = t => elo.get(t) ?? 1500; const games = new Map();
 const scoreCount = new Map(); // score baseline from every map
+const teamRegion = {};
+for (const r of REGIONS) for (const t of JSON.parse(fs.readFileSync(`crawler/teams/backtest/${r}.json`, 'utf8'))) teamRegion[t.name] = r;
+const etypeOf = e => /Kickoff/.test(e) ? 'Kickoff' : /Stage [12]/.test(e) ? 'Stage' : /Masters/.test(e) ? 'Masters' : /Champions/.test(e) ? 'Champions' : /Esports World Cup/.test(e) ? 'EWC (+VL)' : 'Khác';
 const states = []; let mapId = 0, joined = 0, mismatched = 0;
 for (const m of matches) {
   const ed = R(m.t1) - R(m.t2), g = Math.min(games.get(m.t1) || 0, games.get(m.t2) || 0);
@@ -55,7 +58,7 @@ for (const m of matches) {
     for (let i = 1; i < st.length - 1; i++) {
       const [a, b] = st[i], [pa] = st[i - 1];
       const won = a > pa ? 1 : -1; streak = Math.sign(streak) === won ? streak + won : won;
-      const row = { id, day: m.day, match: `${m.t1} vs ${m.t2}`, event: m.event, season: m.day.slice(0, 4), map: mp.map, a, b, t: a + b, y, mom: won, streak: Math.max(-5, Math.min(5, streak)), elo: ed / 100, g, econ: null };
+      const row = { id, day: m.day, match: `${m.t1} vs ${m.t2}`, event: m.event, etype: etypeOf(m.event), region: teamRegion[m.t1] && teamRegion[m.t1] === teamRegion[m.t2] ? teamRegion[m.t1] : 'intl', season: m.day.slice(0, 4), map: mp.map, a, b, t: a + b, y, mom: won, streak: Math.max(-5, Math.min(5, streak)), elo: ed / 100, g, econ: null };
       if (er && er.rounds[i]) {
         const prev = er.rounds[i - 1], next = er.rounds[i]; // prev = round i (just played), next = round i+1 (buy phase now)
         row.econ = { prevBuy: prev.buy, nextBuy: next.buy, nextLoad: next.load, bank: next.bank, side1: next.side1, prevWin: prev.win, prevLoad: prev.load };
@@ -81,7 +84,7 @@ const pct = x => `${x >= 0 ? '+' : ''}${(100 * x).toFixed(1)}`;
 // side-symmetric view: each state from both teams' perspective
 const sides = E.flatMap(s => [1, -1].map(sg => {
   const e = s.econ, me = sg > 0 ? 0 : 1, op = 1 - me;
-  return { id: s.id, day: s.day, match: s.match, event: s.event, season: s.season, map: s.map, team: sg > 0 ? s.match.split(' vs ')[0] : s.match.split(' vs ')[1], a: sg > 0 ? s.a : s.b, b: sg > 0 ? s.b : s.a, t: s.t, y: sg > 0 ? s.y : 1 - s.y, pq: sg > 0 ? s.pq : 1 - s.pq,
+  return { id: s.id, day: s.day, match: s.match, event: s.event, etype: s.etype, region: s.region, season: s.season, map: s.map, team: sg > 0 ? s.match.split(' vs ')[0] : s.match.split(' vs ')[1], a: sg > 0 ? s.a : s.b, b: sg > 0 ? s.b : s.a, t: s.t, y: sg > 0 ? s.y : 1 - s.y, pq: sg > 0 ? s.pq : 1 - s.pq,
     mom: sg * s.mom, streak: sg * s.streak,
     myNext: e.nextBuy[me], opNext: e.nextBuy[op], myPrev: e.prevBuy[me], opPrev: e.prevBuy[op], wonPrev: e.prevWin === (sg > 0 ? 1 : 2),
     loadDiff: (e.nextLoad[me] ?? 0) - (e.nextLoad[op] ?? 0), bankDiff: (e.bank[me] ?? 0) - (e.bank[op] ?? 0),
@@ -185,4 +188,22 @@ if (argv.includes('--ledger')) {
   const bands = [[1, 1.3], [1.3, 1.6], [1.6, 2], [2, 3], [3, 99]];
   console.log('Theo khoảng giá (cách đầu tiên):');
   console.table(bands.map(([lo, hi]) => { const l = mainBets.filter(b => b.odds >= lo && b.odds < hi); if (!l.length) return null; return { 'ăn': `${lo}–${hi}`, 'kèo': l.length, 'thắng': `${(100 * l.filter(b => b.y).length / l.length).toFixed(1)}%`, 'nhà cái ngụ ý': `${(100 * l.reduce((s, b) => s + 1 / b.odds, 0) / l.length).toFixed(1)}%`, 'lãi': money(l.reduce((s, b) => s + b.pnl, 0)) }; }).filter(Boolean));
+}
+
+// --split: the main signals by region and by event type, each season separately.
+if (argv.includes('--split')) {
+  const SIG = {
+    'Buy phase: mình full / đối eco, không chuỗi thắng 2+': r => r.myNext === 'full' && r.opNext === 'eco' && r.streak < 2,
+    'Vừa thua full trước đối eco, round tới mình eco / đối full': r => !r.wonPrev && r.myPrev === 'full' && r.opPrev === 'eco' && r.myNext === 'eco' && r.opNext === 'full',
+    'Bị dẫn ≥3, vừa thắng 3+ round liền': r => r.b - r.a >= 3 && r.streak >= 3,
+    'Phòng thủ round tới (mọi map)': r => r.side === 'ct',
+  };
+  const cell = list => { if (list.length < 60) return `(${list.length})`; const ex = list.reduce((s, r) => s + r.y - r.pq, 0) / list.length; const byMap = new Map(); for (const r of list) (byMap.get(r.id) || byMap.set(r.id, []).get(r.id)).push(r); const cl = [...byMap.values()]; const bs = []; for (let i = 0; i < 100; i++) { let sum = 0, n = 0; for (let j = 0; j < cl.length; j++) { const c = cl[Math.floor(Math.random() * cl.length)]; for (const r of c) { sum += r.y - r.pq; n++; } } bs.push(sum / n); } bs.sort((x, y) => x - y); return `${pct(ex)} [${pct(bs[5])}…${pct(bs[94])}] n=${cl.length}`; };
+  for (const [name, f] of Object.entries(SIG)) {
+    const hit = sides.filter(f);
+    console.log(`\n=== ${name} — thực − nhà cái (điểm %), [khoảng 90%], n = số map`);
+    for (const [label, keyFn, keys] of [['khu vực', r => r.region, ['americas', 'emea', 'china', 'pacific', 'intl']], ['loại giải', r => r.etype, ['Kickoff', 'Stage', 'Masters', 'Champions', 'EWC (+VL)', 'Khác']]]) {
+      console.table(keys.map(k => { const row = { [label]: k }; for (const se of ['2025', '2026']) row[se] = cell(hit.filter(r => keyFn(r) === k && r.season === se)); row['cả hai'] = cell(hit.filter(r => keyFn(r) === k)); return row; }));
+    }
+  }
 }
