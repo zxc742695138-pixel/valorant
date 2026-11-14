@@ -105,6 +105,10 @@ console.log('[1] Round TỚI (đang buy phase): mình mua gì vs đối thủ mu
 excess(sides.filter(r => r.myNext && r.opNext && r.myNext !== 'pistol'), r => `mình ${B(r.myNext)} / đối ${B(r.opNext)}`, 'buy round tới');
 console.log('[2] Round VỪA RỒI mình thua: thua khi mình mua gì (đối thủ full)');
 excess(sides.filter(r => !r.wonPrev && r.opPrev === 'full' && r.myPrev), r => `thua ván ${B(r.myPrev)}`, 'ván vừa thua');
+console.log('[2b] Round VỪA RỒI mình THẮNG: thắng kiểu gì (mình mua gì / đối mua gì)');
+excess(sides.filter(r => r.wonPrev && r.myPrev && r.opPrev && r.myPrev !== 'pistol'), r => `thắng khi mình ${B(r.myPrev)} / đối ${B(r.opPrev)}`, 'ván vừa thắng');
+console.log('[2c] Đối thủ vừa thắng "ăn may" (đối eco/half thắng mình full) — góc nhìn đội vừa thua:');
+excess(sides.filter(r => !r.wonPrev && r.myPrev === 'full' && (r.opPrev === 'eco' || r.opPrev === 'half')), r => `mình full thua đối ${B(r.opPrev)}; round tới mình ${B(r.myNext)} / đối ${B(r.opNext)}`, 'mình vừa thua full trước đối eco/half → round tới', 150);
 console.log('[3] Tình huống của bạn: vừa thua ván eco/half (đối full), round tới mình full buy');
 excess(sides.filter(r => !r.wonPrev && r.opPrev === 'full' && r.myNext === 'full'), r => `vừa thua ván ${B(r.myPrev)} → full; đối round tới ${B(r.opNext)}`, 'vừa thua → round tới');
 console.log('[4] Chuỗi thua 2+ round: các ván thua đó là tiết kiệm hay full?');
