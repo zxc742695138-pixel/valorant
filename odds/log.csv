@@ -1,0 +1,2 @@
+date,event,team1,team2,map,score1,score2,last_round,odds1,odds2,bet_on,stake,result,note
+2026-11-14,ví dụ (xóa dòng này),Paper Rex,T1,Ascent,6,6,1,1.72,2.05,,,,"last_round: 1 nếu team1 vừa thắng round, 2 nếu team2; bet_on: 1/2 hoặc để trống nếu chỉ ghi giá; result: 1/2 = đội thắng map"
