@@ -52,14 +52,16 @@ const pHist = (a, b) => { const x = c.get(`${a}-${b}`); return x && x.n >= 30 ? 
 for (const s of states) s.pb = pHist(s.a, s.b);
 const all = states.filter(s => s.pb !== null && s.g >= 10 && s.region);
 const logit = p => Math.log(p / (1 - p)), sig = z => 1 / (1 + Math.exp(-z));
-const FE = ['elo', 'mom', 'streak'];
+// Strength matters more early in a map: Elo enters both as a constant and scaled by rounds left.
+for (const s of all) s.eloT = s.elo * Math.max(0, 24 - s.t) / 24;
+const FE = ['elo', 'eloT', 'mom', 'streak'];
 const w = (() => { const w = new Array(FE.length).fill(0); for (let it = 0; it < 400; it++) { const gr = new Array(w.length).fill(0); for (const r of all) { let z = logit(r.pb); FE.forEach((f, i) => { z += w[i] * r[f]; }); const e = sig(z) - r.y; FE.forEach((f, i) => { gr[i] += e * r[f]; }); } for (let i = 0; i < w.length; i++) w[i] -= 0.5 * gr[i] / all.length; } return w; })();
 for (const s of all) { let z = logit(s.pb); FE.forEach((f, i) => { z += w[i] * s[f]; }); s.pq = sig(z); }
-console.log(`${mapId} map, ${all.length} tình huống có khu vực; nhà cái = tỉ số + Elo (${w[0].toFixed(3)}/100) + round vừa rồi (${w[1].toFixed(3)}) + chuỗi (${w[2].toFixed(3)})`);
+console.log(`${mapId} map, ${all.length} tình huống có khu vực; nhà cái = tỉ số + Elo (${w[0].toFixed(3)}/100 + ${w[1].toFixed(3)} × phần round còn lại) + round vừa rồi (${w[2].toFixed(3)}) + chuỗi (${w[3].toFixed(3)})`);
 const pct = x => `${x >= 0 ? '+' : ''}${(100 * x).toFixed(1)}`;
 
 // both perspectives
-const sides = all.flatMap(s => [1, -1].map(sg => ({ ...s, sg, team: sg > 0 ? s.team1 : s.team2, a: sg > 0 ? s.a : s.b, b: sg > 0 ? s.b : s.a, y: sg > 0 ? s.y : 1 - s.y, pq: sg > 0 ? s.pq : 1 - s.pq,
+const sides = all.flatMap(s => [1, -1].map(sg => ({ ...s, sg, eloT: sg * s.eloT, team: sg > 0 ? s.team1 : s.team2, a: sg > 0 ? s.a : s.b, b: sg > 0 ? s.b : s.a, y: sg > 0 ? s.y : 1 - s.y, pq: sg > 0 ? s.pq : 1 - s.pq,
   mom: sg * s.mom, streak: sg * s.streak, p1: sg * s.p1, p13: sg * s.p13, h1: sg * s.h1, elo: sg * s.elo, ser: sg * s.ser, myMax: sg > 0 ? s.maxLead1 : s.maxLead2, opMax: sg > 0 ? s.maxLead2 : s.maxLead1 })));
 
 const SIT = {
@@ -143,4 +145,37 @@ if (argv.includes('--book')) {
     console.table(rows);
     console.table(Object.entries(months).map(([mo, x]) => ({ 'tháng': mo, 'kèo': x.n, 'lãi tháng': money(x.pnl), 'lũy kế': money(x.end) })));
   }
+}
+
+// --why02: where the profit of the 0-2 rule comes from (history vs bookmaker model vs actual).
+if (argv.includes('--why02')) {
+  const hist = pHist(0, 2);
+  console.log(`\nP lịch sử đội 0-2 thắng map (mọi trận, mọi khu vực): ${(100 * hist).toFixed(1)}% → giá công bằng ${(1 / hist).toFixed(2)}, sau phí 7%: ${(1 / (hist * 1.07)).toFixed(2)}`);
+  const rows = [];
+  for (const rg of REG) {
+    const l = sides.filter(r => r.region === rg && r.t === 2 && r.b === 2);
+    const byMap = new Set(l.map(r => r.id)).size;
+    const act = l.reduce((s, r) => s + r.y, 0) / l.length, model = l.reduce((s, r) => s + r.pq, 0) / l.length;
+    const q = model * 1.07;
+    rows.push({ 'khu vực': NAME[rg], 'map 0-2': byMap, 'thắng thật': `${(100 * act).toFixed(1)}%`, 'lịch sử chung': `${(100 * hist).toFixed(1)}%`, 'mô hình nhà cái (có đà)': `${(100 * model).toFixed(1)}%`, 'giá sau phí': (1 / q).toFixed(2),
+      'ROI nếu nhà cái dùng mô hình đà': `${(100 * (act / q - 1)).toFixed(1)}%`, 'ROI nếu nhà cái chỉ dùng lịch sử tỉ số': `${(100 * (act / (hist * 1.07) - 1)).toFixed(1)}%` });
+  }
+  console.table(rows);
+}
+
+// --why02b: bookmaker fitted ON 0-2 states only (intercept + Elo), i.e. a bookmaker that
+// prices this exact state with full pre-match strength. What is left per region?
+if (argv.includes('--why02b')) {
+  const S = sides.filter(r => r.t === 2 && r.b === 2); // the 0-2 team
+  let a0 = 0, b0 = 0;
+  for (let it = 0; it < 2000; it++) { let ga = 0, gb = 0; for (const r of S) { const e = sig(a0 + b0 * r.elo) - r.y; ga += e; gb += e * r.elo; } a0 -= 0.5 * ga / S.length; b0 -= 0.5 * gb / S.length; }
+  console.log(`\nMô hình riêng cho tỉ số 0-2: P(đội 0-2 thắng) = sigmoid(${a0.toFixed(3)} + ${b0.toFixed(3)} × Elo/100) — ${S.length} map`);
+  const rows = [];
+  for (const rg of REG) for (const se of ['2025', '2026', 'cả hai']) {
+    const l = S.filter(r => r.region === rg && (se === 'cả hai' || r.season === se)); if (l.length < 40) continue;
+    const act = l.reduce((s, r) => s + r.y, 0) / l.length, pm = l.reduce((s, r) => s + sig(a0 + b0 * r.elo), 0) / l.length;
+    let pnl = 0, n = 0; for (const r of l) { const q = sig(a0 + b0 * r.elo) * (1 + M); if (q >= 1 || 1 / q > MAX_ODDS) continue; n++; pnl += r.y ? 1 / q - 1 : -1; }
+    rows.push({ 'khu vực': NAME[rg], 'mùa': se, 'map': l.length, 'thắng thật': `${(100 * act).toFixed(1)}%`, 'mô hình': `${(100 * pm).toFixed(1)}%`, 'chênh': pct(act - pm), [`ROI (phí 7%, ăn ≤ ${MAX_ODDS})`]: n ? `${(100 * pnl / n).toFixed(1)}% (${n} kèo)` : '—' });
+  }
+  console.table(rows);
 }
