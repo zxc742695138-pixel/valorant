@@ -1,8 +1,32 @@
 {
   "team_id": "14137",
-  "crawled_at": "2026-11-14T07:52:43.794Z",
-  "since": "2025-12-29T07:51:23.746Z",
+  "crawled_at": "2026-11-15T08:08:26.390Z",
+  "since": "2025-12-29T08:07:06.275Z",
   "matches": [
+    {
+      "url": "https://www.vlr.gg/788001/titan-esports-club-vs-second-e-sport-club-china-national-tournament-season-7-pro-qualifier-d2",
+      "date": "2026-11-14 03:30:00",
+      "event": "China National Tournament Season 7: Pro Qualifier",
+      "stage": "Group Stage: Day 2",
+      "team1": "Titan Esports Club",
+      "team2": "Second E-sport Club",
+      "team1_id": "14137",
+      "team2_id": "20607",
+      "match_result": "0-2",
+      "winner": "Second E-sport Club",
+      "map_result": [
+        {
+          "map": "Sunset",
+          "score": "10-13",
+          "rounds": []
+        },
+        {
+          "map": "Haven",
+          "score": "8-13",
+          "rounds": []
+        }
+      ]
+    },
     {
       "url": "https://www.vlr.gg/787993/ambitious-legend-gaming-vs-titan-esports-club-china-national-tournament-season-7-pro-qualifier-swiss-stage",
       "date": "2026-11-13 01:00:00",

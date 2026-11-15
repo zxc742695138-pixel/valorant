@@ -1,8 +1,32 @@
 {
   "team_id": "11328",
-  "crawled_at": "2026-11-14T07:51:17.448Z",
-  "since": "2025-12-29T07:50:05.832Z",
+  "crawled_at": "2026-11-15T08:06:42.291Z",
+  "since": "2025-12-29T08:05:33.099Z",
   "matches": [
+    {
+      "url": "https://www.vlr.gg/788002/young-gaming-vs-funplus-phoenix-china-national-tournament-season-7-pro-qualifier-d2",
+      "date": "2026-11-14 03:30:00",
+      "event": "China National Tournament Season 7: Pro Qualifier",
+      "stage": "Group Stage: Day 2",
+      "team1": "Young Gaming",
+      "team2": "FunPlus Phoenix",
+      "team1_id": "22941",
+      "team2_id": "11328",
+      "match_result": "0-2",
+      "winner": "FunPlus Phoenix",
+      "map_result": [
+        {
+          "map": "Summit",
+          "score": "5-13",
+          "rounds": []
+        },
+        {
+          "map": "Abyss",
+          "score": "11-13",
+          "rounds": []
+        }
+      ]
+    },
     {
       "url": "https://www.vlr.gg/777963/funplus-phoenix-vs-any-questions-gaming-vct-2026-china-threshold-week-2-qf",
       "date": "2026-10-30 08:00:00",
