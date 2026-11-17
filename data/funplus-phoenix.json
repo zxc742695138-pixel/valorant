@@ -1,8 +1,32 @@
 {
   "team_id": "11328",
-  "crawled_at": "2026-11-16T08:12:38.225Z",
-  "since": "2025-12-29T08:11:36.041Z",
+  "crawled_at": "2026-11-17T09:29:26.079Z",
+  "since": "2025-12-29T09:28:12.751Z",
   "matches": [
+    {
+      "url": "https://www.vlr.gg/788012/hyper-tide-gaming-vs-funplus-phoenix-china-national-tournament-season-7-pro-qualifier-d4",
+      "date": "2026-11-16 01:00:00",
+      "event": "China National Tournament Season 7: Pro Qualifier",
+      "stage": "Group Stage: Day 4",
+      "team1": "Hyper Tide Gaming",
+      "team2": "FunPlus Phoenix",
+      "team1_id": "23797",
+      "team2_id": "11328",
+      "match_result": "0-2",
+      "winner": "FunPlus Phoenix",
+      "map_result": [
+        {
+          "map": "Lotus",
+          "score": "7-13",
+          "rounds": []
+        },
+        {
+          "map": "Summit",
+          "score": "5-13",
+          "rounds": []
+        }
+      ]
+    },
     {
       "url": "https://www.vlr.gg/788008/havoc-yonder-gaming-vs-funplus-phoenix-china-national-tournament-season-7-pro-qualifier-d3",
       "date": "2026-11-15 03:30:00",

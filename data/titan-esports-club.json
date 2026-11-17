@@ -1,8 +1,32 @@
 {
   "team_id": "14137",
-  "crawled_at": "2026-11-16T08:13:51.565Z",
-  "since": "2025-12-29T08:12:44.356Z",
+  "crawled_at": "2026-11-17T09:30:47.302Z",
+  "since": "2025-12-29T09:29:26.422Z",
   "matches": [
+    {
+      "url": "https://www.vlr.gg/788013/titan-esports-club-vs-lng-esports-china-national-tournament-season-7-pro-qualifier-d4",
+      "date": "2026-11-16 03:30:00",
+      "event": "China National Tournament Season 7: Pro Qualifier",
+      "stage": "Group Stage: Day 4",
+      "team1": "Titan Esports Club",
+      "team2": "LNG Esports",
+      "team1_id": "14137",
+      "team2_id": "14138",
+      "match_result": "2-0",
+      "winner": "Titan Esports Club",
+      "map_result": [
+        {
+          "map": "Bind",
+          "score": "13-4",
+          "rounds": []
+        },
+        {
+          "map": "Haven",
+          "score": "13-7",
+          "rounds": []
+        }
+      ]
+    },
     {
       "url": "https://www.vlr.gg/788001/titan-esports-club-vs-second-e-sport-club-china-national-tournament-season-7-pro-qualifier-d2",
       "date": "2026-11-14 03:30:00",
