@@ -1,8 +1,37 @@
 {
   "team_id": "14137",
-  "crawled_at": "2026-11-17T09:30:47.302Z",
-  "since": "2025-12-29T09:29:26.422Z",
+  "crawled_at": "2026-11-18T08:57:54.459Z",
+  "since": "2025-12-29T08:55:51.445Z",
   "matches": [
+    {
+      "url": "https://www.vlr.gg/788021/titan-esports-club-vs-victory-no-limits-gaming-china-national-tournament-season-7-pro-qualifier-d5",
+      "date": "2026-11-17 06:00:00",
+      "event": "China National Tournament Season 7: Pro Qualifier",
+      "stage": "Group Stage: Day 5",
+      "team1": "Titan Esports Club",
+      "team2": "Victory No Limits Gaming",
+      "team1_id": "14137",
+      "team2_id": "23699",
+      "match_result": "1-2",
+      "winner": "Victory No Limits Gaming",
+      "map_result": [
+        {
+          "map": "Sunset",
+          "score": "15-13",
+          "rounds": []
+        },
+        {
+          "map": "Haven",
+          "score": "4-13",
+          "rounds": []
+        },
+        {
+          "map": "Lotus",
+          "score": "6-13",
+          "rounds": []
+        }
+      ]
+    },
     {
       "url": "https://www.vlr.gg/788013/titan-esports-club-vs-lng-esports-china-national-tournament-season-7-pro-qualifier-d4",
       "date": "2026-11-16 03:30:00",
