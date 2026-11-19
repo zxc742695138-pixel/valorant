@@ -1,8 +1,37 @@
 {
   "team_id": "14137",
-  "crawled_at": "2026-11-18T08:57:54.459Z",
-  "since": "2025-12-29T08:55:51.445Z",
+  "crawled_at": "2026-11-19T09:10:10.054Z",
+  "since": "2025-12-29T09:08:23.679Z",
   "matches": [
+    {
+      "url": "https://www.vlr.gg/788025/titan-esports-club-vs-keepbest-gaming-china-national-tournament-season-7-pro-qualifier-d6",
+      "date": "2026-11-18 03:30:00",
+      "event": "China National Tournament Season 7: Pro Qualifier",
+      "stage": "Group Stage: Day 6",
+      "team1": "Titan Esports Club",
+      "team2": "KeepBest Gaming",
+      "team1_id": "14137",
+      "team2_id": "12784",
+      "match_result": "2-1",
+      "winner": "Titan Esports Club",
+      "map_result": [
+        {
+          "map": "Bind",
+          "score": "13-10",
+          "rounds": []
+        },
+        {
+          "map": "Summit",
+          "score": "1-13",
+          "rounds": []
+        },
+        {
+          "map": "Sunset",
+          "score": "13-10",
+          "rounds": []
+        }
+      ]
+    },
     {
       "url": "https://www.vlr.gg/788021/titan-esports-club-vs-victory-no-limits-gaming-china-national-tournament-season-7-pro-qualifier-d5",
       "date": "2026-11-17 06:00:00",
