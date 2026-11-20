@@ -1,15 +1,15 @@
 {
   "kind": "one_sided",
-  "crawled_at": "2026-11-19T09:14:52.083Z",
+  "crawled_at": "2026-11-20T09:05:48.438Z",
   "from": "2026-01-01",
-  "to": "2026-11-19",
+  "to": "2026-11-20",
   "last_match": "2026-10-25",
   "gap": 4,
   "top": 8,
   "min_maps": 10,
   "notes": [
     "43 map của Esports World Cup 2026: China Qualifier (12/05–18/05) không có dữ liệu từng round trên vlr.gg nên không được tính.",
-    "20 map của China National Tournament Season 7: Pro Qualifier (13/11–18/11) không có dữ liệu từng round trên vlr.gg nên không được tính."
+    "23 map của China National Tournament Season 7: Pro Qualifier (13/11–19/11) không có dữ liệu từng round trên vlr.gg nên không được tính."
   ],
   "regions": [
     {
@@ -135,7 +135,7 @@
         "Paper Rex"
       ],
       "previous": {
-        "crawled_at": "2026-11-18T09:03:46.491Z",
+        "crawled_at": "2026-11-19T09:14:52.083Z",
         "added": [],
         "removed": []
       }
@@ -263,7 +263,7 @@
         "Evil Geniuses"
       ],
       "previous": {
-        "crawled_at": "2026-11-18T09:03:46.491Z",
+        "crawled_at": "2026-11-19T09:14:52.083Z",
         "added": [],
         "removed": []
       }
@@ -391,7 +391,7 @@
         "TYLOO"
       ],
       "previous": {
-        "crawled_at": "2026-11-18T09:03:46.491Z",
+        "crawled_at": "2026-11-19T09:14:52.083Z",
         "added": [],
         "removed": []
       }
