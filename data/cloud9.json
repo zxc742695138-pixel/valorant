@@ -1,8 +1,80 @@
 {
   "team_id": "188",
-  "crawled_at": "2026-11-21T08:28:29.464Z",
-  "since": "2025-12-29T08:26:56.526Z",
+  "crawled_at": "2026-11-22T08:14:39.511Z",
+  "since": "2025-12-29T08:13:51.844Z",
   "matches": [
+    {
+      "url": "https://www.vlr.gg/792908/cloud9-vs-maryville-university-vct-2027-america-kickoff-north-america-qualifier-playoffs-r2-1-0",
+      "date": "2026-11-21 20:00:00",
+      "event": "VCT 2027: America Kickoff - North America Qualifier Playoffs",
+      "stage": "Swiss Stage: Round 2 (1-0)",
+      "team1": "Cloud9",
+      "team2": "Maryville University",
+      "team1_id": "188",
+      "team2_id": "12900",
+      "match_result": "2-0",
+      "winner": "Cloud9",
+      "map_result": [
+        {
+          "map": "Sunset",
+          "score": "14-12",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "2-0",
+            "3-0",
+            "4-0",
+            "5-0",
+            "6-0",
+            "6-1",
+            "6-2",
+            "6-3",
+            "7-3",
+            "7-4",
+            "8-4",
+            "8-5",
+            "8-6",
+            "9-6",
+            "9-7",
+            "9-8",
+            "9-9",
+            "9-10",
+            "9-11",
+            "10-11",
+            "11-11",
+            "11-12",
+            "12-12",
+            "13-12",
+            "14-12"
+          ]
+        },
+        {
+          "map": "Haven",
+          "score": "13-5",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "2-0",
+            "3-0",
+            "4-0",
+            "5-0",
+            "6-0",
+            "7-0",
+            "8-0",
+            "8-1",
+            "8-2",
+            "9-2",
+            "10-2",
+            "10-3",
+            "10-4",
+            "11-4",
+            "12-4",
+            "12-5",
+            "13-5"
+          ]
+        }
+      ]
+    },
     {
       "url": "https://www.vlr.gg/791679/cloud9-vs-counterfeit-vct-2027-america-kickoff-north-america-qualifier-playoffs-r1-0-0",
       "date": "2026-11-20 17:00:00",
