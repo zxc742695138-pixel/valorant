@@ -1,8 +1,56 @@
 {
   "team_id": "14137",
-  "crawled_at": "2026-11-22T08:21:28.973Z",
-  "since": "2025-12-29T08:20:16.800Z",
+  "crawled_at": "2026-11-23T09:29:43.730Z",
+  "since": "2025-12-29T09:27:55.920Z",
   "matches": [
+    {
+      "url": "https://www.vlr.gg/788042/titan-esports-club-vs-qian-xing-gaming-china-national-tournament-season-7-pro-qualifier-d9",
+      "date": "2026-11-21 01:00:00",
+      "event": "China National Tournament Season 7: Pro Qualifier",
+      "stage": "Group Stage: Day 9",
+      "team1": "Titan Esports Club",
+      "team2": "Qian Xing Gaming",
+      "team1_id": "14137",
+      "team2_id": "23798",
+      "match_result": "2-0",
+      "winner": "Titan Esports Club",
+      "map_result": [
+        {
+          "map": "Lotus",
+          "score": "13-9",
+          "rounds": []
+        },
+        {
+          "map": "Haven",
+          "score": "13-2",
+          "rounds": []
+        }
+      ]
+    },
+    {
+      "url": "https://www.vlr.gg/788037/titan-esports-club-vs-a-team-china-national-tournament-season-7-pro-qualifier-d8",
+      "date": "2026-11-20 03:30:00",
+      "event": "China National Tournament Season 7: Pro Qualifier",
+      "stage": "Group Stage: Day 8",
+      "team1": "Titan Esports Club",
+      "team2": "A Team",
+      "team1_id": "14137",
+      "team2_id": "20603",
+      "match_result": "0-2",
+      "winner": "A Team",
+      "map_result": [
+        {
+          "map": "Haven",
+          "score": "3-13",
+          "rounds": []
+        },
+        {
+          "map": "Sunset",
+          "score": "9-13",
+          "rounds": []
+        }
+      ]
+    },
     {
       "url": "https://www.vlr.gg/788025/titan-esports-club-vs-keepbest-gaming-china-national-tournament-season-7-pro-qualifier-d6",
       "date": "2026-11-18 03:30:00",
