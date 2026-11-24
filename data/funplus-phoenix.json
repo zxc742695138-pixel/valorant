@@ -1,8 +1,32 @@
 {
   "team_id": "11328",
-  "crawled_at": "2026-11-23T09:27:55.661Z",
-  "since": "2025-12-29T09:26:17.333Z",
+  "crawled_at": "2026-11-24T11:16:27.317Z",
+  "since": "2025-12-29T11:15:17.850Z",
   "matches": [
+    {
+      "url": "https://www.vlr.gg/793770/a-team-vs-funplus-phoenix-china-national-tournament-season-7-pro-qualifier-ubqf",
+      "date": "2026-11-23 06:00:00",
+      "event": "China National Tournament Season 7: Pro Qualifier",
+      "stage": "Playoffs: Upper Quarterfinals",
+      "team1": "A Team",
+      "team2": "FunPlus Phoenix",
+      "team1_id": "20603",
+      "team2_id": "11328",
+      "match_result": "2-0",
+      "winner": "A Team",
+      "map_result": [
+        {
+          "map": "Bind",
+          "score": "13-5",
+          "rounds": []
+        },
+        {
+          "map": "Sunset",
+          "score": "13-2",
+          "rounds": []
+        }
+      ]
+    },
     {
       "url": "https://www.vlr.gg/788040/any-questions-gaming-vs-funplus-phoenix-china-national-tournament-season-7-pro-qualifier-d8",
       "date": "2026-11-20 06:00:00",
