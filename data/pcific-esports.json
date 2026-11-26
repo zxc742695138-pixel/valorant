@@ -1,8 +1,77 @@
 {
   "team_id": "3478",
-  "crawled_at": "2026-11-25T10:08:20.741Z",
-  "since": "2025-12-29T10:07:00.965Z",
+  "crawled_at": "2026-11-26T09:48:57.753Z",
+  "since": "2025-12-29T09:48:11.662Z",
   "matches": [
+    {
+      "url": "https://www.vlr.gg/793638/pcific-esports-vs-team-apanthe-vct-2027-emea-kickoff-t-rkiye-qualifier-playoffs-opening-b",
+      "date": "2026-11-25 09:30:00",
+      "event": "VCT 2027: EMEA Kickoff - Türkiye Qualifier",
+      "stage": "Playoffs: Opening (B)",
+      "team1": "PCIFIC Esports",
+      "team2": "team apanthe",
+      "team1_id": "3478",
+      "team2_id": "25427",
+      "match_result": "2-0",
+      "winner": "PCIFIC Esports",
+      "map_result": [
+        {
+          "map": "Lotus",
+          "score": "13-10",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "2-0",
+            "3-0",
+            "4-0",
+            "5-0",
+            "5-1",
+            "6-1",
+            "7-1",
+            "7-2",
+            "7-3",
+            "7-4",
+            "8-4",
+            "8-5",
+            "8-6",
+            "8-7",
+            "8-8",
+            "8-9",
+            "9-9",
+            "10-9",
+            "10-10",
+            "11-10",
+            "12-10",
+            "13-10"
+          ]
+        },
+        {
+          "map": "Abyss",
+          "score": "13-5",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "1-1",
+            "2-1",
+            "3-1",
+            "4-1",
+            "5-1",
+            "6-1",
+            "7-1",
+            "8-1",
+            "9-1",
+            "10-1",
+            "11-1",
+            "11-2",
+            "11-3",
+            "12-3",
+            "12-4",
+            "12-5",
+            "13-5"
+          ]
+        }
+      ]
+    },
     {
       "url": "https://www.vlr.gg/762035/misa-esports-vs-pcific-esports-monsters-reloaded-2026-closed-qualifier-playoffs-lr1",
       "date": "2026-10-09 15:00:00",

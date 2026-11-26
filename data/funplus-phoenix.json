@@ -1,8 +1,32 @@
 {
   "team_id": "11328",
-  "crawled_at": "2026-11-25T10:12:37.149Z",
-  "since": "2025-12-29T10:10:38.125Z",
+  "crawled_at": "2026-11-26T09:51:28.977Z",
+  "since": "2025-12-29T09:50:12.977Z",
   "matches": [
+    {
+      "url": "https://www.vlr.gg/793780/victory-no-limits-gaming-vs-funplus-phoenix-china-national-tournament-season-7-pro-qualifier-lr2",
+      "date": "2026-11-25 04:00:00",
+      "event": "China National Tournament Season 7: Pro Qualifier",
+      "stage": "Playoffs: Lower Round 2",
+      "team1": "Victory No Limits Gaming",
+      "team2": "FunPlus Phoenix",
+      "team1_id": "23699",
+      "team2_id": "11328",
+      "match_result": "2-0",
+      "winner": "Victory No Limits Gaming",
+      "map_result": [
+        {
+          "map": "Abyss",
+          "score": "13-7",
+          "rounds": []
+        },
+        {
+          "map": "Summit",
+          "score": "14-12",
+          "rounds": []
+        }
+      ]
+    },
     {
       "url": "https://www.vlr.gg/793778/funplus-phoenix-vs-keepbest-gaming-china-national-tournament-season-7-pro-qualifier-lr1",
       "date": "2026-11-24 06:40:00",
