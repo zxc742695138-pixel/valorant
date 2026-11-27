@@ -1,8 +1,77 @@
 {
   "team_id": "14419",
-  "crawled_at": "2026-11-26T09:49:21.770Z",
-  "since": "2025-12-29T09:48:33.769Z",
+  "crawled_at": "2026-11-27T09:53:18.469Z",
+  "since": "2025-12-29T09:52:23.576Z",
   "matches": [
+    {
+      "url": "https://www.vlr.gg/794456/eintracht-frankfurt-vs-giantx-vct-2027-emea-kickoff-europe-qualifier-playoffs-swiss-stage-r2-1-0",
+      "date": "2026-11-26 13:30:00",
+      "event": "VCT 2027: EMEA Kickoff - Europe Qualifier Playoffs",
+      "stage": "Swiss Stage: Round 2 (1-0)",
+      "team1": "Eintracht Frankfurt",
+      "team2": "GIANTX",
+      "team1_id": "14478",
+      "team2_id": "14419",
+      "match_result": "2-0",
+      "winner": "Eintracht Frankfurt",
+      "map_result": [
+        {
+          "map": "Summit",
+          "score": "13-9",
+          "rounds": [
+            "0-0",
+            "1-0",
+            "2-0",
+            "3-0",
+            "3-1",
+            "4-1",
+            "4-2",
+            "5-2",
+            "5-3",
+            "5-4",
+            "5-5",
+            "6-5",
+            "7-5",
+            "8-5",
+            "8-6",
+            "8-7",
+            "8-8",
+            "9-8",
+            "10-8",
+            "10-9",
+            "11-9",
+            "12-9",
+            "13-9"
+          ]
+        },
+        {
+          "map": "Lotus",
+          "score": "13-6",
+          "rounds": [
+            "0-0",
+            "0-1",
+            "0-2",
+            "1-2",
+            "2-2",
+            "3-2",
+            "3-3",
+            "4-3",
+            "4-4",
+            "5-4",
+            "5-5",
+            "6-5",
+            "7-5",
+            "8-5",
+            "9-5",
+            "10-5",
+            "11-5",
+            "11-6",
+            "12-6",
+            "13-6"
+          ]
+        }
+      ]
+    },
     {
       "url": "https://www.vlr.gg/794019/giantx-vs-pixel-lumina-vct-2027-emea-kickoff-europe-qualifier-playoffs-swiss-stage-r1-0-0",
       "date": "2026-11-25 11:00:00",
